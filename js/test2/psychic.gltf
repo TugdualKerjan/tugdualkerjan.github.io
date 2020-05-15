@@ -1,0 +1,284 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.0.5",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "path28",
+            "rotation" : [
+                0,
+                0,
+                0.4348229467868805,
+                0.9005160927772522
+            ],
+            "translation" : [
+                0.048928871750831604,
+                0,
+                -0.16881702840328217
+            ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "mesh" : 1,
+            "name" : "path24",
+            "rotation" : [
+                0,
+                0.258819043636322,
+                0,
+                0.9659258127212524
+            ],
+            "scale" : [
+                10,
+                10,
+                10
+            ],
+            "translation" : [
+                0,
+                0,
+                0.045051999390125275
+            ]
+        }
+    ],
+    "animations" : [
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 1,
+                        "path" : "translation"
+                    }
+                }
+            ],
+            "name" : "path24Action",
+            "samplers" : [
+                {
+                    "input" : 6,
+                    "interpolation" : "LINEAR",
+                    "output" : 7
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 0,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "path28Action",
+            "samplers" : [
+                {
+                    "input" : 6,
+                    "interpolation" : "LINEAR",
+                    "output" : 8
+                }
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "path28",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1
+                    },
+                    "indices" : 2,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "path24",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 3,
+                        "NORMAL" : 4
+                    },
+                    "indices" : 5,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "glitch-image",
+            "uri" : "glitch-image.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 235,
+            "max" : [
+                0.016741527244448662,
+                0.009999999776482582,
+                0.01683160848915577
+            ],
+            "min" : [
+                -0.01756984554231167,
+                -0.009999999776482582,
+                -0.01774624176323414
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 235,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5123,
+            "count" : 564,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 2541,
+            "max" : [
+                0.16831105947494507,
+                0.009999999776482582,
+                0.13367633521556854
+            ],
+            "min" : [
+                -0.17007948458194733,
+                -0.009999999776482582,
+                -0.15246762335300446
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 2541,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 6468,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 31,
+            "max" : [
+                1
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 31,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 31,
+            "type" : "VEC4"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 2820,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2820,
+            "byteOffset" : 2820
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1128,
+            "byteOffset" : 5640
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 30492,
+            "byteOffset" : 6768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 30492,
+            "byteOffset" : 37260
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12936,
+            "byteOffset" : 67752
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 124,
+            "byteOffset" : 80688
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 372,
+            "byteOffset" : 80812
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 496,
+            "byteOffset" : 81184
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 81680,
+            "uri" : "psychic.bin"
+        }
+    ]
+}
