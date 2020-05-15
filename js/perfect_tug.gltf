@@ -1,0 +1,148 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.1.45",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "tug2",
+            "rotation" : [
+                0.36922410130500793,
+                0.21407130360603333,
+                -0.12945067882537842,
+                0.8950361013412476
+            ],
+            "scale" : [
+                0.31753695011138916,
+                0.31753700971603394,
+                0.3175370395183563
+            ],
+            "translation" : [
+                0.18192005157470703,
+                2.086362838745117,
+                51.26194381713867
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "tug2",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 1
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "tug2",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "tug2",
+            "uri" : "tug2.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 120411,
+            "max" : [
+                6.384552001953125,
+                9.791954040527344,
+                16.455039978027344
+            ],
+            "min" : [
+                -12.14227294921875,
+                -11.988655090332031,
+                -9.674728393554688
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 120411,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 120411,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5125,
+            "count" : 120411,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1444932,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1444932,
+            "byteOffset" : 1444932
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 963288,
+            "byteOffset" : 2889864
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 481644,
+            "byteOffset" : 3853152
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 4334796,
+            "uri" : "perfect_tug.bin"
+        }
+    ]
+}

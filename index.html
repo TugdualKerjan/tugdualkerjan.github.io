@@ -52,7 +52,7 @@
         document.body.appendChild(renderer.domElement);
 
         let loader = new THREE.GLTFLoader();
-        loader.load('./js/test2/psychic.gltf', function(gltf){
+        loader.load('./js/perfect_tug.gltf', function(gltf){
 					mixer = new THREE.AnimationMixer( gltf.scene );
 					var action = mixer.clipAction( gltf.animations[ 0 ] );
 					action.play();
