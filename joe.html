@@ -28,9 +28,9 @@
 			camera.position.z = 6;
 			controls = new OrbitControls(camera, renderer.domElement);
 			// controls.addEventListener('change', renderer);
-			var hlight = new THREE.AmbientLight(0x404040, 100);
+			var hlight = new THREE.AmbientLight(0x404040, 1);
 			scene.add(hlight);
-			var directionalLight = new THREE.DirectionalLight(0xffffff, 100);
+			var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 			directionalLight.position.set(0, 1, 0);
 			directionalLight.castShadow = true;
 			scene.add(directionalLight);
@@ -49,20 +49,8 @@
 			var light5 = new THREE.PointLight(0xc4c4c4, 1);
 			light5.position.set(0, -200, 0);
 			scene.add(light5);
-			new THREE.FontLoader().load('threejs/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-				var geometry = new THREE.TextGeometry('Title', {
-					font: font,
-					size: 1,
-					height: 1,
-				});
-				var mesh = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({ color: 0x111111 }));
-				scene.add(mesh);
-			});
-			new GLTFLoader().load('assets/card/card.glb', function (gltf) {
-				gltf.scene.traverse(function (child) {
-					console.log(child);
-				});
-				card = gltf.scene.getObjectByName("Plane");
+			new GLTFLoader().load('assets/spaceship/spaceship.glb', function (gltf) {
+				card = gltf.scene.children[0];
 				scene.add(card);
 				animate();
 			});
@@ -75,7 +63,6 @@
 		function animate() {
 			requestAnimationFrame(animate);
 			card.rotation.y += 0.005;
-			console.log("Frame");
 			renderer.render(scene, camera);
 		}
 		init();

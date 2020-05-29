@@ -41,21 +41,21 @@ function loadCards(gltf) {
 
         var pixelHeight = innerHeight / 2;
         var pixelWidth = pixelHeight / 1.61803398875;
-        amountOfCols = Math.floor(innerWidth / pixelWidth); 
-        console.log(innerHeight, innerWidth, pixelWidth, innerWidth/pixelWidth);
+        amountOfCols = Math.floor(innerWidth / pixelWidth);
+        console.log(innerHeight, innerWidth, pixelWidth, innerWidth / pixelWidth);
 
         amountOfRows = 2;
         console.log("Max: " + amountOfCols);
         // console.log(pixelWidth, pixelHeight);
         // console.log(amountOfRows, amountOfCols);
         // console.log(innerWidth + " " + innerHeight);
-        var padding = 1.1;
-        
+        var padding = 1.02;
+
         cardHeight = 2 * 1.61803398875 * padding;
         console.log(cardHeight);
         cardWidth = 2 * padding;
         console.log(cardWidth);
-        
+
         var camWidth = cardHeight * innerWidth / innerHeight;
 
         camera = new THREE.OrthographicCamera(-camWidth, camWidth, cardHeight, -cardHeight, -100, 100);
@@ -123,7 +123,7 @@ function addText(mesh, text, size, x, y) {
 function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xdddddd);
-    scene.add(new THREE.AxesHelper(5));
+    // scene.add(new THREE.AxesHelper(5));
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -150,17 +150,26 @@ function init() {
 
 function animate() {
     requestAnimationFrame(animate);
-    if (cards.length != 0) {
+    if (cards.length != 0 && timer.getElapsedTime() > 6) {
         for (var i = 0; i < cards.length; i++) {
-            var time = Math.min(Math.max(timer.getElapsedTime() - 2 - i, 0), 1) / 1;
+            var time = Math.min(Math.max(timer.getElapsedTime() - 6 - i, 0), 1) / 1;
             var col = i % amountOfCols;
             var row = Math.floor(i / amountOfCols);
             // console.log(i, amountOfCols, col, amountOfRows, row, Math.floor(amountOfCols/2), col * i - Math.floor(amountOfCols/2), row * i - Math.floor(amountOfRows/2));
-            col = cardWidth * (col - (amountOfCols-1)/2);
-            row = cardHeight * (row - (amountOfRows-1)/2);
-            cards[i].position.set(0, row * time, col * time);
+            col = cardWidth * (col - (amountOfCols - 1) / 2);
+            row = cardHeight * (row - (amountOfRows - 1) / 2);
+            cards[i].position.set(-time * 10, row * time, col * time);
             cards[i].rotation.z = time * Math.PI / 2;
             // cards[i].rotation.x = time * Math.PI;
+        }
+    } else {
+        if (cards.length != 0) {
+            for (var i = 0; i < cards.length; i++) {
+                var time = Math.min(Math.max(timer.getElapsedTime() - 3, 0), 3) / 3;
+
+                cards[i].position.set(0, (Math.cos(Math.PI/2 * time)) * cardHeight, 0);
+                // cards[i].rotation.y = time * Math.PI * 2;
+            }
         }
     }
     renderer.render(scene, camera);
