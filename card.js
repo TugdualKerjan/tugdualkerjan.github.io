@@ -4,24 +4,19 @@ import { OrbitControls } from './threejs/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
 
 let scene, camera, renderer, controls, car, cube;
-
 function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xdddddd);
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    var cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
-    camera = new THREE.OrthographicCamera(-window.innerWidth / 2,
-        window.innerWidth / 2,
-        window.innerHeight / 2, -window.innerHeight / 2, -100, 100);
-    // camera.rotation.y = 45 / 180 * Math.PI;
-    camera.position.x = 0;
-    camera.position.y = 0;
-    camera.position.z = 10;
+    var axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
+    camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000);
+    camera.rotation.y = 45 / 180 * Math.PI;
+    camera.position.x = 6;
+    camera.position.y = 6;
+    camera.position.z = 6;
     controls = new OrbitControls(camera, renderer.domElement);
     // controls.addEventListener('change', renderer);
     var hlight = new THREE.AmbientLight(0x404040, 1);
@@ -46,19 +41,16 @@ function init() {
     light5.position.set(0, -200, 0);
     scene.add(light5);
     let loader = new GLTFLoader();
-    loader.load('assets/car/car.glb', function (gltf) {
+    loader.load('assets/spaceship/spaceship.glb', function (gltf) {
         car = gltf.scene.children[0];
-        car.scale.set(10, 10, 10);
         scene.add(gltf.scene);
         animate();
     });
 }
-
 function animate() {
     requestAnimationFrame(animate);
     car.rotation.y += 0.005;
     console.log("Frame");
     renderer.render(scene, camera);
 }
-
 init();
