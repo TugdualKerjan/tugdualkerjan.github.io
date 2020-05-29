@@ -6,7 +6,7 @@ import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
 
 const cardSize = 100;
 
-let scene, camera, renderer, timer, font, textureLoader, amountOfRows, amountOfCols, cardWidth, cardHeight;
+let scene, camera, renderer, timer, fonter, textureLoader, amountOfRows, amountOfCols, cardWidth, cardHeight;
 
 var cards = [];
 function loadCards(gltf) {
@@ -103,7 +103,7 @@ function addPic(mesh, filename) {
 
 function addText(mesh, text, size, x, y) {
     var geometry = new THREE.TextGeometry(text, {
-        font: font,
+        font: fonter,
         size: size,
         height: 0.01,
     });
