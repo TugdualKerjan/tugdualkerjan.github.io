@@ -138,7 +138,7 @@ function init() {
     scene.add(hlight);
 
     new THREE.FontLoader().load('assets/fonts/Oswald_Regular.json', function (result) {
-        font = result;
+        fonter = result;
     });
 
     textureLoader = new THREE.TextureLoader();
