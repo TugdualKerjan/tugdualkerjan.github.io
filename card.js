@@ -1,5 +1,4 @@
 import * as THREE from './threejs/build/three.module.js';
-import * as JQ from './jquery.js';
 
 import { OrbitControls } from './threejs/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
