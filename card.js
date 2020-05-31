@@ -44,6 +44,7 @@ function loadCards(gltf) {
             var geometry = new THREE.BoxGeometry(bbox.max.x * 2, bbox.max.y * 2, bbox.max.z * 2);
             var material = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
             var cube = new THREE.Mesh(geometry, material);
+            cube.link = data["cards"][i]["url"];
             cube.add(card);
 
             //Load card and give it a material
@@ -218,9 +219,10 @@ function onClick(event) {
     var intersects = raycaster.intersectObjects(cards, false); //array
     if (intersects.length > 0) {
         var selectedObject = intersects[0].object;
-        console.log(selectedObject);
-        camera.position.y = selectedObject.position.y;
-        camera.position.z = selectedObject.position.z;
+        console.log(selectedObject.link);
+        if(selectedObject.link != "") window.open(selectedObject.link);
+        // camera.position.y = selectedObject.position.y;
+        // camera.position.z = selectedObject.position.z;
     }
 }
 
