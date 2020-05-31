@@ -8,12 +8,12 @@
         {
             "title": "THIS WEBSITE",
             "img": "site.png",
-            "desc": "The day after making the blender space ship I decided it was time \nto make a terrible website on which I would be able to log all the projects \n I enjoy investing time in. The result is this sort of deck of cards, \n each one describing something I find worth of sharing. It took a full\nday for me to make the cards, animate and modularise them, without ever\nhaving touched Javascript before. Quite satisfied."
+            "desc": "The day after making the blender space ship I decided it was time to make a terrible website on which I would be able to log all the projects  I enjoy investing time in. The result is this sort of deck of cards,  each one describing something I find worth of sharing. It took a fullday for me to make the cards, animate and modularise them, without everhaving touched Javascript before. Quite satisfied."
         },
         {
             "title": "VIBING WITH BLENDER",
             "img": "ship.jpg",
-            "desc": "Drew some perspective drawing 2 days ago, wanted to see how it \nwould look in Blender. Then spent the next day on learning how to use \nthe application. Really intuitive, got a good grasp thanks to this \nfellow on YouTube: Imphenzia. I then decided to see if I could preview   \nit on a github page I had recently created (This one). After a solid day \nof work my shitty 3D model is viewable on a website from anywhere around \nthe world!"
+            "desc": "Drew some perspective drawing 2 days ago,wanted to see how it would look in Blender. Then spent the next day on learning how to use the application. Really intuitive, got a good grasp thanks to this fellow on YouTube: Imphenzia. I then decided to see if I could preview   it on a github page I had recently created (This one). After a solid day of work my shitty 3D model is viewable on a website from anywhere around the world!"
         }
     ]
 }
