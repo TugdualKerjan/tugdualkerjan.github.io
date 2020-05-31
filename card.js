@@ -36,18 +36,19 @@ function loadCards(gltf) {
 
             //Load pictures
             addPic(card, 'assets/images/' + data["cards"][i]["img"]);
-
-            var bbox = new THREE.Box3().setFromObject(card);
-            var geometry = new THREE.BoxGeometry(bbox.max.x, bbox.max.y, bbox.max.z);
-
-            var material = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
-            var cube = new THREE.Mesh(geometry, material);
-            cube.add(card);
-
+            addPicBack(card, 'assets/images/pokemon.png');
 
             card.position.x = 0;
             card.position.z = 0;
-            card.rotation.z = Math.PI;
+            // card.rotation.x = Math.PI/2;
+            card.rotation.z = -Math.PI/2;
+            var bbox = new THREE.Box3().setFromObject(card);
+            var geometry = new THREE.BoxGeometry(bbox.max.x * 2, bbox.max.y * 2, bbox.max.z * 2);
+            var material = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
+            var cube = new THREE.Mesh(geometry, material);
+            cube.add(card);
+            // card.rotation.y = Math.PI/2;
+
             //Load card and give it a material
             scene.add(cube);
             // scene.add(card);
@@ -102,6 +103,19 @@ function loadJSON(callback) {
     xobj.send(null);
 }
 
+function addPicBack(mesh, filename) {
+    textureLoader.load(filename, function (texture) {
+        var geometry = new THREE.PlaneBufferGeometry(2, 2); // Golden ratio resized (2 : 1);
+        var material = new THREE.MeshBasicMaterial({ map: texture }); //Set texture on mesh
+
+        var picMesh = new THREE.Mesh(geometry, material);
+        picMesh.rotation.x = -Math.PI / 2;
+        // picMesh.rotation.z = Math.PI / 2;
+
+        mesh.add(picMesh);
+    });
+}
+
 function addPic(mesh, filename) {
     textureLoader.load(filename, function (texture) {
         var geometry = new THREE.PlaneBufferGeometry(2 * 0.95, 0.95 * 2 / 2.61803398875); // Golden ratio resized (2 : 1);
@@ -122,7 +136,7 @@ function addText(mesh, text, size, x, y, font) {
     var geometry = new THREE.TextBufferGeometry(text, {
         font: font,
         size: size,
-        height: 0.01,
+        height: 0.001,
     });
     var material = new THREE.MeshLambertMaterial({ color: 0xffffff });
 
@@ -134,6 +148,7 @@ function addText(mesh, text, size, x, y, font) {
     //Relative to the card as it is parented
     textMesh.position.x += x; //For some reason bounding box on x axis twice as big
     textMesh.position.z += y;
+    textMesh.position.y -= 0.0001;
     mesh.add(textMesh);
 }
 
@@ -190,7 +205,7 @@ function animate() {
     if (intersects.length > 0) {
         if (INTERSECTED != intersects[0].object.children[0]) { //inters.length != 0 &&
             if (INTERSECTED) {
-                INTERSECTED.position.y += 2;
+                INTERSECTED.position.x += 2;
                 INTERSECTED.position.x -= 0.1;
                 INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                 INTERSECTED.scale.divideScalar(1.1);
@@ -203,17 +218,17 @@ function animate() {
             INTERSECTED.material.opacity = 1;
             INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
             INTERSECTED.material.emissive.setHex(0x333333);
-            INTERSECTED.position.y -= 2;
+            INTERSECTED.position.x -= 2;
             INTERSECTED.position.x += 0.1;
 
         }
         if (INTERSECTED && INTERSECTED.quaternion && INTERSECTEDQUAT) {
-            INTERSECTED.rotation.x = -(2 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) + Math.PI;
-            INTERSECTED.rotation.z = -(0.5 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2)) + Math.PI;
+            INTERSECTED.rotation.z = (0.3 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI/2;
+            INTERSECTED.rotation.y = -(0.4 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
         }
     } else {
         if (INTERSECTED) {
-            INTERSECTED.position.y += 2;
+            INTERSECTED.position.x += 2;
             INTERSECTED.position.x -= 0.1;
             INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
             INTERSECTED.scale.divideScalar(1.1);
@@ -232,8 +247,10 @@ function animate() {
             col = cardWidth * (col - (amountOfCols - 1) / 2);
             row = cardHeight * (row - (amountOfRows - 1) / 2);
             cards[i].position.set(-time * 10, row * time, col * time);
-            cards[i].rotation.z = time * Math.PI / 2;
-            cards[i].rotation.x = (time * Math.PI - Math.PI);
+            // cards[i].rotation.z = -time * Math.PI;
+            cards[i].rotation.x = time * Math.PI;
+            cards[i].rotation.y = time * Math.PI;
+
         }
     } else {
         if (cards.length != 0) {
