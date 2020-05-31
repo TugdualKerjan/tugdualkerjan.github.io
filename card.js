@@ -223,8 +223,8 @@ function animate() {
 
         }
         if (INTERSECTED && INTERSECTED.quaternion && INTERSECTEDQUAT) {
-            INTERSECTED.rotation.z = (0.3 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI/2;
-            INTERSECTED.rotation.y = -(0.4 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
+            INTERSECTED.rotation.z = (0.6 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI/2;
+            INTERSECTED.rotation.y = -(0.7 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
         }
     } else {
         if (INTERSECTED) {
