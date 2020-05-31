@@ -68,21 +68,21 @@ function loadCards(gltf) {
 
         var camWidth = cardHeight * innerWidth / innerHeight;
 
-        camera = new THREE.OrthographicCamera(-camWidth, camWidth, cardHeight, -cardHeight, -100, 100);
+        // camera = new THREE.OrthographicCamera(-camWidth, camWidth, cardHeight, -cardHeight, -100, 100);
+        camera = new THREE.PerspectiveCamera(2 * 45, innerWidth / innerHeight, 1, 1000);
         camera.rotation.y = Math.PI / 2;
 
-        camera.position.x = 1;
+        camera.position.x = 5;
         camera.position.y = 0;
         camera.position.z = 0;
 
-        // new OrbitControls(camera, renderer.domElement);
         var controls = new OrbitControls(camera, renderer.domElement);
         // controls.addEventListener( 'change', render ); // use this only if there is no animation loop
         controls.enableZoom = false;
-        controls.enablePan = true;
-        controls.keyPanSpeed = 300;
+        // controls.enablePan = true;
+        // controls.keyPanSpeed = 300;
         controls.enableRotate = false;
-        controls.screenSpacePanning = true;
+        // controls.screenSpacePanning = true;
 
         timer = new THREE.Clock();
         timer.start();
@@ -161,6 +161,9 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    document.body.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.body.addEventListener('mouseleave', onMouseLeave);
+
     var directionalLight = new THREE.DirectionalLight(0xffffdd, 1);
     directionalLight.position.set(1, 1, 0);
     directionalLight.castShadow = true;
@@ -170,8 +173,6 @@ function init() {
     scene.add(hlight);
 
     raycaster = new THREE.Raycaster();
-
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
 
     var fontLoader = new THREE.FontLoader();
 
@@ -198,13 +199,25 @@ function onDocumentMouseMove(event) {
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    console.log(mouse);
+}
+
+function onMouseLeave(event) {
+    event.preventDefault();
+    
+    mouse.x = 0;
+    mouse.y = 0;
+    console.log(mouse);
+
 }
 
 function animate() {
     requestAnimationFrame(animate);
-    var bob = new THREE.Vector2(0.05 * mouse.x, 0.05 * mouse.y);
-    if (Math.abs(mouse.x) > 0.8) camera.position.z -= bob.x;
-    if (Math.abs(mouse.y) > 0.8) camera.position.y += bob.y;
+    var bob = new THREE.Vector2(Math.pow(mouse.x, 3)/10, Math.pow(mouse.y, 3)/10);
+    // if (Math.abs(mouse.x) > 0.8 || Math.abs(mouse.y) > 0.8) {
+        camera.position.y += bob.y;
+        camera.position.z -= bob.x;
+    // }
 
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
@@ -213,8 +226,7 @@ function animate() {
             if (intersects.length > 0) {
                 if (INTERSECTED != intersects[0].object.children[0]) {
                     if (INTERSECTED) {
-                        INTERSECTED.position.x += 2;
-                        INTERSECTED.position.x -= 0.1;
+                        INTERSECTED.position.x += 0.7;
                         INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                         INTERSECTED.scale.divideScalar(1.1);
                         INTERSECTED.material.opacity = 0.70;
@@ -226,18 +238,16 @@ function animate() {
                     INTERSECTED.material.opacity = 1;
                     INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
                     INTERSECTED.material.emissive.setHex(0x333333);
-                    INTERSECTED.position.x -= 2;
-                    INTERSECTED.position.x += 0.1;
+                    INTERSECTED.position.x -= 0.7;
 
                 }
                 if (INTERSECTED && INTERSECTED.quaternion && INTERSECTEDQUAT) {
-                    INTERSECTED.rotation.z = (0.6 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI / 2;
-                    INTERSECTED.rotation.y = -(0.7 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
+                    INTERSECTED.rotation.z = (0.5 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI / 2;
+                    INTERSECTED.rotation.y = -(0.6 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
                 }
             } else {
                 if (INTERSECTED) {
-                    INTERSECTED.position.x += 2;
-                    INTERSECTED.position.x -= 0.1;
+                    INTERSECTED.position.x += 0.7;
                     INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                     INTERSECTED.scale.divideScalar(1.1);
                     INTERSECTED.material.opacity = 0.70;
@@ -258,7 +268,7 @@ function animate() {
                     cards[i].rotation.y = -time * Math.PI;
                 } else {
                     var time = Math.min(Math.max(timer.getElapsedTime() - i * 0.3, 0), 0.4) / 0.4;
-                    cards[i].position.set(0, -3 * (1 - time) - cardHeight, 0);
+                    cards[i].position.set(0, -8 * (1 - time) - cardHeight, 0);
                 }
             }
         }
