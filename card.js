@@ -190,7 +190,7 @@ function animate() {
     if (intersects.length > 0) {
         if (INTERSECTED != intersects[0].object.children[0]) { //inters.length != 0 &&
             if (INTERSECTED) {
-                INTERSECTED.position.y -= 2;
+                INTERSECTED.position.y += 2;
                 INTERSECTED.position.x -= 0.1;
                 INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                 INTERSECTED.scale.divideScalar(1.1);
@@ -203,7 +203,7 @@ function animate() {
             INTERSECTED.material.opacity = 1;
             INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
             INTERSECTED.material.emissive.setHex(0x333333);
-            INTERSECTED.position.y += 2;
+            INTERSECTED.position.y -= 2;
             INTERSECTED.position.x += 0.1;
 
         }
@@ -213,7 +213,7 @@ function animate() {
         }
     } else {
         if (INTERSECTED) {
-            INTERSECTED.position.y -= 2;
+            INTERSECTED.position.y += 2;
             INTERSECTED.position.x -= 0.1;
             INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
             INTERSECTED.scale.divideScalar(1.1);
