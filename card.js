@@ -46,6 +46,12 @@ function loadCards(gltf) {
             var cube = new THREE.Mesh(geometry, material);
             cube.link = data["cards"][i]["url"];
             cube.add(card);
+            if (cube.link == "spaceship") {
+                card.add(spaceship);
+                spaceship.position.y -= 0.6;
+                spaceship.position.x -= 0.5;
+                spaceship.visible = false;
+            }
 
             //Load card and give it a material
             scene.add(cube);
@@ -70,7 +76,7 @@ function loadCards(gltf) {
         var camWidth = cardHeight * innerWidth / innerHeight;
 
         // camera = new THREE.OrthographicCamera(-camWidth, camWidth, cardHeight, -cardHeight, -100, 100);
-        camera = new THREE.PerspectiveCamera(2 * 45, innerWidth / innerHeight, 1, 1000);
+        camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 1, 1000);
         camera.rotation.y = Math.PI / 2;
 
         camera.position.x = 5;
@@ -174,6 +180,16 @@ function init() {
     var hlight = new THREE.AmbientLight(0x404040, 1);
     scene.add(hlight);
 
+    var light = new THREE.PointLight(0xc4c4c4, 1);
+    light.position.set(0, 300, 500);
+    scene.add(light);
+    var light3 = new THREE.PointLight(0xc4c4c4, 1);
+    light3.position.set(0, 300, -500);
+    scene.add(light3);
+    var light5 = new THREE.PointLight(0xc4c4c4, 1);
+    light5.position.set(0, -200, 0);
+    scene.add(light5);
+
     raycaster = new THREE.Raycaster();
 
     var fontLoader = new THREE.FontLoader();
@@ -195,6 +211,9 @@ function init() {
     var loader = new GLTFLoader();
     loader.load('assets/spaceship/spaceship.glb', function (gltf) {
         spaceship = gltf.scene.children[0];
+        spaceship.scale.multiplyScalar(0.15);
+        spaceship.rotation.x = Math.PI / 2;
+        spaceship.rotation.z = Math.PI / 2;
     });
     loader.load('assets/card/card.glb', loadCards);
 }
@@ -220,12 +239,17 @@ function onClick(event) {
 
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(cards, false); //array
+    spaceship.visible = false;
     if (intersects.length > 0) {
         var selectedObject = intersects[0].object;
         console.log(selectedObject.link);
-        if(selectedObject.link != "") window.open(selectedObject.link);
-        // camera.position.y = selectedObject.position.y;
-        // camera.position.z = selectedObject.position.z;
+        if (selectedObject.link != "") {
+            if (selectedObject.link != "spaceship") {
+                window.open(selectedObject.link);
+            } else {
+                spaceship.visible = true;
+            }
+        }
     }
 }
 
@@ -235,6 +259,7 @@ function animate() {
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
         if (timer.getElapsedTime() - 3 - 2 > 0) {
+            spaceship.rotation.x += 0.003;
             var bob = new THREE.Vector2(Math.pow(mouse.x, 3) / 10, Math.pow(mouse.y, 3) / 10);
             camera.position.y += bob.y;
             camera.position.z -= bob.x;
