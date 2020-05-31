@@ -75,7 +75,14 @@ function loadCards(gltf) {
         camera.position.y = 0;
         camera.position.z = 0;
 
-        new OrbitControls(camera, renderer.domElement);
+        // new OrbitControls(camera, renderer.domElement);
+        var controls = new OrbitControls(camera, renderer.domElement);
+        // controls.addEventListener( 'change', render ); // use this only if there is no animation loop
+        controls.enableZoom = false;
+        controls.enablePan = true;
+        controls.keyPanSpeed = 300;
+        controls.enableRotate = false;
+        controls.screenSpacePanning = true;
 
         timer = new THREE.Clock();
         timer.start();
@@ -178,6 +185,10 @@ function init() {
 
     textureLoader = new THREE.TextureLoader();
 
+    textureLoader.load('assets/images/space.jpg', function (texture) {
+        scene.background = texture;
+    });
+
     var loader = new GLTFLoader();
     loader.load('assets/card/card.glb', loadCards);
 }
@@ -191,6 +202,9 @@ function onDocumentMouseMove(event) {
 
 function animate() {
     requestAnimationFrame(animate);
+    var bob = new THREE.Vector2(0.05 * mouse.x, 0.05 * mouse.y);
+    if (Math.abs(mouse.x) > 0.8) camera.position.z -= bob.x;
+    if (Math.abs(mouse.y) > 0.8) camera.position.y += bob.y;
 
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
@@ -203,7 +217,7 @@ function animate() {
                         INTERSECTED.position.x -= 0.1;
                         INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                         INTERSECTED.scale.divideScalar(1.1);
-                        INTERSECTED.material.opacity = 0.50;
+                        INTERSECTED.material.opacity = 0.70;
                         INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
                     }
                     INTERSECTED = intersects[0].object.children[0];
@@ -226,25 +240,25 @@ function animate() {
                     INTERSECTED.position.x -= 0.1;
                     INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
                     INTERSECTED.scale.divideScalar(1.1);
-                    INTERSECTED.material.opacity = 0.50;
+                    INTERSECTED.material.opacity = 0.70;
                     INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
                 }
                 INTERSECTED = null;
             }
         } else {
             for (var i = 0; i < cards.length; i++) {
-                if (timer.getElapsedTime() - 0.4 - i*0.3 > 0) {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - 0.4 - i*0.3, 0), 0.4)/0.4;
+                if (timer.getElapsedTime() - 0.4 - i * 0.3 > 0) {
+                    var time = Math.min(Math.max(timer.getElapsedTime() - 0.4 - i * 0.3, 0), 0.4) / 0.4;
                     var col = i % amountOfCols;
                     var row = Math.floor(i / amountOfCols);
                     col = cardWidth * -(col - (amountOfCols - 1) / 2);
                     row = cardHeight * -(row - (amountOfRows - 1) / 2);
-                    cards[i].position.set(0, row * time - (Math.sin(Math.PI / 2 * (1-time))) * cardHeight, col * time);
+                    cards[i].position.set(0, row * time - (Math.sin(Math.PI / 2 * (1 - time))) * cardHeight, col * time);
                     cards[i].rotation.x = -time * Math.PI;
                     cards[i].rotation.y = -time * Math.PI;
                 } else {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - i*0.3, 0), 0.4)/0.4;
-                    cards[i].position.set(0, -3*(1-time) - cardHeight, 0);
+                    var time = Math.min(Math.max(timer.getElapsedTime() - i * 0.3, 0), 0.4) / 0.4;
+                    cards[i].position.set(0, -3 * (1 - time) - cardHeight, 0);
                 }
             }
         }
