@@ -22,7 +22,7 @@ function loadCards(gltf) {
         for (var i = 0; i < data["cards"].length; i++) {
 
             var card = default_card.clone();
-            card.material = new THREE.MeshLambertMaterial({
+            card.material = new THREE.MeshPhongMaterial({
                 color: new THREE.Color(0, 0, 0).setHSL(Math.random(), 1, 0.2),
                 transparent: true,
                 opacity: 0.50,
@@ -31,6 +31,7 @@ function loadCards(gltf) {
 
             //Load font
             addText(card, data["cards"][i]["title"], 0.1, -0.85, -0.85, titleFont);
+            addText(card, data["cards"][i]["date"], 0.1, -0.85, 0.35, titleFont);
             addText(card, wordWrap(data["cards"][i]["desc"], 50), 0.05, 0.05, -0.90, descFont);
 
             //Load pictures
@@ -199,7 +200,6 @@ function onDocumentMouseMove(event) {
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-    console.log(mouse);
 }
 
 function onMouseLeave(event) {
@@ -207,8 +207,6 @@ function onMouseLeave(event) {
 
     mouse.x = 0;
     mouse.y = 0;
-    console.log(mouse);
-
 }
 
 function animate() {
