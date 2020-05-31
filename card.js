@@ -204,7 +204,7 @@ function onDocumentMouseMove(event) {
 
 function onMouseLeave(event) {
     event.preventDefault();
-    
+
     mouse.x = 0;
     mouse.y = 0;
     console.log(mouse);
@@ -213,15 +213,13 @@ function onMouseLeave(event) {
 
 function animate() {
     requestAnimationFrame(animate);
-    var bob = new THREE.Vector2(Math.pow(mouse.x, 3)/10, Math.pow(mouse.y, 3)/10);
-    // if (Math.abs(mouse.x) > 0.8 || Math.abs(mouse.y) > 0.8) {
-        camera.position.y += bob.y;
-        camera.position.z -= bob.x;
-    // }
 
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
-        if (timer.getElapsedTime() - 2 > 0) {
+        if (timer.getElapsedTime() - 3 - 2 > 0) {
+            var bob = new THREE.Vector2(Math.pow(mouse.x, 3) / 10, Math.pow(mouse.y, 3) / 10);
+            camera.position.y += bob.y;
+            camera.position.z -= bob.x;
             var intersects = raycaster.intersectObjects(cards);
             if (intersects.length > 0) {
                 if (INTERSECTED != intersects[0].object.children[0]) {
@@ -257,8 +255,8 @@ function animate() {
             }
         } else {
             for (var i = 0; i < cards.length; i++) {
-                if (timer.getElapsedTime() - 0.4 - i * 0.3 > 0) {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - 0.4 - i * 0.3, 0), 0.4) / 0.4;
+                if (timer.getElapsedTime() - 3 - 0.4 - i * 0.3 > 0) {
+                    var time = Math.min(Math.max(timer.getElapsedTime() - 3 - 0.4 - i * 0.3, 0), 0.4) / 0.4;
                     var col = i % amountOfCols;
                     var row = Math.floor(i / amountOfCols);
                     col = cardWidth * -(col - (amountOfCols - 1) / 2);
@@ -267,7 +265,7 @@ function animate() {
                     cards[i].rotation.x = -time * Math.PI;
                     cards[i].rotation.y = -time * Math.PI;
                 } else {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - i * 0.3, 0), 0.4) / 0.4;
+                    var time = Math.min(Math.max(timer.getElapsedTime() - 3 - i * 0.3, 0), 0.4) / 0.4;
                     cards[i].position.set(0, -8 * (1 - time) - cardHeight, 0);
                 }
             }
