@@ -17,7 +17,6 @@ function loadCards(gltf) {
 
         var default_card = gltf.scene.getObjectByName("Plane");
 
-
         //! Should get a json file with title, image, description
         for (var i = 0; i < data["cards"].length; i++) {
 
@@ -163,6 +162,7 @@ function init() {
     document.body.appendChild(renderer.domElement);
 
     document.body.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.body.addEventListener('click', onClick);
     document.body.addEventListener('mouseleave', onMouseLeave);
 
     var directionalLight = new THREE.DirectionalLight(0xffffdd, 1);
@@ -207,6 +207,21 @@ function onMouseLeave(event) {
 
     mouse.x = 0;
     mouse.y = 0;
+}
+
+function onClick(event) {
+    event.preventDefault();
+
+    console.log("AAAA");
+
+    raycaster.setFromCamera(mouse, camera);
+    var intersects = raycaster.intersectObjects(cards, false); //array
+    if (intersects.length > 0) {
+        var selectedObject = intersects[0].object;
+        console.log(selectedObject);
+        camera.position.y = selectedObject.position.y;
+        camera.position.z = selectedObject.position.z;
+    }
 }
 
 function animate() {
