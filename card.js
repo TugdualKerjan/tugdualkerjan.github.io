@@ -194,7 +194,7 @@ function animate() {
 
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
-        if (timer.getElapsedTime() - 4 > 0) {
+        if (timer.getElapsedTime() - 2 > 0) {
             var intersects = raycaster.intersectObjects(cards);
             if (intersects.length > 0) {
                 if (INTERSECTED != intersects[0].object.children[0]) {
@@ -233,20 +233,18 @@ function animate() {
             }
         } else {
             for (var i = 0; i < cards.length; i++) {
-                if (timer.getElapsedTime() - 1 - i > 0) {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - 1 - i, 0), 1);
+                if (timer.getElapsedTime() - 0.4 - i*0.3 > 0) {
+                    var time = Math.min(Math.max(timer.getElapsedTime() - 0.4 - i*0.3, 0), 0.4)/0.4;
                     var col = i % amountOfCols;
                     var row = Math.floor(i / amountOfCols);
-                    col = cardWidth * (col - (amountOfCols - 1) / 2);
-                    row = cardHeight * (row - (amountOfRows - 1) / 2);
-                    cards[i].position.set(0, row * time, col * time);
+                    col = cardWidth * -(col - (amountOfCols - 1) / 2);
+                    row = cardHeight * -(row - (amountOfRows - 1) / 2);
+                    cards[i].position.set(0, row * time - (Math.sin(Math.PI / 2 * (1-time))) * cardHeight, col * time);
                     cards[i].rotation.x = -time * Math.PI;
                     cards[i].rotation.y = -time * Math.PI;
                 } else {
-                    var time = Math.min(Math.max(timer.getElapsedTime() - i, 0), 1);
-
-                    cards[i].position.set(0, (Math.cos(Math.PI / 2 * time)) * cardHeight, 0);
-                    cards[i].rotation.x = 1 - time;
+                    var time = Math.min(Math.max(timer.getElapsedTime() - i*0.3, 0), 0.4)/0.4;
+                    cards[i].position.set(0, -3*(1-time) - cardHeight, 0);
                 }
             }
         }
