@@ -28,7 +28,6 @@ function loadCards(gltf) {
                 opacity: 0.50,
                 shininess: 100
             });
-            // card.copy(default_card, true);
 
             //Load font
             addText(card, data["cards"][i]["title"], 0.1, -0.85, -0.85, titleFont);
@@ -40,19 +39,15 @@ function loadCards(gltf) {
 
             card.position.x = 0;
             card.position.z = 0;
-            // card.rotation.x = Math.PI/2;
-            card.rotation.z = -Math.PI/2;
+            card.rotation.z = -Math.PI / 2;
             var bbox = new THREE.Box3().setFromObject(card);
             var geometry = new THREE.BoxGeometry(bbox.max.x * 2, bbox.max.y * 2, bbox.max.z * 2);
             var material = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
             var cube = new THREE.Mesh(geometry, material);
             cube.add(card);
-            // card.rotation.y = Math.PI/2;
 
             //Load card and give it a material
             scene.add(cube);
-            // scene.add(card);
-
             cards.push(cube);
         }
 
@@ -64,9 +59,6 @@ function loadCards(gltf) {
 
         amountOfRows = 2;
         console.log("Max: " + amountOfCols);
-        // console.log(pixelWidth, pixelHeight);
-        // console.log(amountOfRows, amountOfCols);
-        // console.log(innerWidth + " " + innerHeight);
         var padding = 1.02;
 
         cardHeight = 2 * 1.61803398875 * padding;
@@ -106,11 +98,12 @@ function loadJSON(callback) {
 function addPicBack(mesh, filename) {
     textureLoader.load(filename, function (texture) {
         var geometry = new THREE.PlaneBufferGeometry(2, 2); // Golden ratio resized (2 : 1);
-        var material = new THREE.MeshBasicMaterial({ map: texture }); //Set texture on mesh
+        var material = new THREE.MeshBasicMaterial({ map: texture, opacity: 1 }); //Set texture on mesh
 
         var picMesh = new THREE.Mesh(geometry, material);
         picMesh.rotation.x = -Math.PI / 2;
-        // picMesh.rotation.z = Math.PI / 2;
+
+        picMesh.position.y += 0.0001;
 
         mesh.add(picMesh);
     });
@@ -200,64 +193,61 @@ function animate() {
     requestAnimationFrame(animate);
 
     raycaster.setFromCamera(mouse, camera);
+    if (cards.length != 0) {
+        if (timer.getElapsedTime() - 4 > 0) {
+            var intersects = raycaster.intersectObjects(cards);
+            if (intersects.length > 0) {
+                if (INTERSECTED != intersects[0].object.children[0]) {
+                    if (INTERSECTED) {
+                        INTERSECTED.position.x += 2;
+                        INTERSECTED.position.x -= 0.1;
+                        INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+                        INTERSECTED.scale.divideScalar(1.1);
+                        INTERSECTED.material.opacity = 0.50;
+                        INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
+                    }
+                    INTERSECTED = intersects[0].object.children[0];
+                    if (INTERSECTEDQUAT == undefined) INTERSECTEDQUAT = INTERSECTED.quaternion.clone();
+                    INTERSECTED.scale.multiplyScalar(1.1);
+                    INTERSECTED.material.opacity = 1;
+                    INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+                    INTERSECTED.material.emissive.setHex(0x333333);
+                    INTERSECTED.position.x -= 2;
+                    INTERSECTED.position.x += 0.1;
 
-    var intersects = raycaster.intersectObjects(cards);
-    if (intersects.length > 0) {
-        if (INTERSECTED != intersects[0].object.children[0]) { //inters.length != 0 &&
-            if (INTERSECTED) {
-                INTERSECTED.position.x += 2;
-                INTERSECTED.position.x -= 0.1;
-                INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
-                INTERSECTED.scale.divideScalar(1.1);
-                INTERSECTED.material.opacity = 0.50;
-                INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
+                }
+                if (INTERSECTED && INTERSECTED.quaternion && INTERSECTEDQUAT) {
+                    INTERSECTED.rotation.z = (0.6 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI / 2;
+                    INTERSECTED.rotation.y = -(0.7 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
+                }
+            } else {
+                if (INTERSECTED) {
+                    INTERSECTED.position.x += 2;
+                    INTERSECTED.position.x -= 0.1;
+                    INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+                    INTERSECTED.scale.divideScalar(1.1);
+                    INTERSECTED.material.opacity = 0.50;
+                    INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
+                }
+                INTERSECTED = null;
             }
-            INTERSECTED = intersects[0].object.children[0];
-            if (INTERSECTEDQUAT == undefined) INTERSECTEDQUAT = INTERSECTED.quaternion.clone();
-            INTERSECTED.scale.multiplyScalar(1.1);
-            INTERSECTED.material.opacity = 1;
-            INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-            INTERSECTED.material.emissive.setHex(0x333333);
-            INTERSECTED.position.x -= 2;
-            INTERSECTED.position.x += 0.1;
-
-        }
-        if (INTERSECTED && INTERSECTED.quaternion && INTERSECTEDQUAT) {
-            INTERSECTED.rotation.z = (0.6 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["y"] - 1 / 2)) - Math.PI/2;
-            INTERSECTED.rotation.y = -(0.7 * (raycaster.intersectObject(INTERSECTED.parent, false)[0]["uv"]["x"] - 1 / 2));
-        }
-    } else {
-        if (INTERSECTED) {
-            INTERSECTED.position.x += 2;
-            INTERSECTED.position.x -= 0.1;
-            INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
-            INTERSECTED.scale.divideScalar(1.1);
-            INTERSECTED.material.opacity = 0.50;
-            INTERSECTED.quaternion.set(INTERSECTEDQUAT.x, INTERSECTEDQUAT.y, INTERSECTEDQUAT.z, INTERSECTEDQUAT.w);
-        }
-        INTERSECTED = null;
-    }
-
-    if (cards.length != 0 && timer.getElapsedTime() > 3) {
-        for (var i = 0; i < cards.length; i++) {
-            var time = Math.min(Math.max(timer.getElapsedTime() - 3 - i, 0), 1) / 1;
-            var col = i % amountOfCols;
-            var row = Math.floor(i / amountOfCols);
-            // console.log(i, amountOfCols, col, amountOfRows, row, Math.floor(amountOfCols/2), col * i - Math.floor(amountOfCols/2), row * i - Math.floor(amountOfRows/2));
-            col = cardWidth * (col - (amountOfCols - 1) / 2);
-            row = cardHeight * (row - (amountOfRows - 1) / 2);
-            cards[i].position.set(-time * 10, row * time, col * time);
-            // cards[i].rotation.z = -time * Math.PI;
-            cards[i].rotation.x = time * Math.PI;
-            cards[i].rotation.y = time * Math.PI;
-
-        }
-    } else {
-        if (cards.length != 0) {
+        } else {
             for (var i = 0; i < cards.length; i++) {
-                var time = Math.min(Math.max(timer.getElapsedTime(), 0), 3) / 3;
+                if (timer.getElapsedTime() - 1 - i > 0) {
+                    var time = Math.min(Math.max(timer.getElapsedTime() - 1 - i, 0), 1);
+                    var col = i % amountOfCols;
+                    var row = Math.floor(i / amountOfCols);
+                    col = cardWidth * (col - (amountOfCols - 1) / 2);
+                    row = cardHeight * (row - (amountOfRows - 1) / 2);
+                    cards[i].position.set(0, row * time, col * time);
+                    cards[i].rotation.x = -time * Math.PI;
+                    cards[i].rotation.y = -time * Math.PI;
+                } else {
+                    var time = Math.min(Math.max(timer.getElapsedTime() - i, 0), 1);
 
-                cards[i].position.set(0, (Math.cos(Math.PI / 2 * time)) * cardHeight, 0);
+                    cards[i].position.set(0, (Math.cos(Math.PI / 2 * time)) * cardHeight, 0);
+                    cards[i].rotation.x = 1 - time;
+                }
             }
         }
     }
