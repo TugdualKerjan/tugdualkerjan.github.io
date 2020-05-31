@@ -5,7 +5,7 @@ import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
 
 const cardSize = 100;
 
-let scene, camera, renderer, timer, raycaster, titleFont, descFont, INTERSECTEDQUAT, textureLoader, amountOfRows, amountOfCols, cardWidth, cardHeight;
+let scene, camera, renderer, timer, spaceship, raycaster, titleFont, descFont, INTERSECTEDQUAT, textureLoader, amountOfRows, amountOfCols, cardWidth, cardHeight;
 
 var mouse = new THREE.Vector2(), INTERSECTED;
 
@@ -193,6 +193,9 @@ function init() {
     });
 
     var loader = new GLTFLoader();
+    loader.load('assets/spaceship/spaceship.glb', function (gltf) {
+        spaceship = gltf.scene.children[0];
+    });
     loader.load('assets/card/card.glb', loadCards);
 }
 
