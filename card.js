@@ -2,6 +2,7 @@ import * as THREE from './threejs/build/three.module.js';
 
 import { OrbitControls } from './threejs/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
+import { loadJSON } from './loadJSON.js';
 
 const cardSize = 100;
 
@@ -14,12 +15,10 @@ function loadCards(gltf) {
 
     loadJSON(function (response) {
         var data = JSON.parse(response);
-
         var default_card = gltf.scene.getObjectByName("Plane");
 
-        //! Should get a json file with title, image, description
         for (var i = 0; i < data["cards"].length; i++) {
-
+            //Random material that is shiny
             var card = default_card.clone();
             card.material = new THREE.MeshPhongMaterial({
                 color: new THREE.Color(0, 0, 0).setHSL(Math.random(), 1, 0.2),
@@ -37,6 +36,7 @@ function loadCards(gltf) {
             addPic(card, 'assets/images/' + data["cards"][i]["img"]);
             addPicBack(card, 'assets/images/pokemon.png');
 
+            //Card + boundingBox
             card.position.x = 0;
             card.position.z = 0;
             card.rotation.z = -Math.PI / 2;
@@ -45,37 +45,32 @@ function loadCards(gltf) {
             var material = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
             var cube = new THREE.Mesh(geometry, material);
             cube.link = data["cards"][i]["url"];
+
+            //Add card
             cube.add(card);
+            scene.add(cube);
+            cards.push(cube);
+
             if (cube.link == "spaceship") {
                 card.add(spaceship);
                 spaceship.position.y -= 0.6;
                 spaceship.position.x -= 0.5;
                 spaceship.visible = false;
             }
-
-            //Load card and give it a material
-            scene.add(cube);
-            cards.push(cube);
         }
 
-
+        //Calculate card 
         var pixelHeight = innerHeight / 2;
         var pixelWidth = pixelHeight / 1.61803398875;
         amountOfCols = Math.floor(innerWidth / pixelWidth);
-        console.log(innerHeight, innerWidth, pixelWidth, innerWidth / pixelWidth);
-
         amountOfRows = 2;
-        console.log("Max: " + amountOfCols);
+
         var padding = 1.02;
 
         cardHeight = 2 * 1.61803398875 * padding;
-        console.log(cardHeight);
         cardWidth = 2 * padding;
-        console.log(cardWidth);
 
-        var camWidth = cardHeight * innerWidth / innerHeight;
-
-        // camera = new THREE.OrthographicCamera(-camWidth, camWidth, cardHeight, -cardHeight, -100, 100);
+        //Camera alignment
         camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 1, 1000);
         camera.rotation.y = Math.PI / 2;
 
@@ -83,30 +78,10 @@ function loadCards(gltf) {
         camera.position.y = 0;
         camera.position.z = 0;
 
-        var controls = new OrbitControls(camera, renderer.domElement);
-        // controls.addEventListener( 'change', render ); // use this only if there is no animation loop
-        controls.enableZoom = false;
-        // controls.enablePan = true;
-        // controls.keyPanSpeed = 300;
-        controls.enableRotate = false;
-        // controls.screenSpacePanning = true;
-
         timer = new THREE.Clock();
         timer.start();
         animate();
     });
-}
-
-function loadJSON(callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'cards.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
 }
 
 function addPicBack(mesh, filename) {
@@ -179,7 +154,6 @@ function init() {
 
     var hlight = new THREE.AmbientLight(0x404040, 1);
     scene.add(hlight);
-
     var light = new THREE.PointLight(0xc4c4c4, 1);
     light.position.set(0, 300, 500);
     scene.add(light);
@@ -234,8 +208,6 @@ function onMouseLeave(event) {
 
 function onClick(event) {
     event.preventDefault();
-
-    console.log("AAAA");
 
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(cards, false); //array
