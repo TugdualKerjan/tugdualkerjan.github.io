@@ -55,29 +55,24 @@ function init() {
 
     var fontLoader = new THREE.FontLoader();
 
-    fontLoader.load('assets/fonts/Montserrat.json', function (result) {
-        descFont = result;
-    });
-
-    fontLoader.load('assets/fonts/Oswald_Regular.json', function (result) {
-        titleFont = result;
-    });
-
     textureLoader = new THREE.TextureLoader();
-
-    textureLoader.load('assets/images/space.jpg', function (texture) {
-        scene.background = texture;
-    });
-
     var loader = new GLTFLoader();
-
-    loader.load('assets/spaceship/spaceship.glb', function (gltf) {
-        spaceship = gltf.scene.children[0];
-        spaceship.scale.multiplyScalar(0.15);
-        spaceship.rotation.x = Math.PI / 2;
-        spaceship.rotation.z = Math.PI / 2;
+    fontLoader.load('./assets/fonts/Montserrat.json', function (result) {
+        descFont = result;
+        fontLoader.load('./assets/fonts/Oswald_Regular.json', function (result) {
+            titleFont = result;
+            textureLoader.load('./assets/images/space.jpg', function (texture) {
+                scene.background = texture;
+                loader.load('./assets/spaceship/spaceship.glb', function (gltf) {
+                    spaceship = gltf.scene.children[0];
+                    spaceship.scale.multiplyScalar(0.15);
+                    spaceship.rotation.x = Math.PI / 2;
+                    spaceship.rotation.z = Math.PI / 2;
+                    loader.load('./assets/card/card.glb', loadCards);
+                });
+            });
+        });
     });
-    loader.load('assets/card/card.glb', loadCards);
 }
 
 
