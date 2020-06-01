@@ -2,7 +2,7 @@ import * as THREE from './threejs/build/three.module.js';
 import { GLTFLoader } from './threejs/examples/jsm/loaders/GLTFLoader.js';
 import { loadJSON, addLights, addCard, animateCards, setCardProportions } from './utilities.js';
 
-let scene, camera, renderer, timer, spaceship, raycaster, titleFont, descFont,  textureLoader;
+let scene, camera, renderer, timer, spaceship, raycaster, titleFont, descFont, textureLoader;
 
 var mouse = new THREE.Vector2();
 
@@ -46,8 +46,9 @@ function init() {
     document.body.addEventListener('mousemove', onDocumentMouseMove, false);
     document.body.addEventListener('click', onClick);
     document.body.addEventListener('mouseleave', onMouseLeave);
-    document.body.addEventListener('touchmove', onTouchMove);
-    document.body.addEventListener('touchstart', onTouchStart);
+    document.body.addEventListener('mousewheel', onMouseWheel, { passive: false });
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchstart', onTouchStart, { passive: false });
 
     addLights(scene);
 
@@ -89,21 +90,21 @@ function animate() {
 
 function onDocumentMouseMove(event) {
     event.preventDefault();
-    
+
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 }
 
 function onMouseLeave(event) {
     event.preventDefault();
-    
+
     mouse.x = 0;
     mouse.y = 0;
 }
 
 function onClick(event) {
     event.preventDefault();
-    
+
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(cards, false); //array
     spaceship.visible = false;
@@ -120,20 +121,32 @@ function onClick(event) {
     }
 }
 
-var startY;
+var start = 0;
 
 function onTouchStart(event) {
-
-    startY = event.touches[ 0 ].pageY;
-
+    event.preventDefault();
+    //   start.x = event.touches[0].pageX;
+    start = event.touches[0].pageY;
 }
 
-function onTouchMove( event ) {
+function onTouchMove(event) {
+    event.preventDefault();
+    console.log(event);
 
-    var deltaY = ( event.touches[ 0 ].pageY - startY );
-    
-    camera.position.z += ( deltaY * speed );
+    // offset.x = start.x - event.touches[0].pageX;
+    var delta = start - event.touches[0].pageY;
+    start = event.touches[0].pageY;
+    console.log(delta);
+    camera.position.y += delta * 0.01;
+}
 
+function onMouseWheel(event) {
+    event.preventDefault();
+
+    // var deltaY = ( event.touches[ 0 ].pageY - startY );
+    console.log(event);
+    camera.position.y -= (event.deltaY * 0.0001);
+    console.log(camera.position.y);
 }
 
 // function onTouchMove(event) {
