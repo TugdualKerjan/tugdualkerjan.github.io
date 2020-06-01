@@ -47,6 +47,7 @@ function init() {
     document.body.addEventListener('click', onClick);
     document.body.addEventListener('mouseleave', onMouseLeave);
     document.body.addEventListener('touchmove', onTouchMove);
+    document.body.addEventListener('touchstart', onTouchStart);
 
     addLights(scene);
 
@@ -124,24 +125,40 @@ function onClick(event) {
     }
 }
 
-function onTouchMove(event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+var startY;
 
-    raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObjects(cards, false); //array
-    spaceship.visible = false;
-    if (intersects.length > 0) {
-        var selectedObject = intersects[0].object;
-        console.log(selectedObject.link);
-        if (selectedObject.link != "") {
-            if (selectedObject.link != "spaceship") {
-                window.open(selectedObject.link);
-            } else {
-                spaceship.visible = true;
-            }
-        }
-    }
+function onTouchStart(event) {
+
+    startY = event.touches[ 0 ].pageY;
+
 }
+
+function onTouchMove( event ) {
+
+    var deltaY = ( event.touches[ 0 ].pageY - startY );
+    
+    camera.position.z += ( deltaY * speed );
+
+}
+
+// function onTouchMove(event) {
+//     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+//     raycaster.setFromCamera(mouse, camera);
+//     var intersects = raycaster.intersectObjects(cards, false); //array
+//     spaceship.visible = false;
+//     if (intersects.length > 0) {
+//         var selectedObject = intersects[0].object;
+//         console.log(selectedObject.link);
+//         if (selectedObject.link != "") {
+//             if (selectedObject.link != "spaceship") {
+//                 window.open(selectedObject.link);
+//             } else {
+//                 spaceship.visible = true;
+//             }
+//         }
+//     }
+// }
 
 init();
