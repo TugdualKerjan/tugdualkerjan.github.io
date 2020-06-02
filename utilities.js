@@ -37,12 +37,12 @@ export function addCard(default_card, data, titleFont, descFont, scene, textureL
     //Random material that is shiny
     var card = default_card.clone();
     card.material = new THREE.MeshPhongMaterial({
-        color: new THREE.Color(0, 0, 0).setHSL(Math.random(), 1, 0.2),
+        color: new THREE.Color(0, 0, 0).setHSL(Math.random(), 1, 0.15),
         transparent: true,
         opacity: 0.50,
-        shininess: 100
+        shininess: 20,
+        specular: 0x682900,
     });
-
     //Load font
     addText(card, data["title"], 0.1, -0.85, -0.85, titleFont);
     addText(card, data["date"], 0.1, -0.85, 0.35, titleFont);
@@ -91,7 +91,7 @@ function addText(mesh, text, size, x, y, font) {
     var geometry = new THREE.TextBufferGeometry(text, {
         font: font,
         size: size,
-        height: 0.01,
+        height: 0.012,
     });
     var material = new THREE.MeshLambertMaterial({ color: 0xffffff });
 
