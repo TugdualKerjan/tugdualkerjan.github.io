@@ -7,15 +7,20 @@ let scene, camera, renderer, timer, spaceship, raycaster, titleFont, descFont, t
 var mouse = new THREE.Vector2();
 
 var cards = [];
-function loadCards(gltf) {
 
-    loadJSON(function (response) {
+var animation_duration_card = 0;
+const total_animation_duration = 3; //In seconds
+
+function loadCards(gltf) {
+    loadJSON(function(response) {
         var data = JSON.parse(response);
         var default_card = gltf.scene.getObjectByName("Plane");
 
         for (var i = 0; i < data["cards"].length; i++) {
             cards.push(addCard(default_card, data["cards"][i], titleFont, descFont, scene, textureLoader, spaceship));
         }
+
+        animation_duration_card = total_animation_duration / cards.length;
 
         //Calculate card 
         setCardProportions(innerWidth, innerHeight);
@@ -58,13 +63,13 @@ function init() {
 
     textureLoader = new THREE.TextureLoader();
     var loader = new GLTFLoader();
-    fontLoader.load('./assets/fonts/Montserrat.json', function (result) {
+    fontLoader.load('./assets/fonts/Montserrat.json', function(result) {
         descFont = result;
-        fontLoader.load('./assets/fonts/Oswald_Regular.json', function (result) {
+        fontLoader.load('./assets/fonts/Oswald_Regular.json', function(result) {
             titleFont = result;
-            textureLoader.load('./assets/images/space.jpg', function (texture) {
+            textureLoader.load('./assets/images/space.jpg', function(texture) {
                 scene.background = texture;
-                loader.load('./assets/spaceship/spaceship.glb', function (gltf) {
+                loader.load('./assets/spaceship/spaceship.glb', function(gltf) {
                     spaceship = gltf.scene.children[0];
                     spaceship.scale.multiplyScalar(0.15);
                     spaceship.rotation.x = Math.PI / 2;
@@ -82,7 +87,7 @@ function animate() {
 
     raycaster.setFromCamera(mouse, camera);
     if (cards.length != 0) {
-        animateCards(cards, timer, camera, mouse, raycaster, spaceship);
+        animateCards(cards, timer, camera, mouse, raycaster, spaceship, animation_duration_card);
     }
     renderer.render(scene, camera);
 }
@@ -92,7 +97,7 @@ function onDocumentMouseMove(event) {
     event.preventDefault();
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 }
 
 function onMouseLeave(event) {

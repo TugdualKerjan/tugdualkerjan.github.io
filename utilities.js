@@ -62,7 +62,8 @@ export function addCard(default_card, data, titleFont, descFont, scene, textureL
 
     //Add card
     cube.add(card);
-    cube.position.set(0, 0 - cardHeight, 0);
+    //Place the card in the correct spot
+    cube.position.set(0, 0 - cardHeight * 3, 0);
     scene.add(cube);
 
     if (cube.link == "spaceship") {
@@ -169,11 +170,10 @@ export function setCardProportions(innerWidth, innerHeight) {
     cardWidth = padding;
 }
 
-const animation_duration = 0.5;
-export function animateCards(cards, timer, camera, mouse, raycaster, spaceship) {
+export function animateCards(cards, timer, camera, mouse, raycaster, spaceship, animation_duration_card) {
     for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
-        if (timer.getElapsedTime() > i + animation_duration + 0.1) {
+        if (timer.getElapsedTime() > (i + 1) * animation_duration_card + 0.1) {
             spaceship.rotation.x += 0.003;
             var newPos = new THREE.Vector2(Math.pow(mouse.x, 3) / 10, Math.pow(mouse.y, 3) / 10);
             camera.position.y += newPos.y;
@@ -190,15 +190,16 @@ export function animateCards(cards, timer, camera, mouse, raycaster, spaceship) 
                 undoPop();
                 INTERSECTED = null;
             }
-        } else if (timer.getElapsedTime() >= i) {
-            var time = clamp(timer.getElapsedTime() - i, 0, animation_duration) * 2;
+        } else if (timer.getElapsedTime() >= i * animation_duration_card) {
+            var time = clamp(timer.getElapsedTime() - i * animation_duration_card, 0, animation_duration_card) * (1.0 / animation_duration_card);
             var col = i % amountOfCols;
             var row = Math.floor(i / amountOfCols);
             col = cardWidth * ((amountOfCols - 1) / 2 - col);
             row = cardHeight * ((amountOfRows - 1) / 2 - row);
-            card.position.set(0, row * time, col * time);
+            card.position.set(0, row * time - (cardHeight * 3 * (1 - time)), col * time);
             card.rotation.x = -time * Math.PI;
             card.rotation.y = -time * Math.PI;
+            if (i == 3) console.log(time);
         }
     }
     if (INTERSECTED) {
