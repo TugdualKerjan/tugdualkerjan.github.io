@@ -1,9 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: small;
+  font-family: monospace;
+  font-size: 14px;
 }
 
 /* Center the container */
@@ -12,7 +11,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(43, 53, 53);
+  /* background-color: rgb(128, 128, 128); */
+  background: linear-gradient(90deg, rgba(135,134,134,1) 0%, rgb(146, 146, 146) 50%, rgba(135,134,134,1) 100%); 
 }
 
 /* Center the cards in the container */
@@ -22,8 +22,17 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 100%;
+  /* overflow: hidden; */
+  overflow: visible;
+  /*  */
   transform-style: preserve-3d;
+}
+
+.container .hitbox {
+  width: 350px;
+  height: 566.31px;
+  margin: 40px;
 }
 
 /* Scale in, choose card height/width = Golden */
@@ -33,25 +42,26 @@ body {
   justify-content: center;
   align-items: center;
 
-  animation: 1s ease-out 0s 1 cardIntro2;
+  /* animation: 1s ease-out 0s 1 cardIntro2; */
 
   position: relative;
-  width: 300px;
-  height: 485.4px;
-  margin: 40px;
+  width: 100%;
+  height: 100%;
 
-  background-color: rgb(64, 75, 75);
+  background: radial-gradient(
+    circle,
+    rgba(255, 186, 90, 1) 0%,
+    rgba(255, 186, 30, 1) 50%,
+    rgba(255, 164, 0, 1) 100%
+  );
+
   border-radius: 15px;
-  border: 0.5px solid red;
+  border: 2px solid rgb(255, 136, 0);
 
   transform-style: preserve-3d;
   transform: rotateY(180deg);
   /* filter: drop-shadow(0px 0px 2px white); */
-  transition: 0.1s;
-}
-
-.container .box:hover {
-  transform: rotateY(0deg);
+  /* transition: 1s; */
 }
 
 /* Name comes in from top */
@@ -60,8 +70,9 @@ body {
   left: 0px;
   top: 0px;
   text-align: center;
-  font-size: x-large;
-  color: white;
+  font-family: fantasy;
+  font-size: 40px;
+  color: blanchedalmond;
   width: 100%;
   flex: 10%;
   transform-style: preserve-3d;
@@ -73,14 +84,16 @@ body {
 
 .container .box:hover .name {
   opacity: 1;
-  top: 10px;
-  transform: translate3d(0, 0, 15px);
+  top: 15px;
+  /* transform: translate3d(0, 0, 10px); */
 }
 
 .container .box .desc {
   position: relative;
   text-align: justify;
   text-decoration: none;
+  font-weight: 700;
+
 
   top: 5%;
   flex: 50%;
@@ -88,7 +101,7 @@ body {
   transform: translate3d(0, 0, 1px);
   color: white;
   /* background: rgba(0, 0, 0, 0.1); */
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px;
   border-radius: 25px;
   /* text-decoration: none; */
   transition: 0.5s;
@@ -107,16 +120,20 @@ body {
   flex: 30%;
   left: 5px;
   height: 200px;
-  width: 290px;
+  width: 340px;
+
+  box-shadow: 0 0 1em rgba(255, 0, 0, 0.3);
+
   align-self: center;
   object-fit: cover;
+  transition: 0.5s;
   transform-style: preserve-3d;
   transform: translate3d(0, 15%, 1px);
   z-index: 2;
 }
 
 .container .box:hover .product {
-  transform: translate3d(0, 15%, 15px);
+  transform: translate3d(0, 15%, 1px);
 }
 
 .container .box .back {
@@ -137,7 +154,7 @@ body {
   filter: invert();
 }
 
-.container .box:nth-child(1) .circle {
+/* .container .box:nth-child(1) .circle {
   background: red;
 }
 
@@ -147,7 +164,7 @@ body {
 
 .container .box:nth-child(3) .circle {
   background: green;
-}
+} */
 
 @keyframes cardIntro2 {
   0% {
