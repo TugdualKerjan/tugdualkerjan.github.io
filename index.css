@@ -77,8 +77,6 @@ body {
   flex-wrap: wrap;
   width: 100%;
   overflow: hidden;
-  /* overflow: visible; */
-  /*  */
   transform-style: preserve-3d;
 }
 
