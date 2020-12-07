@@ -5,69 +5,71 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   /* background-color: gray; */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   font-size: 15px;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 #background {
+  /* flex-wrap: none; */
+
+  /* width: 100%; */
+  /* overflow: hidden; */
   position: absolute;
   transform: skewY(-15deg);
-  width: 100%;
-  top: -50vh;
+  max-width: 200%;
+  top: -20vh;
   /* padding: 14px; */
   height: 100vh;
   text-align: center;
-  vertical-align: center;
-  text-align: center;
-  animation: color 36s ease-in-out 0s infinite ;
+
+  animation: color 36s ease-in-out 0s infinite;
 
   /* filter: grayscale(0) brightness(0.3); */
 }
 
 #background-text {
+  word-wrap: break-word;
+  text-align: center;  
+
   /* background-color: dimgray; */
   font-family: fantasy;
-  font-size: 100px;
+  font-size: 550px;
   color: rgb(36, 36, 36);
   z-index: -1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @keyframes color {
   0% {
-    text-shadow: 4px 4px hsla(0,100%,50%,0.2);
+    text-shadow: 4px 4px hsla(0, 100%, 50%, 0.2);
   }
   33% {
-    text-shadow: 4px 4px hsla(120,100%,50%,0.2);
+    text-shadow: 4px 4px hsla(120, 100%, 50%, 0.2);
   }
   66% {
-    text-shadow: 4px 4px hsla(240,100%,50%,0.2);
+    text-shadow: 4px 4px hsla(240, 100%, 50%, 0.2);
   }
   100% {
-    text-shadow: 4px 4px hsla(360,100%,50%,0.2);
+    text-shadow: 4px 4px hsla(360, 100%, 50%, 0.2);
   }
 }
 
 /* Center the container */
 body {
   background: rgb(36, 36, 36);
-  /* background: linear-gradient(
-    15deg,
-    rgb(36, 36, 36) 0%,
-    /* rgb(49, 49, 49) 100% */
-  ); */
   display: flex;
+
   /* align-items: center; */
   /* justify-content: center; */
-  /* background-color: rgb(128, 128, 128); */
-  /* background: linear-gradient(
-    90deg,
-    rgb(156, 156, 156) 0%,
-    rgba(135, 134, 134, 1) 100%
-    ); */
-  }
-  
-  /* Center the cards in the container */
-  #container {
+}
+
+/* Center the cards in the container */
+#container {
   position: relative;
   display: flex;
   align-items: center;
@@ -101,8 +103,8 @@ body {
 
   background: radial-gradient(
     circle,
-    rgb(33, 56, 70) 50%,
-    /* rgb(38, 18, 94) 50%, */ rgb(19, 34, 43) 100%
+    rgb(22, 38, 48) 50%,
+    rgb(19, 34, 43) 100%
   );
 
   border-radius: 15px;
