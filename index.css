@@ -1,49 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: monospace;
-  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  /* background-color: gray; */
+  font-size: 15px;
+}
+
+#background {
+  position: absolute;
+  transform: skewY(-15deg);
+  width: 100%;
+  top: -50vh;
+  /* padding: 14px; */
+  height: 100vh;
+  text-align: center;
+  vertical-align: center;
+  text-align: center;
+  animation: color 36s ease-in-out 0s infinite ;
+
+  /* filter: grayscale(0) brightness(0.3); */
+}
+
+#background-text {
+  /* background-color: dimgray; */
+  font-family: fantasy;
+  font-size: 100px;
+  color: rgb(36, 36, 36);
+  z-index: -1;
+  overflow: hidden;
+}
+
+@keyframes color {
+  0% {
+    text-shadow: 4px 4px hsla(0,100%,50%,0.2);
+  }
+  33% {
+    text-shadow: 4px 4px hsla(120,100%,50%,0.2);
+  }
+  66% {
+    text-shadow: 4px 4px hsla(240,100%,50%,0.2);
+  }
+  100% {
+    text-shadow: 4px 4px hsla(360,100%,50%,0.2);
+  }
 }
 
 /* Center the container */
 body {
+  background: rgb(36, 36, 36);
+  /* background: linear-gradient(
+    15deg,
+    rgb(36, 36, 36) 0%,
+    /* rgb(49, 49, 49) 100% */
+  ); */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  /* align-items: center; */
+  /* justify-content: center; */
   /* background-color: rgb(128, 128, 128); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
-    rgba(135, 134, 134, 1) 0%,
-    rgb(146, 146, 146) 50%,
+    rgb(156, 156, 156) 0%,
     rgba(135, 134, 134, 1) 100%
-  );
-}
-
-/* Center the cards in the container */
-.container {
+    ); */
+  }
+  
+  /* Center the cards in the container */
+  #container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  /* overflow: hidden; */
-  overflow: visible;
+  overflow: hidden;
+  /* overflow: visible; */
   /*  */
   transform-style: preserve-3d;
 }
 
-.container .hitbox {
+#container .hitbox {
   width: 350px;
   height: 566.31px;
   margin: 40px;
 }
 
 /* Scale in, choose card height/width = Golden */
-.container .box {
+#container .box {
   display: grid;
-  grid-template-rows: 10% 35% 55%;
+  grid-template-rows: 35% 4% 55%;
   justify-content: center;
   align-items: center;
 
@@ -60,6 +106,7 @@ body {
   );
 
   border-radius: 15px;
+  /* box-shadow: 0 0 0.3em rgb(255, 136, 0); */
   border: 2px solid rgb(255, 136, 0);
 
   transform-style: preserve-3d;
@@ -69,13 +116,14 @@ body {
 }
 
 /* Name comes in from top */
-.container .box .name {
+#container .box .name {
   position: relative;
+  align-self: baseline;
   left: 0px;
   top: 0px;
   text-align: center;
-  font-family: fantasy;
-  font-size: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
   /* color: rgb(58, 131, 199); */
   /* color: rgb(255, 136, 0); */
   color: white;
@@ -87,66 +135,67 @@ body {
   transition: 0.5s;
   /* opacity: 0; */
   z-index: 1;
+  text-shadow: 2px 1px rgb(255, 136, 0);
 }
 
-.container .box:hover .name {
+#container .box:hover .name {
   opacity: 1;
   top: 15px;
-  /* transform: translate3d(0, 0, 10px); */
+  transform: translate3d(0, 0, 10px);
 }
 
-.container .box .desc {
+#container .box .desc {
   position: relative;
   text-align: justify;
-  text-decoration: none;
-  font-weight: 450;
-  font-stretch: ultra-expanded;
+  align-self: baseline;
 
-  top: 5%;
-  flex: 50%;
-  transform-style: preserve-3d;
+  font-weight: 800;
+
+  top: 9%;
   transform: translate3d(0, 0, 1px);
-  /* color: rgb(255, 136, 0); */
   color: white;
 
-
-  /* background: rgba(0, 0, 0, 0.1); */
+  text-shadow: 1px 1px rgba(0, 0, 0, 1);
   padding: 10px 20px;
-  border-radius: 25px;
-  /* text-decoration: none; */
+  border-radius: 5px;
   transition: 0.5s;
+
   /* opacity: 0; */
-  z-index: 1;
+  /* z-index: 1; */
 }
 
-.container .box:hover .desc {
-  top: 3%;
-  opacity: 1;
-  transform: translate3d(0, 0, 15px);
+#container .box:hover .desc {
+  top: 7%;
+  transform: translate3d(0, 0, 1px);
 }
 
-.container .box .product {
+#container .box .product {
   position: relative;
   flex: 30%;
   left: 5px;
-  height: 200px;
+  height: 195px;
   width: 340px;
 
-  box-shadow: 0 0 1em rgba(255, 0, 0, 0.3);
+  /* box-shadow: 0 0 1em rgb(255, 136, 0); */
+  border-bottom: 3px solid rgb(255, 136, 0);
+
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   align-self: center;
   object-fit: cover;
   transition: 0.5s;
-  transform-style: preserve-3d;
-  transform: translate3d(0, 15%, 1px);
+  /* transform-style: preserve-3d; */
+  transform: translate3d(0, 5px, 1px);
   z-index: 2;
 }
 
-.container .box:hover .product {
-  transform: translate3d(0, 15%, 1px);
+#container .box:hover .product {
+  transform: translate3d(0, 5px, 10px);
 }
 
-.container .box .back {
+#container .box .back {
   position: absolute;
   display: flex;
   align-items: center;
@@ -157,22 +206,22 @@ body {
   width: 100%;
 }
 
-.container .box .back img {
+#container .box .back img {
   height: 300px;
   width: 300px;
   /* z-index: -100; */
   filter: invert();
 }
 
-/* .container .box:nth-child(1) .circle {
+/* #container .box:nth-child(1) .circle {
   background: red;
 }
 
-.container .box:nth-child(2) .circle {
+#container .box:nth-child(2) .circle {
   background: blue;
 }
 
-.container .box:nth-child(3) .circle {
+#container .box:nth-child(3) .circle {
   background: green;
 } */
 
