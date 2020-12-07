@@ -32,17 +32,22 @@
             <div id="container">
                 <div class="hitbox">
                     <div class="box" href="#">
+                        <img class="product" src="images/shypooper.jpg">
+                        <h2 class="name">SHYPOOPER</h2>
+                        <a class="desc">Finally, a web application that's capable of accumulating the fine knowledge of
+                            which bathrooms are the best at EPFL. Thanks to this site coded using OpenLayers, MongoDB
+                            and Express one can check the quality of a variety of bathrooms at EPFL</a>
+                        <div class="back"><img src="images/poop.png"></img></div>
+                    </div>
+                </div>
+                <div class="hitbox">
+                    <div class="box" href="#">
                         <img class="product" src="deprecated/assets/images/bike.jpg">
                         <h2 class="name">LAUSANNE TO LILLE</h2>
                         <a class="desc">With Augustin decided it would be a good idea to bike all the way back from
-                            Lausanne
-                            to
-                            Lille by bike. Took a sore ass, 4 days of biking and one afternoon of traversing the Jura
-                            hungover to
-                            acheive this dumb idea. Left with just a backpack, no sleeping bag nor tent. Used
-                            WarmShowers to
-                            find
-                            places to sleep.</a>
+                            Lausanne to Lille by bike. Took a sore ass, 4 days of biking and one afternoon of traversing
+                            the Jura hungover to acheive this dumb idea. Left with just a backpack, no sleeping bag nor
+                            tent. Used WarmShowers to find splaces to sleep.</a>
                         <div class="back"><img src="images/bike.png"></img></div>
                     </div>
                 </div>
@@ -51,13 +56,10 @@
                         <img class="product" src="deprecated/assets/images/colemak.png">
                         <h2 class="name">TYPING SPEED</h2>
                         <p class="desc">After reseting my computer because I had accidentaly corrupted my Ubuntu, I was
-                            presented
-                            with the option to select a keyboard layout. I decided to go with Colemak, which had been
-                            specificaly
-                            designed to be more efficient at typing compared to Qwerty. Over the course of 2 weeks I
-                            went
-                            from 0 wpm
-                            to 50! I am currenty working on punctuation and coding, as those also rely on muscle memory.
+                            presented with the option to select a keyboard layout. I decided to go with Colemak, which
+                            had been specificaly designed to be more efficient at typing compared to Qwerty. Over the
+                            course of 2 weeks I went from 0 wpm to 50! I am currenty working on punctuation and coding,
+                            as those also rely on muscle memory.
                         </p>
                         <div class="back"><img src="images/keyboard.png"></img></div>
                     </div>
@@ -67,12 +69,8 @@
                         <img class="product" src="deprecated/assets/images/potato.jpg">
                         <h2 class="name">DARPA POTATO GUN</h2>
                         <a class="desc">Bored on a saturday morning with Charles and Come, we decide that it is time we
-                            made
-                            a
-                            potato gun. Ingredients: Potato, PVC and lighter. Surprisingly powerful, especially given
-                            that
-                            less fuel
-                            gives a more potent explosion (Ratio of Oxygen?)</a>
+                            made a potato gun. Ingredients: Potato, PVC and lighter. Surprisingly powerful, especially
+                            given that less fuel gives a more potent explosion (Ratio of Oxygen?)</a>
                         <div class="back"><img src="images/canon.png"></img></div>
                     </div>
                 </div>
@@ -81,16 +79,10 @@
                         <img class="product" src="deprecated/assets/images/site.png">
                         <h2 class="name">THIS WEBSITE</h2>
                         <a class="desc">The day after making the blender space ship I decided it was time to make a
-                            terrible
-                            website
-                            on which I would be able to log all the projects I enjoy investing time in. The result is
-                            this
-                            sort of
-                            deck of cards, each one describing something I find worth of sharing. It took a full day for
-                            me
-                            to make
-                            the cards, animate and modularise them, without ever having touched Javascript before. Quite
-                            satisfied.</a>
+                            terrible website on which I would be able to log all the projects I enjoy investing time in.
+                            The result is this sort of deck of cards, each one describing something I find worth of
+                            sharing. It took a full day for me to make the cards, animate and modularise them, without
+                            ever having touched Javascript before. Quite satisfied.</a>
                         <div class="back"><img src="images/web.png"></img></div>
                     </div>
                 </div>
@@ -99,14 +91,10 @@
                         <img class="product" src="deprecated/assets/images/ship.jpg">
                         <h2 class="name">BLENDER SPEEDRUN</h2>
                         <a class="desc">Drew some perspective drawing 2 days ago, wanted to see how it would look in
-                            Blender. Then
-                            spent the next day on learning how to use the application. Really intuitive, got a good
-                            grasp thanks to
-                            this fellow on YouTube: Imphenzia. I then decided to see if I could preview it on a github
-                            page I had
-                            recently created (This one). After a solid day of work my shitty 3D model is viewable on a
-                            website from
-                            anywhere around the world!</a>
+                            Blender. Then spent the next day on learning how to use the application. Really intuitive,
+                            got a good grasp thanks to this fellow on YouTube: Imphenzia. I then decided to see if I
+                            could preview it on a github page I had recently created (This one). After a solid day of
+                            work my shitty 3D model is viewable on a website from anywhere around the world!</a>
                         <div class="back"><img src="images/3d.png"></img></div>
                     </div>
                 </div>
@@ -131,12 +119,14 @@
         document.querySelectorAll('#container .box:hover .desc').forEach(e => {
             e.style.top = '7%';
         });
+
     } else {
+        document.getElementById('background-text').innerText = "TUGDUAL TUGDUAL TUGDUAL";
         VanillaTilt.init(document.querySelectorAll(".box"), {
             max: 15,
-            // speed: 500,
+            speed: 3000,
             scale: 1.05,
-            transition: 1,
+            // transition: 1,
             // glare: 1,
             perspective: 1000,
         });

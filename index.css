@@ -62,10 +62,7 @@
 /* Center the container */
 body {
   background: rgb(36, 36, 36);
-  display: flex;
-
-  /* align-items: center; */
-  /* justify-content: center; */
+  /* display: flex; */
 }
 
 /* Center the cards in the container */
@@ -83,7 +80,7 @@ body {
 #container .hitbox {
   width: 350px;
   height: 566.31px;
-  margin: 40px;
+  margin: 60px;
 }
 
 /* Scale in, choose card height/width = Golden */
@@ -101,8 +98,8 @@ body {
 
   background: radial-gradient(
     circle,
-    rgb(22, 38, 48) 50%,
-    rgb(19, 34, 43) 100%
+    rgb(1, 69, 112) 40%,
+    rgb(0, 44, 71) 100%
   );
 
   border-radius: 15px;
@@ -110,7 +107,7 @@ body {
   border: 2px solid rgb(255, 136, 0);
 
   transform-style: preserve-3d;
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
   /* filter: drop-shadow(0px 0px 2px white); */
   /* transition: 1s; */
 }
@@ -126,8 +123,6 @@ body {
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
-  /* color: rgb(58, 131, 199); */
-  /* color: rgb(255, 136, 0); */
   color: white;
 
   width: 100%;
@@ -135,13 +130,12 @@ body {
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 1px);
   transition: 0.5s;
-  /* opacity: 0; */
+
   z-index: 1;
   text-shadow: 2px 1px rgb(255, 136, 0);
 }
 
-#container .box:hover .name {
-  opacity: 1;
+#container .hitbox:hover .name {
   top: 15px;
   transform: translate3d(0, 0, 10px);
 }
@@ -157,16 +151,12 @@ body {
   transform: translate3d(0, 0, 1px);
   color: white;
 
-  text-shadow: 1px 1px rgba(0, 0, 0, 1);
+  /* text-shadow: 1px 1px rgba(0, 0, 0, 1); */
   padding: 10px 20px;
-  border-radius: 5px;
   transition: 0.5s;
-
-  /* opacity: 0; */
-  /* z-index: 1; */
 }
 
-#container .box:hover .desc {
+#container .hitbox:hover .desc {
   top: 7%;
   transform: translate3d(0, 0, 1px);
 }
@@ -178,7 +168,6 @@ body {
   height: 195px;
   width: 340px;
 
-  /* box-shadow: 0 0 1em rgb(255, 136, 0); */
   border-bottom: 3px solid rgb(255, 136, 0);
 
   overflow: hidden;
@@ -188,13 +177,12 @@ body {
   align-self: center;
   object-fit: cover;
   transition: 0.5s;
-  /* transform-style: preserve-3d; */
-  transform: translate3d(0, 5px, 1px);
+  transform: translate3d(0, 10px, 1px);
   z-index: 2;
 }
 
-#container .box:hover .product {
-  transform: translate3d(0, 5px, 10px);
+#container .hitbox:hover .product {
+  transform: translate3d(0, 10px, 10px);
 }
 
 #container .box .back {
@@ -212,7 +200,7 @@ body {
   height: 300px;
   width: 300px;
   /* z-index: -100; */
-  filter: invert();
+  filter: contrast(1000) invert();
   /* filter: invert(78%) sepia(56%) saturate(6818%) hue-rotate(108deg) brightness(95%) contrast(108%); */
 }
 
