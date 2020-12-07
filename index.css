@@ -5,8 +5,8 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   /* background-color: gray; */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   font-size: 15px;
 }
 
@@ -34,7 +34,7 @@
 
 #background-text {
   word-wrap: break-word;
-  text-align: center;  
+  text-align: center;
 
   /* background-color: dimgray; */
   font-family: fantasy;
@@ -93,7 +93,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* animation: 1s ease-out 0s 1 cardIntro2; */
+  /* animation: 1s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s 1 cardIntro2; */
 
   position: relative;
   width: 100%;
@@ -114,6 +114,8 @@ body {
   /* filter: drop-shadow(0px 0px 2px white); */
   /* transition: 1s; */
 }
+
+
 
 /* Name comes in from top */
 #container .box .name {
@@ -228,10 +230,29 @@ body {
 
 @keyframes cardIntro2 {
   0% {
-    transform-origin: 50% 100vh;
+    /* transform-origin: 50% 100vh; */
     transform: scale(0) rotateY(180deg);
   }
   100% {
     transform: scale(1) rotateY(180deg);
+  }
+}
+
+
+@media (pointer: coarse) {
+  #container .box {
+    transform: rotateY(0deg);
+  }
+
+  #container .box .name {
+    top: 15px;
+  }
+
+  #container .box:hover .desc {
+    top: 7%;
+  }
+
+  #background-text {
+    font-size: 50px;
   }
 }
