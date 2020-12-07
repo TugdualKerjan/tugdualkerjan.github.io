@@ -38,7 +38,7 @@
 
   /* background-color: dimgray; */
   font-family: fantasy;
-  font-size: 550px;
+  font-size: calc(-95px + 30vw);
   color: rgb(36, 36, 36);
   z-index: -1;
   /* overflow: hidden; */
@@ -250,9 +250,5 @@ body {
 
   #container .box:hover .desc {
     top: 7%;
-  }
-
-  #background-text {
-    font-size: 50px;
   }
 }

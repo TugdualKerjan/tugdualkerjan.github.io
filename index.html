@@ -116,7 +116,21 @@
 </body>
 <script>
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // some code..
+        document.querySelectorAll('#container .box').forEach(e => {
+            e.style.transform = 'rotateY(0deg)';
+        });
+
+        document.querySelectorAll('#container .box .name').forEach(e => {
+            e.style.top = '15px';
+        });
+
+        document.querySelectorAll('#background-text').forEach(e => {
+            e.style.top = '15px';
+        });
+
+        document.querySelectorAll('#container .box:hover .desc').forEach(e => {
+            e.style.top = '7%';
+        });
     } else {
         VanillaTilt.init(document.querySelectorAll(".box"), {
             max: 15,
