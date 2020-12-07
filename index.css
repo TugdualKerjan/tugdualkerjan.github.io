@@ -38,7 +38,7 @@
 
   /* background-color: dimgray; */
   font-family: fantasy;
-  font-size: calc(-30px + 20vw);
+  font-size: calc(-30px + 27vw);
   color: rgb(36, 36, 36);
   z-index: -1;
   /* overflow: hidden; */
@@ -46,16 +46,16 @@
 
 @keyframes color {
   0% {
-    text-shadow: 4px 4px hsla(0, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(0, 100%, 50%, 0.2);
   }
   33% {
-    text-shadow: 4px 4px hsla(120, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(120, 100%, 50%, 0.2);
   }
   66% {
-    text-shadow: 4px 4px hsla(240, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(240, 100%, 50%, 0.2);
   }
   100% {
-    text-shadow: 4px 4px hsla(360, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(360, 100%, 50%, 0.2);
   }
 }
 
