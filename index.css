@@ -237,18 +237,3 @@ body {
     transform: scale(1) rotateY(180deg);
   }
 }
-
-
-@media (pointer: coarse) {
-  #container .box {
-    transform: rotateY(0deg);
-  }
-
-  #container .box .name {
-    top: 15px;
-  }
-
-  #container .box:hover .desc {
-    top: 7%;
-  }
-}
