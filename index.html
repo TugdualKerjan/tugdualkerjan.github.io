@@ -76,6 +76,19 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
+                        <img class="product" src="images/anki.png">
+                        <h2 class="name">ANKI ELEMENTS</h2>
+                        <a class="desc">The second deck I chose to work on after the World countries one is dedicated to
+                            the periodic table of elements, namely the name, atomic number and symbol. It took me 1
+                            month to learn, 10 minutes a day. This confirmed the efficiency of Anki which I since then
+                            use to store notes about classes and programming. This also introduced me to the art of
+                            memory as it used small images associated to each element so as to help the learning
+                            process.</a>
+                        <div class="back"><img src="images/periodic.png"></img></div>
+                    </div>
+                </div>
+                <div class="hitbox">
+                    <div class="box" href="#">
                         <img class="product" src="deprecated/assets/images/site.png">
                         <h2 class="name">THIS WEBSITE</h2>
                         <a class="desc">The day after making the blender space ship I decided it was time to make a
@@ -96,6 +109,19 @@
                             could preview it on a github page I had recently created (This one). After a solid day of
                             work my shitty 3D model is viewable on a website from anywhere around the world!</a>
                         <div class="back"><img src="images/3d.png"></img></div>
+                    </div>
+                </div>
+                <div class="hitbox">
+                    <div class="box" href="#">
+                        <img class="product" src="images/anki.png">
+                        <h2 class="name">ANKI WORLD</h2>
+                        <a class="desc">Using the opensource application ANKI, I was able in the span of a month, 20
+                            minutes a day, to memorise all countries, capitals, geolocations and flags. This totaled to
+                            around 10 hours of work. It also allowed me to realise the potential of Anki. I have used it
+                            since to memorize a multitude of other subjects that you can find in other cards. As a side
+                            note, I chose to also memorise the cantons of Switzerland, their capital and coat of arms,
+                            as well as the regions of France.</a>
+                        <div class="back"><img src="images/world.png"></img></div>
                     </div>
                 </div>
             </div>
@@ -121,11 +147,12 @@
         });
 
     } else {
-        document.getElementById('background-text').innerText = "TUGDUAL TUGDUAL TUGDUAL";
+        document.getElementById('background-text').innerText = "TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL";
         VanillaTilt.init(document.querySelectorAll(".box"), {
             max: 15,
+            reverse: 1,
             speed: 3000,
-            scale: 1.05,
+            // scale: 1.2,
             // transition: 1,
             // glare: 1,
             perspective: 1000,

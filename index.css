@@ -46,16 +46,16 @@
 
 @keyframes color {
   0% {
-    text-shadow: 7px 7px hsla(0, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(0, 100%, 50%, 0.4);
   }
   33% {
-    text-shadow: 7px 7px hsla(120, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(120, 100%, 50%, 0.4);
   }
   66% {
-    text-shadow: 7px 7px hsla(240, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(240, 100%, 50%, 0.4);
   }
   100% {
-    text-shadow: 7px 7px hsla(360, 100%, 50%, 0.2);
+    text-shadow: 7px 7px hsla(360, 100%, 50%, 0.4);
   }
 }
 
@@ -63,6 +63,8 @@
 body {
   background: rgb(36, 36, 36);
   /* display: flex; */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Center the cards in the container */
@@ -72,9 +74,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
+  padding: 60px;
   transform-style: preserve-3d;
+  /* transform: translateZ(0); */
 }
 
 #container .hitbox {
@@ -83,6 +87,10 @@ body {
   margin: 60px;
 }
 
+/* #container .hitbox:hover .box {
+  transform: rotateZ(0deg);
+} */
+
 /* Scale in, choose card height/width = Golden */
 #container .box {
   display: grid;
@@ -90,17 +98,15 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* animation: 1s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s 1 cardIntro2; */
+  animation: 1s ease-in 0s 1 cardIntro2;
 
   position: relative;
   width: 100%;
   height: 100%;
 
-  background: radial-gradient(
-    circle,
-    rgb(1, 69, 112) 40%,
-    rgb(0, 44, 71) 100%
-  );
+  /* transition: 1.5s; */
+
+  background: radial-gradient(circle, rgb(0, 47, 77) 0%, rgb(0, 21, 34) 100%);
 
   border-radius: 15px;
   /* box-shadow: 0 0 0.3em rgb(255, 136, 0); */
@@ -112,14 +118,12 @@ body {
   /* transition: 1s; */
 }
 
-
-
 /* Name comes in from top */
 #container .box .name {
   position: relative;
   align-self: baseline;
   left: 0px;
-  top: 0px;
+  top: -30px;
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
@@ -149,6 +153,7 @@ body {
 
   top: 9%;
   transform: translate3d(0, 0, 1px);
+  /* transform: translateZ(0); */
   color: white;
 
   /* text-shadow: 1px 1px rgba(0, 0, 0, 1); */
@@ -200,7 +205,9 @@ body {
   height: 300px;
   width: 300px;
   /* z-index: -100; */
-  filter: contrast(1000) invert();
+  filter: contrast(1000) invert() drop-shadow(0px 0px 3px black);
+  /* filter: ; */
+
   /* filter: invert(78%) sepia(56%) saturate(6818%) hue-rotate(108deg) brightness(95%) contrast(108%); */
 }
 
@@ -218,10 +225,10 @@ body {
 
 @keyframes cardIntro2 {
   0% {
-    /* transform-origin: 50% 100vh; */
-    transform: scale(0) rotateY(180deg);
+    transform-origin: 50% 0%;
+    transform: translateY(100vh) rotateY(180deg);
   }
   100% {
-    transform: scale(1) rotateY(180deg);
+    transform: translateY(0vh) rotateY(180deg);
   }
 }
