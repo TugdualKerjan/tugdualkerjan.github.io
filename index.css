@@ -1,234 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  /* background-color: gray; */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  font-size: 15px;
+@keyframes color {
+    0%,to {
+        text-shadow: 7px 7px rgba(255,0,0,.4)
+    }
+
+    33% {
+        text-shadow: 7px 7px rgba(0,255,0,.4)
+    }
+
+    66% {
+        text-shadow: 7px 7px rgba(0,0,255,.4)
+    }
 }
 
-*::-webkit-scrollbar {
-  display: none;
+@keyframes cardIntro2 {
+    0% {
+        transform-origin: 50% 0;
+        transform: translateY(100vh) rotateY(180deg)
+    }
+
+    to {
+        transform: translateY(0) rotateY(180deg)
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 15px
+}
+
+::-webkit-scrollbar {
+    display: none
 }
 
 #background {
-  /* flex-wrap: none; */
-
-  /* width: 100%; */
-  /* overflow: hidden; */
-  position: absolute;
-  transform: skewY(-15deg);
-  max-width: 200%;
-  top: -20vh;
-  /* padding: 14px; */
-  height: 100vh;
-  text-align: center;
-
-  animation: color 36s ease-in-out 0s infinite;
-
-  /* filter: grayscale(0) brightness(0.3); */
+    position: absolute;
+    transform: skewY(-15deg);
+    max-width: 200%;
+    top: -20vh;
+    height: 100vh;
+    text-align: center;
+    animation: color 36s ease-in-out 0s infinite
 }
 
 #background-text {
-  word-wrap: break-word;
-  text-align: center;
-
-  /* background-color: dimgray; */
-  font-family: fantasy;
-  font-size: calc(-30px + 27vw);
-  color: rgb(36, 36, 36);
-  z-index: -1;
-  /* overflow: hidden; */
+    word-wrap: break-word;
+    text-align: center;
+    font-family: fantasy;
+    font-size: calc(-30px + 27vw);
+    color: #242424;
+    z-index: -1
 }
 
-@keyframes color {
-  0% {
-    text-shadow: 7px 7px hsla(0, 100%, 50%, 0.4);
-  }
-  33% {
-    text-shadow: 7px 7px hsla(120, 100%, 50%, 0.4);
-  }
-  66% {
-    text-shadow: 7px 7px hsla(240, 100%, 50%, 0.4);
-  }
-  100% {
-    text-shadow: 7px 7px hsla(360, 100%, 50%, 0.4);
-  }
-}
-
-/* Center the container */
 body {
-  background: rgb(36, 36, 36);
-  /* display: flex; */
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+    background: #242424;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden
 }
 
-/* Center the cards in the container */
 #container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* width: 100%; */
-  overflow: hidden;
-  padding: 60px;
-  transform-style: preserve-3d;
-  /* transform: translateZ(0); */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 60px
 }
 
 #container .hitbox {
-  width: 350px;
-  height: 566.31px;
-  margin: 60px;
+    width: 350px;
+    height: 566.31px;
+    margin: 60px;
+    border-radius: 15px;
+    background: rgba(0,0,0,.3);
+    box-shadow: 0 0 50px rgba(0,0,0,.6);
+    animation: 1s ease-in 0s 1 cardIntro2
 }
 
-/* #container .hitbox:hover .box {
-  transform: rotateZ(0deg);
-} */
+#container,#container .box {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d
+}
 
-/* Scale in, choose card height/width = Golden */
 #container .box {
-  display: grid;
-  grid-template-rows: 35% 4% 55%;
-  justify-content: center;
-  align-items: center;
-
-  animation: 1s ease-in 0s 1 cardIntro2;
-
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  /* transition: 1.5s; */
-
-  background: radial-gradient(circle, rgb(0, 47, 77) 0%, rgb(0, 21, 34) 100%);
-
-  border-radius: 15px;
-  /* box-shadow: 0 0 0.3em rgb(255, 136, 0); */
-  border: 2px solid rgb(255, 136, 0);
-
-  transform-style: preserve-3d;
-  transform: rotateY(-180deg);
-  /* filter: drop-shadow(0px 0px 2px white); */
-  /* transition: 1s; */
+    display: grid;
+    grid-template-rows: 35% 4% 55%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#181f18 ,#002a25 100%);
+    border-radius: 15px;
+    border: 2px solid #f80;
+    transform: rotateY(-180deg)
 }
 
-/* Name comes in from top */
+#container .box .desc,#container .box .name {
+    position: relative;
+    align-self: baseline;
+    color: #fff;
+    transition: .5s
+}
+
 #container .box .name {
-  position: relative;
-  align-self: baseline;
-  left: 0px;
-  top: -30px;
-  text-align: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 30px;
-  color: white;
-
-  width: 100%;
-  flex: 10%;
-  transform-style: preserve-3d;
-  transform: translate3d(0, 0, 1px);
-  transition: 0.5s;
-
-  z-index: 1;
-  text-shadow: 2px 1px rgb(255, 136, 0);
+    left: 0;
+    top: -39px;
+    text-align: center;
+    font-family: "Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+    font-size: 30px;
+    width: 100%;
+    flex: 10%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,10px);
+    z-index: 1;
+    text-shadow: 2px 1px #f80
 }
 
 #container .hitbox:hover .name {
-  top: 15px;
-  transform: translate3d(0, 0, 10px);
+    top: 15px
 }
 
 #container .box .desc {
-  position: relative;
-  text-align: justify;
-  align-self: baseline;
-
-  font-weight: 800;
-
-  top: 9%;
-  transform: translate3d(0, 0, 1px);
-  /* transform: translateZ(0); */
-  color: white;
-
-  /* text-shadow: 1px 1px rgba(0, 0, 0, 1); */
-  padding: 10px 20px;
-  transition: 0.5s;
-}
-
-#container .hitbox:hover .desc {
-  top: 7%;
-  transform: translate3d(0, 0, 1px);
+    text-align: justify;
+    font-weight: 800;
+    top: 9%;
+    transform: translate3d(0,0,1px);
+    padding: 10px 20px
 }
 
 #container .box .product {
-  position: relative;
-  flex: 30%;
-  left: 5px;
-  height: 195px;
-  width: 340px;
-
-  border-bottom: 3px solid rgb(255, 136, 0);
-
-  overflow: hidden;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-
-  align-self: center;
-  object-fit: cover;
-  transition: 0.5s;
-  transform: translate3d(0, 10px, 1px);
-  z-index: 2;
-}
-
-#container .hitbox:hover .product {
-  transform: translate3d(0, 10px, 10px);
+    position: relative;
+    flex: 30%;
+    left: 5px;
+    height: 195px;
+    width: 340px;
+    border-bottom: 3px solid #f80;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-self: center;
+    object-fit: cover;
+    transition: .5s;
+    transform: translate3d(0,10px,10px);
+    z-index: 2
 }
 
 #container .box .back {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  transform: translate3d(0px, 0px, -1px) rotateY(180deg);
-  height: 100%;
-  width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,-1px) rotateY(180deg);
+    height: 100%;
+    width: 100%
 }
 
 #container .box .back img {
-  height: 300px;
-  width: 300px;
-  /* z-index: -100; */
-  filter: contrast(1000) invert() drop-shadow(0px 0px 3px black);
-  /* filter: ; */
-
-  /* filter: invert(78%) sepia(56%) saturate(6818%) hue-rotate(108deg) brightness(95%) contrast(108%); */
-}
-
-/* #container .box:nth-child(1) .circle {
-  background: red;
-}
-
-#container .box:nth-child(2) .circle {
-  background: blue;
-}
-
-#container .box:nth-child(3) .circle {
-  background: green;
-} */
-
-@keyframes cardIntro2 {
-  0% {
-    transform-origin: 50% 0%;
-    transform: translateY(100vh) rotateY(180deg);
-  }
-  100% {
-    transform: translateY(0vh) rotateY(180deg);
-  }
+    padding-bottom: 10%;
+    height: 300px;
+    width: 300px;
+    filter: invert() contrast(50%)
 }
