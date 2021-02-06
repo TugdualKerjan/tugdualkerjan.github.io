@@ -1,167 +1,165 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
 
 @keyframes color {
-    0%,to {
-        text-shadow: 7px 7px rgba(255,0,0,.4)
-    }
+  0%,
+  to {
+    text-shadow: 7px 7px rgba(255, 0, 0, 0.4);
+  }
 
-    33% {
-        text-shadow: 7px 7px rgba(0,255,0,.4)
-    }
+  33% {
+    text-shadow: 7px 7px rgba(0, 255, 0, 0.4);
+  }
 
-    66% {
-        text-shadow: 7px 7px rgba(0,0,255,.4)
-    }
+  66% {
+    text-shadow: 7px 7px rgba(0, 0, 255, 0.4);
+  }
 }
 
 @keyframes cardIntro2 {
-    0% {
-        transform-origin: 50% 0;
-        transform: translateY(100vh) rotateY(180deg)
-    }
+  0% {
+    transform-origin: 50% 0;
+    transform: translateY(100vh) rotateY(0deg);
+  }
 
-    to {
-        transform: translateY(0) rotateY(180deg)
-    }
+  to {
+    transform: translateY(0) rotateY(0deg);
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins",sans-serif;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    font-size: 15px
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-size: 15px;
 }
 
 ::-webkit-scrollbar {
-    display: none
+  display: none;
 }
 
 #background {
-    position: absolute;
-    transform: skewY(-15deg);
-    max-width: 200%;
-    top: -20vh;
-    height: 100vh;
-    text-align: center;
-    animation: color 36s ease-in-out 0s infinite
+  position: absolute;
+  transform: skewY(-15deg);
+  max-width: 200%;
+  top: -20vh;
+  height: 100vh;
+  text-align: center;
+  text-shadow: 7px 7px rgba(255, 0, 0.5, 0.6);
+
+  /* animation: color 36s ease-in-out 0s infinite; */
 }
 
 #background-text {
-    word-wrap: break-word;
-    text-align: center;
-    font-family: fantasy;
-    font-size: calc(-30px + 27vw);
-    color: #242424;
-    z-index: -1
+  word-wrap: break-word;
+  text-align: center;
+  font-family: fantasy;
+  font-size: calc(-30px + 27vw);
+  color: #242424;
+  z-index: -1;
 }
 
 body {
-    background: #242424;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden
+  background: #242424;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 #container {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    padding: 60px
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
 #container .hitbox {
-    width: 350px;
-    height: 566.31px;
-    margin: 60px;
-    border-radius: 15px;
-    background: rgba(0,0,0,.3);
-    box-shadow: 0 0 50px rgba(0,0,0,.6);
-    animation: 1s ease-in 0s 1 cardIntro2
+  width: 95%;
+  height: 120px;
+
+  margin: 10px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+  animation: 1s ease-in 0s 1 cardIntro2;
+  transition: 0.5s;
+  border: 2px solid #f80;
+
+  overflow: visible;
 }
 
-#container,#container .box {
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transform-style: preserve-3d
+#container,
+#container .box {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 #container .box {
-    display: grid;
-    grid-template-rows: 35% 4% 55%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#181f18 ,#002a25 100%);
-    border-radius: 15px;
-    border: 2px solid #f80;
-    transform: rotateY(-180deg)
+  display: grid;
+  grid-template-rows: 120px 1fr;
+  grid-template-areas:
+    "icon name name name name"
+    "image image desc desc desc";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#181f18, #002a25 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
-#container .box .desc,#container .box .name {
-    position: relative;
-    align-self: baseline;
-    color: #fff;
-    transition: .5s
+#container .box .desc,
+#container .box .name,
+#container .box .product,
+#container .box .back {
+  position: relative;
+  color: #fff;
+  transition: 1s;
+  top: 0%;
 }
 
-#container .box .name {
-    left: 0;
-    top: -39px;
-    text-align: center;
-    font-family: "Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
-    font-size: 30px;
-    width: 100%;
-    flex: 10%;
-    transform-style: preserve-3d;
-    transform: translate3d(0,0,10px);
-    z-index: 1;
-    text-shadow: 2px 1px #f80
-}
-
-#container .hitbox:hover .name {
-    top: 15px
+#container .box:hover * {
+  top: -120px;
 }
 
 #container .box .desc {
-    text-align: justify;
-    font-weight: 800;
-    top: 9%;
-    transform: translate3d(0,0,1px);
-    padding: 10px 20px
+  grid-area: desc;
+  text-align: justify;
+  font-weight: 800;
+  align-self: center;
+
+  transform: translate3d(0, 0, 1px);
+  padding: 10px 20px;
 }
 
 #container .box .product {
-    position: relative;
-    flex: 30%;
-    left: 5px;
-    height: 195px;
-    width: 340px;
-    border-bottom: 3px solid #f80;
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    align-self: center;
-    object-fit: cover;
-    transition: .5s;
-    transform: translate3d(0,10px,10px);
-    z-index: 2
+  grid-area: image;
+  min-height: 120px;
+  height: 100%;
+  width: 195px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  align-self: center;
+  object-fit: cover;
+}
+
+#container .box .name {
+  grid-area: name;
+  left: -5%;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  text-shadow: 2px 1px #f80;
 }
 
 #container .box .back {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-style: preserve-3d;
-    transform: translate3d(0,0,-1px) rotateY(180deg);
-    height: 100%;
-    width: 100%
+  grid-area: icon;
 }
 
 #container .box .back img {
-    padding-bottom: 10%;
-    height: 300px;
-    width: 300px;
-    filter: invert() contrast(50%)
+  height: 120px;
+  width: 120px;
+  filter: invert() contrast(50%);
 }

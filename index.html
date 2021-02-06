@@ -8,6 +8,8 @@
     <title> T U G D U A L</title>
     <link rel="stylesheet" href="index.css">
     <script src="vanilla-tilt.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,8 +34,8 @@
             <div id="container">
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="images/shypooper.jpg">
                         <h2 class="name">SHYPOOPER</h2>
+                        <img class="product" src="images/shypooper.jpg">
                         <a class="desc">Finally, a web application that's capable of accumulating the fine knowledge of
                             which bathrooms are the best at EPFL. Thanks to this site coded using OpenLayers, MongoDB
                             and Express one can check the quality of a variety of bathrooms at EPFL</a>
@@ -42,8 +44,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="deprecated/assets/images/bike.jpg">
                         <h2 class="name">LAUSANNE TO LILLE</h2>
+                        <img class="product" src="deprecated/assets/images/bike.jpg">
                         <a class="desc">With Augustin decided it would be a good idea to bike all the way back from
                             Lausanne to Lille by bike. Took a sore ass, 4 days of biking and one afternoon of traversing
                             the Jura hungover to acheive this dumb idea. Left with just a backpack, no sleeping bag nor
@@ -53,8 +55,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="deprecated/assets/images/colemak.png">
                         <h2 class="name">TYPING SPEED</h2>
+                        <img class="product" src="deprecated/assets/images/colemak.png">
                         <p class="desc">After reseting my computer because I had accidentaly corrupted my Ubuntu, I was
                             presented with the option to select a keyboard layout. I decided to go with Colemak, which
                             had been specificaly designed to be more efficient at typing compared to Qwerty. Over the
@@ -66,8 +68,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="deprecated/assets/images/potato.jpg">
                         <h2 class="name">DARPA POTATO GUN</h2>
+                        <img class="product" src="deprecated/assets/images/potato.jpg">
                         <a class="desc">Bored on a saturday morning with Charles and Come, we decide that it is time we
                             made a potato gun. Ingredients: Potato, PVC and lighter. Surprisingly powerful, especially
                             given that less fuel gives a more potent explosion (Ratio of Oxygen?)</a>
@@ -76,8 +78,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="images/anki.png">
                         <h2 class="name">ANKI ELEMENTS</h2>
+                        <img class="product" src="images/anki.png">
                         <a class="desc">The second deck I chose to work on after the World countries one is dedicated to
                             the periodic table of elements, namely the name, atomic number and symbol. It took me 1
                             month to learn, 10 minutes a day. This confirmed the efficiency of Anki which I since then
@@ -89,8 +91,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="deprecated/assets/images/site.png">
                         <h2 class="name">THIS WEBSITE</h2>
+                        <img class="product" src="deprecated/assets/images/site.png">
                         <a class="desc">The day after making the blender space ship I decided it was time to make a
                             terrible website on which I would be able to log all the projects I enjoy investing time in.
                             The result is this sort of deck of cards, each one describing something I find worth of
@@ -101,8 +103,8 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="deprecated/assets/images/ship.jpg">
                         <h2 class="name">BLENDER SPEEDRUN</h2>
+                        <img class="product" src="deprecated/assets/images/ship.jpg">
                         <a class="desc">Drew some perspective drawing 2 days ago, wanted to see how it would look in
                             Blender. Then spent the next day on learning how to use the application. Really intuitive,
                             got a good grasp thanks to this fellow on YouTube: Imphenzia. I then decided to see if I
@@ -113,15 +115,15 @@
                 </div>
                 <div class="hitbox">
                     <div class="box" href="#">
-                        <img class="product" src="images/anki.png">
+                        <div class="back"><img src="images/world.png"></img></div>
                         <h2 class="name">ANKI WORLD</h2>
+                        <img class="product" src="images/anki.png">
                         <a class="desc">Using the opensource application ANKI, I was able in the span of a month, 20
                             minutes a day, to memorise all countries, capitals, geolocations and flags. This totaled to
                             around 10 hours of work. It also allowed me to realise the potential of Anki. I have used it
                             since to memorize a multitude of other subjects that you can find in other cards. As a side
                             note, I chose to also memorise the cantons of Switzerland, their capital and coat of arms,
                             as well as the regions of France.</a>
-                        <div class="back"><img src="images/world.png"></img></div>
                     </div>
                 </div>
             </div>
@@ -129,35 +131,44 @@
     </div>
 </body>
 <script>
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        document.querySelectorAll('#container .box').forEach(e => {
-            e.style.transform = 'rotateY(0deg)';
-        });
+    // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    //     document.querySelectorAll('#container .box').forEach(e => {
+    //         e.style.transform = 'rotateY(0deg)';
+    //     });
 
-        document.querySelectorAll('#container .box .name').forEach(e => {
-            e.style.top = '15px';
-        });
+    //     document.querySelectorAll('#container .box .name').forEach(e => {
+    //         e.style.top = '15px';
+    //     });
 
-        document.querySelectorAll('#background-text').forEach(e => {
-            e.style.top = '15px';
-        });
+    //     document.querySelectorAll('#background-text').forEach(e => {
+    //         e.style.top = '15px';
+    //     });
 
-        document.querySelectorAll('#container .box:hover .desc').forEach(e => {
-            e.style.top = '7%';
-        });
+    //     document.querySelectorAll('#container .box:hover .desc').forEach(e => {
+    //         e.style.top = '7%';
+    //     });
 
-    } else {
-        document.getElementById('background-text').innerText = "TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL";
-        VanillaTilt.init(document.querySelectorAll(".box"), {
-            max: 15,
-            reverse: 1,
-            speed: 2000,
-            // scale: 1.2,
-            // transition: 1,
-            // glare: 1,
-            perspective: 1000,
+    // } else {
+    //     document.getElementById('background-text').innerText = "TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL";
+    //     VanillaTilt.init(document.querySelectorAll(".box"), {
+    //         max: 5,
+    //         reverse: 1,
+    //         speed: 2000,
+    //         scale: 1.1,
+    //         transition: 1,
+    //         // glare: 1,
+    //         perspective: 3000,
+    //     });
+    // }
+    $('.hitbox').hover(function () {
+        $(this).animate({
+            height: Math.max($(this).find(".desc").height() + 20, 120),
         });
-    }
+    }, function () {
+        $(this).stop().animate({
+            height: "120px",
+        })
+    });
 </script>
 <script src="./index.js"></script>
 
