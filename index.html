@@ -211,8 +211,9 @@
     //     });
     // }
     $('.hitbox').hover(function () {
-        $(this).animate({
-            height: Math.max($(this).find(".desc").height() + 20, 120),
+        
+        $(this).stop().animate({
+            height: Math.max($(this).find(".desc").height() + 20 + (($(window).width() < 750) ? $(this).find(".product").height() : 0), 120),
         });
     }, function () {
         $(this).stop().animate({
