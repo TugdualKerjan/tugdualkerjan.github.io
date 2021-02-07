@@ -1,19 +1,33 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
-
-@keyframes color {
-  0%,
-  to {
-    text-shadow: 7px 7px rgba(255, 0, 0, 0.4);
+@media (min-width: 751px) {
+  #container .box {
+    grid-template-areas:
+      "icone name name name name"
+      "image image desc desc desc";
   }
 
-  33% {
-    text-shadow: 7px 7px rgba(0, 255, 0, 0.4);
-  }
-
-  66% {
-    text-shadow: 7px 7px rgba(0, 0, 255, 0.4);
+  #container .box .product {
+    width: 195px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 }
+
+@media (max-width: 750px) {
+  #container .box {
+    grid-template-areas:
+      "icone name name name name"
+      "image image image image image"
+      "desc desc desc desc desc";
+  }
+
+  #container .box .product {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
 
 @keyframes cardIntro2 {
   0% {
@@ -98,9 +112,6 @@ body {
 #container .box {
   display: grid;
   grid-template-rows: 120px 1fr;
-  grid-template-areas:
-    "icon name name name name"
-    "image image desc desc desc";
   width: 100%;
   height: 100%;
   background: linear-gradient(#181f18, #002a25 100%);
@@ -137,10 +148,7 @@ body {
   grid-area: image;
   min-height: 120px;
   height: 100%;
-  width: 195px;
   overflow: hidden;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
   align-self: center;
   object-fit: cover;
 }
@@ -155,7 +163,7 @@ body {
 }
 
 #container .box .back {
-  grid-area: icon;
+  grid-area: icone;
 }
 
 #container .box .back img {
@@ -163,3 +171,19 @@ body {
   width: 120px;
   filter: invert() contrast(50%);
 }
+
+/* 
+@keyframes color {
+  0%,
+  to {
+    text-shadow: 7px 7px rgba(255, 0, 0, 0.4);
+  }
+
+  33% {
+    text-shadow: 7px 7px rgba(0, 255, 0, 0.4);
+  }
+
+  66% {
+    text-shadow: 7px 7px rgba(0, 0, 255, 0.4);
+  }
+} */
