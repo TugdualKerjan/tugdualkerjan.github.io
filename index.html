@@ -32,8 +32,20 @@
         </div>
         <div>
             <div id="container">
-                <div class="hitbox">
-                    <div class="box" href="#">
+                <div class="hitbox" onclick="location.href=`https://munsite.onrender.com`;" style="cursor: pointer;">
+                    <div class="box">
+                        <h2 class="name">MUN SITE</h2>
+                        <img class="product" src="images/mun.png">
+                        <a class="desc">For the MUN association of at EPFL we wanted to improve the site as the current
+                            one simply wasn't attractive enough. This was part of a bigger initiative to have a clearer
+                            and more consistent image of MUN EPFL, as the last years it had been with defracted. Using
+                            simple HTML and CSS we were able to build a clean and readble website the perfect amount of
+                            information </a>
+                        <div class="back"><img src="images/laurier.png"></img></div>
+                    </div>
+                </div>
+                <div class="hitbox" onclick="window.open(`images/sponge.jpg`, '_blank');" style="cursor: pointer;">
+                    <div class="box">
                         <h2 class="name">SPONGEBOB AT EPFL</h2>
                         <img class="product" src="images/sponge.jpg">
                         <a class="desc">When I learned that there was a way to print my own plastic cards using a
@@ -45,8 +57,8 @@
                         <div class="back"><img src="images/id.png"></img></div>
                     </div>
                 </div>
-                <div class="hitbox">
-                    <div class="box" href="#">
+                <div class="hitbox" onclick="window.open('images/Projet de casier distributeur automatique de Mate.pdf','_blank');" style="cursor: pointer;">
+                    <div class="box">
                         <h2 class="name">AUTOMATÉ</h2>
                         <img class="product" src="images/automate.png">
                         <a class="desc">Lors d'un cours d'archord, avec Elior on a eu l'idee fantastique de creer une
@@ -82,7 +94,7 @@
                         <div class="back"><img src="images/dinoicon.png"></img></div>
                     </div>
                 </div>
-                <div class="hitbox">
+                <div class="hitbox" onclick="window.open(`https://shypooper.ch`, '_blank');" style="cursor: pointer;">
                     <div class="box" href="#">
                         <h2 class="name">SHYPOOPER</h2>
                         <img class="product" src="images/shypooper.jpg">
@@ -103,8 +115,8 @@
                         <div class="back"><img src="images/bike.png"></img></div>
                     </div>
                 </div>
-                <div class="hitbox">
-                    <div class="box" href="#">
+                <div class="hitbox" onclick="window.open(`https://www.keybr.com/profile/61pc4tj`, '_blank');" style="cursor: pointer;">
+                    <div class="box">
                         <h2 class="name">TYPING SPEED</h2>
                         <img class="product" src="deprecated/assets/images/colemak.png">
                         <p class="desc">After reseting my computer because I had accidentaly corrupted my Ubuntu, I was
@@ -211,7 +223,7 @@
     //     });
     // }
     $('.hitbox').hover(function () {
-        
+
         $(this).stop().animate({
             height: Math.max($(this).find(".desc").height() + 20 + (($(window).width() < 750) ? $(this).find(".product").height() : 0), 120),
         });
