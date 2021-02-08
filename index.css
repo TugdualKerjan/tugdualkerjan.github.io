@@ -59,7 +59,7 @@
   top: -20vh;
   height: 100vh;
   text-align: center;
-  text-shadow: 7px 7px rgba(255, 0, 0.5, 0.6);
+  text-shadow: 7px 7px #f80;
 
   /* animation: color 36s ease-in-out 0s infinite; */
 }
