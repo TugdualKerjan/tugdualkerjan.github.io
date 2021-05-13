@@ -23,11 +23,6 @@
                 TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
                 TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
                 TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
                 TUGDUAL</p>
         </div>
         <div>
@@ -36,7 +31,7 @@
                     onclick="window.open(`https://github.com/TugdualKerjan/CalvinAndHobbesPainting`, '_blank');"
                     style="cursor: pointer;">
                     <div class="box">
-                        <h2 class="name">CALVIN AND HOBBES PAINTING</h2>
+                        <h2 class="name">CALVIN AND HOBBES</h2>
                         <img class="product" src="images/calvin.jpg">
                         <a class="desc">On a whim when back from EPFL to vacation for Easter with the family I asked my
                             Mom if she could teach me how to paint. I had already painted, but a long time ago and I
@@ -278,11 +273,11 @@
     $('.hitbox').hover(function () {
 
         $(this).stop().animate({
-            height: Math.max($(this).find(".desc").height() + 20 + (($(window).width() < 750) ? $(this).find(".product").height() : 0), 120),
+            height: Math.max($(this).find(".desc").height() + 30 + (($(window).width() < 750) ? $(this).find(".product").height() : 0), 150),
         });
     }, function () {
         $(this).stop().animate({
-            height: "120px",
+            height: "150px",
         })
     });
 </script>
