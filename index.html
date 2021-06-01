@@ -17,13 +17,7 @@
     <div id="container">
 
         <div id="background">
-            <p id="background-text">TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL TUGDUAL
-                TUGDUAL</p>
+            <p id="background-text">TUGDUAL</p>
         </div>
         <div>
             <div id="container">
@@ -41,6 +35,8 @@
                         <div class="back"><img src="images/paint.png"></img></div>
                     </div>
                 </div>
+                <div class="hitbox2"><img src="images/hmmm.gif" style="display:block; margin-left: auto;
+                    margin-right: auto; height: 100%;"></div>
                 <div class="hitbox" onclick="window.open(`https://youtu.be/7CMFNPTSn-w`, '_blank');"
                     style="cursor: pointer;">
                     <div class="box">
@@ -88,6 +84,7 @@
                         <div class="back"><img src="images/laurier.png"></img></div>
                     </div>
                 </div>
+
                 <div class="hitbox" onclick="window.open(`images/sponge.jpg`, '_blank');" style="cursor: pointer;">
                     <div class="box">
                         <h2 class="name">SPONGEBOB AT EPFL</h2>
@@ -129,6 +126,8 @@
                         <div class="back"><img src="images/tower.png"></img></div>
                     </div>
                 </div>
+                <div class="hitbox2"><img src="images/penguin.webp" style="display:block; margin-left: auto;
+                    margin-right: auto; height: 100%;"></div>
                 <div class="hitbox">
                     <div class="box" href="#">
                         <h2 class="name">LASER DINOSAUR</h2>
@@ -273,7 +272,7 @@
     $('.hitbox').hover(function () {
 
         $(this).stop().animate({
-            height: Math.max($(this).find(".desc").height() + 30 + (($(window).width() < 750) ? $(this).find(".product").height() : 0), 150),
+            height: Math.max($(this).find(".desc").height() + 30 + $(this).find(".product").height(), 200),
         });
     }, function () {
         $(this).stop().animate({
