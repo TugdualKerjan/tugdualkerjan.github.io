@@ -184,6 +184,7 @@ body {
 
 #container .box .back img {
   height: 150px;
+  object-fit: contain;
   width: 150px;
   filter: brightness(0);
 }
