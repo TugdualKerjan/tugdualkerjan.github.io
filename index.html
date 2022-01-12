@@ -252,13 +252,12 @@
 </body>
 <script>
     $('.hitbox').hover(function () {
-
         $(this).stop().animate({
             height: Math.max($(this).find(".desc").height() + 30 + $(this).find(".product").height(), 200),
         });
     }, function () {
         $(this).stop().animate({
-            height: "150px",
+            height: (document.body.clientWidth < 999) ? "120px" : "150px",
         })
     });
 </script>
