@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<head>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<style>
+		.node text {
+			font: 10px sans-serif;
+		}
+
+		/* .node:hover * {
+			font-size: 15px;
+			transition: font-size 0.1s;
+		} */
+
+		.link {
+			fill: none;
+			stroke: #555;
+			stroke-opacity: 0.4;
+			stroke-width: 1.5px;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "Poppins", sans-serif;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			font-size: 20px;
+		}
+
+		::-webkit-scrollbar {
+			display: none;
+		}
+		body {
+			margin: 0;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="myGraph"></div>
+</body>
+<script src="wheel.js"></script>
