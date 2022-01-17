@@ -263,7 +263,7 @@ function renderBeautifulRadius(params) {
 				//get transform event
 				var transform = d3.event.transform;
 
-				chart.transition().duration(100).ease(d3.easeLinear).attr("transform", transform).inter;
+				chart.transition().duration(100).ease(d3.easeLinear).attr("transform", transform);
 				attrs.lastTransform = transform;
 
 				// apply transform event props to the wrapper
