@@ -32,6 +32,7 @@ function renderBeautifulRadius(params) {
 		textDisplayed: true,
 		lineStrokeWidth: "1.5px",
 		data: null,
+		lastTransform: null,
 		duration: 500
 	};
 
@@ -75,7 +76,7 @@ function renderBeautifulRadius(params) {
 			behaviors.zoom = d3
 				.zoom()
 				.wheelDelta(() => {
-					return -d3.event.deltaY * (d3.event.deltaMode ? 10 : 1) / 4500;
+					return -d3.event.deltaY * (d3.event.deltaMode ? 10 : 1) / 1500;
 				})
 				.on("zoom", zoomed);
 			behaviors.drag = d3
@@ -133,7 +134,7 @@ function renderBeautifulRadius(params) {
 				"translate(" +
 				calc.chartWidth / 2 +
 				"," +
-				(calc.chartHeight * 0.55555) + 
+				(calc.chartHeight * 0.55555) +
 				")scale(0.4)"
 			);
 			var nodes, links, enteredNodes;
@@ -261,10 +262,12 @@ function renderBeautifulRadius(params) {
 			function zoomed() {
 				//get transform event
 				var transform = d3.event.transform;
+
+				chart.transition().duration(100).ease(d3.easeLinear).attr("transform", transform).inter;
 				attrs.lastTransform = transform;
 
 				// apply transform event props to the wrapper
-				chart.attr("transform", transform);
+
 
 				svg
 					.selectAll(".link")
@@ -282,6 +285,7 @@ function renderBeautifulRadius(params) {
 					attrs.textDisplayed = true;
 				}
 			}
+
 
 			//handler drag start event
 			function dragstarted(d) {
