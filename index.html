@@ -22,6 +22,16 @@
         <div id="container">
             <div class="hitbox">
     <div class="box">
+        <h2 class="name">THE WHEEL</h2>
+        <img class="product" onclick="window.open(`https://tugdual.fr/wheel/wheel`, '_blank');"
+                    style="cursor: pointer;" src="images/organigram.png">
+        <a class="desc" onclick="window.open(`https://tugdual.fr/wheel/wheel`, '_blank');"
+                    style="cursor: pointer;">During this summer I got the idea of downloading the dataset of all the units at EPFL and representing them with D3.js, a javascript library for data visualisation. This project allowed me to better understand how this language works, and what typical coding parterns are used in it. In the future I would like to add the option to see the people in each unit, optimise it so it doesn't slow down computers too much and make a version with history in mind.</a>
+        <div class="back"><img src="images/wheel.png"></img></div>
+    </div>
+</div>
+<div class="hitbox">
+    <div class="box">
         <h2 class="name">AUTOMATIC POSTING</h2>
         <img class="product"  src="images/telegram.png">
         <a class="desc" >People don't regularly visit websites anymore without having 							notifications. If only RSS was still something people used! 							Although in the future I plan on adding it for now I wanted to be 							able to avoid doing redundant work by being able to post what I do 							on Telegram but also automatically post it on my website. Now 							whenever a post appears on t.me/tugdualupdates it is automatically 							added to my website as well!</a>
@@ -252,12 +262,13 @@
 </body>
 <script>
     $('.hitbox').hover(function () {
+
         $(this).stop().animate({
             height: Math.max($(this).find(".desc").height() + 30 + $(this).find(".product").height(), 200),
         });
     }, function () {
         $(this).stop().animate({
-            height: (document.body.clientWidth < 999) ? "120px" : "150px",
+            height: "150px",
         })
     });
 </script>
