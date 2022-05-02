@@ -9,7 +9,7 @@ template = """<div class="hitbox">
     <div class="box">
         <h2 class="name">%s</h2>
         <img class="product" %s src="%s">
-        <a class="desc" %s>%s</a>
+        <p class="desc" %s>%s</p>
         <div class="back"><img src="%s"></img></div>
     </div>
 </div>"""
