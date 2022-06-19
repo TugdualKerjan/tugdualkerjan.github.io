@@ -1,6 +1,6 @@
 import os
 
-article_path = "/home/tugdual/Documents/Notes/Notes/Articles/"
+article_path = "/home/tugdual/Documents/Notes/Articles/"
 
 link_text = """onclick="window.open(`%s`, '_blank');"
                     style="cursor: pointer;\""""
