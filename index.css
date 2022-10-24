@@ -1,4 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=Passion+One&:wght@700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+
 
 * {
 	margin: 0;
@@ -19,7 +21,7 @@
 	word-wrap: break-word;
 	vertical-align: middle;
 	text-align: left;
-	font-family: fantasy;
+	font-family: Passion One;
 	font-size: 70px;
 	color: #3d3d3d;
 	z-index: -1;
