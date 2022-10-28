@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css2?family=Passion+One&:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap);
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	font-size: 20px;
+}
+
+body {
+	background: linear-gradient(135deg, #ffcfcf 0%, #ffe7b4 100%);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+#product_list {
+	flex-direction: row;
+	border-radius: 3px;
+	border-color: black;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	margin: 20px;
+}
+
+#product_list .product-container {
+	padding: 10px;
+	background-color: white;
+	margin: 20px;
+	border-radius: 7px;
+	box-shadow: 0px 2px 5px rgb(0, 0, 0);
+	transition: 0.5s;
+    width: 25%;
+    text-align: center;
+}
+
+.block-pla-matrix {
+    display: none;
+}
+
+.product-desc {
+    display: none;
+}
