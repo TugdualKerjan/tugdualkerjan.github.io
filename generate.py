@@ -1,6 +1,6 @@
 import os
-
-article_path = "/home/tugdual/Documents/Notes/Articles/"
+import pprint as pp
+article_path = "/Users/tugdual/Documents/Notes/Articles/"
 
 link_text = """onclick="window.open(`%s`, '_blank');"
                     style="cursor: pointer;\""""
@@ -93,12 +93,13 @@ def main():
     file_list.reverse()
     list_of_articles = []
     for element in file_list:
-        if element == "images":
+        if element == "images" or element == ".DS_Store":
             pass
         elif element[-4:] == ".gif":
             list_of_articles.append(template_gif % (element[4:]))
         else:
             with open(article_path + str(element)) as article_file:
+                print(element)
                 list_of_articles.append(
                     transform_text(article_file.readlines()))
     final_string = html_final % ("\n".join(list_of_articles))
