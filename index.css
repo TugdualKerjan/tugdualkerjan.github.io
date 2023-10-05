@@ -36,6 +36,15 @@
 	color: #3d3d3d;
 }
 
+#background-text3 {
+	word-wrap: break-word;
+	vertical-align: middle;
+	text-align: left;
+	/* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+	font-size: 30px;
+	color: #3d3d3d;
+}
+
 body {
 	background: linear-gradient(135deg, #fff6d0 0%, #d3cbaa 100%);
 	backface-visibility: hidden;
