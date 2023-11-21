@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 2;
       max-width: 800px;
       margin: 20px auto;
       padding: 0 20px;
@@ -101,17 +101,8 @@
       /* Fix the position relative to the viewport */
       top: 10px;
       /* Position from the right */
-      background-color: darkgoldenrod;
+      background-color: lightgray;
       /* Set the background color to orange */
-      color: white;
-      /* Set the text color to white */
-      border: none;
-      /* Remove border */
-      /* Add some padding for better spacing */
-      border-radius: 5px;
-      /* Add border-radius for rounded corners */
-      cursor: pointer;
-      /* Change cursor to pointer on hover */
       z-index: 1100;
     }
 
@@ -155,9 +146,9 @@
       cursor: pointer;
       text-decoration: none;
       /* Set the initial color for the first border-bottom to gray */
-      border-bottom: 3px solid var(--underlined-default-color, gray);
+      border-bottom: 4px solid var(--underlined-default-color, gray);
       /* Adjust thickness as needed */
-      transition: border-color 0.3s ease-in-out;
+      transition: border-color 0.2s ease-in-out;
     }
 
     .lower-underlined {
@@ -166,11 +157,11 @@
       cursor: pointer;
       text-decoration: none;
       /* Set the initial color for the second border-bottom to gray */
-      border-bottom: 3px solid var(--underlined-default-color, gray);
+      border-bottom: 4px solid var(--underlined-default-color, gray);
       /* Adjust thickness as needed */
-      padding-bottom: 6px;
+      padding-bottom: 7px;
       /* Increase the space between text and bottom */
-      transition: border-color 0.3s ease-in-out;
+      transition: border-color 0.2s ease-in-out;
     }
 
     .lower-lower-underlined {
@@ -179,11 +170,11 @@
       cursor: pointer;
       text-decoration: none;
       /* Set the initial color for the second border-bottom to gray */
-      border-bottom: 3px solid var(--underlined-default-color, gray);
+      border-bottom: 4px solid var(--underlined-default-color, gray);
       /* Adjust thickness as needed */
-      padding-bottom: 12px;
+      padding-bottom: 13px;
       /* Increase the space between text and bottom */
-      transition: border-color 0.3s ease-in-out;
+      transition: border-color 0.2s ease-in-out;
     }
 
     .hidden {
@@ -337,6 +328,14 @@
       margin-left: auto;
       /* Pushes the dropdown to the left */
     }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: left;
+      gap: 5px;
+      /* adjust the gap between buttons as needed */
+    }
+
   </style>
 </head>
 
@@ -601,7 +600,7 @@
               style="--underlined-default-color: red;">...</span></span>"</li>
       </ul>
       <br>
-      <button onclick="revealSolution1('solution1')">Reveal Solution</button>
+      <button onclick="revealSolution1('solution1'); this.style.display='none';">Reveal Solution</button>
     </div>
     <div class="normal">
 
@@ -746,7 +745,7 @@
       Try to solve the following riddle with case disjunction:
       <ul> A and B are Knights or Knaves, A says "there is at most one Knight among us." What are A and B?
       </ul>
-      <button onclick="revealSolution2('solution2')">Reveal Solution</button>
+      <button onclick="revealSolution2('solution2'); this.style.display='none';">Reveal Solution</button>
       <span id="solution2" style="display: none;">
         <i> A is a Knight, and B is a Knave. </i>
       </span>
@@ -1159,7 +1158,7 @@
         </tr>
       </table>
       <br>
-      <button onclick="revealSolution3('tableLogic')">Reveal Solution</button>
+      <button onclick="revealSolution3('tableLogic'); this.style.display='none';">Reveal Solution</button>
     </div>
     </ul>
   </section>
@@ -1227,8 +1226,8 @@
           We have three individuals A, B, and C, either Knights or Knaves.
           A says "There are at most 2 Knights among us."
           What are A, B, and C ?
-            <br>
-            <br>
+          <br>
+          <br>
           <select style="width: 150px;">
             <option value="Option 1" selected>Don't know</option>
             <option value="Option 2">Double negation</option>
@@ -1237,7 +1236,7 @@
             <option value="Option 5">Randomness</option>
           </select>
           <br><br>
-          <button onclick="revealSolution2('sol1')">Reveal Solution</button>
+          <button onclick="revealSolution2('sol1'); this.style.display='none';">Reveal Solution</button>
           <span id="sol1" style="display: none;">
             <i>Equifinality - A is a Knight, B and C can be either</i>
           </span>
@@ -1246,8 +1245,8 @@
         <li>
           In front of you is either Knight or Knave, who answers by “yes” or “no”, and you want to know if proposition A
           is true, what can you ask them to know ?
-            <br>
-            <br>
+          <br>
+          <br>
           <div class="dropdown-hint-wrapper">
             <select style="width: 150px;">
               <option value="Option 1" selected>Don't know</option>
@@ -1256,14 +1255,14 @@
               <option value="Option 4">Paradoxes</option>
               <option value="Option 5">Randomness</option>
             </select>
-            <button class="special-button" onclick="revealSolution2('hint1')">Reveal Hint</button>
+            <button class="special-button" onclick="revealSolution2('hint1'); this.style.display='none';">Reveal Hint</button>
           </div>
           <span id="hint1" style="display: none;">
             <br>
             <i>Try to use double negation.</i>
           </span>
           <br>
-          <button onclick="revealSolution2('sol2')">Reveal Solution</button>
+          <button onclick="revealSolution2('sol2'); this.style.display='none';">Reveal Solution</button>
           <span id="sol2" style="display: none;">
             <i>Double negation - What would you answer if I asked you if A is true ?</i>
           </span>
@@ -1272,8 +1271,8 @@
         <br>
         <li>
           A and B are Knights or Knaves, and A says "I am a Knave or B is a Knight." What are A and B ?
-            <br>
-            <br>
+          <br>
+          <br>
           <select style="width: 150px;">
             <option value="Option 1" selected>Don't know</option>
             <option value="Option 2">Double negation</option>
@@ -1282,7 +1281,7 @@
             <option value="Option 5">Randomness</option>
           </select>
           <br><br>
-          <button onclick="revealSolution2('sol3')">Reveal Solution</button>
+          <button onclick="revealSolution2('sol3'); this.style.display='none';">Reveal Solution</button>
           <span id="sol3" style="display: none;">
             <i>Paradoxes - Both are Knights</i>
           </span>
@@ -1291,8 +1290,8 @@
         <li>
           A, B and C are two Knights and one Normal and you have to find who is Normal, you can ask two yes-no
           questions each to one person, what are your questions ?
-            <br>
-            <br>
+          <br>
+          <br>
           <div class="dropdown-hint-wrapper">
             <select style="width: 150px;">
               <option value="Option 1" selected>Don't know</option>
@@ -1301,14 +1300,14 @@
               <option value="Option 4">Paradoxes</option>
               <option value="Option 5">Randomness</option>
             </select>
-            <button class="special-button" onclick="revealSolution2('hint2')">Reveal Hint</button>
+            <button class="special-button" onclick="revealSolution2('hint2'); this.style.display='none';">Reveal Hint</button>
           </div>
           <span id="hint2" style="display: none;">
             <br>
             <i>Use the first question to identify someone who isn't Normal, and therefore is a Knight</i>
           </span>
           <br>
-          <button onclick="revealSolution2('sol4')">Reveal Solution</button>
+          <button onclick="revealSolution2('sol4'); this.style.display='none';">Reveal Solution</button>
           <span id="sol4" style="display: none;">
             <i>Randomness - Ask A "Is B Normal", if Yes then ask C "Who is Normal ?" if No ask B "Who is Normal ?"</i>
           </span>
@@ -1316,8 +1315,8 @@
         <br>
         <li>
           A and B are Knights or Knaves, A says "I am different from B". What are A and B ?
-            <br>
-            <br>
+          <br>
+          <br>
           <select style="width: 150px;">
             <option value="Option 1" selected>Don't know</option>
             <option value="Option 2">Double negation</option>
@@ -1326,7 +1325,7 @@
             <option value="Option 5">Randomness</option>
           </select>
           <br><br>
-          <button onclick="revealSolution2('sol5')">Reveal Solution</button>
+          <button onclick="revealSolution2('sol5'); this.style.display='none';">Reveal Solution</button>
           <span id="sol5" style="display: none;">
             <i>Equifinality - A can be either but B is a Knave</i>
           </span>
@@ -1382,6 +1381,8 @@
     window.onload = function () {
       addProfessorLogicaIcon();
       highlightWords();
+      updateBackButtonVisibility();
+
       startTimer(); // Add this if you have a function to start the timer
     };
 
@@ -1534,6 +1535,36 @@
 
     // Counter to keep track of the number of pages
     let pageCounter = 0;
+    function showPreviousPart() {
+      const sections = document.querySelectorAll('section');
+      let currentPart;
+
+      for (const section of sections) {
+        if (!section.classList.contains('hidden')) {
+          currentPart = section;
+          break;
+        }
+      }
+
+      if (currentPart) {
+        const prevPart = currentPart.previousElementSibling;
+        if (prevPart && prevPart.tagName === 'SECTION') {
+          currentPart.classList.add('hidden');
+          prevPart.classList.remove('hidden');
+          pageCounter--;
+
+          // Show the next button if it was hidden
+          document.getElementById('nextPartButton').style.display = 'block';
+        }
+
+        // Update the visibility of the back button
+      }
+      updateBackButtonVisibility();
+    }
+
+    function updateBackButtonVisibility() {
+      document.getElementById('backPartButton').style.display = pageCounter == 0 ? 'none' : 'block';
+    }
 
     function showNextPart() {
       // Increment the page counter
@@ -1571,6 +1602,7 @@
         // Hide the button after reaching the maximum number of pages
         document.getElementById('nextPartButton').style.display = 'none';
       }
+      updateBackButtonVisibility();
     }
 
     function revealSolution1() {
@@ -1688,8 +1720,10 @@
 
   </script>
 
-  <!-- Button to trigger the transition -->
-  <button id="nextPartButton" onclick="showNextPart()">Next Part</button>
+  <div class="navigation-buttons">
+    <button id="nextPartButton" onclick="showNextPart()">Next</button>
+    <button id="backPartButton" onclick="showPreviousPart()">Back</button>
+  </div>
 
 </body>
 
