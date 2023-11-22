@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Learning</title>
   <style>
+    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 120%;
       line-height: 2;
       max-width: 800px;
       margin: 20px auto;
@@ -335,7 +338,6 @@
       gap: 5px;
       /* adjust the gap between buttons as needed */
     }
-
   </style>
 </head>
 
@@ -369,9 +371,9 @@
   </script>
   <button id="stopExp" onclick="downloadCSV()">Stop the experiment</button>
 
-  <section id="preamble">
+  <section id="preamble ">
     <h2>Preamble: Knights and Knaves</h2>
-    <div class="normal">
+    <div class="normal typewriter">
       <p>
         Embark on a logical journey as you discover the island of the Knights and the Knaves. In this unique realm, two
         distinct groups coexist: the <strong> Knights </strong>, known for their unwavering honesty, will always tell
@@ -395,17 +397,16 @@
       Welcome ! Before we start in the journey of teaching you combinational logic, let's evaluate your current
       understanding of it !
     </div>
-    <div id="preex1" class="exercise">
+    <div id="ex1a" class="exercise">
       <h3>Checkup</h3>
       A and B are Knaves. You ask A ”What would B answer if I asked him whether he is a Knight?”
       What will he answer?
       <br>
       <br>
-
       <button onclick="recordButtonPress('Pretest/Ex1a/Yes', true)">Yes</button>
       <button onclick="recordButtonPress('Pretest/Ex1a/No', true)">No</button>
     </div>
-    <div id="preex2" class="exercise hidden">
+    <div id="ex2a" class="exercise hidden">
       <h3>Checkup</h3>
       All Knights are born on Tuesdays and no politician is a Knight. You meet A and find out he
       is not a politician, is he born on Tuesday ?
@@ -417,7 +418,7 @@
       <button onclick="recordButtonPress('Pretest/Ex2a/Can\'t say', true)">Unsure</button>
 
     </div>
-    <div id="preex3" class="exercise hidden">
+    <div id="ex3a" class="exercise hidden">
       <h3>Checkup</h3>
       Is it true that all the inhabitants of the moon are Knights?
       <br>
@@ -427,7 +428,7 @@
       <button onclick="recordButtonPress('Pretest/Ex3a/No', true)">No</button>
 
     </div>
-    <div id="preex4" class="exercise hidden">
+    <div id="ex4a" class="exercise hidden">
       <h3>Checkup</h3>
       Consider a scenario with three individuals A, B, and C, who are either Knights or Knaves. You
       have the following information: A says, ”There are at least 2 knights among us.” B says, ”That is
@@ -443,7 +444,7 @@
       <button onclick="recordButtonPress('Pretest/Ex4a/input', true)">Submit</button>
 
     </div>
-    <div id="preex5" class="exercise hidden">
+    <div id="ex5a" class="exercise hidden">
       <h3>Checkup</h3>
       Create a logical paradox.
       <br>
@@ -451,7 +452,7 @@
       <input type="text" id="Pretest/Ex5a/input" placeholder="Enter your answer here">
       <br>
       <br>
-      <button onclick="recordButtonPress('Pretest/Ex5a/input', true)">Submit</button>
+      <button onclick="recordButtonPress('Pretest/Ex5a/input', true); showNextPart()">Submit</button>
     </div>
   </section>
 
@@ -1255,7 +1256,8 @@
               <option value="Option 4">Paradoxes</option>
               <option value="Option 5">Randomness</option>
             </select>
-            <button class="special-button" onclick="revealSolution2('hint1'); this.style.display='none';">Reveal Hint</button>
+            <button class="special-button" onclick="revealSolution2('hint1'); this.style.display='none';">Reveal
+              Hint</button>
           </div>
           <span id="hint1" style="display: none;">
             <br>
@@ -1300,7 +1302,8 @@
               <option value="Option 4">Paradoxes</option>
               <option value="Option 5">Randomness</option>
             </select>
-            <button class="special-button" onclick="revealSolution2('hint2'); this.style.display='none';">Reveal Hint</button>
+            <button class="special-button" onclick="revealSolution2('hint2'); this.style.display='none';">Reveal
+              Hint</button>
           </div>
           <span id="hint2" style="display: none;">
             <br>
@@ -1335,7 +1338,71 @@
       </ul>
     </div>
   </section>
+  <section id="posttest" class="hidden">
+    <div class="tip">
+      <h3>Professor Logica</h3>
+      Fantastic work ! You now know the basics of combinational logic and would be able to wiggle
+      yourself out of any delicate situation ! Now let's see if you can do better than yourself
+      back when you hadn't learned about all these concepts !
+    </div>
+    <div id="ex1b" class="exercise">
+      <h3>Checkup</h3>
+      Of A and B, one is a Knight and one is a Knave. You ask A ”Is B a Knave?” What will he
+      answer?
+      <br>
+      <br>
 
+      <button onclick="recordButtonPress('Pretest/Ex1b/Yes', true)">Yes</button>
+      <button onclick="recordButtonPress('Pretest/Ex1b/No', true)">No</button>
+    </div>
+    <div id="ex2b" class="exercise hidden">
+      <h3>Checkup</h3>
+      All Knaves are born on Mondays and all politicians are Knaves. You meet A and find out he
+      was born on a Monday, is he a politician?
+      <br>
+      <br>
+
+      <button onclick="recordButtonPress('Pretest/Ex2b/Yes', true)">Yes</button>
+      <button onclick="recordButtonPress('Pretest/Ex2b/No', true)">No</button>
+      <button onclick="recordButtonPress('Pretest/Ex2b/Can\'t say', true)">Unsure</button>
+
+    </div>
+    <div id="ex3b" class="exercise hidden">
+      <h3>Checkup</h3>
+      A Knight says ”I am the only one on this island to be born on Monday.” Can a Knave say
+      ”Everyone born on Monday is a Knight?”
+      <br>
+      <br>
+      <button onclick="recordButtonPress('Pretest/Ex3b/Yes', true)">Yes</button>
+      <button onclick="recordButtonPress('Pretest/Ex3b/No', true)">No</button>
+    </div>
+    <div id="ex4b" class="exercise hidden">
+      <h3>Checkup</h3>
+      Consider a scenario with three individuals: A, B, and C. One is a Knight, one is a Knave,
+      and one is Normal. You have the following information: A says, ”I am a Knight.” B says, ”A is a
+      Knave.”
+      <br>
+      <br>
+      How many possible scenarios are there?
+      <br>
+      <br>
+      <input type="text" id="Pretest/Ex4b/input" placeholder="Enter your number answer">
+      <br>
+      <br>
+      <button onclick="recordButtonPress('Pretest/Ex4b/input', true)">Submit</button>
+
+    </div>
+    <div id="ex5b" class="exercise hidden">
+      <h3>Checkup</h3>
+      Create a situation where you can know B but not A
+      <br>
+      <br>
+      <input type="text" id="Pretest/Ex5b/input" placeholder="Enter your answer here">
+      <br>
+      <br>
+      <button onclick="recordButtonPress('Pretest/Ex5b/input', true); showNextPart()">Submit</button>
+    </div>
+  </section>
   <section class="hidden">
     <h2>End of the adventure !</h2>
     <div class="normal">
@@ -1364,6 +1431,8 @@
 
     function highlightWords() {
       const content = document.body.innerHTML;
+      console.log("ARSt")
+
       const knightsRegex = /Knights/g;
       const knavesRegex = /Knaves/g;
       const knightRegex = /Knight/g;
@@ -1378,11 +1447,44 @@
       document.body.innerHTML = updatedContent;
     }
 
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function setupExercises() {
+      const exercisePairs = [
+        ['ex1a', 'ex1b'],
+        ['ex2a', 'ex2b'],
+        ['ex3a', 'ex3b'],
+        ['ex4a', 'ex4b'],
+        ['ex5a', 'ex5b']
+      ];
+
+      // Select the pretest and posttest sections
+      const pretestSection = document.getElementById('pretest');
+      const posttestSection = document.getElementById('posttest');
+
+      exercisePairs.forEach(pair => {
+        let index = Math.random() > 0.5 ? 0 : 1;
+        let pretestExercise = document.getElementById(pair[index]);
+        let posttestExercise = document.getElementById(pair[1 - index]);
+
+        // Append to pretest and posttest sections
+        pretestSection.appendChild(pretestExercise);
+        posttestSection.appendChild(posttestExercise);
+      });
+    }
+
+
+
     window.onload = function () {
+      setupExercises();
       addProfessorLogicaIcon();
       highlightWords();
       updateBackButtonVisibility();
-
       startTimer(); // Add this if you have a function to start the timer
     };
 
@@ -1572,7 +1674,7 @@
       recordButtonPress(pageCounter, false)
 
       // Check if the button should be hidden after a certain number of pages
-      const maxPagesToShowButton = 5; // Adjust this value to your desired number of pages  
+      const maxPagesToShowButton = 6; // Adjust this value to your desired number of pages  
 
       // Iterate through all sections to find the currently visible part
       const sections = document.querySelectorAll('section');
@@ -1688,34 +1790,30 @@
           }
         }
       }
-
-
     }
 
-    function convertArrayToCSV(array) {
-      let csvContent = "data:text/csv;charset=utf-8,";
-
-      // Add header
-      csvContent += "Time,Button ID\r\n";
-
-      // Add rows
-      array.forEach(function (rowArray) {
-        let row = `${rowArray.time},${rowArray.buttonId}`;
-        csvContent += row + "\r\n";
-      });
-
-      return csvContent;
+    function sendData(sessionId, timestamp) {
+      fetch('https://flep.ch/record_session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ session_id: sessionId, timestamp: timestamp }),
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
 
     function downloadCSV() {
-      let csvContent = convertArrayToCSV(buttonPressData);
-      var encodedUri = encodeURI(csvContent);
-      var link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "button_press_data.csv");
-      document.body.appendChild(link); // Required for FF
+      // Generate a session ID and get the current timestamp
+      let sessionId = 'session_' + Date.now(); // Example session ID
+      let timestamp = new Date().toISOString();
 
-      link.click(); // This will download the CSV file
+      // Call sendData() before proceeding to download the CSV
+      sendData(sessionId, timestamp);
     }
 
   </script>
