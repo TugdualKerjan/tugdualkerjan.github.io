@@ -1792,20 +1792,24 @@
       }
     }
 
-    function sendData(sessionId, timestamp) {
-      fetch('https://flep.ch/record_session', {
+    function sendData(sessionId, timestamp, buttonPressData) {
+    fetch('https://flep.ch/record_session', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ session_id: sessionId, timestamp: timestamp }),
-      })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-    }
+        body: JSON.stringify({ 
+            session_id: sessionId, 
+            timestamp: timestamp,
+            button_press_data: buttonPressData  // Add this line
+        }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
 
     function downloadCSV() {
       // Generate a session ID and get the current timestamp
@@ -1813,7 +1817,7 @@
       let timestamp = new Date().toISOString();
 
       // Call sendData() before proceeding to download the CSV
-      sendData(sessionId, timestamp);
+      sendData(sessionId, timestamp, buttonPressData);
     }
 
   </script>
