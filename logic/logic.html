@@ -1844,7 +1844,7 @@
     function downloadCSV() {
       // Generate a session ID and get the current timestamp
       let sessionId = 'session_' + Date.now(); // Example session ID
-      let timestamp = new Date().toISOString();
+      let timestamp = formatTime(Date.now() - startTime);
 
       // Call sendData() before proceeding to download the CSV
       sendData(sessionId, timestamp, buttonPressData);
