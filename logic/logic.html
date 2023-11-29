@@ -338,6 +338,21 @@
       gap: 5px;
       /* adjust the gap between buttons as needed */
     }
+
+    #version-number {
+      position: fixed;
+      /* Fixed position */
+      bottom: 10px;
+      /* 10px from the bottom */
+      left: 10px;
+      /* 10px from the left */
+      color: lightgray;
+      /* Light gray text */
+      font-size: 12px;
+      /* Smaller font size */
+      z-index: 1000;
+      /* High z-index to ensure it's above other elements */
+    }
   </style>
 </head>
 
@@ -1658,13 +1673,23 @@
           document.getElementById('nextPartButton').style.display = 'block';
         }
 
-        // Update the visibility of the back button
       }
+      // Update the visibility of the back button
       updateBackButtonVisibility();
+      updateNextButtonVisibility();
+      updateTimerVisibility();
     }
 
     function updateBackButtonVisibility() {
       document.getElementById('backPartButton').style.display = pageCounter == 0 ? 'none' : 'block';
+    }
+
+    function updateNextButtonVisibility() {
+      document.getElementById('nextPartButton').style.display = (pageCounter == 1 || pageCounter == 5) ? 'none' : 'block';
+    }
+
+    function updateTimerVisibility() {
+      document.getElementById('timer').style.color = (pageCounter == 1 || pageCounter == 5) ? '#333' : 'white';
     }
 
     function showNextPart() {
@@ -1703,7 +1728,9 @@
         // Hide the button after reaching the maximum number of pages
         document.getElementById('nextPartButton').style.display = 'none';
       }
+      updateNextButtonVisibility();
       updateBackButtonVisibility();
+      updateTimerVisibility();
     }
 
 
@@ -1732,7 +1759,7 @@
       document.getElementById('stopExp').style.display = 'none';
     }
 
-    function revealSolution1() {
+    function revealSolution1(solutionID) {
       recordButtonPress(solutionID, false)
 
       // Set the correct colors for the underlined elements
@@ -1777,13 +1804,16 @@
       const now = new Date();
       // Add the data to the array
 
+      // Check if the buttonId corresponds to an input field
       if (String(buttonId).includes("input")) {
-        const inputElement = document.getElementById(buttonId).getAttribute("placeholder");
+        // Find the input element by its ID and get its value
+        const inputValue = document.getElementById(buttonId).value;
         buttonPressData.push({
-          buttonId: inputElement,
+          buttonId: buttonId + "/" + inputValue, // You might want to keep the actual ID
           time: document.getElementById('timer').innerText
         });
       } else {
+        // For other buttons, record the button ID and time
         buttonPressData.push({
           buttonId: buttonId,
           time: document.getElementById('timer').innerText
@@ -1829,7 +1859,7 @@
         },
         body: JSON.stringify({
           session_id: sessionId,
-          timestamp: timestamp,
+          timestamp: new Date(Date.now()),
           button_press_data: buttonPressData  // Add this line
         }),
       })
@@ -1855,6 +1885,7 @@
     <button id="nextPartButton" onclick="showNextPart()">Next</button>
     <button id="backPartButton" onclick="showPreviousPart()">Back</button>
   </div>
+  <div id="version-number">Version 1.0.0</div>
 
 </body>
 
