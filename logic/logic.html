@@ -445,11 +445,11 @@
     <div id="ex4a" class="exercise hidden">
       <h3>Checkup</h3>
       Consider a scenario with three individuals A, B, and C, who are either Knights or Knaves. You
-      have the following information: A says, ”There are at least 2 knights among us.” B says, ”That is
-      not true, I am the only Knight.”
+      have the following information: A says, ”There are at least 2 knights among us.” B says, ”That's not true because
+      I am the only Knight”.
       <br>
       <br>
-      How many possible scenarios are there?
+      Out of the 8 outcomes, how many are possible?
       <br>
       <br>
       <input type="text" id="Pretest/Ex4a/input" placeholder="Enter your number answer">
@@ -469,7 +469,27 @@
       <button onclick="recordButtonPress('Pretest/Ex5a/input', true); showNextPart()">Submit</button>
     </div>
   </section>
+  <section id="PS" class="hidden">
+    <div class="tip">
+      <h3>Professor Logica</h3>
+      Time for a hard (hard!) puzzle. At the end of this session you should be able to solve this puzzle. If at any
+      point you feel like this is too hard (which is normal!) feel free to move onto the next part.
 
+      <br>
+      <br>
+      There are 3 people in front of you, let's call
+      them A, B, and C, one is a Knight, one is a Knave, and the third is Normal, and your goal is to find which is
+      which. To do this, you must ask 3 Yes-or-No questions, each to any one person. However, A, B, and C speak in a
+      foreign language where the words “yes” and “no” are “da” and “bal,” but you don't know if “da” stands for “yes”
+      and “bal” for “no” or the other way around
+      <br>
+      <br>
+      <input type="text" id="Pretest/PS/input" placeholder="Enter your 3 questions follewed by commas here.">
+      <br>
+      <br>
+      <button onclick="recordButtonPress('Pretest/PS/input', true); showNextPart()">Submit</button>
+    </div>
+  </section>
   <section id="part1" class="hidden">
     <h2>Part 1: Real-World Propositions</h2>
 
@@ -1397,7 +1417,7 @@
       Knave.”
       <br>
       <br>
-      How many possible scenarios are there?
+      Out of the 8 outcomes, how many are possible?
       <br>
       <br>
       <input type="text" id="Pretest/Ex4b/input" placeholder="Enter your number answer">
@@ -1499,6 +1519,7 @@
       addProfessorLogicaIcon();
       highlightWords();
       updateBackButtonVisibility();
+      maybeMovePSSection();
       startTimer(); // Add this if you have a function to start the timer
     };
 
@@ -1652,6 +1673,10 @@
     // Counter to keep track of the number of pages
     let pageCounter = 0;
     function showPreviousPart() {
+      pageCounter--;
+      recordButtonPress(pageCounter, false)
+
+
       const sections = document.querySelectorAll('section');
       let currentPart;
 
@@ -1663,14 +1688,11 @@
       }
 
       if (currentPart) {
+        currentPart.classList.add('hidden');
+
         const prevPart = currentPart.previousElementSibling;
         if (prevPart && prevPart.tagName === 'SECTION') {
-          currentPart.classList.add('hidden');
           prevPart.classList.remove('hidden');
-          pageCounter--;
-
-          // Show the next button if it was hidden
-          document.getElementById('nextPartButton').style.display = 'block';
         }
 
       }
@@ -1681,15 +1703,26 @@
     }
 
     function updateBackButtonVisibility() {
-      document.getElementById('backPartButton').style.display = pageCounter == 0 ? 'none' : 'block';
+      // let currentPart;
+
+      // for (const section of sections) {
+      //   if (!section.classList.contains('hidden')) {
+      //     currentPart = section;
+      //     break;
+      //   }
+      // }
+
+      // if (currentPart.id == "PS" || currentPart.id == "posttest")
+
+      document.getElementById('backPartButton').style.display = (pageCounter == 0 || pageCounter == 2 || pageCounter == 6) ? 'none' : 'block';
     }
 
     function updateNextButtonVisibility() {
-      document.getElementById('nextPartButton').style.display = (pageCounter == 1 || pageCounter == 5) ? 'none' : 'block';
+      document.getElementById('nextPartButton').style.display = (pageCounter == 1 || pageCounter == 6 || pageCounter == 7) ? 'none' : 'block';
     }
 
     function updateTimerVisibility() {
-      document.getElementById('timer').style.color = (pageCounter == 1 || pageCounter == 5) ? '#333' : 'white';
+      document.getElementById('timer').style.color = (pageCounter == 1 || pageCounter == 7) ? '#333' : 'white';
     }
 
     function showNextPart() {
@@ -1698,7 +1731,7 @@
       recordButtonPress(pageCounter, false)
 
       // Check if the button should be hidden after a certain number of pages
-      const maxPagesToShowButton = 6; // Adjust this value to your desired number of pages  
+      const maxPagesToShowButton = 7; // Adjust this value to your desired number of pages  
 
       // Iterate through all sections to find the currently visible part
       const sections = document.querySelectorAll('section');
@@ -1726,7 +1759,8 @@
       window.scrollTo({ top: 0 });
       if (pageCounter == maxPagesToShowButton) {
         // Hide the button after reaching the maximum number of pages
-        document.getElementById('nextPartButton').style.display = 'none';
+        downloadCSV();
+        goToTheEnd();
       }
       updateNextButtonVisibility();
       updateBackButtonVisibility();
@@ -1755,7 +1789,7 @@
       }
 
       document.getElementById('nextPartButton').style.display = 'none';
-      document.getElementById('nextPartButton').style.display = 'none';
+      document.getElementById('prevPartButton').style.display = 'none';
       document.getElementById('stopExp').style.display = 'none';
     }
 
@@ -1790,10 +1824,6 @@
         solutionDiv.style.display = 'block';
       }
     }
-  </script>
-
-  <script>
-
   </script>
 
   <script>
@@ -1879,6 +1909,24 @@
       sendData(sessionId, timestamp, buttonPressData);
     }
 
+  </script>
+  <script>
+    function maybeMovePSSection() {
+      // Generate a random number between 0 and 1
+      const randomNumber = Math.random();
+
+      // Check if the random number is greater than 0.5 (50% chance)
+      if (randomNumber > 0.5) {
+        // Get the PS section element
+        const psSection = document.getElementById('PS');
+
+        // Get the posttest section element
+        const posttestSection = document.getElementById('posttest');
+
+        // Move the PS section to be before the posttest section
+        posttestSection.parentNode.insertBefore(psSection, posttestSection);
+      }
+    }
   </script>
 
   <div class="navigation-buttons">
