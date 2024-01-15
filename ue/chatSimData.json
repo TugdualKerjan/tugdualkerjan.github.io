@@ -1,0 +1,50 @@
+[
+    {
+        "inputText": "Let's use ChatGPT to make a site. The chat looks a little bit janky. Make it resizable, movable and more aesthetic.\n",
+        "content": "chapterZero/chapterZero9"
+    },
+    {
+        "inputText": "I want you to use this PDF to make a site that is reactive with the corresponding images : The idea is to create an interactive journey with each article being a chapter of it's own, a show of a different type of desgn thinking. The code should be pure html, css and javascript. The idea is that each chapter is a section in the html. A small menu at the top allows you to go from one to the next chapter in whichever way you want .\n",
+        "content": "chapterZero/chapterZero0"
+    },
+    {
+        "inputText": "actually, make it one of the chapters (<section>). The idea is that the text FEEL is in the middle with all these images creating a frame around it\n",
+        "content": "chapterZero/chapterZero1"
+    },
+    {
+        "inputText": "Can't see the text FEEL. make it so that the images are on top of one another around the text.\n",
+        "content": "chapterZero/chapterZero2"
+    },
+    {
+        "inputText": "Clean up the display by putting the images on the side and take the font of the PDF for the text in the middle.\n",
+        "content": "chapterZero/chapterZero3"
+    },
+    {
+        "inputText": "Awesome. Let's move on to the next chapter, the one on Clint Eastwood.\n How can I make it so that the scrolling is horizontal. I want this is the first two images, and the experience map to be next. The rest will come later.",
+        "content": "chapterOne/chapterOne1"
+    },
+    {
+        "inputText": "Awesome. Let's move on to the next chapter, the one on Clint Eastwood.\n How can I make it so that the scrolling is horizontal. I want this is the first two images, and the experience map to be next. The rest will come later.",
+        "content": "chapterOne/chapterOne2"
+    },
+    {
+        "inputText": "With this style of html, make the <p> small and italic directy underneath the image.\n The H1 has to be clear and large on the top left, with a white background slightly placed on the image.\n The h4 is readable text on the side of the image, sharing the horizontal space 40% and the image takes 60% with the h1 and p",
+        "content": "chapterOne/chapterOne3"
+    },
+    {
+        "inputText": "make the header text much more like an imposing title. choose font styles also for the discrete subtitle text describing the image and the text that has the majority of the content in suitable and easily reable styles.",
+        "content": "chapterOne/chapterOne4"
+    },
+    {
+        "inputText": "Add a small bar that slides from chapter to chapter in the menu depending on the active one. How do I name the chapters instead of having chapter 1, 2 etc ? \nI also want a small progress bar at the bottom, and make that the scrolling of the user that goes down or up makes him go left or right.",
+        "content": "chapterOne/chapterOne5"
+    },
+    {
+        "inputText": "Base yourself off the given PDF and do the same with the TRASH Chapter, using the structure of the html below.",
+        "content": "chapterOne/chapterOne6"
+    },
+    {
+        "inputText": "Please remove the chat, we don't need it anymore. Add some reactivity to the image hovering and a frame, modify the menu and text to make it better adapted to the context.",
+        "content": "chapterOne/chapterOne7"
+    }
+]

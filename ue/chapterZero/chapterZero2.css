@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px 0;
+}
+
+
+.chapter {
+    display: none; /* Initially hide all chapters */
+    text-align: center;
+    position: relative;
+}
+
+/* feelChapter */
+
+#chapter0 {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Adjust height as necessary */
+    background: #fff; /* Or any background color/image */
+    overflow: hidden;
+}
+
+#chapter0 img {
+    position: absolute;
+}
+
+/* Add CSS for other images, positioning them around the FEEL text */
+
+.archi {
+    left: 0%;
+    transform:scale(1.1);
+}
+
+.tree {
+    bottom: -20%;
+    left: 40%;
+}
+
+.clint {
+    top: 0px;
+    right: 0px;
+}
+
+.trash {
+    bottom: 0;
+    left: 20%;
+}
+
+.feel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: orange; /* Match the color from your PDF */
+    z-index: 2;
+}
+#chatBox {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 20%;
+  height: 30%;
+  color:white;
+  background-color: white 1px 1px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+  z-index: 20;
+}
+
+#chatMessages {
+  height: 200px;
+  overflow-y: auto;
+}
+
+
+#chatMessages div {
+    font-family: Arial, Helvetica, sans-serif;
+    font:400;
+    color: #333;
+  }
+  #chatBox {
+    /* ... existing styles ... */
+    position: absolute; /* or 'fixed' */
+    resize: both;
+    overflow: auto;
+    min-width: 100px; /* Adjust as needed */
+    min-height: 200px; /* Adjust as needed */
+    max-width: 100%; /* Adjust as needed */
+    max-height: 100%; /* Adjust as needed */
+  }
+  
+
+#chatMessages {
+    margin: 10px;
+}
+
+#chatMessages div {
+    word-wrap: break-word;
+    /* Ensure text breaks into a new line */
+}
+
+#chatInput {
+    margin: 10px;
+}
+
+#chatButton {
+    position: relative;
+    margin: 10px;
+    width: 100px;
+    bottom: 0px;
+}
+
+#chatInput {
+    width: 90%; /* Adjust the width as necessary */
+    min-height: 50px; /* Minimum height */
+    max-width: 90%; /* Maximum width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    overflow: hidden; /* Hide the scrollbar */
+    resize: none; /* Disable manual resizing */
+  }
+  

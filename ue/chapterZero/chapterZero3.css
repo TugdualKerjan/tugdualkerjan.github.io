@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Gravitas One';
+    src: url(path-to-your-gravitas-one-font.woff) format("woff")
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    width: 100vw
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none
+}
+
+.chapter {
+    display: none;
+    text-align: center;
+    position: relative
+}
+
+#chapter0 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden
+}
+
+#chapter0 img {
+    position: absolute
+}
+
+.archi {
+    left: 0;
+    transform: translateX(-60%);
+    height: 80vh;
+    bottom: 0
+}
+
+.runner {
+    left: 0;
+    transform: translateX(-35%);
+    height: 80vh;
+    bottom: 20%
+}
+
+.tree {
+    bottom: 0;
+    transform: translateY(50%) translateX(10%);
+    left: 0;
+    width: 50vw
+}
+
+.clint {
+    right: 0;
+    bottom: 0;
+    transform: translateY(25%) translateX(35%);
+    height: 150vh
+}
+
+.headset {
+    right: 0;
+    top: 0;
+    transform: translateX(30%) translateY(-40%);
+    width: 40vw
+}
+
+.gun {
+    top: 0;
+    transform: scaleY(-100%) translateY(45%);
+    width: 40vw;
+    right: 20%
+}
+
+.tree2 {
+    top: 0;
+    transform: scaleY(-100%) translateY(70%) translateX(40%);
+    left: 0;
+    width: 50vw
+}
+
+.boat2 {
+    top: 0;
+    transform: scaleY(-100%) translateY(30%) translateX(-20%);
+    left: 0;
+    width: 50vw
+}
+
+.pot {
+    bottom: 0;
+    transform: scale(60%) translateY(67%) translateX(-57%);
+    left: 0;
+    width: 50vw
+}
+
+.mix {
+    bottom: 0;
+    transform: scale(60%) translateY(60%) translateX(10%);
+    right: 0;
+    width: 50vw
+}
+
+.trash {
+    bottom: 0;
+    transform: scale(110%) scaleX(-100%) translateY(60%) translateX(10%);
+    right: 10%;
+    width: 50vw
+}
+
+.feel-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-size: 10vw;
+    font-weight: 800;
+    color: orange;
+    text-shadow: 1px 1px 0 #777, 2px 2px 0 #777, 3px 3px 0 #777;
+    z-index: 2
+}
+
+.feel-subtext1 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-weight: 700;
+    font-size: 1vw;
+    text-shadow: 1px 1px 0 #777;
+    color: orange;
+    z-index: 2
+}
+
+.feel-subtext2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-size: 1vw;
+    font-weight: 700;
+    color: orange;
+    text-shadow: 1px 1px 0 #777;
+    z-index: 2
+}
+
+#chatBox {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 20%;
+    height: 30%;
+    color: #fff;
+    background-color: #fff 1px 1px;
+    box-shadow: 0 -2px 10px #0006;
+    z-index: 20
+}
+
+#chatMessages {
+    height: 200px;
+    overflow-y: auto
+}
+
+#chatMessages div {
+    font-family: Arial, Helvetica, sans-serif;
+    font: 400;
+    color: #333
+}
+
+#chatBox {
+    position: absolute;
+    resize: both;
+    overflow: auto;
+    min-width: 100px;
+    min-height: 200px;
+    max-width: 100%;
+    max-height: 100%
+}
+
+#chatMessages {
+    margin: 10px
+}
+
+#chatMessages div {
+    word-wrap: break-word
+}
+
+#chatInput {
+    margin: 10px
+}
+
+#chatButton {
+    position: relative;
+    margin: 10px;
+    width: 100px;
+    bottom: 0
+}
+
+#chatInput {
+    width: 90%;
+    min-height: 50px;
+    max-width: 90%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none
+}

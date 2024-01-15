@@ -1,0 +1,398 @@
+@font-face {
+    font-family: 'Gravitas One';
+    src: url(path-to-your-gravitas-one-font.woff) format("woff")
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #ffe8cb;
+    /* Prevent horizontal scrollbar */
+}
+
+nav {
+    z-index: 100;
+    /* example value, set it to your menu's z-index */
+    position: relative;
+}
+
+#indicator {
+    position: absolute;
+    bottom: 0; /* Or top, if you want it above the menu */
+    height: 3px;
+    background-color: blue; /* Choose your color */
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+
+nav ul {
+    list-style-type: none;
+    padding: 0
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none
+}
+
+.chapter {
+    display: none;
+    text-align: center;
+    position: relative
+}
+
+#front {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden
+}
+
+#front img {
+    position: absolute
+}
+
+.archi {
+    left: 0;
+    transform: translateX(-60%);
+    height: 80vh;
+    bottom: 0
+}
+
+.runner {
+    left: 0;
+    transform: translateX(-35%);
+    height: 80vh;
+    bottom: 20%
+}
+
+.tree {
+    bottom: 0;
+    transform: translateY(50%) translateX(10%);
+    left: 0;
+    width: 50vw
+}
+
+.clint {
+    right: 0;
+    bottom: 0;
+    transform: translateY(25%) translateX(35%);
+    height: 150vh
+}
+
+.headset {
+    right: 0;
+    top: 0;
+    transform: translateX(30%) translateY(-40%);
+    width: 40vw
+}
+
+.gun {
+    top: 0;
+    transform: scaleY(-100%) translateY(45%);
+    width: 40vw;
+    right: 20%
+}
+
+.tree2 {
+    top: 0;
+    transform: scaleY(-100%) translateY(70%) translateX(40%);
+    left: 0;
+    width: 50vw
+}
+
+.boat2 {
+    top: 0;
+    transform: scaleY(-100%) translateY(30%) translateX(-20%);
+    left: 0;
+    width: 50vw
+}
+
+.pot {
+    bottom: 0;
+    transform: scale(60%) translateY(67%) translateX(-57%);
+    left: 0;
+    width: 50vw
+}
+
+.mix {
+    bottom: 0;
+    transform: scale(60%) translateY(60%) translateX(10%);
+    right: 0;
+    width: 50vw
+}
+
+.trash {
+    bottom: 0;
+    transform: scale(110%) scaleX(-100%) translateY(60%) translateX(10%);
+    right: 10%;
+    width: 50vw
+}
+
+.feel-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-size: 10vw;
+    font-weight: 800;
+    color: orange;
+    text-shadow: 1px 1px 0 #777, 2px 2px 0 #777, 3px 3px 0 #777;
+    z-index: 2
+}
+
+.feel-subtext1 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-weight: 700;
+    font-size: 1vw;
+    text-shadow: 1px 1px 0 #777;
+    color: orange;
+    z-index: 2
+}
+
+.feel-subtext2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gravitas One', bold;
+    font-size: 1vw;
+    font-weight: 700;
+    color: orange;
+    text-shadow: 1px 1px 0 #777;
+    z-index: 2
+}
+
+#chatBox {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 20%;
+    height: 30%;
+    color: #fff;
+    background-color: #fff 1px 1px;
+    box-shadow: 0 -2px 10px #0006;
+    z-index: 20
+}
+
+#chatMessages {
+    height: 200px;
+    overflow-y: auto
+}
+
+#chatMessages div {
+    font-family: Arial, Helvetica, sans-serif;
+    font: 400;
+    color: #333
+}
+
+#chatBox {
+    position: absolute;
+    resize: both;
+    overflow: auto;
+    min-width: 100px;
+    min-height: 200px;
+    max-width: 100%;
+    max-height: 100%
+}
+
+#chatMessages {
+    margin: 10px
+}
+
+#chatMessages div {
+    word-wrap: break-word
+}
+
+#chatInput {
+    margin: 10px
+}
+
+#chatButton {
+    position: relative;
+    margin: 10px;
+    width: 100px;
+    bottom: 0
+}
+
+#chatInput {
+    width: 90%;
+    min-height: 50px;
+    max-width: 90%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none
+}
+
+.horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+header {
+    min-height: 50px;
+    background: #333;
+    color: #fff;
+    padding: auto;
+    text-align: center;
+    z-index: 20;
+    position: absolute;
+    width: 100vw
+}
+
+.header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    z-index: 10;
+    /* Lower than the menu's z-index */
+    position: absolute;
+    /* Make sure it's positioned in the flow */
+    /* other styles */
+}
+
+.header h1 {
+    font-family: 'Gravitas One', serif;
+    /* This is a bold and imposing font */
+    font-size: 6em;
+    /* Adjust size to make it more imposing */
+    color: #f08200;
+    /* Choose a color that stands out */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Optional shadow for depth */
+    margin-bottom: 0.5em;
+    /* Space below the title */
+}
+
+.horizontal-scroll {
+    display: flex;
+    width: 100vw;
+    scroll-snap-type: x mandatory;
+}
+
+.section {
+    flex: 0 0 80%;
+    /* Each section takes 80% of the viewport width */
+    display: flex;
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: center;
+    scroll-snap-align: start;
+    padding: 10%;
+    /* Add some padding */
+    padding-top: 25vh;
+    width: 100vw;
+    height: 60vh;
+}
+
+.image-container {
+    width: 50%;
+    text-align: center;
+    /* Center the image and text */
+}
+
+.image-container img {
+    max-width: 100%;
+    /* Make image responsive */
+    height: auto;
+}
+
+.image-container p {
+    font-family: 'Georgia', serif;
+    /* A font that's good for italics */
+    font-style: italic;
+    font-size: 1em;
+    color: #666;
+    /* Subtle color for the subtitle */
+    margin-top: 10px;
+    /* Space between image and paragraph */
+}
+
+.text-section {
+    width: 30%;
+    padding-left: 70px;
+    /* Add padding between text and image */
+    text-align: justify;
+}
+
+.text-section h4 {
+    font-family: 'Open Sans', sans-serif;
+    /* A readable font for dialogue content */
+    color: #333;
+    /* Dark text color for readability */
+    font-size: 1em;
+    /* Standard font size for content */
+    line-height: 1.6;
+    /* Adequate line spacing for readability */
+    margin-top: 5px;
+    /* Space after the name */
+}
+
+.section .dialogue-name {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-family: 'Gravitas One', serif;
+    /* Use the 'Gravitas One' font for names */
+    color: #f08200;
+    /* Dark text color for emphasis */
+    font-size: 1.5em;
+    /* Larger font size for names */
+}
+
+.section .dialogue-text {
+    font-family: 'Open Sans', sans-serif;
+    /* A readable font for dialogue content */
+    color: #333;
+    /* Dark text color for readability */
+    font-size: 1em;
+    /* Standard font size for content */
+    line-height: 1.6;
+    /* Adequate line spacing for readability */
+    margin-top: 5px;
+    /* Space after the name */
+}
+
+.section .text-section .dialogue-text {
+    font-family: 'Open Sans', sans-serif;
+    /* A readable font for dialogue content */
+    color: #333;
+    /* Dark text color for readability */
+    font-size: 1em;
+    /* Standard font size for content */
+    line-height: 1.6;
+    /* Adequate line spacing for readability */
+    margin-top: 5px;
+    /* Space after the name */
+}
+
+#menu li {
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    /* A readable font for dialogue content */
+    color: white;
+    /* Dark text color for readability */
+    font-size: 1.3em;
+    /* Standard font size for content */
+    margin-top: 5px;
+    /* Space after the name */
+}
