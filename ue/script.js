@@ -47,7 +47,7 @@ let currentIndex = 0;
 let chatData = [];
 
 
-fetch('/chatSimData.json')
+fetch('./chatSimData.json')
     .then(response => response.json())
     .then(data => {
         displayMessage("Hey ! I'm ChatGPT and here to help you make a website.");
@@ -62,7 +62,7 @@ function displayNextMessage() {
         displayMessage(item.inputText);
         fetchAndUpdateContent(item.content);
         if (currentIndex < chatData.length) {
-            const a = chatData[currentIndex+1];
+            const a = chatData[currentIndex + 1];
             document.getElementById(`chatInput`).value = a.inputText;
             this.style.height = 'auto'; // Reset height
             this.style.height = (this.scrollHeight) + 'px'; // Set to scroll height
