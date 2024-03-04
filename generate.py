@@ -45,7 +45,7 @@ html_final = """
     <div>
         <div id="background">
             <p id="background-text">TUGDUAL</p>
-			<p id="background-text2">EPFL, 3rd year computer science</p>
+			<p id="background-text2">EPFL, Masters 2nd year Computer Architecture</p>
         </div>
         <div id="container">
             %s
