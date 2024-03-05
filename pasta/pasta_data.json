@@ -1,0 +1,1241 @@
+[
+    {
+        "number": "0",
+        "name": "Fideo No. 0",
+        "image": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_fideo_no0_500g.png",
+        "links": {
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_fideo_no0_500g.png"
+        }
+    },
+    {
+        "number": "1",
+        "name": "Capellini",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029785_1000012559_capellini_25x500g_intl.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029785_1000012559_capellini_25x500g_intl.png",
+            "ROU": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/barilla_capellini.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/mockups_blue_box/3df_bbnvi_capellini_500g_eu_3129_v11.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/capellini_302x87.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_capellini_new.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076800195019--bb_capellini_1_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/capellini_1_500g.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/a1_pb_id1_2_v2/3df_angelhair_productimage.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_capellini_new.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/capellini_302x87.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/capellini2.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_bbnvi_capellini_500g_eu.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/capellini.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/a1_pb_id1_2_v2/3df_angelhair_productimage.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_capellini_500g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030029914_1000675001capellini25x500ggrecia.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/capellini.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_capellini_500g.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/capellini-final.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-largas/5181066871barillaangelhaircopy.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/proteinplus/proteinplus_angelhair_2021.png"
+        }
+    },
+    {
+        "number": "2",
+        "name": "Codo No. 2",
+        "image": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_codo_no2_160g.png",
+        "links": {
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_fideo_no2_200g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_fideo-cut-spaghetti_pasta.png"
+        }
+    },
+    {
+        "number": "3",
+        "name": "Spaghettini",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/spaghettini_302x87.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/spaghettini_302x87.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_21164_integ_nvi_spaghettini_500g_eu_3129_v1_front.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_spaghettini_productimage.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/food-service/3df_spaghettoni_7_5kg.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/classic-blue-box/spaghettini_nvi.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/integrale/3dreal22227integnvispaghettini500geu3129v1frontpng.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_21164_integ_nvi_spaghettini_500g_eu_3129_v1_front.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/aggiornamento_pasta_integrale/2023/integrale_spaghettini_new.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/al_bronzo_be/spaghettoni_al_bronzo_400g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/integrale-spaghettini-2022.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/spaghettini-500g.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/barilla_spaghettini.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/spaghettini-final.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/3df_3030029794_1000675003spaghettini.webp",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_bbnvi_spaghettini_500g_eu.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029776_1000009899_spaghettini_15x1000g_nordics_ba.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_spaghettini_new.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_spaghettini_500g.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-largas/5181068064barillathinspaguetticopy.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/al-bronzo/spaghettoni-al-bronzo_pack-400g_fr-(1).png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/microsoftteamsimage-(58).png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/whole-grain/whole_grain_thin_spaghetti_front_v2.png"
+        }
+    },
+    {
+        "number": "4",
+        "name": "Codo No. 4",
+        "image": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_codo_no4_500g.png",
+        "links": {
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_codo_no4_500g.png"
+        }
+    },
+    {
+        "number": "5",
+        "name": "Spaghetti",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/spaghetti1kgpackage.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/glutenfri_sv/gluten-free-2023/3d_real_11409_sg_nvi_spaghetti_400g_eu_3129_v1_front_80.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/legumesspaghetti.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/integrale_tr/integrali_spaghetti_02.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/gluten-free/gluten_free_spaghetti_box_v3.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/spaghetti-academia2.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/al_bronzo/spaghetti_al_bronzo_400g_fr.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/spaghetti-gluten-free-2021.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/gluten-free/spaghetti_sg_pack_new.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/gluten-free/3d_real_22402_gf_nvi_spaghetti_340g_aus_118431as_v1_front.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/spaghetti-3.png",
+            "ROU": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/spaghettiintegrale500g10000162388076809529419002-1300x87.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/3df_spaghetti_productimage.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/al-bronzo/spaghetti_al_bronzo_400g.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/integrale-es/_0004_3df_10794_integr_spaghetti_5_500g/_0004_3df_10794_integr_spaghetti_5_500g_new.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_spaghetti_new.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/wholewheat_pl/new_barilla_in_spaghetti.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/whole-grain/integrale_cottura_9_300x87.png",
+            "PRT": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/integrale-es/_0004_3df_10794_integr_spaghetti_5_500g/_0004_3df_10794_integr_spaghetti_5_500g_new.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/al-bronzo/packshot/albronzo_spaghetti_400g_frontal_1000020465_8076809581127removebgpreview.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/huelsenfruechte/2022_barilla_pasta_aus_huelsenfruechten_spaghetti_rote_linsen_8076809577021_250g_front.png",
+            "DNK": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/ekologisk_sv/3df_3030028831_1000013732_spaghetti_bio_500g/3d_15060_bio_spaghetti_500g_fronte_v2.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/whole-grain/3df_spaghetti_wholegrain_productimage.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/spaghetti_143x210.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/whole-wheat-spaghetti.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-largas/5181067253barillaspaguetticopy.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/spaghetti.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/gluten-free/barilla_glutenfree_spaghetti_packaging_309x87px.png"
+        }
+    },
+    {
+        "number": "7",
+        "name": "Spaghettoni",
+        "image": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0003_3df_3030030467_1000012613spaghettoni25x500gintl.png",
+        "links": {
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0003_3df_3030030467_1000012613spaghettoni25x500gintl.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/spaghettoni.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_bbnvi_spaghettoni_500g_eu.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/klassiekers_pack_spaghettoni_new.webp",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/products/groups/ranges/klassische_sorten/barilla_spaghettoni.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/spaghettoni_302x87.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/spaghettoni_302x87.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_spaghetti_no7_500g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030030023_1000675007spaghettoni25x500ggrecia.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_spaghettoni_productimage.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/classic-blue-box/spaghettoni_nvi.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076808150072-bb_spaghettoni_7_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaghetti_grossi_7_500g.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/barilla_spaghettoni_500g.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_spaghettoni_new.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/spaghettoni.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/mockups_blue_box/3df_bbnvi_spaghettoni_500g_eu_3129_v11.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/spaghettoni.png"
+        }
+    },
+    {
+        "number": "8",
+        "name": "Spaghettoni n.8",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaghettoni_8_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaghettoni_8_500g.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/cards/massa-com-ovos/novo/fb_aw_3d_11151_swwe_espaguete_8_500g_blu_v1.png"
+        }
+    },
+    {
+        "number": "9",
+        "name": "Bucatini",
+        "image": "https://www.barilla.com//-/media/images/hr_hr/bucatiniproduct.png",
+        "links": {
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/bucatiniproduct.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bucatini-final.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/bucatini_9_500g.webp",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030030476_1000012560_bucatini_24x500g_intl.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030030476_1000012560bucatini24x500g_intl.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/cards/massa-com-ovos/novo/fb_aw_3d_11152_swwe_espaguetinho_9_500g_blu_v1.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076800315097-bb_bucatini_9_500g.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/bucatini_302x87.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bucatini-final.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_bucatini_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/bucatini_9_500g.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_bucatini_new.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_bavette_500g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/al-bronzo/barilla_al-bronzo_bucatini_pasta_packaging.png"
+        }
+    },
+    {
+        "number": "10",
+        "name": "Bucatini Grandi",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/local-cuts-gr/3d_cello_maccheroncini_10_500g_eu_se_grecia.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/local-cuts-gr/3d_cello_maccheroncini_10_500g_eu_se_grecia.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/bucatini_grandi_pack.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000019716_8076809580151_collezione_bucatini_grandi_500g_front(1).png"
+        }
+    },
+    {
+        "number": "11",
+        "name": "Bavettine",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/bavettine_11_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/bavettine_11_500g.png"
+        }
+    },
+    {
+        "number": "13",
+        "name": "Linguine",
+        "image": "https://www.barilla.com//-/media/images/cs_cz/products/3d_coll_linguine_500g_eu_3129_v2_fronte.png",
+        "links": {
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/products/3d_coll_linguine_500g_eu_3129_v2_fronte.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/cards/massa-com-ovos/novo/fb_aw_3d_11153_swwe_linguine_500g_blu_v1.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/new_linguine.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_bavette_500g.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/integrale/3dreal18270integnvilinguine500geu3129v1frontpng.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/al-bronzo/linguinealbronzo_pack400g_fr.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/aggiornamento_pasta_integrale/2023/integrale_linguine_new.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_linguine_productimage.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/new_linguine.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/bavette.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/linguine_13_500g.webp",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/integrale/3dreal18270integnvilinguine500geu3129v1frontpng.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/al-bronzo/3df_linguine_al_bronzo_400g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/linguine-2.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/intagrale-linguine-2021.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/academia_tr/academia_linguine01.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/3df_linguine_productimage.png",
+            "PRT": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0000_3df_bb_bavette_500g_intl/_0000_3df_bb_bavette_500g_intl_new/_0000_3df_bb_bavette_500g_intl_new.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/al-bronzo-boxes_sv/linguine_al-bronzo_400g_packshot.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/integrale/new/linguine_integrale_pack_new_01.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_linguine_pasta.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-largas/5181069066barillalinguinecopy.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076809523509-coll_linguine_500g.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/linguine.png"
+        }
+    },
+    {
+        "number": "16",
+        "name": "Tagliatelle",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/new-la-col-design-2021/1000012391_8076809523714_collezione_tagliatelle_500g_front--kopie_159x203.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/glutenfri_sv/gluten-free-2023/3d_real_11409_sg_nvi_tagliatelle_400.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/tagliatelle.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/glutenfrei/3d_real_14305_sg_nvi_tagliatelle_300g_eu_119492as_v1_front.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/1000012391_8076809523714_collezione_tagliatelle_500g_front--kopie_159x203.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_14305_sg_nvi_tagliatelle_300g_eu_119492as_v1_front.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/sans-gluten/new/tagliatelle_sg_pack_new.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_tagliatelle_500g.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_14305_sg_nvi_tagliatelle_300g_eu_119492as_v1_front.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/gluten-free/tagliatelle_sg_pack_new.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/glutenfrei/3d_real_14305_sg_nvi_tagliatelle_300g_eu_119492as_v1_front.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/groups/ranges/classic-blue-box/437x571barillapappardellepackshot.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/collezione_pt/_0010_3df_lc_tagliatelle_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/specialita_pack_nuovi/tagliatelle_500g.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/glutenvrije_nl/sg_tagliatelle_300g.png"
+        }
+    },
+    {
+        "number": "18",
+        "name": "Tagliatelle",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_tagliatelle_500g_front_1000012391_8076809523714.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_tagliatelle_500g_front_1000012391_8076809523714.png"
+        }
+    },
+    {
+        "number": "20",
+        "name": "Pipette",
+        "image": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_pipette_new.png",
+        "links": {
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_pipette_new.png"
+        }
+    },
+    {
+        "number": "21",
+        "name": "Tempestine",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/tempestine_21_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/tempestine_21_500g.png"
+        }
+    },
+    {
+        "number": "22",
+        "name": "Anelli Siciliani",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/anelli_siciliani_22_cello_1kg.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/anelli_siciliani_22_cello_1kg.png"
+        }
+    },
+    {
+        "number": "23",
+        "name": "Puntine",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/puntine_23_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/puntine_23_500g.png"
+        }
+    },
+    {
+        "number": "24",
+        "name": "Midolline",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/midolline_24_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/midolline_24_500g.png"
+        }
+    },
+    {
+        "number": "26",
+        "name": "Risoni",
+        "image": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_risoni_500g.png",
+        "links": {
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_risoni_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/risoni_26_500g.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/risoni_pack_new.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3d_cello_risoni_26_500g_eu_se_grecia.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/classic-blue-box/risoni_nvi.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_risoni_productimage.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/risoni_162x210.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_risoni_new.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/risoni_162x210.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_orzo-pasta.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/orzo.png"
+        }
+    },
+    {
+        "number": "27",
+        "name": "Stelline",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/stelline_162x210.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/stelline_162x210.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/stelline_27_500g.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/stelline_27_500g.webp",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/mockups_blue_box/3df_bbnvi_risoni_500g.png"
+        }
+    },
+    {
+        "number": "30",
+        "name": "Filini",
+        "image": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/barilla_filini_500g.png",
+        "links": {
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/barilla_filini_500g.png"
+        }
+    },
+    {
+        "number": "31",
+        "name": "Corallini",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/corallini_31_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/corallini_31_500g.png"
+        }
+    },
+    {
+        "number": "32",
+        "name": "Coquilletes",
+        "image": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/3df_3030042426_1000016568coquillettes16x500gimueu.jpg",
+        "links": {
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/3df_3030042426_1000016568coquillettes16x500gimueu.jpg",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/bio/bio_coquillettes_pack_2023.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_16632_integ_nvi_coquillettes_500g_eu_iso1rid_v1_front.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/macaroni-final.png"
+        }
+    },
+    {
+        "number": "34",
+        "name": "Girandole",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/girandole_162x210.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/girandole_162x210.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/girandole_162x210.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029433_1000073034_torsadesgirandole_15x500g.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/girandole_torsades_pack_2023.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076809512268-bb_girandole_torsades_500g.png"
+        }
+    },
+    {
+        "number": "36",
+        "name": "Orecchiette",
+        "image": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_orecchiette_2021.png",
+        "links": {
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_orecchiette_2021.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/collezione_pt/_0014_3df_3030030838_1000012413orecchiette15x500glcintl.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/pack_orecchiette_collezione_new.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/collezione/collezione_orecchiette_box_web2.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/academia_tr/academia_orecchiette01.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/orecchiette_500g.png"
+        }
+    },
+    {
+        "number": "38",
+        "name": "Spaghetti Tagliati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaghetti_tagliati_38_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaghetti_tagliati_38_500g.png"
+        }
+    },
+    {
+        "number": "39",
+        "name": "Conchigliette",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/conchigliette_39_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/conchigliette_39_500g.png"
+        }
+    },
+    {
+        "number": "40",
+        "name": "Farfalle Tonde",
+        "image": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_farfalle_tonde_new.png",
+        "links": {
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_farfalle_tonde_new.png"
+        }
+    },
+    {
+        "number": "41",
+        "name": "Elbows",
+        "image": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/classic-blue-box/3df_3030045031_1000018210elbow14x500gimuameksa/3df_bbnvi_chifferi_500g.png",
+        "links": {
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/classic-blue-box/3df_3030045031_1000018210elbow14x500gimuameksa/3df_bbnvi_chifferi_500g.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_chifferi_productimage.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_conchiglie_rigate_new.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/maccheronni/chifferi_productimage.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-cortas/5181040863barillaelbowreadypastacopy.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/glutenfrei/2023_143x210_3d_real_11413_sg_nvi_coquillettes_400g_eu_119498_v2_front.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/proteinplus/proteinplus_elbows_2021.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_16632_integ_nvi_coquillettes_500g_eu_iso1rid_v1_front.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/gluten-free/gluten_free_elbows_box_v3.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/gf-pack-shots-en/114x225barillamacaroni_final.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/integrale/new/pack_coquillettes_integrale_new.png"
+        }
+    },
+    {
+        "number": "42",
+        "name": "Lumachine",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/lumachine_42_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/lumachine_42_500g.png"
+        }
+    },
+    {
+        "number": "43",
+        "name": "Ditalini Lisci",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditalini_lisci_43_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditalini_lisci_43_500g.png"
+        }
+    },
+    {
+        "number": "44",
+        "name": "Maccheroni",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/maccheroni_162x210.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/maccheroni_162x210.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_maccheroni_500g.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_maccheroni_new.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_maccheroni_productimage.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_maccheroni_500g_eu.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/maccheroni_162x210.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/maccheroni.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076808050440-bb_maccheroni_500g.png"
+        }
+    },
+    {
+        "number": "45",
+        "name": "Ditali Lisci",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3d_cello_ditalilisci.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3d_cello_ditalilisci.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditali_lisci_45_500g.png"
+        }
+    },
+    {
+        "number": "46",
+        "name": "Ditaloni Lisci",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditaloni_lisci_46_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditaloni_lisci_46_500g.png"
+        }
+    },
+    {
+        "number": "47",
+        "name": "Ditalini Rigati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditalini_rigati_47_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/gluten-free/new/senza_glutine_ditalini_rigati.png"
+        }
+    },
+    {
+        "number": "48",
+        "name": "Mezzi Canneroni",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezzi_canneroni_48_cello_1kg.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezzi_canneroni_48_cello_1kg.png"
+        }
+    },
+    {
+        "number": "49",
+        "name": "Ditaloni Rigati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditaloni_rigati_49_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditaloni_rigati_49_500g.png"
+        }
+    },
+    {
+        "number": "51",
+        "name": "Gobbetti",
+        "image": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/gobbetti_162x210.png",
+        "links": {
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/gobbetti_162x210.png"
+        }
+    },
+    {
+        "number": "52",
+        "name": "Gramigna",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/gramigna_52_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/gramigna_52_500g.png"
+        }
+    },
+    {
+        "number": "53",
+        "name": "Sedanini Rigati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/sedanini_rigati_53_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/sedanini_rigati_53_500g.png"
+        }
+    },
+    {
+        "number": "54",
+        "name": "Pasta Mista",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pasta_mista_54_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pasta_mista_54_500g.png"
+        }
+    },
+    {
+        "number": "56",
+        "name": "Orecchiette",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/collezione/210_1000016207_8076809519977_collezione_orecchiette_500g_front(1).png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/collezione/210_1000016207_8076809519977_collezione_orecchiette_500g_front(1).png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-orecchiette-2022.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_orecchiette.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000016207_8076809519977_collezione_orecchiette_500g_front(1).png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_orecchiette.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076809519977-coll_orecchiette_500g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/specialita_pack_nuovi/orecchiette_500g.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_orecchiette_new.png"
+        }
+    },
+    {
+        "number": "59",
+        "name": "Farfalline",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/farfalline_59_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/emiliane/new/farfalline_275g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/farfalline.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/mockups_blue_box/3df_bbnvi_farfalline_500g1.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_bbnvi_farfalline_500g.png"
+        }
+    },
+    {
+        "number": "60",
+        "name": "Gnocchetti Sardi",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/gnocchetti_sardi_60_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/specialita_pack_nuovi/gnocchetti_sardi_500g.png"
+        }
+    },
+    {
+        "number": "65",
+        "name": "Lacitos",
+        "image": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-cortas/5181041534barillafarfallecopy.png",
+        "links": {
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-cortas/5181041534barillafarfallecopy.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_farfalle_productimage.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/integrale-farfalle-2021.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/proteinplus/proteinplus_farfalle_2021.png",
+            "DNK": "https://www.barilla.com//-/media/images/da_dk/products/groups/ranges/klassikere/klassikere_farfalle_pkg.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0012_3df_farfalle500gintl.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_19488_integr_nvi_farfalle_500g_eu_iso7_v1_front.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_19488_integr_nvi_farfalle_500g_eu_iso7_v1_front.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/integrale_tr/integrali_farfalle_02.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076808060654bb_farfalle_500g.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/gama--clasica_pt/_0012_3df_farfalle500gintl.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000019715_8076809580144_collezione_farfalle_500g_front(1).png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_farfalle_new.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/farfalle.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/whole-grain/integrale_farfalle_500g_front.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029916_1000680065_farfalle_15x500g_intl.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/classic-blue-box/farfalle_nvi.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/integrale/3d_real_19488_integr_nvi_farfalle_500g_eu_iso7_v1_front.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_farfalle_500g.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/3d_coll_farfalle_500g_eu_iso7_v1_fronte.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/3df_farfalle_productimage.png",
+            "HUN": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/farfalle.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/aggiornamento_pasta_integrale/2023/integrale_farfalle_new.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/farfalle.png"
+        }
+    },
+    {
+        "number": "66",
+        "name": "Mini Penne Rigate",
+        "image": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/piccolini_penne_rigate_162x210.png",
+        "links": {
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/2022/piccolini_penne_rigate_162x210.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/_w_3df_16540_piccnvi_mini_penne_rigate_500g_int.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/piccolini_pack_nvi/mini_penne_rigate_500g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/mini-penne-rigate.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/piccolini_be/8076809521581-picc_mini_penne_rigate_500g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/piccolini-gr/mini-penne-136x225.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/piccolini/piccolini_br_mini_penne_rigate_500g/3df_3030042519_1000016540minipennerigate16x500gimueuwest.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3df_picc_mini_penne_rigate_500g_intl.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/piccolini_mini_penne_product_2023.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/piccolini/pack_nvi/3d_real_16540_piccnvi_mini_penne_rigate_500g_int_iso3_v1_front.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_minipennerigate_200g.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/3df_3030042519_1000016540minipennerigate16x500gimueuwest.png"
+        }
+    },
+    {
+        "number": "69",
+        "name": "Pennette Lisce",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_lisce_69_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_lisce_69_500g.png"
+        }
+    },
+    {
+        "number": "70",
+        "name": "Mezze Penne Rigate",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezze_penne_rigate_70_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/al_bronzo/mezze_penne_rigate_al_bronzo_400g.png"
+        }
+    },
+    {
+        "number": "71",
+        "name": "Penne Lisce",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_lisce_71_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_lisce_71_500g.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/penne_lisce_162x210.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076802085714-bb_penne_lisce_500g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030029911_1000073071pennelisce15x500g.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/penne-lisce.png"
+        }
+    },
+    {
+        "number": "72",
+        "name": "Pennette Rigate",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_rigate_72_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_rigate_72_500g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/integrale_be/3df_real_16534_intg_penne_rigate_500g_new_iso5_v1.jpg",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/integrale/3dreal16536integnvipennerigate500geuiso5v2frontpng.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/integrale_tr/integrali_pennette_rigate_02.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/pennette-rigate-int.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/pennette-rigate.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/whole-grain/3df_pennerigatei_wholegrain_productimage.png"
+        }
+    },
+    {
+        "number": "73",
+        "name": "Penne rigate",
+        "image": "https://www.barilla.com//-/media/images/sl_si/pennerigate.png",
+        "links": {
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_16534_integ_nvi_penne_rigate_500g_eu_iso5_v1_front.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/legumes-penne-2021_new.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/glutenfri_sv/gluten-free-2023/3d_real_11410_sg_nvi_penne_rigate_400g_eu_3150_v1_front.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/glutenvrije_nl/sg_penne_rigate_400g.png",
+            "ROU": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/pennerigateintegrale500g10000165368076809529433002-2143x210.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/hero-images/classici/hero_penne_rigate_new_1380x776/penne_pack.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/aggiornamento_pasta_integrale/2023/integrale_penne_rigate_new.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/3df_pennerigate_productimage.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/glutenfree_tr/glutenfree_penne_rigate_03.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/glutenfrei/143_210_3d_real_11410_sg_nvi_penne_rigate_400g_eu_3150_v1_front.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/pennerigate_500g_front_academia_barilla_1000013491_8076809545853/penne-rigate-barilla-academia.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/integrale/3dreal16536integnvipennerigate500geuiso5v2frontpng.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/gluten-free/semgluten_penne_rigate_400g_front/3df_14767_gluten_free_penne_400g_br-(1).png",
+            "PRT": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/integrale-es/_0020_3df_10795_integr_pennette_rigate_500g/_0020_3df_10795_integr_pennette_rigate_500g_new.png",
+            "DNK": "https://www.barilla.com//-/media/images/da_dk/products/groups/ranges/fullkorn/barillapennerigatefullkorn500g.jpg",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/whole-grain/wg_penne_pkg_update.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/legumineuses/penne_pack.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/al_bronzo_be/penne_rigate_al_bronzo_400g.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/glutenfree_pl/new_barilla_sg_penne_rigate.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/gf_passover/8076809545457.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/gf-pack-shots-en/114x225barillapenne_final.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/products/groups/ranges/gluten-free/gluten_free_penne_box_web.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/gluten-free/gluten_free_penne_box_v3.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/legumes/3df_penne_redlentil.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/legumes/2023-legume-packaging-update/barilla_chickpea-penne_pasta_2023.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/penne_rigate_143x210.png"
+        }
+    },
+    {
+        "number": "74",
+        "name": "Ziti Tagliati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ziti_tagliati_74_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ziti_tagliati_74_500g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_ziti_pasta.png"
+        }
+    },
+    {
+        "number": "75",
+        "name": "Penne Rigate",
+        "image": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_pennerigate_productimage.png",
+        "links": {
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_pennerigate_productimage.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/3df_3030042514_1000332073pennerigate12x500gshelfableger.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/products/groups/ranges/proteinplus/proteinplus_penne_2021.png"
+        }
+    },
+    {
+        "number": "77",
+        "name": "Penne a Candela",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_a_candela_77_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_a_candela_77_500g.png"
+        }
+    },
+    {
+        "number": "79",
+        "name": "Macarrones",
+        "image": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0019_3df_3030029910_1000073079macarrones15x500g.png",
+        "links": {
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0019_3df_3030029910_1000073079macarrones15x500g.png"
+        }
+    },
+    {
+        "number": "82",
+        "name": "Cataneselle",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/new_classici/classici_cataneselle_225px.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/new_classici/classici_cataneselle_225px.png"
+        }
+    },
+    {
+        "number": "83",
+        "name": "Tortiglioni",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030030022_1000012626tortiglioni15x500ggrintl.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030030022_1000012626tortiglioni15x500ggrintl.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/tortiglioni_83_500g.webp",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_tortiglioni_new.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/al-bronzo/packshot/albronzo_tortiglioni_400g_frontal_1000020464_8076809581110removebgpreview.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030030465_1000073083_tortiglioni_500g_intl.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/al-bronzo/tortiglioni_al_bronzo_400g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/tortiglioni.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/tortiglioni.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/gama--clasica_pt/_0017_3df_3030030022_1000012626tortiglioni15x500ggrintl.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/tortiglioni.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_tortiglioni_productimage.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/integrale/3d_real_18269_integr_nvi_tortiglioni_500g_eu_iso7_v1_front.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/integrale_be/3df_real_18269_intg_tortiglioni_500g_new_iso7_v1-(1).jpg",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/_0017_3df_3030030022_1000012626tortiglioni15x500ggrintl.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/gluten-free/new/senza_glutine_tortiglioni_225px.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_tortiglioni_new.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_tortiglioni_500g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/collezione/collezione_rigatoni_box_web.png"
+        }
+    },
+    {
+        "number": "84",
+        "name": "Mezze Maniche Rigate",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezze_maniche_rig_84_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezze_maniche_rig_84_500g.png"
+        }
+    },
+    {
+        "number": "85",
+        "name": "Gnocchi",
+        "image": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/gnocchi_162x210.png",
+        "links": {
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/gnocchi_162x210.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/gnocchi_85_500g.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_gnocchi_500g.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030030039_1000012563_gnocchi_15x500g_intl.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_gnocchi_new.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/gnocchi15x500ggrecia.png",
+            "DNK": "https://www.barilla.com//-/media/images/da_dk/products/groups/ranges/klassikere/klassikere_gnocchi_pkg.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076802085851-bb_gnocchi_500g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/gnocchi.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_gnocchetti_new.png"
+        }
+    },
+    {
+        "number": "86",
+        "name": "Pipette Rigate",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pipette_rigate_86_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pipette_rigate_86_500g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_pipette_pasta.png"
+        }
+    },
+    {
+        "number": "87",
+        "name": "Casarecce",
+        "image": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_casarecce.png",
+        "links": {
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_casarecce.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_casarecce_500g/3df_casareccelc500gimuintleu/3df_16208_coll_casarecce_500g_eu.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_casarecce_01_2112.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-casarecce-2021.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000016208_8076809519960_collezione_casarecce_500g_front.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_casarecce_2021.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/collezione/1000016208_8076809519960_collezione_casarecce_500g_front.png"
+        }
+    },
+    {
+        "number": "88",
+        "name": "Cannelloni",
+        "image": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_cannelloni_2021.png",
+        "links": {
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_cannelloni_2021.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_cannelloni.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/collezione_new_pack_cannelloni.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/collezione-2023/3d_real_12497_coll_cannelloni_250g_eu_118601as_v3_fronte-(2).png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_cannelloni_250g_front_1000012497_8076808070882.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000012497_8076808070882_collezione_cannelloni_250g_front.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/collezione_cannelloni_2021.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_cannelloni_new.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-cannelloni-2021.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076808070882-coll_cannelloni_250g.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/3df__lc_cannelloni_250g.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/collezione/3df_cannelloni_collezione.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/emiliane/new/cannelloni_250g_new.png"
+        }
+    },
+    {
+        "number": "89",
+        "name": "Rigatoni",
+        "image": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/rigatoni.png",
+        "links": {
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/rigatoni.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/mockups_blue_box/3df_bbnvi_rigatoni_89_500g1.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/rigatoni_89_500g.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/classic-blue-box/3df_rigatoni_productimage.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030029781_1000073089rigatoni15x500g.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029781_1000073089_rigatoni_15x500g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076802085899-bb_rigatoni_500g.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/classic-blue-box/rigatoni_nvi.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/rigatoni_162x210.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/barilla_rigatoni_500g.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/rigatoni.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/collezione/collezione_rigatoni_340g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_rigatoni-pasta.png"
+        }
+    },
+    {
+        "number": "90",
+        "name": "Gemelli",
+        "image": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/klassische_sorten/3df_3030042506_1000012835gemelli14x500ggershelf.png",
+        "links": {
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000022393_8076809583503_collezione_treccine_500g_front.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/collezione/1000022393_8076809583503_collezione_treccine_500g_front_2023.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/klassikere_sv/3df_3030029230_1000012835_gemelli_14x500g_ger_shelf.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_gemelli-pasta.png"
+        }
+    },
+    {
+        "number": "91",
+        "name": "Pipe Rigate",
+        "image": "https://www.barilla.com//-/media/images/hr_hr/piperigate.png",
+        "links": {
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/piperigate.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/piperigate.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/pipe-rigate.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/classiques/pack_nvi/3df_bbnvi_pipe_rigate_500g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/classiques_be/8076802085912-bb_pipe_rigate_500g.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_pipe_rigate_new.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/klassische_sorten_nl/new/klassiekers_pack_piperigate_new.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pipe_rigate_91_500g.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/klassische_sorten/2022/pipe_rigate_162x210.png"
+        }
+    },
+    {
+        "number": "93",
+        "name": "Conchiglie Rigate",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/conchiglie_rigate_93_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/conchiglie_rigate_93_500g.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/conchiglie_rigate_93_500g.webp",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/conchiglie.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_conchiglie_500g.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/al-bronzo/barilla_al-bronzo_conchiglie_shells_pasta.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-caracoles/5181037471barillamediumshellscopy.png"
+        }
+    },
+    {
+        "number": "94",
+        "name": "Sedani Rigati",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/sedani_rigati_94_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/sedani_rigati_94_500g.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/classic_tr/bluebox_rsedani_rigati_new.png"
+        }
+    },
+    {
+        "number": "96",
+        "name": "Spaccatelle",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaccatelle_96_cello_1kg.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaccatelle_96_cello_1kg.png"
+        }
+    },
+    {
+        "number": "98",
+        "name": "Fusilli",
+        "image": "https://www.barilla.com//-/media/images/sl_si/fusillipackage.png",
+        "links": {
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/fussili50.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/gama--clasica_pt/_0016_3df_3030030466_1000012625fusilli500gowintlb.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/academia_tr/fusilli-academia-new.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/legumes/3df_fusilli_redlentil.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/huelsenfruechte/2022_barilla_pasta_aus_huelsenfruechten_fusilli_rote_linsen_8076809574983_250g_front.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/gluten-free/new/fusilli_sg.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/glutenfrei/3d_real_11411_sg_nvi_fusilli_400g_eu_3151_v1_front.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/al-bronzo-boxes_sv/fusilloni_al-bronzo_400g_packshot.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/fusilli-integrale.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/gluten-free/3d_real_22404_gf_nvi_fusilli_340g_aus_c23002_v1_front.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/integrale-es/_0004_3df_10794_integr_spaghetti_5_500g/fusilli_int_pack_new.png",
+            "DNK": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/ekologisk_sv/3df_3030030754_1000013730_fusilli_bio_500g/new-fusilli.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/whole-grain/integrale_fusilli_500g_front.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/glutenvrije_nl/sg_fusilli_400g.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/legumineuses/fusilli_pack.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3df_fusilloni_al_bronzo_400g.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/classic_pl/new_barilla_fusilli_500g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/integrale-fusilli-2021.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/gluten-free/fusilli_sg_pack_new.png",
+            "KOR": "https://www.barilla.com//-/media/images/ko_kr/products/groups/ranges/classic-blue-box/3df_fusilli_productimage.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/ready-pasta/ready-pasta-new-packaging-2023/barilla_ready-pasta_rotini.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/rotini.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/pronto/pronto_fusilli_340g.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/gf_passover/8076809545464.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-cortas/5181044687barillarotinireadypastacopy.png"
+        }
+    },
+    {
+        "number": "115",
+        "name": "Fusilli Bucati Corti",
+        "image": "https://www.barilla.com//-/media/images/pt_br/hero-images/3df_16219_coll_fusilli_bucati_corti_500g_eu_iso7_v1-(1).png",
+        "links": {
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/hero-images/3df_16219_coll_fusilli_bucati_corti_500g_eu_iso7_v1-(1).png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_fusilli_bucati_corti.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/updates_some_products/fusilli_bucati_corti_pack_new.png"
+        }
+    },
+    {
+        "number": "124",
+        "name": "Collezione Édition Gourmet Fettuccine",
+        "image": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/fettuccine_collection_gourmet_new.png",
+        "links": {
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/fettuccine_collection_gourmet_new.png"
+        }
+    },
+    {
+        "number": "125",
+        "name": "Collezione Édition Gourmet Lasagnette",
+        "image": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/lasagnette_collection_gourmet_new.png",
+        "links": {
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/lasagnette_collection_gourmet_new.png"
+        }
+    },
+    {
+        "number": "129",
+        "name": "Tagliatelle all'uovo",
+        "image": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_tagliatelle_uovo.png",
+        "links": {
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_tagliatelle_uovo.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/collezione-es/_0013_3df_coll_tagliatelle_uovo_500g/_0013_3df_coll_tagliatelle_uovo_500g_new/_0013_3df_coll_tagliatelle_uovo_500g_new.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-tagliatelle-2021.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_tagliatelle_new.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/emiliane/tagliatelle_500g.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/barilla_tagliatelle-uovo-250g_front.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/collezione/3df_tagliatelle_productimage_v2.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076808201293-coll_tagliatelle_uovo_500g_fronte_v1_3184.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/collezione/collezione_tagliatelle_box_web.png"
+        }
+    },
+    {
+        "number": "166",
+        "name": "Fettuccine",
+        "image": "https://www.barilla.com//-/media/images/hr_hr/3d_real_12394_coll_nvi_fettuccine_500g_eu_3180_v1_front.png",
+        "links": {
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_12394_coll_nvi_fettuccine_500g_eu_3180_v1_front.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/hero-images/fb_aw_3d_11160_swwe_fettuccine_500g_bra_v2.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/new-la-col-design-2021/1000012394_8076809523776_collezione_fettuccine_500g_front--kopie_159x203.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/emiliane/fettuccine_ricce_250g.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-fettuccine-2021.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/tk_1000012394_8076809523776_collezione_fettuccine_500g_front.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_fettuccine_2112.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_12394_coll_nvi_fettuccine_500g_eu_3180_v1_front.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/emiliane/pack_fettuccine-5cereali-uova.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/gluten-free/barilla_glutenfree_fettuccine_packaging_309x87px.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_fettuccine_500g.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-largas/5181068365barillafettuccinecopy.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/fettucine.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/collezione_fettuccine_500g_front.png"
+        }
+    },
+    {
+        "number": "167",
+        "name": "Tagliatelle con Spinaci",
+        "image": "https://www.barilla.com//-/media/images/hr_hr/spinaci.png",
+        "links": {
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/spinaci.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/spinaci.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/10000271167_8076809523721_collezione_tagliatelle_spinaci_500g_front.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_tagliatelle_spinaci_500g_front_1000271167_8076809523721.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/3df_3030032645_1000271167-tagliatelle-con-spinachi-500g-lc.png"
+        }
+    },
+    {
+        "number": "169",
+        "name": "Collezione Lasagne",
+        "image": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_lasagne_500g_front/3df_3030043741_1000012389lasagnelc12x250ggerbraport/3df_12389_coll_lasagne_250g_eu-(1).png",
+        "links": {
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_lasagne_500g_front/3df_3030043741_1000012389lasagnelc12x250ggerbraport/3df_12389_coll_lasagne_250g_eu-(1).png"
+        }
+    },
+    {
+        "number": "170",
+        "name": "Mezze Penne Tricolore",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-penne-tricolore-2021.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-penne-tricolore-2021.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_penne_tricolore_500g_front_1000012496_8076809501415.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/tk_1000016210_8076809501415_collezione_penne_tricolore_500g_front.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/mezzepennetricolorecollezione.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_tri-color-rotini-pasta.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/gama--clasica_pt/bb_tricolor_penne_pp.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/mezze-penne-tricolore.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/pastas-cortas/5181045448barillatricolorpennecopy.png"
+        }
+    },
+    {
+        "number": "171",
+        "name": "Paglia Fieno",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-tagliatelle-paglia-2021.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-tagliatelle-paglia-2021.png"
+        }
+    },
+    {
+        "number": "174",
+        "name": "Tagliatelle all‘uovo",
+        "image": "https://www.barilla.com//-/media/images/sl_si/collezione_tagliatellealluovo.png",
+        "links": {
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/collezione_tagliatellealluovo.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_tagliatelle_2021.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/taglietelle_alluovo.png"
+        }
+    },
+    {
+        "number": "176",
+        "name": "Collezione Mezze Penne Tricolore",
+        "image": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_penne_tricolore_500g_front/3df_mezzepennetric/3df_16210_coll_mezze_penne_tric_500g_eu_v1.png",
+        "links": {
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_penne_tricolore_500g_front/3df_mezzepennetric/3df_16210_coll_mezze_penne_tric_500g_eu_v1.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-pappardelle-2021.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_pappardelle_2112.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/papardele_novo.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_pappardelle_2021.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/collezione_pappardelle_2021.png",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/pappardellecollezione.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/collezione_pappardelle.png"
+        }
+    },
+    {
+        "number": "189",
+        "name": "Lasagne",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/collezione-2023/3d_real_12388_coll_lasagne_500g_eu_3189_v3_front.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/glutenfri_sv/gluten-free-2023/3d_real_11409_sg_lasagne_glutenfri_small.png",
+            "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/fazionlasagne_3dfpack.jpg",
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_lasagne.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_tagliatelle_2112.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/3d_real_216908_sg_nvi_lasagne_250g_int_119497as_v1_front.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/3d_real_216908_sg_nvi_lasagne_250g_int_119497as_v1_front.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/glutenfrei/3d_real_216908_sg_nvi_lasagne_250g_int_119497as_v1_front.png",
+            "DNK": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/collezione-2023/3d_real_12388_coll_lasagne_500g_eu_3189_v3_front.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/glutenfrei/3d_real_216908_sg_nvi_lasagne_250g_int_119497as_v1_front.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_oven-ready-lasagne_no-boil-lasagna-pasta.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/cards/massa-com-ovos/novo/fb_aw_3d_12712_swwe_lasanha_200g_blu_v1.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/new-products-2023/lasagna/5181112292barillalasagneovenreadycopy.png",
+            "ROU": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/product_250x230_lasagne_new.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/gf_lasagna_s.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/collezione/premium_collezione_lasagne_500g.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/sans-gluten/new/lasagne_sg_pack.png"
+        }
+    },
+    {
+        "number": "190",
+        "name": "Lasagne con Spinaci",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/3df_coll_lasagne_spinaci_500g_eu.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/3df_coll_lasagne_spinaci_500g_eu.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2023_barillacollezionepasta_lasagneconspinaci500g.png"
+        }
+    },
+    {
+        "number": "199",
+        "name": "Lasagne s jajima",
+        "image": "https://www.barilla.com//-/media/images/hr_hr/lazanja_nova.png",
+        "links": {
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/lazanja_nova.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_lasagne_new.png",
+            "PRT": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/collezione-es/lasagne_all_uovo_pack/lasagne_all_uovo_pack_new/lasagne_all_uovo_pack_new.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_lasagne_uovo.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/tagliatelle_500g_fr_pack.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/emiliane/new/lasagne_500g_fr_pack.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/lasagne-500.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-lasagne-2021.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/collezione_lazanja.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/collezione-es/lasagne_all_uovo_pack/lasagne_all_uovo_pack_new/lasagne_all_uovo_pack_new.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076800376999-coll_lasagne_uovo_500g.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/cards/massa-com-ovos/novo/fb_aw_3d_12712_swwe_lasanha_200g_blu_v1.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/collezione/3df_lasagneegg_productimage.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/emiliane/lasagne_500g.png"
+        }
+    },
+    {
+        "number": "200",
+        "name": "Lasagne con Spinaci",
+        "image": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-lasagne-spinaci-2021.png",
+        "links": {
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-lasagne-spinaci-2021.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/3df_3030030862_1000012498_paglia_fieno_12x500g_lc_intl.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/emiliane/new/lasagne_verdi_500g_fr_pack.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/3dfr_3030030779_1000012390-lasagne-verdi-lc-15x500g-intl.png"
+        }
+    },
+    {
+        "number": "217",
+        "name": "Mafaldine",
+        "image": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_mafaldine_2112.png",
+        "links": {
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_mafaldine_2112.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000015858_8076800000061_collezione_mafaldine_500g_front.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-mafaldine-2021.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_mafaldine.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_mafaldine_new.png",
+            "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/collezione-mafaldine-2021.webp",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_mafaldine_500g_front_1000015858_8076800000061.png"
+        }
+    },
+    {
+        "number": "265",
+        "name": "Farfalle",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/farfalle_265_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/farfalle_265_500g.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/collezione/premium_collezione_farfalle_500g.png"
+        }
+    },
+    {
+        "number": "280",
+        "name": "Castellane",
+        "image": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_castellane.png",
+        "links": {
+            "POL": "https://www.barilla.com//-/media/images/pl_pl/products/groups/ranges/collezione_pl/new_barilla_castellane.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/2023/collezione/1000012412_8076809523707_collezione_castellane_500g_front.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/new-la-col-design-2021/1000012412_8076809523707_collezione_castellane_500g_front--kopie_138x203.png",
+            "CZE": "https://www.barilla.com//-/media/images/cs_cz/img_aktualizace/1000012412_8076809523707_collezione_castellane_500g_front--kopie_138x203.png",
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_castellane_2112.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000012412_8076809523707_collezione_castellane_500g_front.png"
+        }
+    },
+    {
+        "number": "287",
+        "name": "Casarecce",
+        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/casarecce_287_500g.png",
+        "links": {
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/legumi/2023/casarecce_di_ceci_250g_new.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/collezione/collezione_casarecce_340g.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/legume/pack_casarecce_ceci.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/casarecce.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/legumes/3df_casarecce_chickpea_productimage.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/huelsenfruechte/2022_barilla_pasta_aus_huelsenfruechten_casarecce_kichererbsen_8076809574990_250g_front.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/casareccechickpeas250g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/casarecce_500g_8076809519960-3d_12395_coll_fronte_v1_3127r.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/legumineuses/casarecce_pack.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/hero-images/classici/hero_penne_rigate_new_1380x776/hero_16_9_1380x776_1_red_lentil_penne/casarecce_pack.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/legumes/legumes-casarecce-2021.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/collezione/collezione_casarecce_box_web.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/huelsenfruechte/2022_barilla_pasta_aus_huelsenfruechten_casarecce_kichererbsen_8076809574990_250g_front.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/casareccechickpeas250g.png"
+        }
+    },
+    {
+        "number": "289",
+        "name": "Trofie",
+        "image": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/pack_orecchiette_collezione_new/8076809537711coll_trofie_500g.png",
+        "links": {
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/pack_orecchiette_collezione_new/8076809537711coll_trofie_500g.png"
+        }
+    },
+    {
+        "number": "292",
+        "name": "Fusilli Bucati Corti",
+        "image": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/new-la-col-design-2021/colfus2.png",
+        "links": {
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/new-la-col-design-2021/colfus2.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/t_1000016219_8076809574631_collezione_fusilli_bucati_corti_500g_front.png"
+        }
+    },
+    {
+        "number": "296",
+        "name": "Trofie",
+        "image": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000016537_8076809537711_collezione_trofie_liguri_500g_front.png",
+        "links": {
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/collezione/2023/1000016537_8076809537711_collezione_trofie_liguri_500g_front.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione/new/collezione_new_pack_trofie.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/collezione-2023/3d_real_16537_coll_trofie_500g_eu_iso6_v3_fronte.png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/collezione_troffie.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/collezione/2022_collezione_trofie_liguri_500g_front_1000016537_8076809537711.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/trofie_nova.png",
+            "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/collezione_pt/8076809537711coll_trofie_500g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/collezione_be/8076809537711-coll_trofie_500g.png"
+        }
+    },
+    {
+        "number": "298",
+        "name": "Ready Pasta Gemelli",
+        "image": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/ready-pasta/ready-pasta-new-packaging-2023/barilla_ready-pasta_gemelli.png",
+        "links": {
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/ready-pasta/ready-pasta-new-packaging-2023/barilla_ready-pasta_gemelli.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/specialita_pack_nuovi/trofie_500g.png"
+        }
+    },
+    {
+        "number": "?",
+        "name": "Tortellini Fromaggi",
+        "image": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_tortellini_2112.png",
+        "links": {
+            "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_tortellini_2112.png",
+            "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_engrane_200g.png",
+            "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/specialita_pack_nuovi/cellentani_500g.png",
+            "PRI": "https://www.barilla.com//-/media/images/es_pr/products/groups/ranges/whole-grain/whole_grain_lasagne_front_v2.png",
+            "DEU": "https://www.barilla.com//-/media/images/de_de/products/groups/ranges/al-bronzo/mezzi-rigatoni-al-bronzo_pack-400g.png",
+            "BEL": "https://www.barilla.com//-/media/images/be/products/groups/ranges/piccolini_be/8076809521567-picc_mini_farfalle_500g.png",
+            "CHE": "https://www.barilla.com//-/media/images/ch/products/groups/ranges/huelsenfruechte/2022_barilla_risoni_rote_linsen_kichererbsen_erbsen_8076809573023_300g_front.png",
+            "ROU": "https://www.barilla.com//-/media/images/ro_ro/poze-produse/bb-clasic/mini-fusilli.png",
+            "USA": "https://www.barilla.com//-/media/images/en_us/products/groups/ranges/classic-blue-box/blue-box-packaging-refresh-2022/barilla_pastina-pasta.png",
+            "CAN": "https://www.barilla.com//-/media/images/ca/products/new-product-shots/linguine-fini.png",
+            "NLD": "https://www.barilla.com//-/media/images/nl_nl/products/groups/ranges/collezione_nl/new/collezione_pack_tortellini_new.png",
+            "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/cereals/5_cereali_riz_complet_pack.png",
+            "GRC": "https://www.barilla.com//-/media/images/el_gr/products/categories/collezione-tortellini-250-2021.png",
+            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/piccolini/piccolini_br_mini_fusilli_500g/3df_3030044221_1000016226minifusilli12x500gimueu.png",
+            "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/collezione_sv/collezione-2023/3d_real_532001_coll_tortellini_form_250g_eu_112044b_v3_fronte-(1).png",
+            "SVN": "https://www.barilla.com//-/media/images/sl_si/cellentani_int_500g_fr.png",
+            "HRV": "https://www.barilla.com//-/media/images/hr_hr/cellentani_int_500g_fr.png",
+            "SGP": "https://www.barilla.com//-/media/images/en_sg/products/groups/ranges/collezione/3df_pappardelle_productimage.png",
+            "ESP": "https://www.barilla.com//-/media/images/es_es/products/groups/ranges/classic-es/pack_orecchiette_collezione_new/8076809537711coll_trofie_500g/collezione_papiri_pack.png"
+        }
+    }
+]

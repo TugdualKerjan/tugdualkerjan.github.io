@@ -12,12 +12,43 @@
 </head>
 
 <body>
-    <select id="pastaSelector">
-        <option value="spaghetti">Spaghetti</option>
-        <option value="penne">Penne</option>
-        <!-- Add more options here -->
-    </select>
-    <div id="map" class="map" style="width: 100%; height: 400px;"></div>
+    <header>
+        <h1>Exploring Barilla's Pasta Varieties</h1>
+    </header>
+    <section class="intro-text">
+        <p><b>I want to eat all the pasta shapes proposed by Barilla.</b></p>
+        <p>Unfortunately, when contacting their customer service I failed to get a satisfactory answer concerning finding a comprehensive list of all their products. </p>
+        <p>I resorted to using web scrapping to obtain the full list of Barilla products sold on their website, and then, after having removed duplicates, sorted 1300 items using google sheets <i>IMAGE()</i> function, noting if it had a number referenced on it or not. You can find the google sheet <a src="https://docs.google.com/spreadsheets/d/1rQhfoM2TQrRZ-8JivcqenkBXMGunRsi-IIo0Pvn-4K4/edit?usp=sharing">here</a></p>
+        <p>After going through the list I transformed it into a JSON file that could be loaded and displayed thanks to Javascript and OpenLayers.</p>
+        <p>Below, you'll discover a map detailing the availability of specific pasta types across different countries.</p>
+    </section>
+    <section class="stats">
+        <div class="stat">
+            <h2>3688</h2>
+        <h4>Number of pasta products scrapped</h4>
+        </div>
+        <div class="stat">
+            <h2>1390</h2>
+        <h4>Number of unique pasta products</h4>
+        </div>
+        <div class="stat">
+            <h2>96</h2>
+        <h4>Number of pasta types that have numbers</h4>
+        </div>
+    </section>
+
+
+    
+    <main class="divider">
+        <div class="side-select">
+            <div class="current-pasta-area">
+                <img class="current-pasta" src="" alt="Selected Pasta" />
+                <div class="pasta-number-display" id="pastaNumberDisplay"></div>
+            </div>
+            <div class="scrollable-list"></div>
+        </div>
+        <div id="map" class="map"></div>
+    </main>
 </body>
 
 <script src="script.js"></script>
