@@ -47,48 +47,68 @@ function initMapAndList() {
         .catch(error => console.error('Error fetching GeoJSON data:', error));
 
 
-    fetch('pasta_data.json')
+    fetch('./pasta_data.json')
         .then(response => response.json())
         .then(pastaData => {
-            loadPasta(pastaData)
+            loadPasta(pastaData);
         })
         .catch(error => {
             console.error('Error fetching pasta data:', error);
         });
 }
 
+
 function loadPasta(pastaData) {
-    // Clear previous list
-    document.querySelector('.scrollable-list').innerHTML = '';
+    // Clear previous list if necessary
+    const existingTable = document.querySelector('#pastaTable');
+    if (existingTable) {
+        existingTable.parentNode.removeChild(existingTable);
+    }
 
-    // Build the pastaCountries mapping and create list items
-    pastaData.forEach(pasta => {
-        // Store country codes for each pasta
-        pastaCountries[pasta.name] = Object.keys(pasta.links);
+    // Build the table structure
+    let tableHtml = `
+        <table id="pastaTable" class="display">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    `;
+    document.querySelector('.scrollable-list').innerHTML = tableHtml;
 
-        // Create list item for each pasta
-        let listItem = document.createElement('div');
-        listItem.className = 'list-item';
-        listItem.addEventListener('click', () => {
-            selectItem(pasta.name, pasta.image, pasta.number, listItem);
-        });
-
-        let img = document.createElement('img');
-        img.src = pasta.image;
-        img.alt = pasta.name;
-        img.className = 'pasta-image';
-
-        let text = document.createTextNode(` ${pasta.name}`);
-        listItem.appendChild(img);
-        listItem.appendChild(text);
-
-        document.querySelector('.scrollable-list').appendChild(listItem);
+    // Populate the table with data
+    let tableData = pastaData.map(pasta => {
+        return [
+            `<img src="${pasta.image}" alt="${pasta.name}" class="list-item">`,
+            pasta.name
+        ];
     });
 
-    //Select the first element
+    // Initialize DataTable
+    const dataTable = new DataTable('#pastaTable', {
+        data: tableData,
+        columns: [
+            { title: "Image" },
+            { title: "Name" }
+        ]
+    });
 
-    const firstItem = document.querySelector('.list-item').firstChild;
-    firstItem.click(); // Programmatically click the first item
+    // Add event listeners to the table rows
+    const rows = document.querySelectorAll('#pastaTable tbody tr');
+    rows.forEach((row, index) => {
+        row.addEventListener('click', () => {
+            selectItem(pastaData[index].name, pastaData[index].image, pastaData[index].number, row);
+        });
+    });
+
+    // Select the first item programmatically
+    if (rows.length > 0) {
+        rows[0].click();
+    }
 }
 
 function selectItem(name, imagePath, number, listItem) {
@@ -161,9 +181,10 @@ function highlightCountries(pastaName) {
 }
 
 // Initialize the map on load
-window.onload = initMapAndList;
+// window.onload = ;
 
 document.addEventListener("DOMContentLoaded", () => {
+    initMapAndList();
     const statElements = document.querySelectorAll(".stat h2");
 
     statElements.forEach((element) => {

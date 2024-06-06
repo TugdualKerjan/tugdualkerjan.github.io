@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The pastas of the world</title>
     <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="ol.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
 </head>
 
 <body>
@@ -17,30 +21,39 @@
     </header>
     <section class="intro-text">
         <p><b>I want to eat all the pasta shapes proposed by Barilla.</b></p>
-        <p>Unfortunately, when contacting their customer service I failed to get a satisfactory answer concerning finding a comprehensive list of all their products. </p>
-        <p>I resorted to using web scrapping to obtain the full list of Barilla products sold on their website, and then, after having removed duplicates, sorted 1300 items using google sheets <i>IMAGE()</i> function, noting if it had a number referenced on it or not. You can find the google sheet <a src="https://docs.google.com/spreadsheets/d/1rQhfoM2TQrRZ-8JivcqenkBXMGunRsi-IIo0Pvn-4K4/edit?usp=sharing">here</a></p>
-        <p>After going through the list I transformed it into a JSON file that could be loaded and displayed thanks to Javascript and OpenLayers.</p>
-        <p>Below, you'll discover a map detailing the availability of specific pasta types across different countries.</p>
+        <p>Unfortunately, when contacting their customer service I failed to get a satisfactory answer concerning
+            finding a comprehensive list of all their products. </p>
+        <p>I resorted to using web scrapping to obtain the full list of Barilla products sold on their website, removing
+            duplicates, and finally sorted through 1300 items using google sheets <i>IMAGE()</i> function, noting if it
+            had a number referenced on it or not. You can find the google sheet <a
+                href="https://docs.google.com/spreadsheets/d/1rQhfoM2TQrRZ-8JivcqenkBXMGunRsi-IIo0Pvn-4K4/edit?usp=sharing">here</a>.
+            Alternatively download the raw CSV file <a href="./UnMaxDePasta.csv">here</a>.</p>
+        <p>After going through the list I transformed it into a JSON file that could be loaded and displayed thanks to
+            Javascript and OpenLayers. If you want more details feel free to check out the code <a
+                href="https://github.com/TugdualKerjan/AllThePasta">here</a>.</p>
+
+        <p>Below, you'll discover a map detailing the availability of specific pasta types across different countries.
+        </p>
     </section>
     <section class="stats">
         <div class="stat">
             <h2>3688</h2>
-        <h4>Number of pasta products scrapped</h4>
+            <h4>Number of pasta products scrapped</h4>
         </div>
         <div class="stat">
             <h2>1390</h2>
-        <h4>Number of unique pasta products</h4>
+            <h4>Number of unique pasta products</h4>
         </div>
         <div class="stat">
             <h2>96</h2>
-        <h4>Number of pasta types that have numbers</h4>
+            <h4>Number of pasta types that have numbers</h4>
         </div>
     </section>
 
 
-    
+
     <main class="divider">
-        <div class="side-select">
+        <div class="select">
             <div class="current-pasta-area">
                 <img class="current-pasta" src="" alt="Selected Pasta" />
                 <div class="pasta-number-display" id="pastaNumberDisplay"></div>
