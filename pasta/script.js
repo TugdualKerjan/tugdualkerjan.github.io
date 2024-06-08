@@ -80,6 +80,12 @@ function loadPasta(pastaData) {
     `;
     document.querySelector('.scrollable-list').innerHTML = tableHtml;
 
+    pastaData.map(pasta => {
+        pastaCountries[pasta.name] = Object.keys(pasta.links);
+    })
+
+    // console.log(pastaCountries)
+
     // Populate the table with data
     let tableData = pastaData.map(pasta => {
         return [
@@ -97,21 +103,17 @@ function loadPasta(pastaData) {
         ]
     });
 
-    // Add event listeners to the table rows
-    const rows = document.querySelectorAll('#pastaTable tbody tr');
-    rows.forEach((row, index) => {
-        row.addEventListener('click', () => {
-            selectItem(pastaData[index].name, pastaData[index].image, pastaData[index].number, row);
-        });
-    });
+    $('#pastaTable').on('click', 'tbody td', function() {
+        var index = dataTable.row(this).index();
+        selectItem(pastaData[index].name, pastaData[index].image, pastaData[index].number);
+    })
+  
 
     // Select the first item programmatically
-    if (rows.length > 0) {
-        rows[0].click();
-    }
+    selectItem(pastaData[0].name, pastaData[0].image, pastaData[0].number);
 }
 
-function selectItem(name, imagePath, number, listItem) {
+function selectItem(name, imagePath, number) {
     // Update the image displayed on the webpage to the selected pasta's image
     // Clear previously selected item styling
     document.querySelectorAll('.list-item').forEach(item => {
@@ -119,7 +121,7 @@ function selectItem(name, imagePath, number, listItem) {
     });
 
     // Set the clicked item as selected
-    listItem.classList.add('selected-list-item');
+    // listItem.classList.add('selected-list-item');
 
     // Update the image displayed on the webpage to the selected pasta's image
     document.querySelector('.current-pasta').src = imagePath;
