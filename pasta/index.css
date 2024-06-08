@@ -46,6 +46,7 @@ h1 {
     position: absolute;
     z-index: 1;
     display: flex;
+    max-width: 20vw;
     flex-direction: column;
     max-height: 100%;
     overflow-y: auto;
@@ -78,8 +79,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #eee;
-    background-color: #fff;
+    /* border-bottom: 1px solid #eee; */
+    /* background-color: #fff; */
     padding: 12px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -119,11 +120,13 @@ h1 {
 }
 
 .current-pasta {
-    display: flex;
+    /* display: flex; */
     align-self: center;
     justify-self: center;
-    max-width: 80%; /* Adjust for better fit */
-    max-height: 80%;
+    max-width: 60%; /* Adjust for better fit */
+    max-height: 60%;
+    overflow: hidden;
+    padding: 20px;
     margin-bottom: 10px;
 }
 
