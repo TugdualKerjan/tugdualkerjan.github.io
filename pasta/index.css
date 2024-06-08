@@ -37,20 +37,18 @@ h1 {
 
 /* Layout */
 .divider {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    position: relative;
     max-height: 95vh;
     margin-top: 20px;
 }
 
 .side-select {
-    flex: 1;
+    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     max-height: 100%;
     overflow-y: auto;
-    padding-right: 20px; /* Add some spacing between the list and the map */
 }
 
 .scrollable-list {
@@ -59,11 +57,16 @@ h1 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
     flex: 1;
     height: auto; /* Adjust based on content */
-    margin-bottom: 2px;
+    margin: 10px;
 }
 
 .map {
-    flex-grow: 3;
+    /* padding: 20px; */
+    /* flex-grow: 3; */
+    width: auto;
+    height: 90vh;
+    border: 1px solid #ffffff;
+
     background-color: #e0e0e0; /* Placeholder, assuming map will cover */
     border-radius: 8px; /* Consistent rounding */
 }
@@ -107,11 +110,10 @@ h1 {
     max-height: 30vh;
     align-items: center;
     justify-content: space-around; /* Align content to the top */
-    padding: 20px;
+    margin: 10px;
     background-color: #ffffff; /* Contrast with body */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
     border-radius: 8px; /* Rounded corners */
-    margin-bottom: 20px; /* Separate from the list */
 }
 
 .current-pasta {
@@ -136,7 +138,6 @@ h1 {
     border: 1px solid #ffffff;
     border-radius: 8px; /* Consistent rounding */
     background-color: #fff;
-    padding: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -148,7 +149,6 @@ h1 {
 }
 
 .stat {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
