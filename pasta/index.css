@@ -52,6 +52,9 @@ h1 {
 }
 
 .scrollable-list {
+    background-color: white;
+    max-width: 100%;
+    padding: 10px;
     border-radius: 8px; /* Consistent rounding */
     overflow-y: auto;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
@@ -66,7 +69,6 @@ h1 {
     width: auto;
     height: 90vh;
     border: 1px solid #ffffff;
-
     background-color: #e0e0e0; /* Placeholder, assuming map will cover */
     border-radius: 8px; /* Consistent rounding */
 }
@@ -83,12 +85,12 @@ h1 {
     transition: background-color 0.3s;
 }
 
-.list-item:hover {
+/* .list-item:hover {
     background-color: #f7f7f7;
-}
+} */
 
-.list-item img {
-    height: 4vh; /* Increase for visibility */
+.list-item {
+    max-height: 4vh; /* Increase for visibility */
     width: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Space between image and text */
 }

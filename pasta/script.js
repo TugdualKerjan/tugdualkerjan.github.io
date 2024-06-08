@@ -129,17 +129,16 @@ function selectItem(name, imagePath, number, listItem) {
     const pastaNumberDisplay = document.getElementById('pastaNumberDisplay');
     pastaNumberDisplay.textContent = `${name}, Number: ${number}`;
     pastaNumberDisplay.style.display = 'block'; // Make sure it's visible
-
     // Highlight the countries on the map where this pasta is available
     highlightCountries(name);
 }
 
 
-function highlightCountries(pastaName) {
-    const countries = pastaCountries[pastaName] || [];
-    vectorSource.clear(); // Clear existing features
-    loadGeoJson(countries); // Load and style GeoJSON based on selected pasta
-}
+// function highlightCountries(pastaName) {
+//     const countries = pastaCountries[pastaName] || [];
+//     vectorSource.clear(); // Clear existing features
+//     loadGeoJson(countries); // Load and style GeoJSON based on selected pasta
+// }
 
 // Define the highlight style
 const highlightStyle = new ol.style.Style({
@@ -171,6 +170,8 @@ const defaultStyle = new ol.style.Style({
 // }
 
 function highlightCountries(pastaName) {
+    console.log(pastaCountries)
+
     const countriesToHighlight = pastaCountries[pastaName] || [];
 
     // Apply the highlight style to the features that match the selected pasta's countries
