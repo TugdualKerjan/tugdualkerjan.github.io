@@ -1,0 +1,30 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5dc; /* Beige background */
+    margin: 0;
+    padding: 20px;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow for the SVG */
+}
+
+.component-text {
+    font-size: 14px;
+    font-weight: bold;
+    fill: black; /* Change text color */
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.dimension-text {
+    font-size: 12px;
+    fill: gray; /* Change text color */
+}
+
+.arrow-label {
+    font-size: 10px;
+    fill: red; /* Change arrow label color */
+}
