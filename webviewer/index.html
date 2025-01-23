@@ -2,42 +2,28 @@
 <html>
 
 <head>
-    <title>3D Viewer</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
             margin: 0
         }
-
-        canvas {
-            width: 100vw;
-            height: 100vh
-        }
-
-        #debug {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            color: black;
-            background: white;
-            padding: 10px;
-            z-index: 100
-        }
     </style>
 </head>
 
 <body>
-    <div id="debug"></div>
-    <script>
-        const debug = document.getElementById('debug');
-        debug.textContent = `
-           Domain: ${window.location.hostname}
-           Path: ${window.location.pathname}
-           Search: ${window.location.search}
-           Init Data: ${window.Telegram?.WebApp?.initData || 'No Telegram data'}
-       `;
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        const webapp = window.Telegram.WebApp;
+        const fileData = webapp.initDataUnsafe.user.shared_file;
+
+        // Debug info
+        document.body.innerHTML += `<pre style="position:fixed;top:0;left:0;z-index:100">${JSON.stringify(fileData, null, 2)}</pre>`;
+
+        // Rest of Three.js setup...
     </script>
-    <!-- Rest of your Three.js code -->
 </body>
 
 </html>
