@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* CSS remains mostly the same, but consider adding responsive design rules */
+        :root {
+            --spacing: 40px;
+            --transition-duration: 0.6s;
+            --border-radius: 8px;
+            --border-width: 2px;
+            --module-background: #fff;
+            --module-border-color: #666;
+            --arrow-color: #666;
+            --discriminator-color: #ef4444;
+        }
+
+        .container {
+            position: relative;
+            /* Ensure arrows are positioned relative to the container */
+            max-width: 90vw;
+            margin: 0 auto;
+            font-family: system-ui, sans-serif;
+        }
+
+        .column {
+            position: relative;
+            /* Ensure modules are positioned relative to their columns */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--spacing);
+        }
+
+        .model-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: var(--spacing);
+            padding: 20px;
+            height: 800px;
+            overflow: auto;
+        }
+
+
+        .module {
+            border: var(--border-width) solid var(--module-border-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all var(--transition-duration) cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 10;
+            background-color: var(--module-background);
+            opacity: 1;
+            transform: scale(1);
+            align-self: center;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .module.entering {
+            animation: popUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .module.exiting {
+            animation: popDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+            }
+
+            70% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes popDown {
+            0% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        .module.discriminator.entering {
+            transform: scale(0.8);
+        }
+
+        .module.discriminator.exiting {
+            transform: scale(1.1);
+        }
+
+        .module.discriminator {
+            border-color: var(--discriminator-color);
+        }
+
+        .module-label {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            pointer-events: none;
+            padding: 8px;
+        }
+
+        .arrow {
+            position: absolute;
+            background-color: var(--arrow-color);
+            height: 2px;
+            z-index: 1;
+            transform-origin: left center;
+            pointer-events: none;
+        }
+
+        .skip-connection {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .skip-connection svg {
+            overflow: visible;
+        }
+
+        .skip-connection path {
+            stroke-dasharray: 5, 5;
+            animation: dash 1s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 10;
+            }
+        }
+
+        .discriminator-arrow {
+            --arrow-color: #ef4444;
+        }
+
+        .controls {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #model-slider {
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        #stage-name {
+            font-size: 16px;
+            color: #666;
+            height: 20px;
+            margin-top: 10px;
+            transition: opacity var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="model-container" class="model-container">
+            <!-- Columns will be dynamically added here -->
+        </div>
+        <div class="controls">
+            <input type="range" id="model-slider" min="0" max="0" value="0" step="1">
+            <div id="stage-name"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import modelConfig from './model-config.js';
+
+        class ModelVisualizer {
+            constructor(container, config) {
+                this.container = container;
+                this.config = config;
+                this.currentStage = 0;
+                this.modules = new Map();
+                this.arrows = [];
+                this.transitioning = false;
+
+                this.initializeSlider();
+                this.render();
+            }
+
+
+            initializeSlider() {
+                const slider = document.getElementById('model-slider');
+                slider.max = this.config.stages.length - 1;
+
+                slider.addEventListener('input', (e) => {
+                    if (!this.transitioning) {
+                        this.currentStage = parseInt(e.target.value);
+                        this.transitionToStage();
+                    }
+                });
+            }
+            transitionToStage() {
+                if (this.transitioning) return;
+                this.transitioning = true;
+
+                // Clear and render new stage immediately
+                this.container.innerHTML = '';
+                this.render();
+                this.transitioning = false;
+            } createModule(module) {
+                const elem = document.createElement('div');
+                elem.id = module.id;
+                elem.className = `module ${module.type === 'discriminator' ? 'discriminator' : ''}`;
+
+                const typeConfig = this.config.moduleTypes[module.type];
+                elem.style.width = `${module.width || typeConfig.defaultWidth}px`;
+                elem.style.backgroundColor = typeConfig.background;
+                elem.style.gridColumn = module.column + 1;
+                elem.style.gridRow = module.row + 1;
+                elem.style.position = 'relative'; // Ensure child modules are positioned relative to this
+
+                // Handle transformer stacking
+                if (module.type === 'transformer' && module.stackCount > 1) {
+                    const stackHeight = module.height || typeConfig.defaultHeight;
+                    const stackSpread = module.stackSpread || 0; // Horizontal and vertical offset between stacked modules
+                    const hiddenSize = parseInt(module.label.match(/h=(\d+)/)?.[1]) || 80; // Extract hidden size from label
+
+                    // Adjust height based on hidden size
+                    const heightMultiplier = Math.log(hiddenSize / 10); // Normalize height based on h=80
+                    const moduleHeight = stackHeight * heightMultiplier;
+
+                    // Calculate total height for the container
+                    const totalHeight = moduleHeight + stackSpread * (module.stackCount - 1);
+                    elem.style.height = `${totalHeight}px`; // Set container height to fit all stacked modules
+
+                    // Create stacked modules
+                    for (let i = 0; i < module.stackCount; i++) {
+                        const stackElem = document.createElement('div');
+                        stackElem.className = `module ${module.type}`;
+                        stackElem.style.width = `${module.width || typeConfig.defaultWidth}px`;
+                        stackElem.style.height = `${moduleHeight}px`;
+                        stackElem.style.backgroundColor = typeConfig.background;
+                        stackElem.style.position = 'absolute';
+                        stackElem.style.top = `${(i - 1) * stackSpread}px`; // Offset each module vertically
+                        // stackElem.style.left = `${i * stackSpread}px`; // Offset each module horizontally
+                        stackElem.style.zIndex = module.stackCount - i; // Ensure the first module is on top
+
+                        // Add label to the first module only
+                        if (i === 0) {
+                            const label = document.createElement('div');
+                            label.className = 'module-label';
+                            label.textContent = module.label;
+                            stackElem.appendChild(label);
+                        }
+
+                        elem.appendChild(stackElem);
+                    }
+                } else {
+                    // Add label for non-stacked modules
+                    const label = document.createElement('div');
+                    label.className = 'module-label';
+                    label.textContent = module.label;
+                    elem.appendChild(label);
+
+                    // Set height for non-stacked modules
+                    elem.style.height = `${module.height || typeConfig.defaultHeight}px`;
+                }
+
+                return elem;
+            }
+            createArrow(start, end, isSkip = false) {
+                // Log positions for debugging
+                console.log("Start Module:", start);
+                console.log("End Module:", end);
+
+                // Get the container's bounding box
+                const containerRect = this.container.getBoundingClientRect();
+                console.log("Container Rect:", containerRect);
+
+                // Get the bounding boxes of the start and end modules
+                const startRect = start.getBoundingClientRect();
+                const endRect = end.getBoundingClientRect();
+                console.log("Start Rect:", startRect);
+                console.log("End Rect:", endRect);
+
+                // Calculate the center points of the modules relative to the container
+                const startX = startRect.left + startRect.width / 2 - containerRect.left;
+                const startY = startRect.top + startRect.height / 2 - containerRect.top;
+                const endX = endRect.left + endRect.width / 2 - containerRect.left;
+                const endY = endRect.top + endRect.height / 2 - containerRect.top;
+
+                console.log("Start Center:", { startX, startY });
+                console.log("End Center:", { endX, endY });
+
+                if (isSkip) {
+                    // Create curved skip connection using SVG
+                    const dx = endX - startX;
+                    const control1X = startX + dx * 0.3;
+                    const control1Y = startY - 80; // Adjust curvature height as needed
+                    const control2X = endX - dx * 0.3;
+                    const control2Y = endY - 80;
+
+                    // Calculate bounding box for the SVG
+                    const allX = [startX, control1X, control2X, endX];
+                    const allY = [startY, control1Y, control2Y, endY];
+                    const minX = Math.min(...allX);
+                    const minY = Math.min(...allY);
+                    const maxX = Math.max(...allX);
+                    const maxY = Math.max(...allY);
+                    const width = maxX - minX;
+                    const height = maxY - minY;
+
+                    // Create SVG elements
+                    const svgNS = "http://www.w3.org/2000/svg";
+                    const svg = document.createElementNS(svgNS, "svg");
+                    svg.setAttribute("viewBox", `${minX} ${minY} ${width} ${height}`);
+                    svg.setAttribute("width", width);
+                    svg.setAttribute("height", height);
+                    svg.style.position = "absolute";
+                    svg.style.left = `${minX}px`;
+                    svg.style.top = `${minY}px`;
+                    svg.style.overflow = "visible";
+
+                    const path = document.createElementNS(svgNS, "path");
+                    path.setAttribute("d",
+                        `M ${startX - minX} ${startY - minY} 
+             C ${control1X - minX} ${control1Y - minY}, 
+               ${control2X - minX} ${control2Y - minY}, 
+               ${endX - minX} ${endY - minY}`);
+                    path.setAttribute("fill", "none");
+                    path.setAttribute("stroke", "#666");
+                    path.setAttribute("stroke-width", "2");
+                    path.setAttribute("stroke-dasharray", "5,5");
+
+                    svg.appendChild(path);
+
+                    // Create container div
+                    const skipConn = document.createElement("div");
+                    skipConn.className = "skip-connection";
+                    skipConn.style.position = "absolute";
+                    skipConn.style.left = `${minX}px`;
+                    skipConn.style.top = `${minY}px`;
+                    skipConn.style.width = `${width}px`;
+                    skipConn.style.height = `${height}px`;
+                    skipConn.appendChild(svg);
+
+                    return skipConn;
+                } else {
+                    // Create straight arrow
+                    const dx = endX - startX;
+                    const dy = endY - startY;
+                    const length = Math.sqrt(dx * dx + dy * dy);
+                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+                    const arrow = document.createElement("div");
+                    arrow.className = "arrow";
+                    arrow.style.position = "absolute";
+                    arrow.style.left = `${startX}px`;
+                    arrow.style.top = `${startY}px`;
+                    arrow.style.width = `${length}px`;
+                    arrow.style.transform = `rotate(${angle}deg)`;
+                    arrow.style.transformOrigin = "0 0"; // Ensure rotation starts from the left edge
+
+                    return arrow;
+                }
+            }
+            render() {
+                const stage = this.config.stages[this.currentStage];
+                this.container.innerHTML = '';
+                this.modules.clear();
+                this.arrows = [];
+
+                // Create columns
+                const columns = Math.max(...stage.modules.map(m => m.column)) + 1;
+                for (let i = 0; i < columns; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'column';
+                    column.dataset.column = i;
+                    this.container.appendChild(column);
+                }
+
+                // Render modules
+                stage.modules.forEach(module => {
+                    const column = this.container.querySelector(`[data-column="${module.column}"]`);
+                    const elem = this.createModule(module);
+                    column.appendChild(elem);
+                    this.modules.set(module.id, elem);
+                });
+
+                // Render connections
+                requestAnimationFrame(() => {
+                    stage.connections.forEach(conn => {
+                        const start = this.modules.get(conn.from);
+                        const end = this.modules.get(conn.to);
+                        if (start && end) {
+                            const arrow = this.createArrow(start, end, conn.type === 'skip');
+                            this.container.appendChild(arrow);
+                            this.arrows.push(arrow);
+                        }
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('model-container');
+            const visualizer = new ModelVisualizer(container, modelConfig);
+        });
+    </script>
+</body>
+
+</html>
