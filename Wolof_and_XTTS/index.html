@@ -69,6 +69,7 @@
         .row-label {
             font-weight: 600;
             color: #2c3e50;
+            background-color: #f5f7fa;
         }
 
         footer {
@@ -90,7 +91,13 @@
         }
 
         .audio-cell {
-            width: 30%;
+            width: 18%;
+        }
+
+        .description ul {
+            text-align: left;
+            display: inline-block;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -101,121 +108,125 @@
     </header>
 
     <div class="description">
-        <p>This page presents audio samples generated using models finetuned from XTTS (Extended Text-to-Speech).
-            Each row represents a different speaker or style, while columns contain different sample types.</p>
+        <p>This page presents audio samples generated using three different models finetuned from XTTS (Extended
+            Text-to-Speech) for the Wolof language:</p>
+        <ul>
+            <li><strong>BPE with large dataset:</strong> Extended BPE tokenizer (1000 additional mappings) trained on 5
+                unprocessed datasets</li>
+            <li><strong>BPE with clean dataset:</strong> Extended BPE tokenizer (1000 additional mappings) trained on a
+                cleaned dataset</li>
+            <li><strong>Char with clean dataset:</strong> Novel character-level tokenizer (similar to StyleTTS) trained
+                on the same cleaned dataset</li>
+        </ul>
     </div>
 
     <table class="samples-table">
         <thead>
             <tr>
-                <th>Sample Type</th>
-                <th>Sample 1</th>
-                <th>Sample 2</th>
-                <th>Sample 3</th>
+                <th>Model Type</th>
+                <th>Example 1</th>
+                <th>Example 2</th>
+                <th>Example 3</th>
+                <th>Example 4</th>
+                <th>Example 5</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="row-label">Speaker 1</td>
+                <td class="row-label">BPE with large dataset</td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpe-26-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpe-27-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
-                        Your browser does not support the audio element.
-                    </audio>
-                </td>
-            </tr>
-            <tr>
-                <td class="row-label">Speaker 2</td>
-                <td class="audio-cell">
-                    <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpe-28-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpe-29-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpe-30-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
             </tr>
             <tr>
-                <td class="row-label">Speaker 3</td>
+                <td class="row-label">BPE with clean dataset</td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpeclean-26-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpeclean-27-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
-                        Your browser does not support the audio element.
-                    </audio>
-                </td>
-            </tr>
-            <tr>
-                <td class="row-label">Speaker 4</td>
-                <td class="audio-cell">
-                    <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpeclean-28-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpeclean-29-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/bpeclean-30-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
             </tr>
             <tr>
-                <td class="row-label">Speaker 5</td>
+                <td class="row-label">Char with clean dataset</td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/char-26-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/char-27-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
                 <td class="audio-cell">
                     <audio controls>
-                        <source src="sample_placeholder.mp3" type="audio/mp3">
+                        <source src="audio/char-28-audio.wav" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </td>
+                <td class="audio-cell">
+                    <audio controls>
+                        <source src="audio/char-29-audio.wav" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </td>
+                <td class="audio-cell">
+                    <audio controls>
+                        <source src="audio/char-30-audio.wav" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
@@ -224,8 +235,8 @@
     </table>
 
     <footer>
-        <p>For more information about this research, visit <a href="https://kera.health/" target="_blank">Kera
-                Health Platforms</a></p>
+        <p>For more information about this research, visit <a href="https://kera.health/" target="_blank">Kera Health
+                Platforms</a></p>
     </footer>
 
 </body>
