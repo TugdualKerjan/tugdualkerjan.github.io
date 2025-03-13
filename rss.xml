@@ -1,0 +1,412 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>TUGDUAL</title>
+    <link>https://tugdual.com</link>
+    <description>MSc CS EPFL, poking around life !</description>
+    <item>
+      <title>TIME CAPSULE</title>
+      <link>https://time-capsule.ch</link>
+      <description>Avec Elior nous avons crée service qui s'engage à livrer des lettres écrites de la part d'une personne à une autre, mais 1 an après. L'idée est d'assurer la livraison de ce message au bon moment dans le futur,  peut-être à un moment où il/elle ne s’y attend pas. Le minimum viable product est une version en ligne mais nous souhaitons s'étendre aux lettres physiques: Nous recevons des enveloppes à une adresse prédéfinie et nous engageons à la renvoyer à une date prédéfinie. BREF: &lt;a href="time-capsule.ch"&gt;time-capsule.ch&lt;/a&gt; si vous voulez tester !</description>
+      <pubDate>Wed, 12 Mar 2025 06:42:04 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-062_TIME_CAPSULE-md</guid>
+    </item>
+    <item>
+      <title>DIVING</title>
+      <description>Finishing off my time at Dakar I was looking to spend some time learning a new skill - Dakar is surrounded by the sea and although not the most beautiful place to dive it had facilities to take classes and obtain at least the preliminary license ! Even in Senegal the water temperature was around 15-16 degrees ! After 9 dives through SSI (Scuba schools international) I obtained my Open Water Diver and can now dive up to 18m :)</description>
+      <pubDate>Wed, 12 Mar 2025 06:28:00 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-061_DIVING-md</guid>
+    </item>
+    <item>
+      <title>NETWORKS IN JAVA</title>
+      <link>https://github.com/TugdualKerjan/NeuralNetworksInJava</link>
+      <description>My fascination with neural networks started with &lt;a href="https://www.youtube.com/watch?v=qv6UVOQ0F44"&gt;this youtube video&lt;/a&gt; which still makes me marvel in awe today. It motivated me to take the little knowledge I had of programming games for Minecraft in Java to try and build my own neural networks. Following &lt;a href="https://www.youtube.com/watch?v=d3OtgsGcMLw&amp;list=PLgomWLYGNl1dL1Qsmgumhcg4HOcWZMd3k"&gt;this suite of tutorials&lt;/a&gt; on youtube, I slowly built my way up to working neural networks ! It remains by far one of my proudest achievements, having persevered through the terrific bad code I wrote and buggy scripts to arrive to something that could read handwriting and output the corresponding number.</description>
+      <pubDate>Wed, 05 Feb 2025 18:39:29 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-060_JAVA NETWORKS-md</guid>
+    </item>
+    <item>
+      <title>RUNNING</title>
+      <description>When arriving in Dakar, I promised myself to run every day during my stay. Based on the wisdom of atomic habits and the observations of what consistency does with the &lt;a href="https://t.me/+PPzl4ADhh0s0YTJk"&gt;GATO&lt;/a&gt; project, I set my goal to be to simply put my shoes on and go outside. This meant many days were spent just doing this, running 5 meters and checking that box - which was the idea ! Starting a new habit means anticipating how you'll make it work the day you lose motivation. Make it as easy as possible so that the action remains doable those days, and you won't break the chain ! Magic recipe: Choose something you want to be better at, set a very small goal, and do it!</description>
+      <pubDate>Sun, 26 Jan 2025 13:22:48 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-059_RUNNING-md</guid>
+    </item>
+    <item>
+      <title>JUST DO IT</title>
+      <link>https://reeee.mmm.page/justdoit</link>
+      <description>This page is in honor of one of my favorite terms: Proactivity. The goal of this page is to just do it.Not finish it, not polish it, just do the thing and be happy to be tinkering.</description>
+      <pubDate>Thu, 23 Jan 2025 17:24:01 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-058_JUSTDOIT-md</guid>
+    </item>
+    <item>
+      <title>GPT in JAX</title>
+      <link>https://github.com/TugdualKerjan/nanoEQXGPT</link>
+      <description>Another coding post ! Feel free to skim it, I'm mainly posting these to get a better understanding of things myself and because I feel that there is a lack of coding examples for this online - although in this specific post we mainly base ourselves off the work done &lt;a href="https://huggingface.co/blog/sachithgunasekara/nanojaxgpt"&gt;here&lt;/a&gt;.</description>
+      <pubDate>Tue, 11 Feb 2025 14:31:08 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-057_JAXTTS GPT-md</guid>
+    </item>
+    <item>
+      <title>REDDISTIL</title>
+      <link>https://www.youtube.com/@reddistil1195/videos</link>
+      <description>Back 5 years ago, videos doing Text to Speech on the most popular reddit threads in certain subreddits like "Ask me Anything" and "TIL" were popping up and making tons of views. I thought it would be pretty easy to automate these and so made my own and posted a few videos on youtube with it. Unfortunately I think I didn't persevere enough to break through and lost the code with time. Good memories anyways :)</description>
+      <pubDate>Sun, 17 Nov 2024 13:46:02 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-056_REDDISTIL-md</guid>
+    </item>
+    <item>
+      <title>VQVAE in JAX</title>
+      <link>https://github.com/TugdualKerjan/audio-vae-jax</link>
+      <description>Je deviens corpo. I'm currently in Dakar working on my master's thesis and I want to share what I do so that the next Tugdual who comes along doesn't have to spend 5 days from sunrise to sunset figuring out why his cute VQVAE seems smart enough to freeze boiling water for later use. (The problem is actually between the chair and the computer but hey). Anyways. Less fun than other projects but a project nonetheless.</description>
+      <pubDate>Tue, 11 Feb 2025 14:31:24 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-055_JAXTTS VQVAE-md</guid>
+    </item>
+    <item>
+      <title>SOLVEIT</title>
+      <link>https://tugdual.fr/solveit/</link>
+      <description>Sometimes when I try to go to sleep I think about a problem / solution that I would love to see pop up in the world. Ideas are good but execution is what counts. Thus I'm writing them down and making a public link so that more people may see and be motivated to implement a solution for it. It was also an excuse to make a page using mmm.page, which is legit gold concerning making things fast and dirty, just copied the HTML source and plopped it in my own site and it works ! :)</description>
+      <pubDate>Thu, 23 Jan 2025 16:33:52 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-054_SOLVEIT-md</guid>
+    </item>
+    <item>
+      <title>STICKER PRINTER</title>
+      <description>En traînant sur Facebook Marketplace, nous sommes tombées sur une machine à stickers avec Elior. Après une virée chaotique pour aller la chercher, plusieurs heures à comprendre comment elle fonctionnait et un an à chiller sur le projet, je m’y suis enfin remis pour concevoir la pièce qui s’était usée avec le temps ! Design et impression 3D, utilisation d’inserts métalliques et hop ! Le tour est joué, et la machine peut maintenant imprimer des stickers… Reste à obtenir la licence pour le faire :P</description>
+      <pubDate>Tue, 05 Nov 2024 09:37:38 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-053_STICKER_PRINTER-md</guid>
+    </item>
+    <item>
+      <title>POSTERS</title>
+      <description>I like playing around with the idea of "s'approprier l'espace", which seems to lack translation in english but it's basically making public spaces feel more human, at home, welcoming... Around a year ago EPFL removed certain spots used to display club posters to "clean things up". This had the issue that any club reusing these once used and now "clean" spots would get reprimanded as it would be the only one doing it. The solution was to create fake posters that would drown out the responsibility of a single club as was the case before. I used Midjourney to create a set of posters that were then printed and placed in these various old spots, making it easier for others to start doing the same ! :)</description>
+      <pubDate>Thu, 05 Sep 2024 00:01:35 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-052_POSTERS-md</guid>
+    </item>
+    <item>
+      <title>BUNNY</title>
+      <link>https://github.com/TugdualKerjan/bunny</link>
+      <description>Bunny is a better worse version of Rabbit R1, an AI assistant supposed to facilitate the interface between humans and LLMs. This project is a proof of concept to show the potential in reusing old phones as cheap, portable and privacy oriented devices that won't send your chats to be trained at OpenAI or whatever other company. It will work without any connection and can be further configured to your desire. Further down the road, I would want to have the skills to run the computationally intensive parts on dedicated hardware to accelerate and render more efficient the inference.</description>
+      <pubDate>Fri, 19 Jul 2024 10:50:37 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-051_BUNNY-md</guid>
+    </item>
+    <item>
+      <title>ALL THE PASTA</title>
+      <link>https://tugdual.fr/pasta</link>
+      <description>I want to eat all the different types of pasta Barilla has to propose. I sent them a message asking if they could send me the list of all the different numbers of pasta but they apparently don't have one ! I guess I'll do it myself then. Scrapping the website, filtering out the pesto and miscellaneous products, I finally (6 hours later 🤡) obtain a list of all different pasta numbers ! To better visualise where I can find them, I built a small website where I will be keeping track of the pasta types I've bought, tasted and an overall score. My adventures will be logged on a &lt;a href="https://t.me/+mpQYS2SoFWkxZGVk"&gt;telegram channel&lt;/a&gt; for those who wish to partake in the adventure !</description>
+      <pubDate>Sat, 08 Jun 2024 19:01:54 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-050_PASTA-md</guid>
+    </item>
+    <item>
+      <title>BANC</title>
+      <description>We wanted to get a bench for the house as there isn't really a place to put the shoes and coats back in the apartment. I thought it would be a great excuse to try learning to weld as the design we chose was only right angle welds. Bought some steel, cut it up after having modelled it on Fusion360 and then learned to weld ! Six hours later and after a lot of learning, I got a bench ! Now we learned what primer is for after seeing rust appear during the painting process, so we had to do a second round. Finally, some time later I found a good piece of wood to sand down and luster up to place on the steel, completing this great learning experience ! We can finally put our socks on while sitting down 🎉.</description>
+      <pubDate>Thu, 30 May 2024 22:46:26 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-049_BANC-md</guid>
+    </item>
+    <item>
+      <title>GATÔ</title>
+      <description>I decided during new years that I would do a cake everyday for a year. It's been a wild ride but we've reached the 100 day mark and I can safely say that I believe this to be a fantastic success. This bizarre challenge has pushed me to do random things such as ask people in a train if they could host me for the night and if I could bake a cake in their oven, or simply try out recipes that shouldn't exist. The channel on which I would post everyday is available &lt;a href="https://t.me/+PPzl4ADhh0s0YTJk"&gt;here&lt;/a&gt;. A fantastic way to learn also about what perseverance can do. More cake will come do not fear.</description>
+      <pubDate>Wed, 08 May 2024 19:42:43 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-048_GATÔ-md</guid>
+    </item>
+    <item>
+      <title>USER EXPERIENCE</title>
+      <description>Nous avons eu un cours de "Design thinking" ou le but était d'apprendre à attaquer des problèmes avec différentes "Frameworks" pour y trouver des solutions. Pour illustrer nos solutions nous avons exploité Midjourney pour produire des images des produits qu'on propose. Le dossier complet est disponible &lt;a href="https://tugdual.fr/ue"&gt;ici&lt;/a&gt;, montrant l'utilisation de Chat-GPT pour le développement du site.</description>
+      <pubDate>Wed, 08 May 2024 19:31:54 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-047_UE-md</guid>
+    </item>
+    <item>
+      <title>TRANSPAL PAINTING</title>
+      <description>AGEPoly possède moulte transpalettes et des cargos, ainsi que plein d'autre matériel. Dans un but de créer une identité visible j'ai proposé au comité de repeindre le matériel dans la couleur des pulls, un sorte de turquoise. Après discussion avec le SKIL je suis parti sur de la peinture 2 composant d'une carrosserie puis hop ! Quelques heures de pris et même le vieux transpal dinosaur avait l'air neuf !</description>
+      <pubDate>Thu, 14 Dec 2023 14:44:22 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-046_painting-md</guid>
+    </item>
+    <item>
+      <title>AUTOSTOP</title>
+      <description>Cet été, j'ai commencé à faire du stop, car aller de Lausanne à Barcelone, ça coûte trop cher sinon. Cela a lancé une grande passion pour ce mode de transport où on peut rencontrer tout type de personne : complotiste, couples, ingénieurs pour le secteur électrique néerlandais, teufeurs bretons, chef de secteur chez BOBST, chef d'hôpital, peintre polonais qui roule à 240 km/h sur l'autobahn... Au menu niveau voitures : Ford Fiesta, VW Golf, Tesla, Porsche Cayenne et Audi S7. De loin, une des meilleures découvertes cette année (Merci Bastien pour l'idée :)). Total de 3250km et 41h15 de voiture !</description>
+      <pubDate>Fri, 03 Nov 2023 17:11:58 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-045_Hitchhiking-md</guid>
+    </item>
+    <item>
+      <title>LETTRE</title>
+      <description>Un bon ami à moi part en voyage pendant un an sur un batô. Je j'apprécie énormément et j'ai décidé de lui écrire une lettre afin qu'il le sache ! Papier 300g/m2 trouvé dans une partagère et image de bateau et oiseau trouvé en ligne, je l'ai laser découpé afin de créer une découpure puis mis dans un autre papier jaune comme enveloppe en vitesse.</description>
+      <pubDate>Mon, 09 Oct 2023 19:03:31 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-044_Letter-md</guid>
+    </item>
+    <item>
+      <title>BOB</title>
+      <description>Decided to make a bob to learn how to use the sowing machine. Using my aunts experience we cut out the shapes and measured my head to get the correct dimensions. A good 4h later we obtained the final product after having cutout the pattern, chosen the textile and used my grandma's Bernina that still works like new after 40 years of heavy use !</description>
+      <pubDate>Wed, 30 Aug 2023 18:06:02 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-043_Bob-md</guid>
+    </item>
+    <item>
+      <title>SAVON</title>
+      <description>La savonnerie du Fer à Cheval vends des blocs de 10kg de savon de Marseille. Je trouvais cela drôle d'aller en acheter en vélo depuis Lausanne. Départ samedi à 9h45 depuis chez moi pour une arrivé 45h et 600km plus tard à Marseille en passant par Genève, Valence, Avignon et en dormant un total de 4h ! Arrivé à 5h40, j'ai plus de fesses ! Au final j'en ai acheté deux.</description>
+      <pubDate>Sat, 29 Jul 2023 01:04:33 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-042_Savon-md</guid>
+    </item>
+    <item>
+      <title>SIROLOC</title>
+      <link>http://siroloc.ch</link>
+      <description>Suite à une idée d'Elior, la colocation Siroloc est née - un des buts est de collectionner tous les sirops Morands disponibles ! Plein d'aventures en découlent: des cadeaux, une visite de l'entreprise impromptu (Où on nous a gracieusement offert une avant-première au sirop Diana des bois qui s'apprêtait à sortir), la mise en place d'un site siroloc.ch pour informer les visiteurs des sirops qu'on possède et plus récemment la création d'une étagère pour les mettre en avant !</description>
+      <pubDate>Thu, 29 Jun 2023 19:07:30 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-041_Sirops-md</guid>
+    </item>
+    <item>
+      <title>NFC RING</title>
+      <description>Pendant les vacances de février, j'ai tenté de transformer ma carte d'accès au campus de l'EPFL en annaux que je pouvais porter sur mon doigt. La carte est fait de PCB et se dissout à l'acetone pour ne laisser que le fil qui sert de transceiver et d'inducteur afin d'alimenter une petite puce caché au sein de la carte. Après quelques essais, je suis capable de maintenant ouvrir comme avec une carte normale les portes des batiments, payer et utiliser les imprimantes ! Le fil reste très fragile, j'aimerais fabriquer une version plus solide et capable d'être détécté de plus loin.</description>
+      <pubDate>Mon, 05 Jun 2023 18:50:02 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-040_NFC_RING-md</guid>
+    </item>
+    <item>
+      <title>CLARIFY</title>
+      <link>https://github.com/TugdualKerjan/VoiceClarifier</link>
+      <description>In 2019 I took a train to go to STARTHack St Gallen. One of the competitions was axed around helping people in need. We worked on a proof of concept showing that people that have difficulty articulating could benefit off a device that improves the articulation so as to render the disabled person more independent with everyday activities, especially phone calls.</description>
+      <pubDate>Mon, 13 Mar 2023 21:21:13 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-039_Clarify-md</guid>
+    </item>
+    <item>
+      <title>SUPERBoard</title>
+      <description>Lors d'une fin de soirée nous sommes tombées sur des SMARTBoards aux encombrants avec Olivier. Un peu de motivation et quelques grammes m'aident à le ramener à la maison. Il s'avère que c'est un trackpad, je peux donc définir diverses actions selon des zones différentes du tableau. Par exemple, créer un clavier pour inciter l'impression d'étiquettes marrantes, interfacé avec une RaspberryPi entre le SMARTBoard et l'étiqueteuse Brother (Reuf)</description>
+      <pubDate>Fri, 30 Dec 2022 18:30:17 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-038_SUPERBoard-md</guid>
+    </item>
+    <item>
+      <title>AUTOPOST</title>
+      <link>https://gist.github.com/TugdualKerjan/e7ebd66d2475f6f8fb4c923145f9c33a</link>
+      <description>La poste suisse à un service qui propose l'envoi d'une carte postale gratuite tout le jours. C'est un service incroyable mais il est pas possible de programmer l'envoi donc j'oublie souvent d'ouvrir l'application de manière journalière. Heureusement, la poste propose aussi un API. Avec un script python, tout le jours, une image est prise d'un dossier dédié et envoyé par la poste vers mon addresse. Il me suffit maintenant de simplement placer les images que je souhaite envoyer dans ce fichier, le reste ce fait automatiquement !</description>
+      <pubDate>Wed, 07 Dec 2022 16:10:05 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-037_Autopost-md</guid>
+    </item>
+    <item>
+      <title>MALEVICH</title>
+      <description>Mom and Foulques came to EPFL for a few days. She loves art, and one of the goals in her classroom is to make the kids interact more with different creations of artists. Before, I had already created a frame based of Mondrian, now this time the goal was to make humans based off the art of Kazimir Malevich. Mom drew the outline, then we vectorized the picture and adjusted the fine details by editing the nodes of the outline. Result: 16 humans to play with.</description>
+      <pubDate>Fri, 28 Oct 2022 17:19:06 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-036_Malevich-md</guid>
+    </item>
+    <item>
+      <title>CHAMPIGNONS</title>
+      <description>Dimanche j'ai suivi Kuba dans la forêt pour aller à la chasse aux champignons. C'est comme Pokémon GO mais mieux - il faut traverser de la broussaille pour tomber sur des champignons plus ou moins rares. L'expertise de Kuba était utile pour ne pas mourir en prenant le mauvais champignon. Résultat des courses: des cèpes, girolles et trompettes de la mort ainsi que des lactaires délicieux. Problème: Je connais maintenant beaucoup de noms de champignons mais en polonais.</description>
+      <pubDate>Mon, 24 Oct 2022 12:08:59 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-035_Champignons-md</guid>
+    </item>
+    <item>
+      <title>SPARTAN</title>
+      <description>Lors d'une soirée on me propose de participer a une spartan le lendemain. Je me retrouve en guelle de bois le lendemain a être en train de courir un 5km avec 20 obstacles et 450m de dénivlé. Experience 10/10, vu sur les montagnes du Valais avec un ciel bleu. Would do again</description>
+      <pubDate>Fri, 07 Oct 2022 08:52:52 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-034_SPARTAN-md</guid>
+    </item>
+    <item>
+      <title>BOB ROSS</title>
+      <description>After about a year I finally took out the two frames I had and with Jeanne we followed a  sacred &lt;a href="https://www.youtube.com/watch?v=87MMbN1bQCs"&gt;Bob Ross ™️ tutorial&lt;/a&gt;. It took around 2 hours and surprisingly no paint fell on the floor or table 🌚. I think it is by far one of my most prized memories with Jeanne &lt;3</description>
+      <pubDate>Fri, 07 Oct 2022 09:07:07 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-033_BOBROSS-md</guid>
+    </item>
+    <item>
+      <title>BRODERIE</title>
+      <description>Decided to learn to sow on the most basic level, asked grandma for some help to make some little patterns using 3 different colors of string. With the help of aida cloth which allows easy cross-stitch embroidery. Was a great experience. Mom came to give us extra tips and tricks on being more efficient when making lines of cross-stitches.</description>
+      <pubDate>Wed, 31 Aug 2022 21:26:10 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-032_Broderie-md</guid>
+    </item>
+    <item>
+      <title>CHAINSAW</title>
+      <description>Après un rachat un peu foireux de matériel de bricolage sur Facebook Market place je me suis retrouvée avec une tronçonneuse en ma possession, qui fonctionnait pas. 1h de démontage m'as permis de trouver le problème: Le frein moteur s'était fondu dans le plastique. Un coup de dremelle sur le plastique et hop ! La tronçonneuse fonctionne de nouveau, bien que sans une pièce de sécurité un peu cruciale ;)</description>
+      <pubDate>Mon, 18 Jul 2022 15:05:37 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-031_Chainsaw-md</guid>
+    </item>
+    <item>
+      <title>RADÖ</title>
+      <description>When walking behind the student bar of our school I noticed that the plastic keykegs were being loaded into a truck. Apparently they are recycled when empty. With the help of a very large metal frame that was laying around we decided to make a raft with some friends. We then went to the lake to test it out. There was enough buoyancy for a total of 7 people on it! Doors of metal lockers were used without much efficiency to paddle around. An overall success :)</description>
+      <pubDate>Tue, 28 Jun 2022 14:10:46 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-030_Rado-md</guid>
+    </item>
+    <item>
+      <title>TREBUCHET</title>
+      <description>Bored during the summer holidays with two friends we decided it would be a good time to build a weapon of mass destruction. We took some wood from grandpa and got to work building the medieval potato launcher that would be this project. The hardest part was finding a good counterweight, but thankfully grandpa saved the day by giving us a car battery. We also ended up in the regional news paper.</description>
+      <pubDate>Tue, 21 Jun 2022 22:48:17 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-029_Trebuchet-md</guid>
+    </item>
+    <item>
+      <title>CADRE</title>
+      <description>Both of my grandparents live near the sea. Using 3mm medium density fiberboard and some tinted black plexiglass I decided to make them some maps of their area. I used &lt;a href="snazzymaps.com"&gt;snazzymaps.com&lt;/a&gt; to create a black and white theme of their cities with the roads. One of the frames was done with wood from a waste disposal and the other adapted from an old frame to fit the map.</description>
+      <pubDate>Sun, 19 Jun 2022 16:55:12 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-028_Cadre-md</guid>
+    </item>
+    <item>
+      <title>PotAGEP</title>
+      <description>Avec Marie nous avons amenagee le terrain devant le local de l'AGEPoly pour la deuxieme annee de suite. Nous y avons plantee: 2 courgettes, 2 concombres, des haricots grimpants, 6 plants de tomates et un oeillet d'inde qui repousse les nématodes pour les tomates, des radis, des carottes, 2 basilics, 24 salades, de la ciboulette, un groseillier, 2 framboisiers, un piment, du thym, et du persil. Cout total: ~100 CHF de plantons et graines.</description>
+      <pubDate>Sun, 08 May 2022 10:00:55 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-027_PotAGEP-md</guid>
+    </item>
+    <item>
+      <title>TRANSPALETTE</title>
+      <description>Dimanche matin je suis tombé sur une annonce pour un transpalette sur Facebook marketplace pour 80 CHF. J'ai pris la décision de louer une voiture et aller le chercher, puis dans les prochains jours le poncer et repeindre. La peinture m'aura coûté 30 CHF en plus.</description>
+      <pubDate>Sun, 08 May 2022 10:01:51 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-026_Transpalette-md</guid>
+    </item>
+    <item>
+      <title>LAMP</title>
+      <description>Our flat in which I live with 3 other people had a lot to improve on. One of the main problems was lighting, which initially was provided by one poor light. Poor lighting makes it hard to work and stay concentrated. With Jeanne I decided it was time for a change. Went to OBI (The hardware store) a total of 5 times to finally obtain all the necessary things to build the lamp. It took a total of 15h to wire up and sand everything and finally obtain a product that lit of the room in a more uniform and brighter fashion!</description>
+      <pubDate>Tue, 03 May 2022 13:59:47 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-025_Lamp-md</guid>
+    </item>
+    <item>
+      <title>SJOELBAK</title>
+      <description>Back From Paques, an event organized by AGEPoly (Association for the students of EPFL) budgeted 150 CHF for me to build this famous dutch shuffleboard. Measurements were taken rapidly from &lt;a href="http://www.van-vliet.org/dempseywoodworking/sjoelbak.shtml"&gt;this site&lt;/a&gt;. The wood cost ~70 CHF and the varnish another 10. The little peices of wood were made out of truck flooring plywood and a CNC. A dark varnish allowed the material to look more authentic</description>
+      <pubDate>Tue, 03 May 2022 13:51:09 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-024_Sjoelbak-md</guid>
+    </item>
+    <item>
+      <title>MUN SIGN</title>
+      <description>During the vacation of 2019 I used the SKIL to create a new Sign Plate for MUN, in our entrance of our headquarters CO116 it is composed of two PMMA, one white for the background and a transparent one with a combination of a black and red vinyl stickers cut out with a Silhouette 3.</description>
+      <pubDate>Mon, 02 May 2022 15:32:20 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-023_MUN_Plate-md</guid>
+    </item>
+    <item>
+      <title>THE WHEEL</title>
+      <link>https://tugdual.fr/wheel/wheel</link>
+      <description>During this summer I got the idea of downloading the dataset of all the units at EPFL and representing them with D3.js, a javascript library for data visualisation. This project allowed me to better understand how this language works, and what typical coding parterns are used in it. In the future I would like to add the option to see the people in each unit, optimise it so it doesn't slow down computers too much and make a version with history in mind.</description>
+      <pubDate>Wed, 19 Jan 2022 15:07:58 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-022_wheel-md</guid>
+    </item>
+    <item>
+      <title>AUTOMATIC POSTING</title>
+      <description>People don't regularly visit websites anymore without having 							notifications. If only RSS was still something people used! 							Although in the future I plan on adding it for now I wanted to be 							able to avoid doing redundant work by being able to post what I do 							on Telegram but also automatically post it on my website. Now 							whenever a post appears on t.me/tugdualupdates it is automatically 							added to my website as well!</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-021_automatic_posting-md</guid>
+    </item>
+    <item>
+      <title>STICKER DETECTION</title>
+      <link>https://github.com/TugdualKerjan/StickerDetection</link>
+      <description>For my semester project of my EPFL Bachelors, I decided to 							rebuild my dinosaur detector but generalize it to being able to 							detect any sticker in my area. This used Facebook's python library 							Detectron2 and an implementation of Few-Shot papers by Oscar 							Knagg. Overall the project was a success and I wish to spend more 							time on it later on.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-020_sticker_detection-md</guid>
+    </item>
+    <item>
+      <title>BARNABE</title>
+      <link>https://github.com/TugdualKerjan/Barnabe</link>
+      <description>The headquarters of the Sysmic association have a projector and 							really apreciate listening to music on youtube through it. 							Unfortunately there is always the need to be connected to the HDMI 							cable. Thanks to a RPI B+ and some simple python code I am able to 							have a bot which will respond to @barnab on a specific group, 							suggest youtube songs and respond. One can click on pause/play, 							next, previous and increase or lower the volume of the projector 							all from the bot.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-019_barnabe-md</guid>
+    </item>
+    <item>
+      <title>MY NAME ON MARS</title>
+      <link>http://spaceref.com/mars/109-million-names-aboard-perseverance-mars-rover.html</link>
+      <description>For the Perseverance rover it was possible to add our name onto 							an engraved plate that would go with it on its launch in July 2020 							onboard the Atlas V 541 rocket, along with a cool 10 million other 							people!</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-018_my_name_on_mars-md</guid>
+    </item>
+    <item>
+      <title>FREE REMOTE FOR PRESENTATIONS</title>
+      <link>https://github.com/TugdualKerjan/remoteTelegram</link>
+      <description>Instead of studying ProbaStat for my exams, I procrasinated by 							giving myself a remote to present my Semester Project, but without 							having to spend 100$ on some random remote. This bot simply 							recreates the keyboard presses I typically use for my 							presentations (Space, left, right...). This project took around 							~15 minutes to complete, from start to finish! New record :^)</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-017_free_remote_for_presentations-md</guid>
+    </item>
+    <item>
+      <title>CALVIN AND HOBBES</title>
+      <link>https://github.com/TugdualKerjan/CalvinAndHobbesPainting</link>
+      <description>On a whim when back from EPFL to vacation for Easter with the 							family I asked my Mom if she could teach me how to paint. I had 							already painted, but a long time ago and I feel like I have a sort 							of helplessness associated with just not knowing where to start 							for things a simple as painting. This also applies in Sowing, 							Woodworking, Car reperations and, probably forever seeing as how 							complex the field is, Computer Science.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-016_calvin_and_hobbes-md</guid>
+    </item>
+    <item>
+      <title>SUGAR ROCKETS</title>
+      <link>https://youtu.be/7CMFNPTSn-w</link>
+      <description>Once again bored during quarantine and having completed the DARPA 							Potato Canon, I wanted to go a little further. The obvious answer 							is building rockets, so after a little research and the 							wonderfully documented blog of Richard Nakka, I decided to go for 							the classic potassium nitrate (KNO3) + sugar rockets. Just like 							your car, your rocket needs oxygen and a fuel. Instead of using 							petrol we will use sugar, and instead of using the oxygen of the 							atmosphere we will grab them from the potassium nitrate. We 							grabbed some sodium nitrate from the gardening store and some 							potassium chloride from the pharmacy (A common replacement for 							salt). Did a double displacement reaction and ended up with our 							long awaited for potassium nitrate. Some tests reveal flamboyant 							success, and, don't tell mom but when mixing another batch later 							on it exploded and my hair burt to a crisp. Thankfully I was 							wearing goggles and a mask, so my moustache is intact.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-015_sugar_rockets-md</guid>
+    </item>
+    <item>
+      <title>WOODEN ELEMENTS</title>
+      <link>https://github.com/TugdualKerjan/WoodenElements</link>
+      <description>I absolutely love chemistry, and thus I decided it would be 							awesome to laser cut some periodic table of elements with a 							collectable like feeling to them (Basically make them look cute). 							To acheive this I used a multitude of programs and loopholes so as 							to automatise the process of editing each name. I started by 							downloading a csv with all the elements and their numbers, then 							designing the basic template token in inkscape, then using a 							python program to copy paste and change the number, symbol and 							name and paste the elements one next to another. I then transform 							it using SVG to DXF</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-014_wooden_elements-md</guid>
+    </item>
+    <item>
+      <title>MUN SITE</title>
+      <link>https://munsite.onrender.com</link>
+      <description>For the MUN association of at EPFL we wanted to improve the site 							as the current one simply wasn't attractive enough. This was part 							of a bigger initiative to have a clearer and more consistent image 							of MUN EPFL, as the last years it had been with defracted. Using 							simple HTML and CSS we were able to build a clean and readble 							website the perfect amount of information</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-013_mun_site-md</guid>
+    </item>
+    <item>
+      <title>SPONGEBOB AT EPFL</title>
+      <link>images/sponge.jpg</link>
+      <description>When I learned that there was a way to print my own plastic cards 							using a machine at EPFL I decided it was time to sign spongebob up 							for EPFL. I spent around 2-3h working on copying pixel for pixel 							the camipro standard, and then changing the information and 							picture on it for spongebob. Doing this, I learned a few things in 							the domain of printers (How to register them, send jobs etc) as 							well as the standards used in plastic cards (Such as that they are 							86mm x 54mm)</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-012_spongebob_at_epfl-md</guid>
+    </item>
+    <item>
+      <title>AUTOMATÉ</title>
+      <link>images/Projet de casier distributeur automatique de Mate.pd</link>
+      <description>Lors d'un cours d'archord, avec Elior on a eu l'idee fantastique 							de creer une machine qui automatiserais la vente de club mates, 							des boissons remplies de caffeine. Apres quelques dessins de 							design, nous avons commencee a construire la boite dans laquelle 							une personne se mettrais et donnerait un mate a ceux qui vennait 							appuyer sur un bouton. Malheureusement le projet ne s'est jamais 							acheve.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-011_automaté-md</guid>
+    </item>
+    <item>
+      <title>HEADPHONES</title>
+      <description>The MDR-1000X headphones that I bought cost 250 Euro, but unfortunately broke (Probably because of the cold...). I looked online and noticed that I wasn't the only one that had this problem. A few prints later after having found 3-4 potential models I was able to print a 3d piece that managed to fit but wasn't too feeble. Problem solved!</description>
+      <pubDate>Mon, 02 May 2022 15:49:46 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-011_2 Headphones-md</guid>
+    </item>
+    <item>
+      <title>LE CHURROS</title>
+      <description>EPFL decided to install this weird ass sculpture on the 							diagonale, a popular walkway. Seeing as there was no name on it, 							with the inspiration of a friend we decided to baptise it Le 							churros, 1999, (Not edible) The actual name of the structure is 							Beton, made in the 70s.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-010_le_churros-md</guid>
+    </item>
+    <item>
+      <title>LASER DINOSAUR</title>
+      <description>At SKIL at EPFL, for the project of the hidden dinosaurs I 							decided to create a small gift for those who would be able to find 							all of them. After some experimenting I came up with a design of 4 							layers so as to give it depth, and using the eyes as an anchor 							point for the layers.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-009_laser_dinosaur-md</guid>
+    </item>
+    <item>
+      <title>SHYPOOPER</title>
+      <link>https://shypooper.ch</link>
+      <description>Finally, a web application that's capable of accumulating the 							fine knowledge of which bathrooms are the best at EPFL. Thanks to 							this site coded using OpenLayers, MongoDB and Express one can 							check the quality of a variety of bathrooms at EPFL</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-008_shypooper-md</guid>
+    </item>
+    <item>
+      <title>LAUSANNE TO LILLE</title>
+      <description>With Augustin decided it would be a good idea to bike all the way 							back from Lausanne to Lille by bike. Took a sore ass, 4 days of 							biking and one afternoon of traversing the Jura hungover to 							acheive this dumb idea. Left with just a backpack, no sleeping bag 							nor tent. Used WarmShowers to find splaces to sleep.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-007_lausanne_to_lille-md</guid>
+    </item>
+    <item>
+      <title>TYPING SPEED</title>
+      <link>https://www.keybr.com/profile/61pc4tj</link>
+      <description>After reseting my computer because I had accidentaly corrupted my 							Ubuntu, I was presented with the option to select a keyboard 							layout. I decided to go with Colemak, which had been specificaly 							designed to be more efficient at typing compared to Qwerty. Over 							the course of 2 weeks I went from 0 wpm to 50! I am currenty 							working on punctuation and coding, as those also rely on muscle 							memory.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-006_typing_speed-md</guid>
+    </item>
+    <item>
+      <title>DARPA POTATO GUN</title>
+      <link>https://www.youtube.com/watch?v=J2pw6YUc0-Q</link>
+      <description>Bored on a saturday morning with Charles and Come, we decide that 							it is time we made a potato gun. Ingredients: Potato, PVC and 							lighter. Surprisingly powerful, especially given that less fuel 							gives a more potent explosion (Ratio of Oxygen?)</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-005_darpa_potato_gun-md</guid>
+    </item>
+    <item>
+      <title>ANKI ELEMENTS</title>
+      <description>The second deck I chose to work on after the World countries one 							is dedicated to the periodic table of elements, namely the name, 							atomic number and symbol. It took me 1 month to learn, 10 minutes 							a day. This confirmed the efficiency of Anki which I since then 							use to store notes about classes and programming. This also 							introduced me to the art of memory as it used small images 							associated to each element so as to help the learning process.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-004_anki_elements-md</guid>
+    </item>
+    <item>
+      <title>THIS WEBSITE</title>
+      <description>The day after making the blender space ship I decided it was time 							to make a terrible website on which I would be able to log all the 							projects I enjoy investing time in. The result is this sort of 							deck of cards, each one describing something I find worth of 							sharing. It took a full day for me to make the cards, animate and 							modularise them, without ever having touched Javascript before. 							Quite satisfied.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-003_this_website-md</guid>
+    </item>
+    <item>
+      <title>BLENDER SPEEDRUN</title>
+      <description>Drew some perspective drawing 2 days ago, wanted to see how it 							would look in Blender. Then spent the next day on learning how to 							use the application. Really intuitive, got a good grasp thanks to 							this fellow on YouTube: Imphenzia. I then decided to see if I 							could preview it on a github page I had recently created (This 							one). After a solid day of work my shitty 3D model is viewable on 							a website from anywhere around the world!</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-002_blender_speedrun-md</guid>
+    </item>
+    <item>
+      <title>ANKI WORLD</title>
+      <description>Using the opensource application ANKI, I was able in the span of 							a month, 20 minutes a day, to memorise all countries, capitals, 							geolocations and flags. This totaled to around 10 hours of work. 							It also allowed me to realise the potential of Anki. I have used 							it since to memorize a multitude of other subjects that you can 							find in other cards. As a side note, I chose to also memorise the 							cantons of Switzerland, their capital and coat of arms, as well as 							the regions of France.</description>
+      <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-001_anki_world-md</guid>
+    </item>
+  </channel>
+</rss>
