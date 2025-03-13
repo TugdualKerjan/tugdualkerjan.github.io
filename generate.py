@@ -134,7 +134,7 @@ def generate_rss(article_path):
     ET.SubElement(channel, "title").text = "TUGDUAL"
     ET.SubElement(
         channel, "link"
-    ).text = "https://tugdual.com"  # Adjust with your actual website URL
+    ).text = "https://tugdual.fr"  # Adjust with your actual website URL
     ET.SubElement(channel, "description").text = "MSc CS EPFL, poking around life !"
 
     # Get all article files

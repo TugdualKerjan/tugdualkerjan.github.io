@@ -2,8 +2,15 @@
 <rss version="2.0">
   <channel>
     <title>TUGDUAL</title>
-    <link>https://tugdual.com</link>
+    <link>https://tugdual.fr</link>
     <description>MSc CS EPFL, poking around life !</description>
+    <item>
+      <title>RSS</title>
+      <link>https://tugdual.fr/rss.xml</link>
+      <description>RSS is basically the proto-social network. It's a protocol that allows you to get content from various websites that you wish to follow and receive it in a dedicated application on your device. It allows you to "follow" people on internet that post content in whatever format, and simply also provide a document formatted in XML that will be sent to you whenever there is a new update. Without ads. Or algorithms. Just you and the people you want to hear about, without needing to remind yourself to open the website every now and then.</description>
+      <pubDate>Thu, 13 Mar 2025 09:37:38 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-063_RSS-md</guid>
+    </item>
     <item>
       <title>TIME CAPSULE</title>
       <link>https://time-capsule.ch</link>
