@@ -7,14 +7,14 @@
     <item>
       <title>RSS</title>
       <link>https://tugdual.fr/rss.xml</link>
-      <description>RSS is basically the proto-social network. It's a protocol that allows you to get content from various websites that you wish to follow and receive it in a dedicated application on your device. It allows you to "follow" people on internet that post content in whatever format, and simply also provide a document formatted in XML that will be sent to you whenever there is a new update. Without ads. Or algorithms. Just you and the people you want to hear about, without needing to remind yourself to open the website every now and then.</description>
-      <pubDate>Thu, 13 Mar 2025 09:37:38 +0000</pubDate>
+      <description>RSS is basically the proto-social network. It's a protocol that allows you to get content from various websites that you wish to follow and receive it in a dedicated application on your device. It allows you to &quot;follow&quot; people on internet that post content in whatever format, and simply also provide a document formatted in XML that will be sent to you whenever there is a new update. Without ads. Or algorithms. Just you and the people you want to hear about, without needing to remind yourself to open the website every now and then</description>
+      <pubDate>Wed, 26 Mar 2025 14:50:12 +0000</pubDate>
       <guid isPermaLink="false">tugdual-063_RSS-md</guid>
     </item>
     <item>
       <title>TIME CAPSULE</title>
       <link>https://time-capsule.ch</link>
-      <description>Avec Elior nous avons crée service qui s'engage à livrer des lettres écrites de la part d'une personne à une autre, mais 1 an après. L'idée est d'assurer la livraison de ce message au bon moment dans le futur,  peut-être à un moment où il/elle ne s’y attend pas. Le minimum viable product est une version en ligne mais nous souhaitons s'étendre aux lettres physiques: Nous recevons des enveloppes à une adresse prédéfinie et nous engageons à la renvoyer à une date prédéfinie. BREF: &lt;a href="time-capsule.ch"&gt;time-capsule.ch&lt;/a&gt; si vous voulez tester !</description>
+      <description>Avec Elior nous avons crée service qui s'engage à livrer des lettres écrites de la part d'une personne à une autre, mais 1 an après. L'idée est d'assurer la livraison de ce message au bon moment dans le futur,  peut-être à un moment où il/elle ne s’y attend pas. Le minimum viable product est une version en ligne mais nous souhaitons s'étendre aux lettres physiques: Nous recevons des enveloppes à une adresse prédéfinie et nous engageons à la renvoyer à une date prédéfinie. BREF: &lt;a href=&quot;time-capsule.ch&quot;&gt;time-capsule.ch&lt;/a&gt; si vous voulez tester !</description>
       <pubDate>Wed, 12 Mar 2025 06:42:04 +0000</pubDate>
       <guid isPermaLink="false">tugdual-062_TIME_CAPSULE-md</guid>
     </item>
@@ -27,13 +27,13 @@
     <item>
       <title>NETWORKS IN JAVA</title>
       <link>https://github.com/TugdualKerjan/NeuralNetworksInJava</link>
-      <description>My fascination with neural networks started with &lt;a href="https://www.youtube.com/watch?v=qv6UVOQ0F44"&gt;this youtube video&lt;/a&gt; which still makes me marvel in awe today. It motivated me to take the little knowledge I had of programming games for Minecraft in Java to try and build my own neural networks. Following &lt;a href="https://www.youtube.com/watch?v=d3OtgsGcMLw&amp;list=PLgomWLYGNl1dL1Qsmgumhcg4HOcWZMd3k"&gt;this suite of tutorials&lt;/a&gt; on youtube, I slowly built my way up to working neural networks ! It remains by far one of my proudest achievements, having persevered through the terrific bad code I wrote and buggy scripts to arrive to something that could read handwriting and output the corresponding number.</description>
+      <description>My fascination with neural networks started with &lt;a href=&quot;https://www.youtube.com/watch?v=qv6UVOQ0F44&quot;&gt;this youtube video&lt;/a&gt; which still makes me marvel in awe today. It motivated me to take the little knowledge I had of programming games for Minecraft in Java to try and build my own neural networks. Following &lt;a href=&quot;https://www.youtube.com/watch?v=d3OtgsGcMLw&amp;list=PLgomWLYGNl1dL1Qsmgumhcg4HOcWZMd3k&quot;&gt;this suite of tutorials&lt;/a&gt; on youtube, I slowly built my way up to working neural networks ! It remains by far one of my proudest achievements, having persevered through the terrific bad code I wrote and buggy scripts to arrive to something that could read handwriting and output the corresponding number.</description>
       <pubDate>Wed, 05 Feb 2025 18:39:29 +0000</pubDate>
       <guid isPermaLink="false">tugdual-060_JAVA NETWORKS-md</guid>
     </item>
     <item>
       <title>RUNNING</title>
-      <description>When arriving in Dakar, I promised myself to run every day during my stay. Based on the wisdom of atomic habits and the observations of what consistency does with the &lt;a href="https://t.me/+PPzl4ADhh0s0YTJk"&gt;GATO&lt;/a&gt; project, I set my goal to be to simply put my shoes on and go outside. This meant many days were spent just doing this, running 5 meters and checking that box - which was the idea ! Starting a new habit means anticipating how you'll make it work the day you lose motivation. Make it as easy as possible so that the action remains doable those days, and you won't break the chain ! Magic recipe: Choose something you want to be better at, set a very small goal, and do it!</description>
+      <description>When arriving in Dakar, I promised myself to run every day during my stay. Based on the wisdom of atomic habits and the observations of what consistency does with the &lt;a href=&quot;https://t.me/+PPzl4ADhh0s0YTJk&quot;&gt;GATO&lt;/a&gt; project, I set my goal to be to simply put my shoes on and go outside. This meant many days were spent just doing this, running 5 meters and checking that box - which was the idea ! Starting a new habit means anticipating how you'll make it work the day you lose motivation. Make it as easy as possible so that the action remains doable those days, and you won't break the chain ! Magic recipe: Choose something you want to be better at, set a very small goal, and do it!</description>
       <pubDate>Sun, 26 Jan 2025 13:22:48 +0000</pubDate>
       <guid isPermaLink="false">tugdual-059_RUNNING-md</guid>
     </item>
@@ -47,14 +47,14 @@
     <item>
       <title>GPT in JAX</title>
       <link>https://github.com/TugdualKerjan/nanoEQXGPT</link>
-      <description>Another coding post ! Feel free to skim it, I'm mainly posting these to get a better understanding of things myself and because I feel that there is a lack of coding examples for this online - although in this specific post we mainly base ourselves off the work done &lt;a href="https://huggingface.co/blog/sachithgunasekara/nanojaxgpt"&gt;here&lt;/a&gt;.</description>
+      <description>Another coding post ! Feel free to skim it, I'm mainly posting these to get a better understanding of things myself and because I feel that there is a lack of coding examples for this online - although in this specific post we mainly base ourselves off the work done &lt;a href=&quot;https://huggingface.co/blog/sachithgunasekara/nanojaxgpt&quot;&gt;here&lt;/a&gt;.</description>
       <pubDate>Tue, 11 Feb 2025 14:31:08 +0000</pubDate>
       <guid isPermaLink="false">tugdual-057_JAXTTS GPT-md</guid>
     </item>
     <item>
       <title>REDDISTIL</title>
       <link>https://www.youtube.com/@reddistil1195/videos</link>
-      <description>Back 5 years ago, videos doing Text to Speech on the most popular reddit threads in certain subreddits like "Ask me Anything" and "TIL" were popping up and making tons of views. I thought it would be pretty easy to automate these and so made my own and posted a few videos on youtube with it. Unfortunately I think I didn't persevere enough to break through and lost the code with time. Good memories anyways :)</description>
+      <description>Back 5 years ago, videos doing Text to Speech on the most popular reddit threads in certain subreddits like &quot;Ask me Anything&quot; and &quot;TIL&quot; were popping up and making tons of views. I thought it would be pretty easy to automate these and so made my own and posted a few videos on youtube with it. Unfortunately I think I didn't persevere enough to break through and lost the code with time. Good memories anyways :)</description>
       <pubDate>Sun, 17 Nov 2024 13:46:02 +0000</pubDate>
       <guid isPermaLink="false">tugdual-056_REDDISTIL-md</guid>
     </item>
@@ -80,7 +80,7 @@
     </item>
     <item>
       <title>POSTERS</title>
-      <description>I like playing around with the idea of "s'approprier l'espace", which seems to lack translation in english but it's basically making public spaces feel more human, at home, welcoming... Around a year ago EPFL removed certain spots used to display club posters to "clean things up". This had the issue that any club reusing these once used and now "clean" spots would get reprimanded as it would be the only one doing it. The solution was to create fake posters that would drown out the responsibility of a single club as was the case before. I used Midjourney to create a set of posters that were then printed and placed in these various old spots, making it easier for others to start doing the same ! :)</description>
+      <description>I like playing around with the idea of &quot;s'approprier l'espace&quot;, which seems to lack translation in english but it's basically making public spaces feel more human, at home, welcoming... Around a year ago EPFL removed certain spots used to display club posters to &quot;clean things up&quot;. This had the issue that any club reusing these once used and now &quot;clean&quot; spots would get reprimanded as it would be the only one doing it. The solution was to create fake posters that would drown out the responsibility of a single club as was the case before. I used Midjourney to create a set of posters that were then printed and placed in these various old spots, making it easier for others to start doing the same ! :)</description>
       <pubDate>Thu, 05 Sep 2024 00:01:35 +0000</pubDate>
       <guid isPermaLink="false">tugdual-052_POSTERS-md</guid>
     </item>
@@ -94,7 +94,7 @@
     <item>
       <title>ALL THE PASTA</title>
       <link>https://tugdual.fr/pasta</link>
-      <description>I want to eat all the different types of pasta Barilla has to propose. I sent them a message asking if they could send me the list of all the different numbers of pasta but they apparently don't have one ! I guess I'll do it myself then. Scrapping the website, filtering out the pesto and miscellaneous products, I finally (6 hours later 🤡) obtain a list of all different pasta numbers ! To better visualise where I can find them, I built a small website where I will be keeping track of the pasta types I've bought, tasted and an overall score. My adventures will be logged on a &lt;a href="https://t.me/+mpQYS2SoFWkxZGVk"&gt;telegram channel&lt;/a&gt; for those who wish to partake in the adventure !</description>
+      <description>I want to eat all the different types of pasta Barilla has to propose. I sent them a message asking if they could send me the list of all the different numbers of pasta but they apparently don't have one ! I guess I'll do it myself then. Scrapping the website, filtering out the pesto and miscellaneous products, I finally (6 hours later 🤡) obtain a list of all different pasta numbers ! To better visualise where I can find them, I built a small website where I will be keeping track of the pasta types I've bought, tasted and an overall score. My adventures will be logged on a &lt;a href=&quot;https://t.me/+mpQYS2SoFWkxZGVk&quot;&gt;telegram channel&lt;/a&gt; for those who wish to partake in the adventure !</description>
       <pubDate>Sat, 08 Jun 2024 19:01:54 +0000</pubDate>
       <guid isPermaLink="false">tugdual-050_PASTA-md</guid>
     </item>
@@ -106,13 +106,13 @@
     </item>
     <item>
       <title>GATÔ</title>
-      <description>I decided during new years that I would do a cake everyday for a year. It's been a wild ride but we've reached the 100 day mark and I can safely say that I believe this to be a fantastic success. This bizarre challenge has pushed me to do random things such as ask people in a train if they could host me for the night and if I could bake a cake in their oven, or simply try out recipes that shouldn't exist. The channel on which I would post everyday is available &lt;a href="https://t.me/+PPzl4ADhh0s0YTJk"&gt;here&lt;/a&gt;. A fantastic way to learn also about what perseverance can do. More cake will come do not fear.</description>
+      <description>I decided during new years that I would do a cake everyday for a year. It's been a wild ride but we've reached the 100 day mark and I can safely say that I believe this to be a fantastic success. This bizarre challenge has pushed me to do random things such as ask people in a train if they could host me for the night and if I could bake a cake in their oven, or simply try out recipes that shouldn't exist. The channel on which I would post everyday is available &lt;a href=&quot;https://t.me/+PPzl4ADhh0s0YTJk&quot;&gt;here&lt;/a&gt;. A fantastic way to learn also about what perseverance can do. More cake will come do not fear.</description>
       <pubDate>Wed, 08 May 2024 19:42:43 +0000</pubDate>
-      <guid isPermaLink="false">tugdual-048_GATÔ-md</guid>
+      <guid isPermaLink="false">tugdual-048_GATÔ-md</guid>
     </item>
     <item>
       <title>USER EXPERIENCE</title>
-      <description>Nous avons eu un cours de "Design thinking" ou le but était d'apprendre à attaquer des problèmes avec différentes "Frameworks" pour y trouver des solutions. Pour illustrer nos solutions nous avons exploité Midjourney pour produire des images des produits qu'on propose. Le dossier complet est disponible &lt;a href="https://tugdual.fr/ue"&gt;ici&lt;/a&gt;, montrant l'utilisation de Chat-GPT pour le développement du site.</description>
+      <description>Nous avons eu un cours de &quot;Design thinking&quot; ou le but était d'apprendre à attaquer des problèmes avec différentes &quot;Frameworks&quot; pour y trouver des solutions. Pour illustrer nos solutions nous avons exploité Midjourney pour produire des images des produits qu'on propose. Le dossier complet est disponible &lt;a href=&quot;https://tugdual.fr/ue&quot;&gt;ici&lt;/a&gt;, montrant l'utilisation de Chat-GPT pour le développement du site.</description>
       <pubDate>Wed, 08 May 2024 19:31:54 +0000</pubDate>
       <guid isPermaLink="false">tugdual-047_UE-md</guid>
     </item>
@@ -199,7 +199,7 @@
     </item>
     <item>
       <title>BOB ROSS</title>
-      <description>After about a year I finally took out the two frames I had and with Jeanne we followed a  sacred &lt;a href="https://www.youtube.com/watch?v=87MMbN1bQCs"&gt;Bob Ross ™️ tutorial&lt;/a&gt;. It took around 2 hours and surprisingly no paint fell on the floor or table 🌚. I think it is by far one of my most prized memories with Jeanne &lt;3</description>
+      <description>After about a year I finally took out the two frames I had and with Jeanne we followed a  sacred &lt;a href=&quot;https://www.youtube.com/watch?v=87MMbN1bQCs&quot;&gt;Bob Ross ™️ tutorial&lt;/a&gt;. It took around 2 hours and surprisingly no paint fell on the floor or table 🌚. I think it is by far one of my most prized memories with Jeanne &lt;3</description>
       <pubDate>Fri, 07 Oct 2022 09:07:07 +0000</pubDate>
       <guid isPermaLink="false">tugdual-033_BOBROSS-md</guid>
     </item>
@@ -229,7 +229,7 @@
     </item>
     <item>
       <title>CADRE</title>
-      <description>Both of my grandparents live near the sea. Using 3mm medium density fiberboard and some tinted black plexiglass I decided to make them some maps of their area. I used &lt;a href="snazzymaps.com"&gt;snazzymaps.com&lt;/a&gt; to create a black and white theme of their cities with the roads. One of the frames was done with wood from a waste disposal and the other adapted from an old frame to fit the map.</description>
+      <description>Both of my grandparents live near the sea. Using 3mm medium density fiberboard and some tinted black plexiglass I decided to make them some maps of their area. I used &lt;a href=&quot;snazzymaps.com&quot;&gt;snazzymaps.com&lt;/a&gt; to create a black and white theme of their cities with the roads. One of the frames was done with wood from a waste disposal and the other adapted from an old frame to fit the map.</description>
       <pubDate>Sun, 19 Jun 2022 16:55:12 +0000</pubDate>
       <guid isPermaLink="false">tugdual-028_Cadre-md</guid>
     </item>
@@ -253,7 +253,7 @@
     </item>
     <item>
       <title>SJOELBAK</title>
-      <description>Back From Paques, an event organized by AGEPoly (Association for the students of EPFL) budgeted 150 CHF for me to build this famous dutch shuffleboard. Measurements were taken rapidly from &lt;a href="http://www.van-vliet.org/dempseywoodworking/sjoelbak.shtml"&gt;this site&lt;/a&gt;. The wood cost ~70 CHF and the varnish another 10. The little peices of wood were made out of truck flooring plywood and a CNC. A dark varnish allowed the material to look more authentic</description>
+      <description>Back From Paques, an event organized by AGEPoly (Association for the students of EPFL) budgeted 150 CHF for me to build this famous dutch shuffleboard. Measurements were taken rapidly from &lt;a href=&quot;http://www.van-vliet.org/dempseywoodworking/sjoelbak.shtml&quot;&gt;this site&lt;/a&gt;. The wood cost ~70 CHF and the varnish another 10. The little peices of wood were made out of truck flooring plywood and a CNC. A dark varnish allowed the material to look more authentic</description>
       <pubDate>Tue, 03 May 2022 13:51:09 +0000</pubDate>
       <guid isPermaLink="false">tugdual-024_Sjoelbak-md</guid>
     </item>
@@ -344,7 +344,7 @@
       <link>images/Projet de casier distributeur automatique de Mate.pd</link>
       <description>Lors d'un cours d'archord, avec Elior on a eu l'idee fantastique 							de creer une machine qui automatiserais la vente de club mates, 							des boissons remplies de caffeine. Apres quelques dessins de 							design, nous avons commencee a construire la boite dans laquelle 							une personne se mettrais et donnerait un mate a ceux qui vennait 							appuyer sur un bouton. Malheureusement le projet ne s'est jamais 							acheve.</description>
       <pubDate>Tue, 28 Dec 2021 15:43:56 +0000</pubDate>
-      <guid isPermaLink="false">tugdual-011_automaté-md</guid>
+      <guid isPermaLink="false">tugdual-011_automaté-md</guid>
     </item>
     <item>
       <title>HEADPHONES</title>

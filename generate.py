@@ -6,7 +6,7 @@ from datetime import datetime
 from xml.dom import minidom
 
 
-article_path = "/Users/tugdual/Documents/Notes/Articles/"
+article_path = "/home/tugdual/Documents/Notes/Articles/"
 
 link_text = """onclick="window.open(`%s`, '_blank');"
                     style="cursor: pointer;\""""
