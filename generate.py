@@ -38,6 +38,7 @@ html_final = """
 
 <head>
     <meta charset="UTF-8">
+    <meta name="searchmysite-verification" content="JXB2jLJOnCAcUKBmLFxm9qjuiIUcbylX1FUjzETsLM">
     <link rel="icon" href="images/toad.gif" type="image/gif">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> T U G D U A L</title>
