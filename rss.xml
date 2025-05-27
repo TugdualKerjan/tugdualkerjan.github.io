@@ -5,6 +5,13 @@
     <link>https://tugdual.fr</link>
     <description>MSc CS EPFL, poking around life !</description>
     <item>
+      <title>INTERWEB NUGGETS</title>
+      <link>https://t.me/interwebnuggets</link>
+      <description>On the 31st of August, inspired by friends that had created channels on Telegram I decided to have a go myself on a subject that I enjoy: Fantastic, quirky websites found in the vast depths of internet. Across the years, any time I would fall on one of these I would simply post it there to grow my collection. Yesterday this channel reached a total of 1000 squirrels all collecting and sending these small nuggets of beauty through a bot. For me, this channel is my most precious example of an atomic habit that transforms a 5 second reflex into something great ! Have a go at it yourself, I'd love to be your first subscriber</description>
+      <pubDate>Tue, 27 May 2025 08:31:46 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-067_INTERWEB-md</guid>
+    </item>
+    <item>
       <title>CARGOBIKE BOT</title>
       <description>At EPFL we have the ability to pick up a cargobike through the bike sharing app donkey republic for 12h without paying. It's a fantastic service that is provided free of charge by the school and has been the source of a lot of memories for me and friends alike. Unfortunately, there was a lot of demand and few bikes, thus if you wanted to reserve a bike you had to constantly check the app. A simple telegram bot on my end solves this issue - at the press of a button I could receive a notification whenever a cargobike was available again.</description>
       <pubDate>Mon, 19 May 2025 13:29:25 +0000</pubDate>
