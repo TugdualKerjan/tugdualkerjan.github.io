@@ -86,8 +86,12 @@ html_final = """
                 <img src="me.png" alt="Tugdual" class="hero-paper-img" width="320" height="320" loading="eager">
             </div>
             <div class="hero-paper-content">
-                <h1 class="hero-paper-title trans" data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building." data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>Je crée des expériences et outils numériques ludiques.">
-                <p class="hero-paper-desc trans" data-en="MSc CS EPFL, poking around life, tech, and design.<br>Specializing in creative coding, playful interfaces, and digital experiments." data-fr="MSc CS EPFL, curieux de vie, de tech et de design.<br>Spécialisé en creative coding, interfaces ludiques et expériences numériques.">MSc CS EPFL, poking around life, tech, and design.<br>Specializing in creative coding, playful interfaces, and digital experiments.</p>
+                <h1 class="hero-paper-title trans"
+    data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building."
+    data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>J'adore apprendre en construisant.">
+    Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building.
+</h1>
+                <p class="hero-paper-desc trans" data-en="I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, Gradient Kerjan">I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan.</p>
                 <div class="hero-paper-socials" style="display:none;"></div>
             </div>
         </section>
@@ -233,7 +237,7 @@ def transform_text(text_array) -> str:
         return img_line[4:-2]
 
     def get_img_src(img_name):
-        if img_name.lower().endswith('.gif'):
+        if img_name.lower().endswith(".gif"):
             return f"{img_name}"
         else:
             base = os.path.splitext(img_name)[0]
@@ -246,9 +250,15 @@ def transform_text(text_array) -> str:
         card_image = get_img_src(card_image_name)
         card_text = text_array[3][:-1]
         back_image_name = get_img_name(text_array[-1])
-        back_image = get_img_src(back_image_name)        
+        back_image = get_img_src(back_image_name)
         return template % (
-            (link_text % link), card_image, title, '', back_image, (link_text % link), card_text
+            (link_text % link),
+            card_image,
+            title,
+            "",
+            back_image,
+            (link_text % link),
+            card_text,
         )
     else:
         title = text_array[0].split("# ")[1][:-1]
@@ -257,7 +267,7 @@ def transform_text(text_array) -> str:
         card_text = text_array[3][:-1]
         back_image_name = get_img_name(text_array[-1])
         back_image = get_img_src(back_image_name)
-        return template % ("", card_image, title, '', back_image, "", card_text)
+        return template % ("", card_image, title, "", back_image, "", card_text)
 
 
 def generate_rss(article_path):
@@ -385,8 +395,12 @@ def compress_and_resize_image(src_path, dest_path, max_width=600):
 def process_images(src_dir, dest_dir):
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
+
     def needs_update(src_path, dest_path):
-        return not os.path.exists(dest_path) or os.path.getmtime(src_path) > os.path.getmtime(dest_path)
+        return not os.path.exists(dest_path) or os.path.getmtime(
+            src_path
+        ) > os.path.getmtime(dest_path)
+
     tasks = []
     for fname in os.listdir(src_dir):
         src_path = os.path.join(src_dir, fname)
@@ -396,7 +410,9 @@ def process_images(src_dir, dest_dir):
         if needs_update(src_path, dest_path):
             tasks.append((src_path, dest_path))
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(compress_and_resize_image, src, dest) for src, dest in tasks]
+        futures = [
+            executor.submit(compress_and_resize_image, src, dest) for src, dest in tasks
+        ]
         for f in concurrent.futures.as_completed(futures):
             f.result()  # Raise exceptions if any
 
