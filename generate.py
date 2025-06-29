@@ -15,13 +15,18 @@ article_path = "/Users/tugdual/Documents/Notes/Articles/"
 link_text = """onclick="window.open(`%s`, '_blank');"
                     style="cursor: pointer;\""""
 
-template = """<div class="hitbox">
-    <div class="box">
-        <h2 class="name">%s</h2>
-        <img class="product lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E">
-        <p class="desc" %s>%s</p>
-        <div class="back"><img class="lazy" data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"></img></div>
-    </div>
+template = """
+<div class="project-card">
+  <div class="project-header">
+    <img class="project-icon lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="48" height="48" alt="icon">
+    <h2 class="project-title">%s</h2>
+  </div>
+  <div class="project-image-container">
+    <img class="project-image lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="220" height="140" alt="project image">
+  </div>
+  <div class="project-desc-container">
+    <p class="project-desc" %s>%s</p>
+  </div>
 </div>"""
 
 template_gif = """<div class="hitbox2">
@@ -42,45 +47,62 @@ html_final = """
 
 <head>
     <meta charset="UTF-8">
-    <meta name="searchmysite-verification" content="JXB2jLJOnCAcUKBmLFxm9qjuiIUcbylX1FUjzETsLM">
-    <link rel="icon" href="images/toad.gif" type="image/gif">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> T U G D U A L</title>
+    <title>TUGDUAL</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&family=DM+Serif+Display:ital,wght@0,400;1,400&family=IBM+Plex+Sans:wght@400;700&family=Space+Grotesk:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <script src="vanilla-tilt.min.js"></script>
+    <style>
+    .draw-animate path, .draw-animate line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 2s forwards;
+    }
+    @keyframes draw {
+        to { stroke-dashoffset: 0; }
+    }
+    </style>
 </head>
 
 <body>
-    <div>
-        <div id="background">
-        <p id="background-text">TUGDUAL</p>
-        <div class="text-container">
-            <p id="background-text2">MSc CS EPFL, poking around life !</p>
-            <div class="social-icons">
-                <a href="https://t.me/sxyBoi" class="social-icon telegram-icon" title="Telegram">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
-                    </svg>
-                </a>
-                <a href="https://tugdual.fr/rss.xml" class="social-icon rss-icon" title="RSS Feed">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
-                    </svg>
-                </a>
-                <a href="mailto:tkerjan@outlook.com" class="social-icon email-icon" title="Email">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
-                    </svg>
-                </a>
+    <div class="paper-bg"></div>
+    <header class="landing-header sticky-header">
+    <div class="logo">
+        <img src="logo.svg" alt="Tugdual Logo" class="logo-svg" height="64"/>
+    </div>
+    <nav>
+        <div class="header-contacts">
+            <a href="mailto:tkerjan@outlook.com" title="Email" class="contact-link trans" data-en="EMAIL &rarr;" data-fr="EMAIL &rarr;">EMAIL &rarr;</a>
+            <a href="https://t.me/sxyBoi" title="Telegram" class="contact-link trans" data-en="TELEGRAM &rarr;" data-fr="TÉLÉGRAM &rarr;">TELEGRAM &rarr;</a>
+            <a href="https://tugdual.fr/rss.xml" title="RSS" class="contact-link trans" data-en="RSS &rarr;" data-fr="RSS &rarr;">RSS &rarr;</a>
+        </div>
+        <div class="lang-switch nav-lang" id="lang-switch"><span id="en-btn" class="active">EN</span> <span id="fr-btn">FR</span></div>
+    </nav>
+    </header>
+    <main class="landing-main">
+        <section class="hero-paper">
+            <div class="hero-paper-imgwrap">
+                <img src="me.png" alt="Tugdual" class="hero-paper-img" width="320" height="320" loading="eager">
             </div>
-        </div>
-    </div>
-        <div id="container">
-            %s
-        </div>
-    </div>
-</body>
-<script>
+            <div class="hero-paper-content">
+                <h1 class="hero-paper-title trans" data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building." data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>Je crée des expériences et outils numériques ludiques.">
+                <p class="hero-paper-desc trans" data-en="MSc CS EPFL, poking around life, tech, and design.<br>Specializing in creative coding, playful interfaces, and digital experiments." data-fr="MSc CS EPFL, curieux de vie, de tech et de design.<br>Spécialisé en creative coding, interfaces ludiques et expériences numériques.">MSc CS EPFL, poking around life, tech, and design.<br>Specializing in creative coding, playful interfaces, and digital experiments.</p>
+                <div class="hero-paper-socials" style="display:none;"></div>
+            </div>
+        </section>
+        <section id="projects" class="projects-section">
+            <h2 class="projects-title trans" data-en="Projects" data-fr="Projets">Projects</h2>
+            <div class="projects-list">
+                %s
+            </div>
+        </section>
+    </main>
+    <footer class="landing-footer">
+        <div class="landing-bottom-bar"></div>
+    </footer>
+    <script src="./index.js"></script>
+    <script>
     // Vanilla JS hover animations
     document.addEventListener('DOMContentLoaded', function() {
         const hitboxes = document.querySelectorAll('.hitbox');
@@ -121,8 +143,84 @@ html_final = """
         lazyImages.forEach(img => {
             imageObserver.observe(img);
         });
+
+        // Language switcher
+        function setLang(lang) {
+            document.querySelectorAll('.trans').forEach(function(el) {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+            document.getElementById('fr-btn').classList.toggle('active', lang === 'fr');
+        }
+        document.getElementById('en-btn').onclick = function() { setLang('en'); };
+        document.getElementById('fr-btn').onclick = function() { setLang('fr'); };
     });
-</script>
+
+    // SVG signature unveil animation
+    window.addEventListener('DOMContentLoaded', function() {
+        var svg = document.getElementById('signature-svg');
+        if (svg) {
+            var totalLength = 0;
+            svg.querySelectorAll('line').forEach(function(line) {
+                var x1 = parseFloat(line.getAttribute('x1'));
+                var y1 = parseFloat(line.getAttribute('y1'));
+                var x2 = parseFloat(line.getAttribute('x2'));
+                var y2 = parseFloat(line.getAttribute('y2'));
+                var length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
+                line.setAttribute('stroke-dasharray', length);
+                line.setAttribute('stroke-dashoffset', length);
+                totalLength += length;
+            });
+            var lines = svg.querySelectorAll('line');
+            lines.forEach(function(line, i) {
+                setTimeout(function() {
+                    line.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.77,0,0.18,1)';
+                    line.setAttribute('stroke-dashoffset', 0);
+                }, i * 250);
+            });
+        }
+    });
+
+    // Inline SVG animation for logo.svg and tugdual.svg
+    function inlineSVG(imgSelector) {
+        document.querySelectorAll(imgSelector).forEach(function(img) {
+            fetch(img.src)
+                .then(res => res.text())
+                .then(svgText => {
+                    const div = document.createElement('div');
+                    div.innerHTML = svgText;
+                    const svg = div.querySelector('svg');
+                    if (!svg) return;
+                    svg.classList.add('draw-animate');
+                    // Remove width/height to allow CSS scaling
+                    svg.removeAttribute('width');
+                    svg.removeAttribute('height');
+                    // Copy over class and style from img
+                    if (img.className) svg.setAttribute('class', img.className + ' draw-animate');
+                    if (img.style.cssText) svg.setAttribute('style', img.style.cssText);
+                    img.replaceWith(svg);
+                    // Animate each path/line
+                    svg.querySelectorAll('path, line').forEach(function(el) {
+                        let length;
+                        if (el.tagName === 'path') {
+                            length = el.getTotalLength();
+                        } else if (el.tagName === 'line') {
+                            const x1 = el.x1.baseVal.value, y1 = el.y1.baseVal.value;
+                            const x2 = el.x2.baseVal.value, y2 = el.y2.baseVal.value;
+                            length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
+                        }
+                        el.style.strokeDasharray = length;
+                        el.style.strokeDashoffset = length;
+                        el.style.animation = 'draw 2s forwards';
+                    });
+                });
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        inlineSVG('img.hero-signature-svg');
+    });
+    </script>
+</body>
 <script src="./index.js"></script>
 
 </html>
@@ -148,15 +246,9 @@ def transform_text(text_array) -> str:
         card_image = get_img_src(card_image_name)
         card_text = text_array[3][:-1]
         back_image_name = get_img_name(text_array[-1])
-        back_image = get_img_src(back_image_name)
-        print(back_image)
+        back_image = get_img_src(back_image_name)        
         return template % (
-            title,
-            (link_text % link),
-            back_image,
-            (link_text % link),
-            card_text,
-            card_image,
+            (link_text % link), card_image, title, '', back_image, (link_text % link), card_text
         )
     else:
         title = text_array[0].split("# ")[1][:-1]
@@ -165,7 +257,7 @@ def transform_text(text_array) -> str:
         card_text = text_array[3][:-1]
         back_image_name = get_img_name(text_array[-1])
         back_image = get_img_src(back_image_name)
-        return template % (title, "", back_image, "", card_text, card_image)
+        return template % ("", card_image, title, '', back_image, "", card_text)
 
 
 def generate_rss(article_path):
