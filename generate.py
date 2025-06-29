@@ -14,15 +14,16 @@ link_text = """onclick="window.open(`%s`, '_blank');"
 template = """<div class="hitbox">
     <div class="box">
         <h2 class="name">%s</h2>
-        <img class="product" %s src="%s">
+        <img class="product lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E">
         <p class="desc" %s>%s</p>
-        <div class="back"><img src="%s"></img></div>
+        <div class="back"><img class="lazy" data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"></img></div>
     </div>
 </div>"""
 
 template_gif = """<div class="hitbox2">
-					<img
-						src="images/%s"
+					<img class="lazy"
+						data-src="images/%s"
+						src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
 						style="
 							display: block;
 							margin-left: auto;
@@ -44,8 +45,6 @@ html_final = """
     <title> T U G D U A L</title>
     <link rel="stylesheet" href="index.css">
     <script src="vanilla-tilt.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -79,15 +78,46 @@ html_final = """
     </div>
 </body>
 <script>
-    $('.hitbox').hover(function () {
-
-        $(this).stop().animate({
-            height: Math.max($(this).find(".desc").height() + 30 + $(this).find(".product").height(), 200),
+    // Vanilla JS hover animations
+    document.addEventListener('DOMContentLoaded', function() {
+        const hitboxes = document.querySelectorAll('.hitbox');
+        
+        hitboxes.forEach(hitbox => {
+            hitbox.addEventListener('mouseenter', function() {
+                const desc = this.querySelector('.desc');
+                const product = this.querySelector('.product');
+                const targetHeight = Math.max(desc.offsetHeight + 30 + product.offsetHeight, 200);
+                
+                this.style.transition = 'height 1.5s ease';
+                this.style.height = targetHeight + 'px';
+            });
+            
+            hitbox.addEventListener('mouseleave', function() {
+                this.style.height = '150px';
+            });
         });
-    }, function () {
-        $(this).stop().animate({
-            height: "150px",
-        })
+
+        // Lazy loading implementation
+        const lazyImages = document.querySelectorAll('img.lazy');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
     });
 </script>
 <script src="./index.js"></script>
