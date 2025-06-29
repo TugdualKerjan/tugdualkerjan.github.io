@@ -4,6 +4,10 @@ import re
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from xml.dom import minidom
+from PIL import Image
+import io
+import shutil
+import concurrent.futures
 
 
 article_path = "/Users/tugdual/Documents/Notes/Articles/"
@@ -21,9 +25,8 @@ template = """<div class="hitbox">
 </div>"""
 
 template_gif = """<div class="hitbox2">
-					<img class="lazy"
-						data-src="images/%s"
-						src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
+					<img
+						src="images/%s"
 						style="
 							display: block;
 							margin-left: auto;
@@ -127,13 +130,26 @@ html_final = """
 
 
 def transform_text(text_array) -> str:
+    def get_img_name(img_line):
+        # Extracts the image filename from the markdown line
+        return img_line[4:-2]
+
+    def get_img_src(img_name):
+        if img_name.lower().endswith('.gif'):
+            return f"{img_name}"
+        else:
+            base = os.path.splitext(img_name)[0]
+            return f"{base}.webp"
+
     if "[" in text_array[0]:  # Contains link
         title = text_array[0].split("# [")[1].split("](")[0]
-        # Get link and remove the last )
         link = text_array[0].split("](")[1][:-2]
-        card_image = text_array[1][4:-2]
+        card_image_name = get_img_name(text_array[1])
+        card_image = get_img_src(card_image_name)
         card_text = text_array[3][:-1]
-        back_image = text_array[-1][4:-1]
+        back_image_name = get_img_name(text_array[-1])
+        back_image = get_img_src(back_image_name)
+        print(back_image)
         return template % (
             title,
             (link_text % link),
@@ -144,9 +160,11 @@ def transform_text(text_array) -> str:
         )
     else:
         title = text_array[0].split("# ")[1][:-1]
-        card_image = text_array[1][4:-2]
+        card_image_name = get_img_name(text_array[1])
+        card_image = get_img_src(card_image_name)
         card_text = text_array[3][:-1]
-        back_image = text_array[-1][4:-1]
+        back_image_name = get_img_name(text_array[-1])
+        back_image = get_img_src(back_image_name)
         return template % (title, "", back_image, "", card_text, card_image)
 
 
@@ -241,7 +259,62 @@ def generate_rss(article_path):
     print("RSS feed generated successfully as rss.xml")
 
 
+def compress_and_resize_image(src_path, dest_path, max_width=600):
+    """
+    Compress and resize an image to WebP format with a max width.
+    GIFs are copied as-is.
+    """
+    ext = os.path.splitext(src_path)[1].lower()
+    if ext == ".gif":
+        shutil.copy2(src_path, dest_path)
+        return
+    try:
+        with Image.open(src_path) as img:
+            # Handle palette images with transparency
+            if img.mode == "P":
+                if "transparency" in img.info:
+                    img = img.convert("RGBA")
+                else:
+                    img = img.convert("RGB")
+            elif img.mode == "RGBA":
+                pass  # keep as RGBA
+            elif img.mode != "RGB":
+                img = img.convert("RGB")
+            w, h = img.size
+            if w > max_width:
+                new_h = int(h * max_width / w)
+                img = img.resize((max_width, new_h), Image.LANCZOS)
+            img.save(dest_path, "WEBP", quality=85, method=6)
+    except Exception as e:
+        print(f"Error processing {src_path}: {e}")
+        shutil.copy2(src_path, dest_path)
+
+
+def process_images(src_dir, dest_dir):
+    if not os.path.exists(dest_dir):
+        os.makedirs(dest_dir)
+    def needs_update(src_path, dest_path):
+        return not os.path.exists(dest_path) or os.path.getmtime(src_path) > os.path.getmtime(dest_path)
+    tasks = []
+    for fname in os.listdir(src_dir):
+        src_path = os.path.join(src_dir, fname)
+        dest_ext = ".webp" if not fname.lower().endswith(".gif") else ".gif"
+        dest_name = os.path.splitext(fname)[0] + dest_ext
+        dest_path = os.path.join(dest_dir, dest_name)
+        if needs_update(src_path, dest_path):
+            tasks.append((src_path, dest_path))
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(compress_and_resize_image, src, dest) for src, dest in tasks]
+        for f in concurrent.futures.as_completed(futures):
+            f.result()  # Raise exceptions if any
+
+
 def main():
+    # Process images: compress/resize to ./images/
+    src_img_dir = os.path.join(article_path, "images")
+    dest_img_dir = "images"
+    process_images(src_img_dir, dest_img_dir)
+
     file_list = os.listdir(article_path)
     file_list.sort()
     file_list.reverse()
@@ -260,8 +333,7 @@ def main():
         final_doc.write(final_string)
         final_doc.close()
 
-    os.system("cp -r %s" % (article_path + "images ."))
-
+    # No need to copy images, already processed
     generate_rss(article_path)
 
 
