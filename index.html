@@ -25,39 +25,71 @@
         to { stroke-dashoffset: 0; }
     }
     </style>
+    <script>
+    // Reveal animations on scroll and logo animation
+    document.addEventListener('DOMContentLoaded', function() {
+      function revealOnScroll() {
+        document.querySelectorAll('.fade-in, .slide-up, .hero-paper-img, .projects-title, .hero-paper-title').forEach(function(el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 60) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+      // Animate logo on load
+      var logo = document.querySelector('.logo-svg');
+      if (logo) setTimeout(() => logo.classList.add('animated'), 400);
+      // Header shrink on scroll
+      var header = document.querySelector('.landing-header');
+      function handleHeaderShrink() {
+        if (window.scrollY > 10) {
+          header.classList.add('shrink');
+        } else {
+          header.classList.remove('shrink');
+        }
+      }
+      window.addEventListener('scroll', handleHeaderShrink);
+      handleHeaderShrink();
+    });
+    </script>
 </head>
 
 <body>
     <div class="paper-bg"></div>
-    <header class="landing-header sticky-header">
+    <header class="landing-header sticky-header fade-in">
     <div class="logo">
-        <img src="logo.svg" alt="Tugdual Logo" class="logo-svg" height="64"/>
+        <a href="https://tugdual.fr" style="cursor: pointer;">
+            <img src="logo.svg" alt="Tugdual Logo" class="logo-svg" />
+        </a>
     </div>
     <nav>
         <div class="header-contacts">
-            <a href="mailto:tkerjan@outlook.com" title="Email" class="contact-link trans" data-en="EMAIL &rarr;" data-fr="EMAIL &rarr;">EMAIL &rarr;</a>
-            <a href="https://t.me/sxyBoi" title="Telegram" class="contact-link trans" data-en="TELEGRAM &rarr;" data-fr="TÉLÉGRAM &rarr;">TELEGRAM &rarr;</a>
-            <a href="https://tugdual.fr/rss.xml" title="RSS" class="contact-link trans" data-en="RSS &rarr;" data-fr="RSS &rarr;">RSS &rarr;</a>
+            <a href="mailto:tkerjan@outlook.com" title="Email" class="contact-link trans fade-in" data-en="EMAIL &rarr;" data-fr="EMAIL &rarr;">EMAIL &rarr;</a>
+            <a href="https://t.me/sxyBoi" title="Telegram" class="contact-link trans fade-in" data-en="TELEGRAM &rarr;" data-fr="TÉLÉGRAM &rarr;">TELEGRAM &rarr;</a>
+            <a href="https://tugdual.fr/rss.xml" title="RSS" class="contact-link trans fade-in" data-en="RSS &rarr;" data-fr="RSS &rarr;">RSS &rarr;</a>
         </div>
-        <div class="lang-switch nav-lang" id="lang-switch"><span id="en-btn" class="active">EN</span> <span id="fr-btn">FR</span></div>
+        <div class="lang-switch nav-lang fade-in" id="lang-switch"><span id="en-btn" class="active">EN</span> <span id="fr-btn">FR</span></div>
     </nav>
     </header>
     <main class="landing-main">
-        <section class="hero-paper">
+        <section class="hero-paper slide-up">
             <div class="hero-paper-imgwrap">
                 <img src="me.png" alt="Tugdual" class="hero-paper-img" width="320" height="320" loading="eager">
             </div>
             <div class="hero-paper-content">
                 <h1 class="hero-paper-title trans"
     data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building."
-    data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>J'adore apprendre en construisant.">
+    data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>J'adore apprendre en construisant."
+    >
     Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building.
 </h1>
-                <p class="hero-paper-desc trans" data-en="I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, Gradient Kerjan">I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan.</p>
+                <p class="hero-paper-desc trans fade-in" data-en="I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, Gradient Kerjan">I've studied computer architecture at EPFL, and now work in my own company, Gradient Kerjan.</p>
                 <div class="hero-paper-socials" style="display:none;"></div>
             </div>
         </section>
-        <section id="projects" class="projects-section">
+        <section id="projects" class="projects-section fade-in">
             <h2 class="projects-title trans" data-en="Projects" data-fr="Projets">Projects</h2>
             <div class="projects-list">
                 
