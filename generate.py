@@ -366,6 +366,41 @@ def generate_rss(article_path):
     print("RSS feed generated successfully as rss.xml")
 
 
+def generate_sitemap(article_path):
+    """
+    Generate a sitemap.xml file for all articles that have a link present.
+    """
+    import xml.etree.ElementTree as ET
+    from xml.dom import minidom
+    
+    urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    file_list = os.listdir(article_path)
+    file_list = [
+        f for f in file_list
+        if f != "images" and f != ".DS_Store" and not f.endswith(".gif")
+    ]
+    file_list.sort(reverse=True)
+    for file_name in file_list:
+        with open(os.path.join(article_path, file_name)) as article_file:
+            lines = article_file.readlines()
+            if len(lines) < 1:
+                continue
+            if "[" in lines[0]:
+                # Extract link
+                try:
+                    link = lines[0].split("](")[1].split(")")[0]
+                except Exception:
+                    continue
+                url = ET.SubElement(urlset, "url")
+                ET.SubElement(url, "loc").text = link
+    rough_string = ET.tostring(urlset, "utf-8")
+    reparsed = minidom.parseString(rough_string)
+    pretty_xml = reparsed.toprettyxml(indent="  ")
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(pretty_xml)
+    print("Sitemap generated successfully as sitemap.xml")
+
+
 def compress_and_resize_image(src_path, dest_path, max_width=600):
     """
     Compress and resize an image to WebP format with a max width.
@@ -448,6 +483,7 @@ def main():
 
     # No need to copy images, already processed
     generate_rss(article_path)
+    generate_sitemap(article_path)
 
 
 if __name__ == "__main__":
