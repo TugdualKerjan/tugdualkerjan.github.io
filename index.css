@@ -51,8 +51,6 @@ body {
   transform: scale(0.4) rotate(-2deg);
   height: 100%;
   filter: drop-shadow(0 2px 8px #ff7a0033);
-    /* padding: 0.0rem 5vw 0.0rem 5vw; */
-
   transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), height 0.35s cubic-bezier(0.4,0,0.2,1),  filter 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -666,4 +664,90 @@ body {
 .projects-title.visible, .hero-paper-title.visible {
   opacity: 1;
   transform: none;
+}
+
+/* --- STATUS SECTION POLISH --- */
+.status-section {
+  width: 100vw;
+  max-width: 700px;
+  margin: 2.5rem auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.status-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  gap: 0;
+}
+.status-block {
+  position: relative;
+  background: #fffbe9;
+  border-radius: 2.2rem;
+  padding: 2.5rem;
+  min-width: 260px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 2px 32px 0 #ff7a0012, 0 1.5px 0 0 #fff inset;
+  text-align: center;
+  margin: 0 auto;
+}
+.status-label-wrap {
+  position: absolute;
+  left: -10%;
+  top: -0.5rem;
+}
+.status-label {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 800;
+  transform: translateX(-50%);
+  background: #fffbe9;
+  border-radius: 2.2rem;
+  padding: 15px;
+  border: 3px solid #ff7a0012;
+  box-shadow: 0 2px 32px 0 #ff7a0012;
+  letter-spacing: 0.04em;
+}
+.status-arrow {
+  top: -1.5rem;
+  width: 28px;
+  height: 18px;
+  position: relative;
+}
+.status-value {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #222;
+  margin: 0.5rem;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  line-height: 1.1;
+}
+@media (max-width: 700px) {
+  .status-section {
+    max-width: 98vw;
+    padding: 0 1vw;
+  }
+  .status-block {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 1.3rem 0.3rem 1.3rem 0.3rem;
+  }
+  .status-label {
+    font-size: 0.98rem;
+    padding: 0.18rem 0.9rem 0.18rem 0.9rem;
+  }
+  .status-arrow {
+    width: 22px;
+    height: 14px;
+  }
+  .status-value {
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+    padding: 0.4rem 0.1rem 0.4rem 0.1rem;
+  }
 }
