@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts by Tugdual</title>
+</head>
+<body>
+    <h1 id="title">My artifacts</h1>
+    <div id="definition">
+        <div class="definition-word">artifact</div>
+        <div class="definition-meta">
+            <span class="pronunciation">[ˈär-ti-ˌfakt]</span>
+            <span class="part-of-speech">noun</span>
+            <span class="language">• English</span>
+        </div>
+        <hr class="definition-line">
+        <div class="definition-text">
+            <p>Various people, pieces of content and events that have significantly influenced my personal development and worldview</p>
+        </div>
+    </div>
+    <p id="description">This page is dedicated to showcasing the various artifacts that I can find that have to a large extent influenced who I have become as a person. These can be videos, articles, anecdotes... all slowly being collected and stored on this page so as to have a better overview of where I come from.</p>
+
+    <!-- D3.js for force simulation -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Trajan+Pro:wght@400;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #f8f6f0, #ffffff, #f5f3ee);
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Cormorant Garamond', serif;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        
+        #title {
+            font-family: 'Trajan Pro', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            text-align: center;
+            color: #34495e;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            position: relative;
+            letter-spacing: 0.1em;
+        }
+        
+        @media (max-width: 768px) {
+            #title::before,
+            #title::after {
+                display: none;
+            }
+        }
+        
+        #title::before {
+            content: '⚱️';
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.5em;
+            opacity: 0.7;
+        }
+        
+        #title::after {
+            content: '⚱️';
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.5em;
+            opacity: 0.7;
+        }
+        
+        #definition {
+            font-family: 'Cormorant Garamond', serif;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 12px;
+            padding: 40px 50px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+        }
+        
+        .definition-word {
+            font-family: 'Trajan Pro', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+        
+        .definition-meta {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .pronunciation {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: normal;
+        }
+        
+        .part-of-speech {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .language {
+            font-style: italic;
+            color: #95a5a6;
+        }
+        
+        .definition-line {
+            border: none;
+            height: 1px;
+            background: #bdc3c7;
+            margin: 30px 0;
+        }
+        
+        .definition-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        #description {
+            font-family: 'Cormorant Garamond', serif;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 800px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            line-height: 1.7;
+        }
+        
+        #artifact-container {
+            width: 100%;
+            max-width: 100vw;
+            min-height: 600px;
+            margin-top: 2em;
+            position: relative;
+            overflow: visible;
+            background: linear-gradient(to bottom, rgba(248,246,240,0.3), rgba(255,255,255,0.1));
+        }
+        
+        .artifact-overlay {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 1em;
+            pointer-events: auto;
+            min-width: 160px;
+            max-width: 280px;
+            font-size: 0.9rem;
+            z-index: 10;
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .artifact-image {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+        }
+        
+        .artifact-overlay.clickable {
+            border-color: #3498db;
+        }
+        
+        .artifact-overlay.clickable:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            border-color: #2980b9;
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .artifact-overlay:not(.clickable):hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .filter-container {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .filter-button {
+            font-family: 'Cinzel', serif;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            padding: 12px 24px;
+            margin: 8px;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-button:hover {
+            background: #d5dbdb;
+            border-color: #95a5a6;
+            transform: translateY(-1px);
+        }
+        
+        .filter-button.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+        
+        .filter-button.person { border-left: 4px solid #e74c3c; }
+        .filter-button.book { border-left: 4px solid #2ecc71; }
+        .filter-button.video { border-left: 4px solid #9b59b6; }
+        .filter-button.article { border-left: 4px solid #f39c12; }
+        .filter-button.anecdote { border-left: 4px solid #1abc9c; }
+        
+        .clickable-indicator {
+            color: #3498db;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+    </style>
+    <div class="filter-container">
+        <button class="filter-button active" data-filter="all">🌟 All</button>
+        <button class="filter-button person" data-filter="person">👤 Person</button>
+        <button class="filter-button book" data-filter="book">📚 Book</button>
+        <button class="filter-button video" data-filter="video">🎥 Video</button>
+        <button class="filter-button article" data-filter="article">📝 Article</button>
+        <button class="filter-button anecdote" data-filter="anecdote">💭 Anecdote</button>
+    </div>
+    <div id="artifact-container"></div>
+    <script>
+        // Example artifacts data with more diverse types
+        const artifacts = [
+            { title: "Steve Jobs", type: "person", link: "https://www.goodreads.com/book/show/11084145-steve-jobs", description: "The ones who are crazy enough to think they can change the world are the ones that do", color: 0xe74c3c, image: "images/steve.png" },
+            { title: "Mari/o", type: "video", link: "https://www.youtube.com/watch?v=qv6UVOQ0F44", description: "Made me write my first MNIST neural network in pure java", color: 0x9b59b6, image: "images/mario.png" },
+            { title: "Minecraft", type: "anecdote", link: "https://dev.bukkit.org/bukkit-plugins", description: "Modification lead me to learn Java, and end up at EPFL", color: 0x1abc9c, image: "images/minecraft.jpg" },
+            { title: "Derek Banas", type: "person", link: "https://www.youtube.com/@derekbanas", description: "Introduced me to Anki, the Spaced Repetition tool I use daily", color: 0xe74c3c, image: "images/derek.jpg" },
+            { title: "AGEPoly", type: "anecdote", link: "https://agepoly.ch", description: "Student club that taught me: Teamwork, project planning, adminstativa, organisation, and that community is everything", color: 0x1abc9c, image: "images/agepoly.png" },
+            { title: "Ultraprocessed People", type: "book", link: "https://www.goodreads.com/book/show/200196183-ultra-processed-people", description: "Fantastic book on how ultra-processed foods are having an impact on our body and society. Backed by solid research", color: 0x2ecc71, image: "images/ultra.jpg" },
+            { title: "Calvin and Hobbes", type: "book", link: "https://en.wikipedia.org/wiki/Bill_Watterson", description: "Calvin and Hobbes has had a huge impact on my way of approaching tough decisions and simply perspective on life, from nihilism to just enjoying the moment", color: 0x2ecc71, image: "images/calvin.png" },
+            { title: "Intentionally making close friends", type: "article", link: "https://www.neelnanda.io/blog/43-making-friends", description: "Yes, we can choose with who we become friends. This article is a great read on how to do so", color: 0xf39c12, image: "images/neel.png" },
+            { title: "Hackernews", type: "article", link: "https://news.ycombinator.com", description: "Huge influence on learning how to think critically about tech, various articles and always motivating to create", color: 0xf39c12, image: "images/hacker.jpg" },
+            { title: "Marc", type: "person", link: "", description: "Head of a fablab in which I learned laser cutting, CNC tools, 3D printing, painting.", color: 0xf39c12, image: "images/hacker.jpg" },
+            { title: "Elior", type: "person", link: "", description: "The right kind of crazy, an example on what to do in life", color: 0xf39c12, image: "images/hacker.jpg" },
+            { title: "Jeanne", type: "person", link: "", description: "Order in my chaos, my cove and refuge for life", color: 0xf39c12, image: "images/hacker.jpg" }
+        ];
+
+        // Scene setup - simplified without Three.js
+        const container = document.getElementById('artifact-container');
+        
+        // Start with a base height that will grow dynamically
+        let currentHeight = Math.max(800, window.innerHeight * 0.8);
+        container.style.height = currentHeight + 'px';
+
+        // D3 force simulation with collision radius based on overlay size for tight packing
+        const BOX_PADDING = 300; // pixels of padding between boxes
+        const BOX_SIZE = 120;   // estimated overlay size in px (adjust as needed)
+
+        const simulation = d3.forceSimulation()
+            .force("charge", d3.forceManyBody().strength(-10)) // weaker repulsion
+            .force("center", d3.forceCenter(window.innerWidth / 2, currentHeight / 3))
+            .force("collision", d3.forceCollide().radius(BOX_SIZE + BOX_PADDING))
+            .force("x", d3.forceX(window.innerWidth / 2).strength(0.12))
+            .force("y", d3.forceY(currentHeight / 2).strength(0.12))
+            .on("tick", ticked);
+
+        // Create overlays for artifacts
+        const overlays = [];
+        const nodes = [];
+        
+        artifacts.forEach((artifact, i) => {
+            // Create node for D3 simulation with partial boundary constraints
+            const padding = 150; // Keep artifacts away from left/right edges
+            const node = {
+                x: Math.random() * (window.innerWidth - 2 * padding) + padding,
+                y: Math.random() * 400 + 100, // Start in upper area but can move down freely
+                index: i
+            };
+            nodes.push(node);
+            
+            // Create HTML overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'artifact-overlay';
+            
+            const imageHtml = artifact.image ? `<img src="${artifact.image}" alt="${artifact.title}" class="artifact-image">` : '';
+            const clickableIndicator = artifact.link ? `<div class="clickable-indicator">🔗 Click to explore</div>` : '';
+            
+            overlay.innerHTML = `
+                ${imageHtml}
+                <strong>${artifact.title}</strong><br>
+                <em>${artifact.type}</em><br>
+                <span>${artifact.description}</span>
+                ${clickableIndicator}
+            `;
+            overlay.style.display = 'block';
+            
+            // Make overlay clickable if link exists
+            if (artifact.link) {
+                overlay.classList.add('clickable');
+                overlay.style.cursor = 'pointer';
+                overlay.addEventListener('click', () => {
+                    window.open(artifact.link, '_blank');
+                });
+            } else {
+                overlay.style.cursor = 'default';
+            }
+            
+            container.appendChild(overlay);
+            overlays.push(overlay);
+        });
+
+        // Add nodes to simulation
+        simulation.nodes(nodes);
+
+        function ticked() {
+            // Update overlay positions based on D3 simulation
+            let maxY = 0;
+            
+            nodes.forEach((node, i) => {
+                const padding = 150;
+                
+                // Constrain nodes to left/right boundaries and top boundary only
+                node.x = Math.max(50, Math.min(window.innerWidth - padding*2 - 50, node.x));
+                node.y = Math.max(100, node.y); // Only constrain top, let bottom expand
+                
+                // Track the lowest point for dynamic resizing
+                maxY = Math.max(maxY, node.y);
+                
+                // Update overlay position directly
+                overlays[i].style.left = node.x + 'px';
+                overlays[i].style.top = node.y + 'px';
+            });
+            
+            // Dynamically resize container if artifacts go too low
+            const requiredHeight = maxY + 200; // Add some padding at bottom
+            if (requiredHeight > currentHeight) {
+                currentHeight = requiredHeight;
+                container.style.height = currentHeight + 'px';
+            }
+        }
+
+        
+        function updateVisibility() {
+            overlays.forEach((overlay, i) => {
+                const artifact = artifacts[i];
+                const shouldShow = currentFilter === 'all' || artifact.type === currentFilter;
+                
+                if (shouldShow) {
+                    overlay.style.display = 'block';
+                    overlay.style.opacity = '1';
+                    overlay.style.transform = 'scale(1)';
+                } else {
+                    overlay.style.display = 'none';
+                }
+            });
+        }
+
+        // Simple animation loop for any CSS transitions
+        function animate() {
+            requestAnimationFrame(animate);
+            // Animation loop is much simpler now - just for any CSS transitions
+        }
+
+        // Filter functionality
+        let currentFilter = 'all';
+        const filterButtons = document.querySelectorAll('.filter-button');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                currentFilter = button.dataset.filter;
+                updateVisibility();
+            });
+        });
+
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Update D3 simulation forces for new width only
+            simulation.force("center", d3.forceCenter(window.innerWidth / 2, currentHeight / 3));
+            simulation.force("x", d3.forceX(window.innerWidth / 2).strength(0.12));
+            simulation.alpha(0.3).restart();
+        });
+    </script>
+
+
+</body>
+</html>

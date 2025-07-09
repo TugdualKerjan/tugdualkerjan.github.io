@@ -163,7 +163,7 @@ html_final = """
           </div>
         </section>
         <script>
-        document.getElementById('current-status').textContent = 'Personal Website'; // Change as needed
+        document.getElementById('current-status').textContent = 'List of artifacts'; // Change as needed
         </script>
         <section id="projects" class="projects-section fade-in">
             <h2 class="projects-title trans" data-en="Projects completed" data-fr="Projets complétées">Projects completed</h2>
