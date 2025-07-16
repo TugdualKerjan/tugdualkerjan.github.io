@@ -5,8 +5,8 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from xml.dom import minidom
 from PIL import Image
-import io
 import shutil
+import concurrent.futures
 import concurrent.futures
 
 
@@ -18,11 +18,11 @@ link_text = """onclick="window.open(`%s`, '_blank');"
 template = """
 <div class="project-card">
   <div class="project-header">
-    <img class="project-icon lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="48" height="48" alt="icon">
+    <img class="project-icon lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="48" height="48" alt="icon" loading="lazy">
     <h2 class="project-title">%s</h2>
   </div>
   <div class="project-image-container">
-    <img class="project-image lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="220" height="140" alt="project image">
+    <img class="project-image lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="220" height="140" alt="project image" loading="lazy">
   </div>
   <div class="project-desc-container">
     <p class="project-desc" %s>%s</p>
@@ -48,10 +48,13 @@ html_final = """
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="logo.svg" type="image/svg+xml">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <meta name="description" content="Tugdual Kerjan - MSc CS EPFL, poking around life! Projects, innovations, and learning by building.">
+    <meta name="theme-color" content="#ff7a00">
     <title>TUGDUAL</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&family=DM+Serif+Display:ital,wght@0,400;1,400&family=IBM+Plex+Sans:wght@400;700&family=Space+Grotesk:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preload" href="me.png" as="image" type="image/png">
     <script src="vanilla-tilt.min.js"></script>
     <script
     src="https://app.rybbit.io/api/script.js"
@@ -66,6 +69,20 @@ html_final = """
     }
     @keyframes draw {
         to { stroke-dashoffset: 0; }
+    }
+    /* Touch improvements for mobile devices */
+    @media (hover: none) and (pointer: coarse) {
+        .project-card:hover {
+            transform: none;
+            box-shadow: 0 6px 32px 0 #ff7a0022, 0 1.5px 0 0 #fff inset;
+        }
+        .contact-link:hover, .lang-switch span:hover {
+            transform: none;
+        }
+        .logo:hover {
+            transform: none;
+            filter: none;
+        }
     }
     </style>
     <script>
@@ -466,10 +483,11 @@ def generate_sitemap(article_path):
     print("Sitemap generated successfully as sitemap.xml")
 
 
-def compress_and_resize_image(src_path, dest_path, max_width=600):
+def compress_and_resize_image(src_path, dest_path, max_width=800):
     """
     Compress and resize an image to WebP format with a max width.
     GIFs are copied as-is.
+    Mobile-optimized with higher quality but reasonable file sizes.
     """
     ext = os.path.splitext(src_path)[1].lower()
     if ext == ".gif":
@@ -491,7 +509,8 @@ def compress_and_resize_image(src_path, dest_path, max_width=600):
             if w > max_width:
                 new_h = int(h * max_width / w)
                 img = img.resize((max_width, new_h), Image.LANCZOS)
-            img.save(dest_path, "WEBP", quality=85, method=6)
+            # Use higher quality for mobile devices
+            img.save(dest_path, "WEBP", quality=90, method=6)
     except Exception as e:
         print(f"Error processing {src_path}: {e}")
         shutil.copy2(src_path, dest_path)
