@@ -36,7 +36,7 @@ template_gif = """<div class="hitbox2">
 							display: block;
 							margin-left: auto;
 							margin-right: auto;
-							height: 100%%;
+							height: 50%%;
 						"
 					/>
 				</div>"""

@@ -5,6 +5,13 @@
     <link>https://tugdual.fr</link>
     <description>MSc CS EPFL, poking around life !</description>
     <item>
+      <title>Accountability Bot</title>
+      <link>https://github.com/TugdualKerjan/AccountAbility</link>
+      <description>I've played around with trying to build certain habits (running, morning routines...). One thing that I've noticed really works nicely is being accountable to someone else. Unfortunately, without the other person asking regularly this accountability can quickly fizzle out. To help with staying on track, I built a telegram bot that will ping the other people on a group if a certain user hasn't checked in for the day concerning a task ! I'll be back in a bit to see if it worked on me :)</description>
+      <pubDate>Fri, 24 Oct 2025 08:42:05 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-071_AccountAbility-md</guid>
+    </item>
+    <item>
       <title>KIFIR</title>
       <description>After spending 4 years with Jane I've had the pleasure of being accustomed with Kefir, a fizzy drink that is made from fermented organisms. I love it so much, in fact, that I wanted to distribute bottles of it to friends and family, and ideally even start a buisness out of it ! Thinking big but starting small, I bought a pack of cheap beer, emptied them and washed off the labels with Sodium Percarbonate and hot water. I also bought hobby brewing material and thus was able to capsulate my own bottles ! Finally, to put the cherry on top with friends we created bottle labels with nano-banana, google's image generator with realistic looking nutritional tables (Probably illegal lol). All in all it was a great success and I want to see if I can scale it up further 🔥</description>
       <pubDate>Mon, 13 Oct 2025 19:36:31 +0000</pubDate>
