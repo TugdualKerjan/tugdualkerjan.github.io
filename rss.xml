@@ -5,6 +5,12 @@
     <link>https://tugdual.fr</link>
     <description>MSc CS EPFL, poking around life !</description>
     <item>
+      <title>POTTERY</title>
+      <description>During a LAN at a friends place I noticed all their plates and bowls were homemade pottery - I asked and ended up taking a subscription with Jeanne to &lt;a href="http://lempotee.ch/"&gt;L'empotée&lt;/a&gt;, a wonderful little workshop in St-Sulpice. We've been going regularly for around 10 weeks now and have been slowly working up our skills on the wheel, working different types of ceramic glazes, and more complex shapes. By far the toughest skill to learn is patience with the wheel as the clay can easily break and get all wobbly. The satisfaction of using our own plates and bowls is amazing, and a wonderful show and tell for when friends are over, or as a gift ! I can only recommend this for anyone looking to spend 2 hours with friends chatting over some pottery making.</description>
+      <pubDate>Tue, 06 Jan 2026 12:04:09 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-072_Pottery-md</guid>
+    </item>
+    <item>
       <title>Accountability Bot</title>
       <link>https://github.com/TugdualKerjan/AccountAbility</link>
       <description>I've played around with trying to build certain habits (running, morning routines...). One thing that I've noticed really works nicely is being accountable to someone else. Unfortunately, without the other person asking regularly this accountability can quickly fizzle out. To help with staying on track, I built a telegram bot that will ping the other people on a group if a certain user hasn't checked in for the day concerning a task ! I'll be back in a bit to see if it worked on me :)</description>

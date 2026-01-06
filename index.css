@@ -401,16 +401,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 1.5rem; */
   position: relative;
   overflow: hidden;
-  height:150px;
-  /* min-height: 200px; */
+  height:100px;
 }
 
 .hitbox2 img {
-  /* max-width: 100%; */
-  /* max-height: 100%; */
+  max-height: 100%;
   object-fit: contain;
 }
 

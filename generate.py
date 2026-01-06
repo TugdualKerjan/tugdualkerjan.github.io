@@ -26,7 +26,7 @@ PROJECT_CARD_TEMPLATE = """
   </div>
 </div>"""
 
-GIF_TEMPLATE = '<div class="hitbox2"><img src="images/%s" style="display:block;margin:auto;height:50%%"></div>'
+GIF_TEMPLATE = '<div class="hitbox2"><img src="images/%s"></div>'
 
 HTML_TEMPLATE = """
 <!DOCTYPE html>
