@@ -1,47 +1,34 @@
 import os
-
 import re
+import shutil
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from xml.dom import minidom
 from PIL import Image
-import shutil
-import concurrent.futures
-import concurrent.futures
+from concurrent.futures import ThreadPoolExecutor
 
+ARTICLE_PATH = "/Users/tugdual/Documents/Notes/Articles/"
+LINK_ATTRS = """onclick="window.open(`%s`, '_blank');" style="cursor: pointer;\""""
 
-article_path = "/Users/tugdual/Documents/Notes/Articles/"
+PLACEHOLDER_IMG = "data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='%s' height='%s'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
 
-link_text = """onclick="window.open(`%s`, '_blank');"
-                    style="cursor: pointer;\""""
-
-template = """
+PROJECT_CARD_TEMPLATE = """
 <div class="project-card">
   <div class="project-header">
-    <img class="project-icon lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="48" height="48" alt="icon" loading="lazy">
+    <img class="project-icon lazy" %s data-src="%s" src="%s" width="48" height="48" alt="icon" loading="lazy">
     <h2 class="project-title">%s</h2>
   </div>
   <div class="project-image-container">
-    <img class="project-image lazy" %s data-src="%s" src="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E" width="220" height="140" alt="project image" loading="lazy">
+    <img class="project-image lazy" %s data-src="%s" src="%s" width="220" height="140" alt="project image" loading="lazy">
   </div>
   <div class="project-desc-container">
     <p class="project-desc" %s>%s</p>
   </div>
 </div>"""
 
-template_gif = """<div class="hitbox2">
-					<img
-						src="images/%s"
-						style="
-							display: block;
-							margin-left: auto;
-							margin-right: auto;
-							height: 50%%;
-						"
-					/>
-				</div>"""
+GIF_TEMPLATE = '<div class="hitbox2"><img src="images/%s" style="display:block;margin:auto;height:50%%"></div>'
 
-html_final = """
+HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 
@@ -191,27 +178,9 @@ html_final = """
     <footer class="landing-footer">
         <div class="landing-bottom-bar"></div>
     </footer>
-    <script src="./index.js"></script>
     <script>
-    // Vanilla JS hover animations
+    // Vanilla JS hover animations - REMOVED, now handled by CSS
     document.addEventListener('DOMContentLoaded', function() {
-        const hitboxes = document.querySelectorAll('.hitbox');
-        
-        hitboxes.forEach(hitbox => {
-            hitbox.addEventListener('mouseenter', function() {
-                const desc = this.querySelector('.desc');
-                const product = this.querySelector('.product');
-                const targetHeight = Math.max(desc.offsetHeight + 30 + product.offsetHeight, 200);
-                
-                this.style.transition = 'height 1.5s ease';
-                this.style.height = targetHeight + 'px';
-            });
-            
-            hitbox.addEventListener('mouseleave', function() {
-                this.style.height = '150px';
-            });
-        });
-
         // Lazy loading implementation
         const lazyImages = document.querySelectorAll('img.lazy');
         
@@ -311,204 +280,185 @@ html_final = """
     });
     </script>
 </body>
-<script src="./index.js"></script>
 
 </html>
             """
 
 
-def transform_text(text_array) -> str:
-    def get_img_name(img_line):
-        # Extracts the image filename from the markdown line
-        return img_line[4:-2]
+def get_image_filename(img_line):
+    """Extract filename from markdown image line"""
+    return img_line[4:-2]
 
-    def get_img_src(img_name):
-        if img_name.lower().endswith(".gif"):
-            return f"{img_name}"
-        else:
-            base = os.path.splitext(img_name)[0]
-            return f"{base}.webp"
 
-    if "[" in text_array[0]:  # Contains link
-        title = text_array[0].split("# [")[1].split("](")[0]
-        link = text_array[0].split("](")[1][:-2]
-        card_image_name = get_img_name(text_array[1])
-        card_image = get_img_src(card_image_name)
-        card_text = text_array[3][:-1]
-        back_image_name = get_img_name(text_array[-1])
-        back_image = get_img_src(back_image_name)
-        return template % (
-            (link_text % link),
+def get_webp_path(img_name):
+    """Convert image name to webp path or keep gif as is"""
+    return (
+        img_name
+        if img_name.lower().endswith(".gif")
+        else f"{os.path.splitext(img_name)[0]}.webp"
+    )
+
+
+def transform_text(lines) -> str:
+    """Transform article text to HTML project card"""
+    title_line = lines[0].strip()
+    card_image = get_webp_path(get_image_filename(lines[1]))
+    description = lines[3].strip()
+    back_image = get_webp_path(get_image_filename(lines[-1]))
+
+    icon_placeholder = PLACEHOLDER_IMG % ("48", "48")
+    img_placeholder = PLACEHOLDER_IMG % ("220", "140")
+
+    if "[" in title_line:  # Has link
+        title = title_line.split("# [")[1].split("](")[0]
+        link = title_line.split("](")[1][:-1]
+        link_attrs = LINK_ATTRS % link
+        return PROJECT_CARD_TEMPLATE % (
+            link_attrs,
             card_image,
+            icon_placeholder,
+            title,
+            link_attrs,
+            back_image,
+            img_placeholder,
+            link_attrs,
+            description,
+        )
+    else:  # No link
+        title = title_line.split("# ")[1]
+        return PROJECT_CARD_TEMPLATE % (
+            "",
+            card_image,
+            icon_placeholder,
             title,
             "",
             back_image,
-            (link_text % link),
-            card_text,
+            img_placeholder,
+            "",
+            description,
         )
+
+
+def get_article_files(path):
+    """Get filtered list of article files"""
+    return [f for f in os.listdir(path) if f not in ("images", ".DS_Store")]
+
+
+def extract_article_data(lines):
+    """Extract title, link, and description from article lines"""
+    if len(lines) < 4:
+        return None, None, None
+
+    title_line = lines[0].strip()
+    if "[" in title_line:
+        title = title_line.split("# [")[1].split("](")[0]
+        link = title_line.split("](")[1][:-1]
     else:
-        title = text_array[0].split("# ")[1][:-1]
-        card_image_name = get_img_name(text_array[1])
-        card_image = get_img_src(card_image_name)
-        card_text = text_array[3][:-1]
-        back_image_name = get_img_name(text_array[-1])
-        back_image = get_img_src(back_image_name)
-        return template % ("", card_image, title, "", back_image, "", card_text)
+        title = title_line.split("# ")[1]
+        link = ""
+
+    return title, link, lines[3].strip()
+
+
+def get_pub_date(filename, filepath):
+    """Get publication date from filename or file modification time"""
+    date_match = re.match(r"(\d{4}-\d{2}-\d{2})", filename)
+    if date_match:
+        return datetime.strptime(date_match.group(1), "%Y-%m-%d")
+    return datetime.fromtimestamp(os.path.getmtime(filepath))
 
 
 def generate_rss(article_path):
-    """
-    Generate an RSS feed from articles in the specified directory.
-
-    Args:
-        article_path (str): Path to directory containing articles
-    """
-    # Create the root RSS element
+    """Generate RSS feed from articles"""
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
 
-    # Add required channel elements
     ET.SubElement(channel, "title").text = "TUGDUAL"
-    ET.SubElement(
-        channel, "link"
-    ).text = "https://tugdual.fr"  # Adjust with your actual website URL
+    ET.SubElement(channel, "link").text = "https://tugdual.fr"
     ET.SubElement(channel, "description").text = "MSc CS EPFL, poking around life !"
 
-    # Get all article files
-    file_list = os.listdir(article_path)
-    file_list = [
-        f
-        for f in file_list
-        if f != "images" and f != ".DS_Store" and not f.endswith(".gif")
-    ]
-    file_list.sort(reverse=True)
+    for filename in sorted(get_article_files(article_path), reverse=True):
+        if filename.endswith(".gif"):  # Skip GIFs for RSS
+            continue
 
-    # Process each article
-    for file_name in file_list:
-        with open(os.path.join(article_path, file_name)) as article_file:
-            lines = article_file.readlines()
+        filepath = os.path.join(article_path, filename)
+        with open(filepath) as f:
+            title, link, description = extract_article_data(f.readlines())
 
-            # Skip if not enough lines
-            if len(lines) < 4:
-                continue
+        if not title:
+            continue
 
-            # Create item element
-            item = ET.SubElement(channel, "item")
+        item = ET.SubElement(channel, "item")
+        ET.SubElement(item, "title").text = title
+        if link:
+            ET.SubElement(item, "link").text = link
+        ET.SubElement(item, "description").text = description
 
-            # Extract title and link
-            if "[" in lines[0]:  # Contains link
-                title = lines[0].split("# [")[1].split("](")[0]
-                link = lines[0].split("](")[1][:-2]
-            else:
-                title = lines[0].split("# ")[1].strip()
-                link = ""  # No link available
+        try:
+            pub_date = get_pub_date(filename, filepath).strftime(
+                "%a, %d %b %Y %H:%M:%S +0000"
+            )
+        except Exception:
+            pub_date = datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0000")
 
-            # Extract description (card text)
-            description = lines[3].strip()
+        ET.SubElement(item, "pubDate").text = pub_date
+        ET.SubElement(
+            item, "guid", isPermaLink="false"
+        ).text = f"tugdual-{filename.replace('.', '-')}"
 
-            # Create file date from filename or use last modified time as fallback
-            try:
-                # Try to extract date from filename (if it follows a pattern like YYYY-MM-DD-title)
-                date_match = re.match(r"(\d{4}-\d{2}-\d{2})", file_name)
-                if date_match:
-                    pub_date = datetime.strptime(date_match.group(1), "%Y-%m-%d")
-                else:
-                    # Use file modification time as fallback
-                    file_path = os.path.join(article_path, file_name)
-                    mod_time = os.path.getmtime(file_path)
-                    pub_date = datetime.fromtimestamp(mod_time)
-
-                # Format date according to RFC 822
-                formatted_date = pub_date.strftime("%a, %d %b %Y %H:%M:%S +0000")
-            except Exception:
-                # Default to current time if date extraction fails
-                formatted_date = datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0000")
-
-            # Add item elements
-            ET.SubElement(item, "title").text = title
-            if link:
-                ET.SubElement(item, "link").text = link
-            ET.SubElement(item, "description").text = description
-            ET.SubElement(item, "pubDate").text = formatted_date
-
-            # Generate a unique ID based on the title
-            guid = ET.SubElement(item, "guid", isPermaLink="false")
-            guid.text = f"tugdual-{file_name.replace('.', '-')}"
-
-    # Convert to pretty-printed XML
-    rough_string = ET.tostring(rss, "utf-8")
-    reparsed = minidom.parseString(rough_string)
-    pretty_xml = reparsed.toprettyxml(indent="  ")
-
-    # Write to file
     with open("rss.xml", "w", encoding="utf-8") as f:
-        f.write(pretty_xml)
+        f.write(minidom.parseString(ET.tostring(rss, "utf-8")).toprettyxml(indent="  "))
 
-    print("RSS feed generated successfully as rss.xml")
+    print("RSS feed generated successfully")
 
 
 def generate_sitemap(article_path):
-    """
-    Generate a sitemap.xml file for all articles that have a link present.
-    """
-    import xml.etree.ElementTree as ET
-    from xml.dom import minidom
-    
+    """Generate sitemap.xml for articles with links"""
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    file_list = os.listdir(article_path)
-    file_list = [
-        f for f in file_list
-        if f != "images" and f != ".DS_Store" and not f.endswith(".gif")
-    ]
-    file_list.sort(reverse=True)
-    for file_name in file_list:
-        with open(os.path.join(article_path, file_name)) as article_file:
-            lines = article_file.readlines()
-            if len(lines) < 1:
+
+    for filename in sorted(get_article_files(article_path), reverse=True):
+        if filename.endswith(".gif"):  # Skip GIFs for sitemap
+            continue
+
+        with open(os.path.join(article_path, filename)) as f:
+            lines = f.readlines()
+
+        if lines and "[" in lines[0]:
+            try:
+                link = lines[0].split("](")[1].split(")")[0]
+                ET.SubElement(ET.SubElement(urlset, "url"), "loc").text = link
+            except (IndexError, ValueError):
                 continue
-            if "[" in lines[0]:
-                # Extract link
-                try:
-                    link = lines[0].split("](")[1].split(")")[0]
-                except Exception:
-                    continue
-                url = ET.SubElement(urlset, "url")
-                ET.SubElement(url, "loc").text = link
-    rough_string = ET.tostring(urlset, "utf-8")
-    reparsed = minidom.parseString(rough_string)
-    pretty_xml = reparsed.toprettyxml(indent="  ")
+
     with open("sitemap.xml", "w", encoding="utf-8") as f:
-        f.write(pretty_xml)
-    print("Sitemap generated successfully as sitemap.xml")
+        f.write(
+            minidom.parseString(ET.tostring(urlset, "utf-8")).toprettyxml(indent="  ")
+        )
+
+    print("Sitemap generated successfully")
 
 
 def compress_and_resize_image(src_path, dest_path, max_width=800):
-    """
-    Compress and resize an image to WebP format with a max width.
-    GIFs are copied as-is.
-    Mobile-optimized with higher quality but reasonable file sizes.
-    """
-    ext = os.path.splitext(src_path)[1].lower()
-    if ext == ".gif":
+    """Convert images to WebP format with compression. GIFs are copied as-is."""
+    if src_path.lower().endswith(".gif"):
         shutil.copy2(src_path, dest_path)
         return
+
     try:
         with Image.open(src_path) as img:
-            # Handle palette images with transparency
+            # Convert to RGB/RGBA properly
             if img.mode == "P":
-                if "transparency" in img.info:
-                    img = img.convert("RGBA")
-                else:
-                    img = img.convert("RGB")
-            elif img.mode == "RGBA":
-                pass  # keep as RGBA
-            elif img.mode != "RGB":
+                img = img.convert("RGBA" if "transparency" in img.info else "RGB")
+            elif img.mode not in ("RGB", "RGBA"):
                 img = img.convert("RGB")
+
+            # Resize if needed
             w, h = img.size
             if w > max_width:
-                new_h = int(h * max_width / w)
-                img = img.resize((max_width, new_h), Image.LANCZOS)
-            # Use higher quality for mobile devices
+                img = img.resize(
+                    (max_width, int(h * max_width / w)), Image.Resampling.LANCZOS
+                )
+
             img.save(dest_path, "WEBP", quality=90, method=6)
     except Exception as e:
         print(f"Error processing {src_path}: {e}")
@@ -516,57 +466,50 @@ def compress_and_resize_image(src_path, dest_path, max_width=800):
 
 
 def process_images(src_dir, dest_dir):
-    if not os.path.exists(dest_dir):
-        os.makedirs(dest_dir)
-
-    def needs_update(src_path, dest_path):
-        return not os.path.exists(dest_path) or os.path.getmtime(
-            src_path
-        ) > os.path.getmtime(dest_path)
+    """Process images from source to destination directory with compression"""
+    os.makedirs(dest_dir, exist_ok=True)
 
     tasks = []
     for fname in os.listdir(src_dir):
         src_path = os.path.join(src_dir, fname)
-        dest_ext = ".webp" if not fname.lower().endswith(".gif") else ".gif"
-        dest_name = os.path.splitext(fname)[0] + dest_ext
-        dest_path = os.path.join(dest_dir, dest_name)
-        if needs_update(src_path, dest_path):
+        dest_ext = ".gif" if fname.lower().endswith(".gif") else ".webp"
+        dest_path = os.path.join(dest_dir, os.path.splitext(fname)[0] + dest_ext)
+
+        # Only process if source is newer or dest doesn't exist
+        if not os.path.exists(dest_path) or os.path.getmtime(
+            src_path
+        ) > os.path.getmtime(dest_path):
             tasks.append((src_path, dest_path))
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [
-            executor.submit(compress_and_resize_image, src, dest) for src, dest in tasks
-        ]
-        for f in concurrent.futures.as_completed(futures):
-            f.result()  # Raise exceptions if any
+
+    with ThreadPoolExecutor() as executor:
+        for future in executor.map(
+            lambda args: compress_and_resize_image(*args), tasks
+        ):
+            pass  # Process all tasks
 
 
 def main():
-    # Process images: compress/resize to ./images/
-    src_img_dir = os.path.join(article_path, "images")
-    dest_img_dir = "images"
-    process_images(src_img_dir, dest_img_dir)
+    """Main function to generate website"""
+    # Process images
+    process_images(os.path.join(ARTICLE_PATH, "images"), "images")
 
-    file_list = os.listdir(article_path)
-    file_list.sort()
-    file_list.reverse()
-    list_of_articles = []
-    for element in file_list:
-        if element == "images" or element == ".DS_Store":
-            pass
-        elif element[-4:] == ".gif":
-            list_of_articles.append(template_gif % (element[4:]))
+    # Generate project cards
+    articles = []
+    for filename in sorted(get_article_files(ARTICLE_PATH), reverse=True):
+        if filename.endswith(".gif"):
+            articles.append(GIF_TEMPLATE % filename[4:])
         else:
-            with open(article_path + str(element)) as article_file:
-                print(element)
-                list_of_articles.append(transform_text(article_file.readlines()))
-    final_string = html_final % ("\n".join(list_of_articles))
-    with open("./index.html", "w") as final_doc:
-        final_doc.write(final_string)
-        final_doc.close()
+            with open(os.path.join(ARTICLE_PATH, filename)) as f:
+                print(filename)
+                articles.append(transform_text(f.readlines()))
 
-    # No need to copy images, already processed
-    generate_rss(article_path)
-    generate_sitemap(article_path)
+    # Write HTML file
+    with open("index.html", "w") as f:
+        f.write(HTML_TEMPLATE % "\n".join(articles))
+
+    # Generate feeds
+    generate_rss(ARTICLE_PATH)
+    generate_sitemap(ARTICLE_PATH)
 
 
 if __name__ == "__main__":
