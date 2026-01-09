@@ -226,32 +226,92 @@ body {
   border: 1px solid rgba(255, 122, 0, 0.1);
 }
 
+.status-label-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--header-font);
+}
+
+.status-arrow {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.status-arrow svg {
+  width: 30px;
+  height: 20px;
+}
+
+.status-block:hover .status-arrow {
+  opacity: 1;
+}
+
 .status-value {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--accent);
   margin: 1rem 0;
+  font-family: var(--header-font);
 }
 
 .services-list {
   list-style: none;
   padding: 0;
   margin: 1rem 0 0;
+  text-align: left;
 }
 
 .services-list li {
   margin: 0.5rem 0;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 122, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.services-list li:last-child {
+  border-bottom: none;
+}
+
+.services-list li:hover {
+  padding-left: 0.5rem;
+  background: rgba(255, 122, 0, 0.05);
+  border-radius: 0.25rem;
+  margin: 0.5rem -0.25rem;
 }
 
 .services-list a {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .services-list a:hover {
-  color: #222;
+  color: #e65a00;
+}
+
+.services-list a::before {
+  content: "→";
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+
+.services-list a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Projects section */

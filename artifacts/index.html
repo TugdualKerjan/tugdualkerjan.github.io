@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts by Tugdual</title>
+</head>
+<body>
+    <div id="definition">
+        <div class="definition-word">My artifacts</div>
+        <div class="definition-meta">
+            <span class="pronunciation">[ˈär-ti-ˌfakt]</span>
+            <span class="part-of-speech">noun</span>
+            <span class="language">• English</span>
+        </div>
+        <hr class="definition-line">
+        <div class="definition-text">
+            <p>Various people, pieces of content and events that have significantly influenced me. Never finished, it's probably missing many others I have yet to realize.</p>
+        </div>
+    </div>
+
+    <!-- D3.js for force simulation -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Trajan+Pro:wght@400;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #f8f6f0, #ffffff, #f5f3ee);
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Cormorant Garamond', serif;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        
+        #title {
+            font-family: 'Trajan Pro', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            text-align: center;
+            color: #34495e;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            position: relative;
+            letter-spacing: 0.1em;
+        }
+        
+        @media (max-width: 768px) {
+            #title::before,
+            #title::after {
+                display: none;
+            }
+        }
+        
+        #title::before {
+            content: '⚱️';
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.5em;
+            opacity: 0.7;
+        }
+        
+        #title::after {
+            content: '⚱️';
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.5em;
+            opacity: 0.7;
+        }
+        
+        #definition {
+            font-family: 'Cormorant Garamond', serif;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 12px;
+            padding: 40px 50px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+        }
+        
+        .definition-word {
+            font-family: 'Trajan Pro', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+        
+        .definition-meta {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .pronunciation {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: normal;
+        }
+        
+        .part-of-speech {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .language {
+            font-style: italic;
+            color: #95a5a6;
+        }
+        
+        .definition-line {
+            border: none;
+            height: 1px;
+            background: #bdc3c7;
+            margin: 30px 0;
+        }
+        
+        .definition-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        #description {
+            font-family: 'Cormorant Garamond', serif;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 800px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            line-height: 1.7;
+        }
+        
+        #artifact-container {
+            width: 100%;
+            height: 600px;
+            margin-top: 2em;
+            background: linear-gradient(to bottom, rgba(248,246,240,0.3), rgba(255,255,255,0.1));
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        svg {
+            cursor: grab;
+        }
+
+        svg:active {
+            cursor: grabbing;
+        }
+        
+        .artifact-node {
+            cursor: pointer;
+        }
+
+        .artifact-circle {
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+            transition: all 0.3s ease;
+        }
+
+        .artifact-circle:hover {
+            filter: drop-shadow(0 6px 20px rgba(0,0,0,0.25));
+        }
+
+        .artifact-node:hover .artifact-circle {
+            stroke-width: 4 !important;
+        }
+
+        .artifact-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            text-anchor: middle;
+            fill: #2c3e50;
+            pointer-events: none;
+        }
+
+        .artifact-title {
+            font-weight: 600;
+        }
+
+        .artifact-type {
+            font-style: italic;
+            font-size: 10px;
+            fill: #7f8c8d;
+        }
+        
+        .filter-container {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .filter-button {
+            font-family: 'Cinzel', serif;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            padding: 12px 24px;
+            margin: 8px;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-button:hover {
+            background: #d5dbdb;
+            border-color: #95a5a6;
+            transform: translateY(-1px);
+        }
+        
+        .filter-button.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+        
+        .filter-button.person { border-left: 4px solid #e74c3c; }
+        .filter-button.book { border-left: 4px solid #2ecc71; }
+        .filter-button.video { border-left: 4px solid #9b59b6; }
+        .filter-button.article { border-left: 4px solid #f39c12; }
+        .filter-button.anecdote { border-left: 4px solid #1abc9c; }
+        
+        .clickable-indicator {
+            color: #3498db;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        /* Simplified artifact styling */
+        .artifact-overlay {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .artifact-overlay:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+    </style>
+    <div class="filter-container">
+        <button class="filter-button active" data-filter="all">🌟 All</button>
+        <button class="filter-button person" data-filter="person">👤 Person</button>
+        <button class="filter-button book" data-filter="book">📚 Book</button>
+        <button class="filter-button video" data-filter="video">🎥 Video</button>
+        <button class="filter-button article" data-filter="article">📝 Article</button>
+        <button class="filter-button anecdote" data-filter="anecdote">💭 Anecdote</button>
+    </div>
+    <div id="artifact-container"></div>
+    <script>
+        // Example artifacts data with more diverse types
+        const artifacts = [
+            { title: "Steve Jobs", type: "person", link: "https://www.goodreads.com/book/show/11084145-steve-jobs", description: "The ones who are crazy enough to think they can change the world are the ones that do", color: 0xe74c3c, image: "images/steve.png" },
+            { title: "Mari/o", type: "video", link: "https://www.youtube.com/watch?v=qv6UVOQ0F44", description: "Made me write my first MNIST neural network in pure java", color: 0x9b59b6, image: "images/mario.png" },
+            { title: "Minecraft", type: "anecdote", link: "https://dev.bukkit.org/bukkit-plugins", description: "Modification lead me to learn Java, and end up at EPFL", color: 0x1abc9c, image: "images/minecraft.jpg" },
+            { title: "Derek Banas", type: "person", link: "https://www.youtube.com/@derekbanas", description: "Introduced me to Anki, the Spaced Repetition tool I use daily", color: 0xe74c3c, image: "images/derek.jpg" },
+            { title: "EPFL", type: "anecdote", link: "https://epfl.ch", description: "A privilege to study and grow as a person. Switzerland has gifted me something I will always cherish and promote.", color: 0x1abc9c, image: "images/epfl.svg" },
+            { title: "AGEPoly", type: "anecdote", link: "https://agepoly.ch", description: "Student club that taught me: Teamwork, project planning, adminstativa, organisation, and that community is everything", color: 0x1abc9c, image: "images/agepoly.png" },
+            { title: "Ultraprocessed People", type: "book", link: "https://www.goodreads.com/book/show/200196183-ultra-processed-people", description: "Fantastic book on how ultra-processed foods are having an impact on our body and society. Backed by solid research", color: 0x2ecc71, image: "images/ultra.jpg" },
+            { title: "Ralentir ou Périr", type: "book", link: "https://www.goodreads.com/book/show/62654568-ralentir-ou-p-rir", description: "Excellent book on the reasons why GDP is a terrible measure of progress", color: 0x2ecc71, image: "images/ralentir.png" },
+            { title: "Sapiens", type: "book", link: "https://www.goodreads.com/book/show/23692271-sapiens", description: "Excellent book to think outside of societal norms - what is biological and what is culture", color: 0x2ecc71, image: "images/sapiens.jpg" },
+            { title: "Calvin and Hobbes", type: "book", link: "https://en.wikipedia.org/wiki/Bill_Watterson", description: "Calvin and Hobbes has had a huge impact on my way of approaching tough decisions and simply perspective on life, from nihilism to just enjoying the moment", color: 0x2ecc71, image: "images/calvin.png" },
+            { title: "Intentionally making close friends", type: "article", link: "https://www.neelnanda.io/blog/43-making-friends", description: "Yes, we can choose with who we become friends. This article is a great read on how to do so", color: 0xf39c12, image: "images/neel.png" },
+            { title: "Hackernews", type: "article", link: "https://news.ycombinator.com", description: "Huge influence on learning how to think critically about tech, various articles and always motivating to create", color: 0xf39c12, image: "images/hacker.jpg" },
+            { title: "Marc", type: "person", link: "https://people.epfl.ch/marc.wettstein?lang=en", description: "Head of a fablab in which I learned laser cutting, CNC tools, 3D printing, painting.", color: 0xf39c12, image: "images/marc.png" },
+            { title: "Elior", type: "person", link: "", description: "The right kind of crazy, an example on what to do in life", color: 0xf39c12, image: "images/elior.png" },
+            { title: "Mother", type: "person", link: "", description: "Taught me arts and love", color: 0xf39c12, image: "images/mom.png" },
+            { title: "Father", type: "person", link: "", description: "Taught me science and logic", color: 0xf39c12, image: "images/dad.png" },
+            { title: "Jeanne", type: "person", link: "", description: "Order in my chaos, my cove and refuge for life", color: 0xf39c12, image: "images/jeanne.png" },
+            { title: "Small Teams", type: "article", link: "https://stevepulec.com/posts/small/", description: "Impressive achievements by small teams and individuals - proof that lean, focused teams can accomplish extraordinary things", color: 0xf39c12, image: "images/small.png" },
+            { title: "Serious fun", type: "article", link: "https://www.scattered-thoughts.net/writing/serious-fun/", description: "Being serious has two meanings. I want to be serious as in be caring, not be boring", color: 0xf39c12, image: "images/serious.png" },
+            { title: "Anki", type: "anecdote", link: "https://apps.ankiweb.net/", description: "Spaced repetition software that revolutionized my learning process", color: 0x1abc9c, image: "images/anki.webp" },
+            { title: "Thought Emporium", type: "video", link: "https://www.youtube.com/@thethoughtemporium", description: "Excellent youtube channel to learn how to genetically edit plants. Modified his own DNA with e-coli to start producing lactase again", color: 0x1abc9c, image: "images/thought.png" },
+            { title: "Dr. Jorge S. Diaz", type: "video", link: "https://www.youtube.com/@jkzero", description: "Explains the history of physics based on the original papers, removing all fluff", color: 0x1abc9c, image: "images/jk.png" },
+        ];
+
+        // Clean SVG-based approach
+        const container = d3.select('#artifact-container');
+        const width = container.node().clientWidth;
+        const height = 600;
+
+        // Create SVG
+        const svg = container
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+        // Create group for zoom/pan
+        const g = svg.append('g');
+
+        // D3 zoom behavior
+        const zoom = d3.zoom()
+            .scaleExtent([0.5, 3])
+            .on('zoom', (event) => {
+                g.attr('transform', event.transform);
+            });
+
+        svg.call(zoom);
+
+        // Custom border force function
+        function borderForce() {
+            const strength = 0.1;
+            const margin = 80; // Keep nodes this far from edges
+
+            function force() {
+                const nodes = simulation.nodes();
+
+                for (let i = 0; i < nodes.length; i++) {
+                    const node = nodes[i];
+
+                    // Left boundary
+                    if (node.x < margin) {
+                        node.vx += (margin - node.x) * strength;
+                    }
+                    // Right boundary
+                    if (node.x > width - margin) {
+                        node.vx += (width - margin - node.x) * strength;
+                    }
+                    // Top boundary
+                    if (node.y < margin) {
+                        node.vy += (margin - node.y) * strength;
+                    }
+                    // Bottom boundary
+                    if (node.y > height - margin) {
+                        node.vy += (height - margin - node.y) * strength;
+                    }
+                }
+            }
+
+            return force;
+        }
+
+        // Force simulation
+        const simulation = d3.forceSimulation(artifacts)
+            .force('charge', d3.forceManyBody().strength(-20))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collision', d3.forceCollide().radius(70))
+            .force('border', borderForce());
+
+        // Create artifact nodes
+        const nodes = g.selectAll('.artifact-node')
+            .data(artifacts)
+            .enter()
+            .append('g')
+            .attr('class', 'artifact-node')
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+
+        // Add background circles
+        nodes.append('circle')
+            .attr('class', 'artifact-circle')
+            .attr('r', 50)
+            .attr('fill', 'rgba(255, 255, 255, 0.9)')
+            .attr('stroke', d => d.link ? '#3498db' : '#bdc3c7')
+            .attr('stroke-width', d => d.link ? 3 : 2);
+
+        // Add circular clipping path for images
+        const defs = svg.append('defs');
+
+        nodes.each(function(d, i) {
+            const clipId = `clip-${i}`;
+            defs.append('clipPath')
+                .attr('id', clipId)
+                .append('circle')
+                .attr('r', 35)
+                .attr('cx', 0)
+                .attr('cy', 0);
+        });
+
+        // Add images
+        nodes.filter(d => d.image)
+            .append('image')
+            .attr('href', d => d.image)
+            .attr('x', -35)
+            .attr('y', -35)
+            .attr('width', 70)
+            .attr('height', 70)
+            .attr('clip-path', (d, i) => `url(#clip-${i})`)
+            .style('object-fit', 'cover');
+
+        // Add emoji fallback for nodes without images
+        nodes.filter(d => !d.image)
+            .append('text')
+            .attr('class', 'artifact-emoji')
+            .attr('text-anchor', 'middle')
+            .attr('dy', 8)
+            .style('font-size', '24px')
+            .text(d => {
+                switch(d.type) {
+                    case 'person': return '👤';
+                    case 'book': return '📚';
+                    case 'video': return '🎥';
+                    case 'article': return '📝';
+                    case 'anecdote': return '💭';
+                    default: return '⭐';
+                }
+            });
+
+        // Add title text below the circle
+        nodes.append('text')
+            .attr('class', 'artifact-text artifact-title')
+            .attr('dy', 65)
+            .text(d => d.title.length > 15 ? d.title.substring(0, 15) + '...' : d.title);
+
+        // Add type text
+        nodes.append('text')
+            .attr('class', 'artifact-text artifact-type')
+            .attr('dy', 78)
+            .text(d => d.type);
+
+        // Add click functionality
+        nodes.filter(d => d.link)
+            .on('click', (event, d) => {
+                event.stopPropagation();
+                window.open(d.link, '_blank');
+            });
+
+        // Add tooltips
+        nodes.append('title')
+            .text(d => `${d.title}\n${d.description}`);
+
+        // Update positions on tick
+        simulation.on('tick', () => {
+            if (window.currentNodes) {
+                window.currentNodes.attr('transform', d => `translate(${d.x},${d.y})`);
+            }
+        });
+
+        // Filter functionality
+        let currentFilter = 'all';
+        const filterButtons = document.querySelectorAll('.filter-button');
+
+        function updateFilter() {
+            // Get filtered data
+            const filteredData = currentFilter === 'all'
+                ? artifacts
+                : artifacts.filter(d => d.type === currentFilter);
+
+            // Reset positions for fresh start
+            filteredData.forEach(d => {
+                d.x = width / 2 + (Math.random() - 0.5) * 200;
+                d.y = height / 2 + (Math.random() - 0.5) * 200;
+                d.vx = 0;
+                d.vy = 0;
+                delete d.fx;
+                delete d.fy;
+            });
+
+            // Update simulation with new data
+            simulation.nodes(filteredData);
+
+            // Rebind data to nodes
+            const updatedNodes = g.selectAll('.artifact-node')
+                .data(filteredData, d => d.title);
+
+            // Remove nodes that don't match filter
+            updatedNodes.exit().remove();
+
+            // Add new nodes (shouldn't be any unless changing from filtered to 'all')
+            const newNodes = updatedNodes.enter()
+                .append('g')
+                .attr('class', 'artifact-node')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+
+            // Add all the node elements for new nodes
+            addNodeElements(newNodes);
+
+            // Merge new and existing nodes
+            const allNodes = newNodes.merge(updatedNodes);
+
+            // Update global nodes reference
+            window.currentNodes = allNodes;
+
+            // Restart simulation with high alpha for fresh dynamics
+            simulation.alpha(1).alphaTarget(0).restart();
+        }
+
+        function addNodeElements(nodeSelection) {
+            // Add background circles
+            nodeSelection.append('circle')
+                .attr('class', 'artifact-circle')
+                .attr('r', 50)
+                .attr('fill', 'rgba(255, 255, 255, 0.9)')
+                .attr('stroke', d => d.link ? '#3498db' : '#bdc3c7')
+                .attr('stroke-width', d => d.link ? 3 : 2);
+
+            // Add images
+            nodeSelection.filter(d => d.image)
+                .append('image')
+                .attr('href', d => d.image)
+                .attr('x', -35)
+                .attr('y', -35)
+                .attr('width', 70)
+                .attr('height', 70)
+                .attr('clip-path', (d, i) => `url(#clip-${artifacts.indexOf(d)})`)
+                .style('object-fit', 'cover');
+
+            // Add emoji fallback
+            nodeSelection.filter(d => !d.image)
+                .append('text')
+                .attr('class', 'artifact-emoji')
+                .attr('text-anchor', 'middle')
+                .attr('dy', 8)
+                .style('font-size', '24px')
+                .text(d => {
+                    switch(d.type) {
+                        case 'person': return '👤';
+                        case 'book': return '📚';
+                        case 'video': return '🎥';
+                        case 'article': return '📝';
+                        case 'anecdote': return '💭';
+                        default: return '⭐';
+                    }
+                });
+
+            // Add title text
+            nodeSelection.append('text')
+                .attr('class', 'artifact-text artifact-title')
+                .attr('dy', 65)
+                .text(d => d.title.length > 15 ? d.title.substring(0, 15) + '...' : d.title);
+
+            // Add type text
+            nodeSelection.append('text')
+                .attr('class', 'artifact-text artifact-type')
+                .attr('dy', 78)
+                .text(d => d.type);
+
+            // Add click functionality
+            nodeSelection.filter(d => d.link)
+                .on('click', (event, d) => {
+                    event.stopPropagation();
+                    window.open(d.link, '_blank');
+                });
+
+            // Add tooltips
+            nodeSelection.append('title')
+                .text(d => `${d.title}\n${d.description}`);
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                currentFilter = button.dataset.filter;
+                updateFilter();
+            });
+        });
+
+        // Store initial nodes reference
+        window.currentNodes = nodes;
+
+        // Drag functions
+        function dragstarted(event) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            event.subject.fx = event.subject.x;
+            event.subject.fy = event.subject.y;
+        }
+
+        function dragged(event) {
+            event.subject.fx = event.x;
+            event.subject.fy = event.y;
+        }
+
+        function dragended(event) {
+            if (!event.active) simulation.alphaTarget(0);
+            event.subject.fx = null;
+            event.subject.fy = null;
+        }
+
+        // Reset zoom on double click
+        svg.on('dblclick.zoom', () => {
+            svg.transition().duration(750).call(
+                zoom.transform,
+                d3.zoomIdentity
+            );
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const newWidth = container.node().clientWidth;
+            svg.attr('width', newWidth);
+            simulation.force('center', d3.forceCenter(newWidth / 2, height / 2));
+            simulation.alpha(0.3).restart();
+        });
+    </script>
+
+
+</body>
+</html>

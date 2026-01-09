@@ -136,38 +136,14 @@ HTML_TEMPLATE = """
             </div>
         </section>
         <section class="status-section fade-in">
-          <h2 class="projects-title trans" data-en="Status" data-fr="Statut">Status</h2>
+          <h2 class="projects-title trans" data-en="Status (Jan 9 2025)" data-fr="Statut (9 Jan 2025)">Status (Jan 9 2025)</h2>
           <div class="status-row">
             <div class="status-block">
-              <div class="status-label-wrap">
-                <div class="status-label">Currently working on</div>
-                <div class="status-arrow">
-                  <svg width="80" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 10 Q20 40 80 55" stroke="#ff7a00" stroke-width="4" fill="none" marker-end="url(#arrowhead2)"/><defs><marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#ff7a00"/></marker></defs></svg>
-                </div>
-              </div>
-              <div class="status-value" id="current-status"></div>
+              <div class="status-value" id="current-status">Building out a blog area for this website</div>
             </div>
-            <div class="status-block">
-            <div class="status-label-wrap">
-              <div class="status-label">Services I pay for</div>
-                <div class="status-arrow">
-                  <svg width="80" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 10 Q20 40 80 55" stroke="#ff7a00" stroke-width="4" fill="none" marker-end="url(#arrowhead2)"/><defs><marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#ff7a00"/></marker></defs></svg>
-                </div>
-              </div>
-              <ul class="services-list">
-                <li><a href="https://telegram.org/premium" target="_blank" rel="noopener">Telegram Premium</a></li>
-                <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude Pro</a></li>
-                <li><a href="https://pasteapp.io/" target="_blank" rel="noopener">Paste on mac</a></li>
-                <li><a href="https://www.warmshowers.org/" target="_blank" rel="noopener">Warmshowers</a></li>
-                <li><a href="https://www.odoo.com/" target="_blank" rel="noopener">Odoo</a></li>
-                <li><a href="https://kagi.com/" target="_blank" rel="noopener">Kagi Search</a></li>
-              </ul>
-            </div>
+
           </div>
         </section>
-        <script>
-        document.getElementById('current-status').textContent = 'List of artifacts'; // Change as needed
-        </script>
         <section id="projects" class="projects-section fade-in">
             <h2 class="projects-title trans" data-en="Projects completed" data-fr="Projets complétées">Projects completed</h2>
             <div class="projects-list">
@@ -283,6 +259,25 @@ HTML_TEMPLATE = """
 
 </html>
             """
+
+# <-- <div class="status-block">
+#   <div class="status-label-wrap">
+#     <div class="status-label">Services I pay for</div>
+#     <div class="status-arrow">
+#       <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+#         <path d="M5 10 L20 10 M15 5 L20 10 L15 15" stroke="#ff7a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+#       </svg>
+#     </div>
+#   </div>
+#   <ul class="services-list">
+#     <li><a href="https://telegram.org/premium" target="_blank" rel="noopener">Telegram Premium</a></li>
+#     <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude Pro</a></li>
+#     <li><a href="https://pasteapp.io/" target="_blank" rel="noopener">Paste on mac</a></li>
+#     <li><a href="https://www.warmshowers.org/" target="_blank" rel="noopener">Warmshowers</a></li>
+#     <li><a href="https://www.odoo.com/" target="_blank" rel="noopener">Odoo</a></li>
+#     <li><a href="https://kagi.com/" target="_blank" rel="noopener">Kagi Search</a></li>
+#   </ul>
+# </div> -->
 
 
 def get_image_filename(img_line):
