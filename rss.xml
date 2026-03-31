@@ -5,6 +5,13 @@
     <link>https://tugdual.fr</link>
     <description>MSc CS EPFL, poking around life !</description>
     <item>
+      <title>MEdia</title>
+      <link>https://tugdual.fr/MEdia</link>
+      <description>I've always liked keeping track of and sharing the books, movies and other content that make me who I am. I've yet to find a convenient website that allows me to simply view a file in which I store the relevant media I've consumed without feeling like I wasn't in control of my data. I'm still exploring and there are other features I would like to add, but &lt;a href="https://tugdual.fr/MEdia/"&gt;MEdia&lt;/a&gt; shows a simple draft of what could be a nice way of sharing MEdia and everything meta around them with friends and family: Reviews, highlighted passages, notes... Initially I turned to &lt;a href="https://dokie.li/"&gt;dokie.li&lt;/a&gt; for this but found their tool had a really high barrier to entry, lacking the basic ability to open a local file anonymously for a quick edit, something which is now natively available on browsers such as chrome thanks to &lt;a href="https://wicg.github.io/file-system-access/"&gt;The file system access API&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 14:21:50 +0000</pubDate>
+      <guid isPermaLink="false">tugdual-075_MEdia-md</guid>
+    </item>
+    <item>
       <title>PLANKING</title>
       <description>10 minutes! After 4 months of planking every day until failure I managed to plank for 10m03s, having started with a PR of 1m30 🎉! This is a habit I plan on keeping for life, heavily inspired by the &lt;a href="https://www.youtube.com/watch?v=Ea0fUDES1Hc"&gt;following video&lt;/a&gt;. So as to make sure the habit stuck I applied the same technique I had used when running for 100 days. Making my habit resistant to breaking on days I’m sick, tired: Planking one second was enough to check the box. The benefits I have seen are: Better posture, increased tolerance to discomfort and muscle gain, and becoming even more convinced that consistency is an amazing mechanism to doing great things!</description>
       <pubDate>Sat, 21 Mar 2026 17:51:34 +0000</pubDate>

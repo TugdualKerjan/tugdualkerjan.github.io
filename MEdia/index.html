@@ -515,24 +515,8 @@
                 showToast('📝 Created new library', 'success');
             } else {
                 // Fallback for browsers without File System Access API
-                data = [
-                    {
-                        "@type": "Article",
-                        "url": "https://tugdual.fr",
-                        "cached": {
-                            "type": "Article",
-                            "title": "tugdual.fr",
-                            "creator": "",
-                            "year": "",
-                            "cover": null,
-                            "url": "https://tugdual.fr"
-                        }
-                    }
-                ];
-                isReadOnly = false;
-                basePath = './';
-                processData();
-                showToast('📝 New library ready (use download to save)', 'success');
+                showToast('❌ File API not supported in this browser', 'error');
+                return;
             }
         }
 
