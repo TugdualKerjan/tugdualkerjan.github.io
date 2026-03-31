@@ -1,0 +1,1426 @@
+[
+  {
+    "@type": "Book",
+    "isbn": "9780374533557",
+    "cached": {
+      "type": "Book",
+      "title": "Thinking, Fast and Slow",
+      "creator": "Daniel Kahneman",
+      "year": "2013",
+      "cover": "cache/books/9780374533557.webp",
+      "url": "https://isbndb.com/book/9780374533557"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "329865",
+    "cached": {
+      "type": "Movie",
+      "title": "Arrival",
+      "creator": "",
+      "year": "2016",
+      "cover": "cache/movies/329865.webp",
+      "url": "https://themoviedb.org/movie/329865"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "62",
+    "cached": {
+      "type": "Movie",
+      "title": "2001: A Space Odyssey",
+      "creator": "",
+      "year": "1968",
+      "cover": "cache/movies/62.webp",
+      "url": "https://themoviedb.org/movie/62"
+    }
+  },
+  {
+    "@type": "Article",
+    "doi": "10.48550/arXiv.1706.03762"
+  },
+  {
+    "@type": "Article",
+    "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+    "cached": {
+      "type": "Article",
+      "title": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+      "creator": "",
+      "year": "",
+      "cover": null,
+      "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "127409",
+    "cached": {
+      "type": "Movie",
+      "title": "Snow-White",
+      "creator": "",
+      "year": "1933",
+      "cover": "cache/movies/127409.webp",
+      "url": "https://themoviedb.org/movie/127409"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1045770",
+    "cached": {
+      "type": "Movie",
+      "title": "Daaaaaal\u00ed!",
+      "creator": "",
+      "year": "2024",
+      "cover": "cache/movies/1045770.webp",
+      "url": "https://themoviedb.org/movie/1045770"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "337703",
+    "cached": {
+      "type": "Movie",
+      "title": "The Red Turtle",
+      "creator": "",
+      "year": "2016",
+      "cover": "cache/movies/337703.webp",
+      "url": "https://themoviedb.org/movie/337703"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "23951",
+    "cached": {
+      "type": "Movie",
+      "title": "Objectified",
+      "creator": "",
+      "year": "2009",
+      "cover": "cache/movies/23951.webp",
+      "url": "https://themoviedb.org/movie/23951"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "16859",
+    "cached": {
+      "type": "Movie",
+      "title": "Kiki's Delivery Service",
+      "creator": "",
+      "year": "1989",
+      "cover": "cache/movies/16859.webp",
+      "url": "https://themoviedb.org/movie/16859"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "8392",
+    "cached": {
+      "type": "Movie",
+      "title": "My Neighbor Totoro",
+      "creator": "",
+      "year": "1988",
+      "cover": "cache/movies/8392.webp",
+      "url": "https://themoviedb.org/movie/8392"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "22504",
+    "cached": {
+      "type": "Movie",
+      "title": "The King and the Mockingbird",
+      "creator": "",
+      "year": "1980",
+      "cover": "cache/movies/22504.webp",
+      "url": "https://themoviedb.org/movie/22504"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "19026",
+    "cached": {
+      "type": "Movie",
+      "title": "Azur & Asmar: The Princes' Quest",
+      "creator": "",
+      "year": "2006",
+      "cover": "cache/movies/19026.webp",
+      "url": "https://themoviedb.org/movie/19026"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "265297",
+    "cached": {
+      "type": "Movie",
+      "title": "The Salt of the Earth",
+      "creator": "",
+      "year": "2014",
+      "cover": "cache/movies/265297.webp",
+      "url": "https://themoviedb.org/movie/265297"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "24582",
+    "cached": {
+      "type": "Movie",
+      "title": "Manufactured Landscapes",
+      "creator": "",
+      "year": "2006",
+      "cover": "cache/movies/24582.webp",
+      "url": "https://themoviedb.org/movie/24582"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "22538",
+    "cached": {
+      "type": "Movie",
+      "title": "Scott Pilgrim vs. the World",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/22538.webp",
+      "url": "https://themoviedb.org/movie/22538"
+    }
+  },
+  {
+    "@type": "Book",
+    "key": "/works/OL796465W"
+  },
+  {
+    "@type": "Book",
+    "key": "/works/OL34308354W"
+  },
+  {
+    "@type": "Book",
+    "key": "/works/OL17840708W"
+  },
+  {
+    "@type": "Book",
+    "key": "/works/OL15270910W"
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782205071993",
+    "cached": {
+      "type": "Book",
+      "title": "Wizzywig",
+      "creator": "Ed Piskor",
+      "year": "2013",
+      "cover": "cache/books/9782205071993.webp",
+      "url": "https://isbndb.com/book/9782205071993"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782205088168",
+    "cached": {
+      "type": "Book",
+      "title": "Le monde sans fin",
+      "creator": "Jean-Marc Jancovici",
+      "year": "2021",
+      "cover": "cache/books/9782205088168.webp",
+      "url": "https://isbndb.com/book/9782205088168"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781982114954",
+    "cached": {
+      "type": "Book",
+      "title": "Lying for Money",
+      "creator": "Dan Davies",
+      "year": "2021",
+      "cover": "cache/books/9781982114954.webp",
+      "url": "https://isbndb.com/book/9781982114954"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780007427925",
+    "cached": {
+      "type": "Book",
+      "title": "Knowledge is Beautiful",
+      "creator": "David McCandless",
+      "year": "2014",
+      "cover": "cache/books/9780007427925.webp",
+      "url": "https://isbndb.com/book/9780007427925"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780525507819",
+    "cached": {
+      "type": "Book",
+      "title": "Numbers Don't Lie",
+      "creator": "Vaclav Smil",
+      "year": "2021",
+      "cover": "cache/books/9780525507819.webp",
+      "url": "https://isbndb.com/book/9780525507819"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780735277458",
+    "cached": {
+      "type": "Book",
+      "title": "12 Rules for Life: An Antidote to Chaos",
+      "creator": "Jordan B. Peterson",
+      "year": "2018",
+      "cover": "cache/books/9780735277458.webp",
+      "url": "https://isbndb.com/book/9780735277458"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780062390875",
+    "cached": {
+      "type": "Book",
+      "title": "Everybody Lies",
+      "creator": "Seth Stephens-Davidowitz",
+      "year": "2017",
+      "cover": "cache/books/9780062390875.webp",
+      "url": "https://isbndb.com/book/9780062390875"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780241969601",
+    "cached": {
+      "type": "Book",
+      "title": "On Anarchism",
+      "creator": "Noam Chomsky",
+      "year": "2014",
+      "cover": "cache/books/9780241969601.webp",
+      "url": "https://isbndb.com/book/9780241969601"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780062316097",
+    "cached": {
+      "type": "Book",
+      "title": "Sapiens A Brief History of Humankind",
+      "creator": "Yuval Noah Harari",
+      "year": "2015",
+      "cover": "cache/books/9780062316097.webp",
+      "url": "https://isbndb.com/book/9780062316097"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782413048220",
+    "cached": {
+      "type": "Book",
+      "title": "Cerveaux augment\u00e9s (Humanit\u00e9 diminu\u00e9e ?)",
+      "creator": "Miguel Benasayag",
+      "year": "2023",
+      "cover": "cache/books/9782413048220.webp",
+      "url": "https://isbndb.com/book/9782413048220"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782744025983",
+    "cached": {
+      "type": "Book",
+      "title": "Les bases du hacking",
+      "creator": "Patrick Engebretson",
+      "year": "2013",
+      "cover": "cache/books/9782744025983.webp",
+      "url": "https://isbndb.com/book/9782744025983"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780190078973",
+    "cached": {
+      "type": "Book",
+      "title": "The World for Sale",
+      "creator": "Javier Blas",
+      "year": "2021",
+      "cover": "cache/books/9780190078973.webp",
+      "url": "https://isbndb.com/book/9780190078973"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780062457738",
+    "cached": {
+      "type": "Book",
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "creator": "Mark Manson",
+      "year": "2016",
+      "cover": "cache/books/9780062457738.webp",
+      "url": "https://isbndb.com/book/9780062457738"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780872861558",
+    "cached": {
+      "type": "Book",
+      "title": "Tales of Ordinary Madness",
+      "creator": "Charles Bukowski",
+      "year": "1984",
+      "cover": "cache/books/9780872861558.webp",
+      "url": "https://isbndb.com/book/9780872861558"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781250184726",
+    "cached": {
+      "type": "Book",
+      "title": "Extreme Ownership",
+      "creator": "Jocko Willink",
+      "year": "2017",
+      "cover": "cache/books/9781250184726.webp",
+      "url": "https://isbndb.com/book/9781250184726"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9798217070251",
+    "cached": {
+      "type": "Book",
+      "title": "One Day, Everyone Will Have Always Been Against This",
+      "creator": "Omar El Akkad",
+      "year": "2025",
+      "cover": "cache/books/9798217070251.webp",
+      "url": "https://isbndb.com/book/9798217070251"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780986932809",
+    "cached": {
+      "type": "Book",
+      "title": "4000 Weeks A Life-changing Novel",
+      "creator": "Robert Bosman",
+      "year": "2011",
+      "cover": "cache/books/9780986932809.webp",
+      "url": "https://isbndb.com/book/9780986932809"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780857197696",
+    "cached": {
+      "type": "Book",
+      "title": "The Psychology of Money",
+      "creator": "Morgan Housel",
+      "year": "2020",
+      "cover": "cache/books/9780857197696.webp",
+      "url": "https://isbndb.com/book/9780857197696"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781603581486",
+    "cached": {
+      "type": "Book",
+      "title": "Thinking in Systems",
+      "creator": "Donella Meadows",
+      "year": "2008",
+      "cover": "cache/books/9781603581486.webp",
+      "url": "https://isbndb.com/book/9781603581486"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782070601486",
+    "cached": {
+      "type": "Book",
+      "title": "Tobie Lolness",
+      "creator": "Timoth\u00e9e de Fombelle",
+      "year": "2016",
+      "cover": "cache/books/9782070601486.webp",
+      "url": "https://isbndb.com/book/9782070601486"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780393355628",
+    "cached": {
+      "type": "Book",
+      "title": "Surely You're Joking, Mr. Feynman! Adventures of a Curious Character",
+      "creator": "Richard P Feynman",
+      "year": "2018",
+      "cover": "cache/books/9780393355628.webp",
+      "url": "https://isbndb.com/book/9780393355628"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780307957658",
+    "cached": {
+      "type": "Book",
+      "title": "Wild",
+      "creator": "Cheryl Strayed",
+      "year": "2012",
+      "cover": "cache/books/9780307957658.webp",
+      "url": "https://isbndb.com/book/9780307957658"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782072958199",
+    "cached": {
+      "type": "Book",
+      "title": "Le mage du Kremlin",
+      "creator": "Giuliano da Empoli",
+      "year": "2022",
+      "cover": "cache/books/9782072958199.webp",
+      "url": "https://isbndb.com/book/9782072958199"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780804139304",
+    "cached": {
+      "type": "Book",
+      "title": "Zero to One",
+      "creator": "Peter Thiel",
+      "year": "2014",
+      "cover": "cache/books/9780804139304.webp",
+      "url": "https://isbndb.com/book/9780804139304"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782021508109",
+    "cached": {
+      "type": "Book",
+      "title": "Ralentir ou p\u00e9rir L'\u00e9conomie de la d\u00e9croissance",
+      "creator": "Timoth\u00e9e Parrique",
+      "year": "2022",
+      "cover": "cache/books/9782021508109.webp",
+      "url": "https://isbndb.com/book/9782021508109"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782021338065",
+    "cached": {
+      "type": "Book",
+      "title": "Capital et id\u00e9ologie",
+      "creator": "Thomas Piketty",
+      "year": "2019",
+      "cover": "cache/books/9782021338065.webp",
+      "url": "https://isbndb.com/book/9782021338065"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780679603856",
+    "cached": {
+      "type": "Book",
+      "title": "The Power of Habit",
+      "creator": "Charles Duhigg",
+      "year": "2012",
+      "cover": "cache/books/9780679603856.webp",
+      "url": "https://isbndb.com/book/9780679603856"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781529903591",
+    "cached": {
+      "type": "Book",
+      "title": "Ultra-Processed People The Science Behind Food That Isn't Food",
+      "creator": "Chris van Tulleken",
+      "year": "2023",
+      "cover": "cache/books/9781529903591.webp",
+      "url": "https://isbndb.com/book/9781529903591"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781627790376",
+    "cached": {
+      "type": "Book",
+      "title": "Algorithms to Live By",
+      "creator": "Brian Christian",
+      "year": "2016",
+      "cover": "cache/books/9781627790376.webp",
+      "url": "https://isbndb.com/book/9781627790376"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782213679853",
+    "cached": {
+      "type": "Book",
+      "title": "Le parfum",
+      "creator": "Patrick S\u00fcskind",
+      "year": "2013",
+      "cover": "cache/books/9782213679853.webp",
+      "url": "https://isbndb.com/book/9782213679853"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780451524935",
+    "cached": {
+      "type": "Book",
+      "title": "1984",
+      "creator": "George Orwell",
+      "year": "1950",
+      "cover": "cache/books/9780451524935.webp",
+      "url": "https://isbndb.com/book/9780451524935"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780544340688",
+    "cached": {
+      "type": "Book",
+      "title": "The Giver",
+      "creator": "Lois Lowry",
+      "year": "2014",
+      "cover": "cache/books/9780544340688.webp",
+      "url": "https://isbndb.com/book/9780544340688"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780375842207",
+    "cached": {
+      "type": "Book",
+      "title": "The Book Thief",
+      "creator": "Markus Zusak",
+      "year": "2007",
+      "cover": "cache/books/9780375842207.webp",
+      "url": "https://isbndb.com/book/9780375842207"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781250773029",
+    "cached": {
+      "type": "Book",
+      "title": "Ender's Game",
+      "creator": "Orson Scott Card",
+      "year": "2021",
+      "cover": "cache/books/9781250773029.webp",
+      "url": "https://isbndb.com/book/9781250773029"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782889151158",
+    "cached": {
+      "type": "Book",
+      "title": "Le minimum th\u00e9orique Tout ce qu'il faut savoir pour commencer \u00e0 faire de la physique",
+      "creator": "L\u00e9onard Susskind",
+      "year": "2016",
+      "cover": "cache/books/9782889151158.webp",
+      "url": "https://isbndb.com/book/9782889151158"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781888963144",
+    "cached": {
+      "type": "Book",
+      "title": "Bone: The Complete Cartoon Epic in One Volume",
+      "creator": "Jeff Smith",
+      "year": "2004",
+      "cover": "cache/books/9781888963144.webp",
+      "url": "https://isbndb.com/book/9781888963144"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781400032716",
+    "cached": {
+      "type": "Book",
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "creator": "Mark Haddon",
+      "year": "2004",
+      "cover": "cache/books/9781400032716.webp",
+      "url": "https://isbndb.com/book/9781400032716"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781451648553",
+    "cached": {
+      "type": "Book",
+      "title": "Steve Jobs",
+      "creator": "Walter Isaacson",
+      "year": "2011",
+      "cover": "cache/books/9781451648553.webp",
+      "url": "https://isbndb.com/book/9781451648553"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "10515",
+    "cached": {
+      "type": "Movie",
+      "title": "Castle in the Sky",
+      "creator": "",
+      "year": "1986",
+      "cover": "cache/movies/10515.webp",
+      "url": "https://themoviedb.org/movie/10515"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "11",
+    "cached": {
+      "type": "Movie",
+      "title": "Star Wars",
+      "creator": "",
+      "year": "1977",
+      "cover": "cache/movies/11.webp",
+      "url": "https://themoviedb.org/movie/11"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1891",
+    "cached": {
+      "type": "Movie",
+      "title": "The Empire Strikes Back",
+      "creator": "",
+      "year": "1980",
+      "cover": "cache/movies/1891.webp",
+      "url": "https://themoviedb.org/movie/1891"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1892",
+    "cached": {
+      "type": "Movie",
+      "title": "Return of the Jedi",
+      "creator": "",
+      "year": "1983",
+      "cover": "cache/movies/1892.webp",
+      "url": "https://themoviedb.org/movie/1892"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1893",
+    "cached": {
+      "type": "Movie",
+      "title": "Star Wars: Episode I - The Phantom Menace",
+      "creator": "",
+      "year": "1999",
+      "cover": "cache/movies/1893.webp",
+      "url": "https://themoviedb.org/movie/1893"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1894",
+    "cached": {
+      "type": "Movie",
+      "title": "Star Wars: Episode II - Attack of the Clones",
+      "creator": "",
+      "year": "2002",
+      "cover": "cache/movies/1894.webp",
+      "url": "https://themoviedb.org/movie/1894"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1895",
+    "cached": {
+      "type": "Movie",
+      "title": "Star Wars: Episode III - Revenge of the Sith",
+      "creator": "",
+      "year": "2005",
+      "cover": "cache/movies/1895.webp",
+      "url": "https://themoviedb.org/movie/1895"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "671",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "creator": "",
+      "year": "2001",
+      "cover": "cache/movies/671.webp",
+      "url": "https://themoviedb.org/movie/671"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "672",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "creator": "",
+      "year": "2002",
+      "cover": "cache/movies/672.webp",
+      "url": "https://themoviedb.org/movie/672"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "673",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "creator": "",
+      "year": "2004",
+      "cover": "cache/movies/673.webp",
+      "url": "https://themoviedb.org/movie/673"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "674",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Goblet of Fire",
+      "creator": "",
+      "year": "2005",
+      "cover": "cache/movies/674.webp",
+      "url": "https://themoviedb.org/movie/674"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "767",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Half-Blood Prince",
+      "creator": "",
+      "year": "2009",
+      "cover": "cache/movies/767.webp",
+      "url": "https://themoviedb.org/movie/767"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "12444",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Deathly Hallows: Part 1",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/12444.webp",
+      "url": "https://themoviedb.org/movie/12444"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "12445",
+    "cached": {
+      "type": "Movie",
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "creator": "",
+      "year": "2011",
+      "cover": "cache/movies/12445.webp",
+      "url": "https://themoviedb.org/movie/12445"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "11314",
+    "cached": {
+      "type": "Movie",
+      "title": "Koyaanisqatsi",
+      "creator": "",
+      "year": "1983",
+      "cover": "cache/movies/11314.webp",
+      "url": "https://themoviedb.org/movie/11314"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "539757",
+    "cached": {
+      "type": "Movie",
+      "title": "Anthropocene: The Human Epoch",
+      "creator": "",
+      "year": "2018",
+      "cover": "cache/movies/539757.webp",
+      "url": "https://themoviedb.org/movie/539757"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "157336",
+    "cached": {
+      "type": "Movie",
+      "title": "Interstellar",
+      "creator": "",
+      "year": "2014",
+      "cover": "cache/movies/157336.webp",
+      "url": "https://themoviedb.org/movie/157336"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "27205",
+    "cached": {
+      "type": "Movie",
+      "title": "Inception",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/27205.webp",
+      "url": "https://themoviedb.org/movie/27205"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "45649",
+    "cached": {
+      "type": "Movie",
+      "title": "Rubber",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/45649.webp",
+      "url": "https://themoviedb.org/movie/45649"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "46690",
+    "cached": {
+      "type": "Movie",
+      "title": "Tintin and the Blue Oranges",
+      "creator": "",
+      "year": "1964",
+      "cover": "cache/movies/46690.webp",
+      "url": "https://themoviedb.org/movie/46690"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "2899",
+    "cached": {
+      "type": "Movie",
+      "title": "Asterix & Obelix: Mission Cleopatra",
+      "creator": "",
+      "year": "2002",
+      "cover": "cache/movies/2899.webp",
+      "url": "https://themoviedb.org/movie/2899"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "21348",
+    "cached": {
+      "type": "Movie",
+      "title": "Kirikou and the Sorceress",
+      "creator": "",
+      "year": "1998",
+      "cover": "cache/movies/21348.webp",
+      "url": "https://themoviedb.org/movie/21348"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "25866",
+    "cached": {
+      "type": "Movie",
+      "title": "The Sucker",
+      "creator": "",
+      "year": "1965",
+      "cover": "cache/movies/25866.webp",
+      "url": "https://themoviedb.org/movie/25866"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "8290",
+    "cached": {
+      "type": "Movie",
+      "title": "Don't Look Now... We're Being Shot At!",
+      "creator": "",
+      "year": "1966",
+      "cover": "cache/movies/8290.webp",
+      "url": "https://themoviedb.org/movie/8290"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "98",
+    "cached": {
+      "type": "Movie",
+      "title": "Gladiator",
+      "creator": "",
+      "year": "2000",
+      "cover": "cache/movies/98.webp",
+      "url": "https://themoviedb.org/movie/98"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "223702",
+    "cached": {
+      "type": "Movie",
+      "title": "Sausage Party",
+      "creator": "",
+      "year": "2016",
+      "cover": "cache/movies/223702.webp",
+      "url": "https://themoviedb.org/movie/223702"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "466272",
+    "cached": {
+      "type": "Movie",
+      "title": "Once Upon a Time... in Hollywood",
+      "creator": "",
+      "year": "2019",
+      "cover": "cache/movies/466272.webp",
+      "url": "https://themoviedb.org/movie/466272"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "500",
+    "cached": {
+      "type": "Movie",
+      "title": "Reservoir Dogs",
+      "creator": "",
+      "year": "1992",
+      "cover": "cache/movies/500.webp",
+      "url": "https://themoviedb.org/movie/500"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "273248",
+    "cached": {
+      "type": "Movie",
+      "title": "The Hateful Eight",
+      "creator": "",
+      "year": "2015",
+      "cover": "cache/movies/273248.webp",
+      "url": "https://themoviedb.org/movie/273248"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "22311",
+    "cached": {
+      "type": "Movie",
+      "title": "The Inglorious Bastards",
+      "creator": "",
+      "year": "1978",
+      "cover": "cache/movies/22311.webp",
+      "url": "https://themoviedb.org/movie/22311"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "24",
+    "cached": {
+      "type": "Movie",
+      "title": "Kill Bill: Vol. 1",
+      "creator": "",
+      "year": "2003",
+      "cover": "cache/movies/24.webp",
+      "url": "https://themoviedb.org/movie/24"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "68718",
+    "cached": {
+      "type": "Movie",
+      "title": "Django Unchained",
+      "creator": "",
+      "year": "2012",
+      "cover": "cache/movies/68718.webp",
+      "url": "https://themoviedb.org/movie/68718"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "328121",
+    "cached": {
+      "type": "Movie",
+      "title": "Ringo",
+      "creator": "",
+      "year": "2011",
+      "cover": null,
+      "url": "https://themoviedb.org/movie/328121"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "603",
+    "cached": {
+      "type": "Movie",
+      "title": "The Matrix",
+      "creator": "",
+      "year": "1999",
+      "cover": "cache/movies/603.webp",
+      "url": "https://themoviedb.org/movie/603"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "1726",
+    "cached": {
+      "type": "Movie",
+      "title": "Iron Man",
+      "creator": "",
+      "year": "2008",
+      "cover": "cache/movies/1726.webp",
+      "url": "https://themoviedb.org/movie/1726"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "10138",
+    "cached": {
+      "type": "Movie",
+      "title": "Iron Man 2",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/10138.webp",
+      "url": "https://themoviedb.org/movie/10138"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "68721",
+    "cached": {
+      "type": "Movie",
+      "title": "Iron Man 3",
+      "creator": "",
+      "year": "2013",
+      "cover": "cache/movies/68721.webp",
+      "url": "https://themoviedb.org/movie/68721"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9782413009528",
+    "cached": {
+      "type": "Book",
+      "title": "Hypercapitalisme",
+      "creator": "Larry Gonick",
+      "year": "2018",
+      "cover": "cache/books/9782413009528.webp",
+      "url": "https://isbndb.com/book/9782413009528"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "857",
+    "cached": {
+      "type": "Movie",
+      "title": "Saving Private Ryan",
+      "creator": "",
+      "year": "1998",
+      "cover": "cache/movies/857.webp",
+      "url": "https://themoviedb.org/movie/857"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "371645",
+    "cached": {
+      "type": "Movie",
+      "title": "Hunt for the Wilderpeople",
+      "creator": "",
+      "year": "2016",
+      "cover": "cache/movies/371645.webp",
+      "url": "https://themoviedb.org/movie/371645"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "10895",
+    "cached": {
+      "type": "Movie",
+      "title": "Pinocchio",
+      "creator": "",
+      "year": "1940",
+      "cover": "cache/movies/10895.webp",
+      "url": "https://themoviedb.org/movie/10895"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "756",
+    "cached": {
+      "type": "Movie",
+      "title": "Fantasia",
+      "creator": "",
+      "year": "1940",
+      "cover": "cache/movies/756.webp",
+      "url": "https://themoviedb.org/movie/756"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9798741663370",
+    "cached": {
+      "type": "Book",
+      "title": "Around the World in 80 Days",
+      "creator": "Jules Verne",
+      "year": "2021",
+      "cover": "cache/books/9798741663370.webp",
+      "url": "https://isbndb.com/book/9798741663370"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9780141185149",
+    "cached": {
+      "type": "Book",
+      "title": "The Periodic Table",
+      "creator": "Primo Levi",
+      "year": "2000",
+      "cover": "cache/books/9780141185149.webp",
+      "url": "https://isbndb.com/book/9780141185149"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781984897398",
+    "cached": {
+      "type": "Book",
+      "title": "Create Dangerously",
+      "creator": "Albert Camus",
+      "year": "2019",
+      "cover": "cache/books/9781984897398.webp",
+      "url": "https://isbndb.com/book/9781984897398"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "8587",
+    "cached": {
+      "type": "Movie",
+      "title": "The Lion King",
+      "creator": "",
+      "year": "1994",
+      "cover": "cache/movies/8587.webp",
+      "url": "https://themoviedb.org/movie/8587"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "5559",
+    "cached": {
+      "type": "Movie",
+      "title": "Bee Movie",
+      "creator": "",
+      "year": "2007",
+      "cover": "cache/movies/5559.webp",
+      "url": "https://themoviedb.org/movie/5559"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "862",
+    "cached": {
+      "type": "Movie",
+      "title": "Toy Story",
+      "creator": "",
+      "year": "1995",
+      "cover": "cache/movies/862.webp",
+      "url": "https://themoviedb.org/movie/862"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "863",
+    "cached": {
+      "type": "Movie",
+      "title": "Toy Story 2",
+      "creator": "",
+      "year": "1999",
+      "cover": "cache/movies/863.webp",
+      "url": "https://themoviedb.org/movie/863"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "10193",
+    "cached": {
+      "type": "Movie",
+      "title": "Toy Story 3",
+      "creator": "",
+      "year": "2010",
+      "cover": "cache/movies/10193.webp",
+      "url": "https://themoviedb.org/movie/10193"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "225914",
+    "cached": {
+      "type": "Movie",
+      "title": "Spider-Man",
+      "creator": "",
+      "year": "1977",
+      "cover": "cache/movies/225914.webp",
+      "url": "https://themoviedb.org/movie/225914"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "472027",
+    "cached": {
+      "type": "Movie",
+      "title": "Batman: The Dark Knight Returns",
+      "creator": "",
+      "year": "2013",
+      "cover": "cache/movies/472027.webp",
+      "url": "https://themoviedb.org/movie/472027"
+    }
+  },
+  {
+    "@type": "Book",
+    "isbn": "9781098108304",
+    "cached": {
+      "type": "Book",
+      "title": "Fundamentals of Data Engineering Plan and Build Robust Data Systems",
+      "creator": "Joe Reis",
+      "year": "2022",
+      "cover": "cache/books/9781098108304.webp",
+      "url": "https://isbndb.com/book/9781098108304"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "597",
+    "cached": {
+      "type": "Movie",
+      "title": "Titanic",
+      "creator": "",
+      "year": "1997",
+      "cover": "cache/movies/597.webp",
+      "url": "https://themoviedb.org/movie/597"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "238",
+    "cached": {
+      "type": "Movie",
+      "title": "The Godfather",
+      "creator": "",
+      "year": "1972",
+      "cover": "cache/movies/238.webp",
+      "url": "https://themoviedb.org/movie/238"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "240",
+    "cached": {
+      "type": "Movie",
+      "title": "The Godfather Part II",
+      "creator": "",
+      "year": "1974",
+      "cover": "cache/movies/240.webp",
+      "url": "https://themoviedb.org/movie/240"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "242",
+    "cached": {
+      "type": "Movie",
+      "title": "The Godfather Part III",
+      "creator": "",
+      "year": "1990",
+      "cover": "cache/movies/242.webp",
+      "url": "https://themoviedb.org/movie/242"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "661539",
+    "cached": {
+      "type": "Movie",
+      "title": "A Complete Unknown",
+      "creator": "",
+      "year": "2024",
+      "cover": "cache/movies/661539.webp",
+      "url": "https://themoviedb.org/movie/661539"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "438631",
+    "cached": {
+      "type": "Movie",
+      "title": "Dune",
+      "creator": "",
+      "year": "2021",
+      "cover": "cache/movies/438631.webp",
+      "url": "https://themoviedb.org/movie/438631"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "693134",
+    "cached": {
+      "type": "Movie",
+      "title": "Dune: Part Two",
+      "creator": "",
+      "year": "2024",
+      "cover": "cache/movies/693134.webp",
+      "url": "https://themoviedb.org/movie/693134"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "76341",
+    "cached": {
+      "type": "Movie",
+      "title": "Mad Max: Fury Road",
+      "creator": "",
+      "year": "2015",
+      "cover": "cache/movies/76341.webp",
+      "url": "https://themoviedb.org/movie/76341"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "120",
+    "cached": {
+      "type": "Movie",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "creator": "",
+      "year": "2001",
+      "cover": "cache/movies/120.webp",
+      "url": "https://themoviedb.org/movie/120"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "121",
+    "cached": {
+      "type": "Movie",
+      "title": "The Lord of the Rings: The Two Towers",
+      "creator": "",
+      "year": "2002",
+      "cover": "cache/movies/121.webp",
+      "url": "https://themoviedb.org/movie/121"
+    }
+  },
+  {
+    "@type": "Movie",
+    "tmdb": "122",
+    "cached": {
+      "type": "Movie",
+      "title": "The Lord of the Rings: The Return of the King",
+      "creator": "",
+      "year": "2003",
+      "cover": "cache/movies/122.webp",
+      "url": "https://themoviedb.org/movie/122"
+    }
+  }
+]

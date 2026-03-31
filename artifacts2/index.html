@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Tracker</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 680px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: .5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        input {
+            font-family: monospace;
+            border: 1px solid #ccc;
+            padding: .3rem .5rem;
+            font-size: .85rem;
+            flex: 1;
+            min-width: 160px;
+        }
+
+        button {
+            font-family: monospace;
+            font-size: .85rem;
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: .3rem .6rem;
+            cursor: pointer;
+        }
+
+        button.active {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .count {
+            font-size: .75rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .item {
+            border-top: 1px solid #eee;
+            padding: .75rem 0;
+            display: flex;
+            gap: .75rem;
+            align-items: flex-start;
+        }
+
+        .item img,
+        .no-img {
+            width: 36px;
+            height: 52px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #eee;
+        }
+
+        .meta {
+            font-size: .75rem;
+            color: #999;
+        }
+
+        .title {
+            font-size: .9rem;
+            margin: .15rem 0;
+        }
+
+        .title a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .search-result {
+            border: 1px solid #ddd;
+            padding: .5rem;
+            margin: .25rem 0;
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            background: #fff;
+        }
+
+        .search-result img {
+            width: 24px;
+            height: 36px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .search-result button {
+            font-size: .75rem;
+            padding: .2rem .4rem;
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .remove-btn {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+            font-size: .7rem;
+            padding: .2rem .4rem;
+            margin-left: auto;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            background: #4CAF50;
+        }
+
+        .toast.error {
+            background: #f44336;
+        }
+
+        .toast.warning {
+            background: #ff9800;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Artifacts II</h1>
+    <h4>I currently use Goodreads and Letterboxd for which books and movies I watch, but don't like having my data stuck
+        in their hands.</h4>
+    <h4>This HTML file is all there is to the solution: It can load a URL or local JSON representing the list of media.
+        Anyone can take this HTML file and open it anywhere, it'll just work ™.</h4>
+    <h4>This is a small step to having the user own the files instead of letting companies manage them.</h4>
+    <h4>Upcoming features: Addition of other video formats, and music. Migrate to the schema.org formats so as to
+        facilitate things by
+        respecting standards.</h4>
+    <h4>You can create your own list of media you've consumed and share it however you want: Using a USB, hosting it
+        online, or keeping it in your homeserver. All you need is the html page you're currently looking at.</h4>
+
+    <div class="controls">
+        <button id="load-file">📂 Select local media.json library</button>
+        <button id="create-new">📝 Create new media.json</button>
+    </div>
+
+    <div class="controls">
+        <input id="url-input" placeholder="Or enter URL to someone's media.json"
+            value="https://tugdual.fr/artifacts2/media.json">
+        <button id="load-url">🌐 Load from URL</button>
+    </div>
+
+    <div class="controls" id="search-controls">
+        <input id="search" placeholder="Select type, then search...">
+        <button id="books">Books</button>
+        <button id="movies">Movies</button>
+        <button id="articles">Articles</button>
+    </div>
+    <div id="results"></div>
+
+    <div class="controls">
+        <input id="filter" placeholder="Filter...">
+        <button class="active" data-type="all">All</button>
+        <button data-type="Book">Books</button>
+        <button data-type="Movie">Movies</button>
+        <button data-type="Article">Articles</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+
+    <script>
+        // Get API keys from localStorage or prompt user
+        function getAPIKey(service) {
+            let key = localStorage.getItem(`${service}_key`);
+            if (!key) {
+                key = prompt(`Enter your ${service.toUpperCase()} API key:`);
+                if (key) localStorage.setItem(`${service}_key`, key);
+            }
+            return key;
+        }
+
+        let TMDB_KEY = '';
+        let ISBNDB_KEY = '';
+
+        let data = [], items = [], fileHandle = null, filter = 'all', query = '', isReadOnly = false, basePath = '';
+
+        function showToast(message, type = 'default') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 3000);
+        }
+
+        function render() {
+            const visible = items.filter(it => it && (filter === 'all' || it.type === filter) &&
+                (!query || [it.title, it.creator, it.year].join(' ').toLowerCase().includes(query.toLowerCase())));
+            document.getElementById('count').textContent = `${visible.length} items`;
+            document.getElementById('list').innerHTML = visible.map((it, i) => `
+                <div class="item">
+                    ${it.cover ? `<img src="${it.cover}">` : '<div class="no-img"></div>'}
+                    <div style="flex: 1;">
+                        <div class="meta">${it.type} · ${it.year} · ${it.creator}</div>
+                        <div class="title"><a href="${it.url}" target="_blank">${it.title}</a></div>
+                    </div>
+                    ${!isReadOnly ? `<button class="remove-btn" onclick="remove(${items.indexOf(it)})">×</button>` : ''}
+                </div>`).join('');
+        }
+
+        async function resolve(entry) {
+            // Check if metadata is already cached in the entry
+            if (entry.cached) {
+                let coverPath = null;
+                if (entry['@type'] === 'Book' && entry.isbn) {
+                    coverPath = `${basePath}cache/books/${entry.isbn}.webp`;
+                } else if (entry['@type'] === 'Movie' && entry.tmdb) {
+                    coverPath = `${basePath}cache/movies/${entry.tmdb}.webp`;
+                }
+
+                // Check if cover exists
+                if (coverPath) {
+                    try {
+                        const response = await fetch(coverPath, { method: 'HEAD' });
+                        if (response.ok) {
+                            entry.cached.cover = coverPath;
+                        }
+                    } catch (e) {
+                        // Cover doesn't exist, use original cover or null
+                    }
+                }
+
+                return entry.cached;
+            }
+
+            // Fallback to API calls for non-cached items
+            if (entry['@type'] === 'Book' && entry.isbn) {
+                const r = await fetch(`https://api2.isbndb.com/book/${entry.isbn}`, {
+                    headers: { 'Authorization': ISBNDB_KEY }
+                });
+                const book = (await r.json()).book;
+                return {
+                    type: 'Book', title: book.title, creator: book.authors?.[0] || '',
+                    year: book.date_published?.slice(0, 4) || '', cover: book.image,
+                    url: `https://isbndb.com/book/${entry.isbn}`
+                };
+            }
+            if (entry['@type'] === 'Movie' && entry.tmdb) {
+                const r = await fetch(`https://api.themoviedb.org/3/movie/${entry.tmdb}?api_key=${TMDB_KEY}`);
+                const movie = await r.json();
+                return {
+                    type: 'Movie', title: movie.title, creator: '',
+                    year: movie.release_date?.slice(0, 4) || '', cover: movie.poster_path ?
+                        `https://image.tmdb.org/t/p/w92${movie.poster_path}` : null,
+                    url: `https://themoviedb.org/movie/${entry.tmdb}`
+                };
+            }
+            if (entry['@type'] === 'Article') {
+                if (entry.doi) {
+                    const r = await fetch(`https://api.semanticscholar.org/graph/v1/paper/DOI:${entry.doi}?fields=title,authors,year`);
+                    const paper = await r.json();
+                    return {
+                        type: 'Article', title: paper.title, creator: paper.authors?.slice(0, 2).map(a => a.name).join(', ') || '',
+                        year: paper.year || '', cover: null, url: `https://doi.org/${entry.doi}`
+                    };
+                }
+                return { type: 'Article', title: entry.url, creator: '', year: '', cover: null, url: entry.url };
+            }
+        }
+
+        async function searchBooks(q) {
+            const r = await fetch(`https://api2.isbndb.com/books/${q}?pageSize=5`, {
+                headers: { 'Authorization': ISBNDB_KEY }
+            });
+            return (await r.json()).books.map(b => ({
+                type: 'Book', title: b.title, author: b.authors?.[0] || '',
+                year: b.date_published?.slice(0, 4) || '', isbn: b.isbn13 || b.isbn, cover: b.image
+            }));
+        }
+
+        async function searchMovies(q) {
+            const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${q}`);
+            return (await r.json()).results.slice(0, 5).map(m => ({
+                type: 'Movie', title: m.title, year: m.release_date?.slice(0, 4) || '',
+                tmdb: m.id, cover: m.poster_path ? `https://image.tmdb.org/t/p/w92${m.poster_path}` : null
+            }));
+        }
+
+        async function add(item) {
+            let entry;
+            if (item.type === 'Book') {
+                entry = { "@type": "Book", "isbn": item.isbn };
+                // Cache the metadata
+                entry.cached = {
+                    type: 'Book',
+                    title: item.title,
+                    creator: item.author || '',
+                    year: item.year || '',
+                    cover: item.cover,
+                    url: `https://isbndb.com/book/${item.isbn}`
+                };
+            } else if (item.type === 'Movie') {
+                entry = { "@type": "Movie", "tmdb": item.tmdb.toString() };
+                // Cache the metadata
+                entry.cached = {
+                    type: 'Movie',
+                    title: item.title,
+                    creator: '',
+                    year: item.year || '',
+                    cover: item.cover,
+                    url: `https://themoviedb.org/movie/${item.tmdb}`
+                };
+            } else if (item.type === 'Article') {
+                if (item.url?.includes('doi.org')) {
+                    entry = { "@type": "Article", "doi": item.url.replace(/.*doi\.org\//, '') };
+                } else {
+                    entry = { "@type": "Article", "url": item.url };
+                }
+                entry.cached = {
+                    type: 'Article',
+                    title: item.title || item.url,
+                    creator: '',
+                    year: '',
+                    cover: null,
+                    url: item.url
+                };
+            }
+
+            data.push(entry);
+            processData();
+            save();
+
+            // Download and cache cover image if not in read-only mode
+            if (!isReadOnly && item.cover) {
+                await cacheImage(item, entry);
+            }
+        }
+
+        async function cacheImage(item, entry) {
+            try {
+                const response = await fetch(item.cover);
+                const blob = await response.blob();
+
+                // Convert to WebP if possible
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+
+                await new Promise((resolve, reject) => {
+                    img.onload = () => {
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                        resolve();
+                    };
+                    img.onerror = reject;
+                    img.src = URL.createObjectURL(blob);
+                });
+
+                canvas.toBlob(async (webpBlob) => {
+                    if (webpBlob) {
+                        // In a real implementation, you'd save this to the cache folder
+                        console.log(`Would save cover as ${item.isbn || item.tmdb}.webp`);
+                    }
+                }, 'image/webp', 0.8);
+            } catch (error) {
+                console.warn('Failed to cache image:', error);
+            }
+        }
+
+        function remove(index) {
+            data.splice(index, 1);
+            processData();
+            save();
+        }
+
+        async function save() {
+            if ('showSaveFilePicker' in window && fileHandle) {
+                const writable = await fileHandle.createWritable();
+                await writable.write(JSON.stringify(data, null, 2));
+                await writable.close();
+                showToast('✅ Saved', 'success');
+            }
+        }
+
+        async function load() {
+            try {
+                if (!('showOpenFilePicker' in window)) {
+                    showToast('❌ File API not supported in this browser', 'error');
+                    return;
+                }
+
+                const [handle] = await window.showOpenFilePicker({
+                    types: [{ accept: { 'application/json': ['.json'] } }]
+                });
+                fileHandle = handle;
+                const file = await handle.getFile();
+                data = JSON.parse(await file.text());
+                isReadOnly = false;
+                basePath = './'; // Local file, cache in same directory
+                processData();
+                showToast('📁 Loaded', 'success');
+            } catch (error) {
+                if (error.name !== 'AbortError') {
+                    showToast(`❌ Error loading file: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        async function loadFromURL() {
+            const url = document.getElementById('url-input').value.trim();
+            if (!url) {
+                showToast('❌ Please enter a URL', 'error');
+                return;
+            }
+
+            try {
+                showToast('⏳ Loading...', 'warning');
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const text = await response.text();
+                data = JSON.parse(text);
+                fileHandle = null;
+                isReadOnly = true;
+
+                // Set basePath to the directory containing the JSON file
+                const urlObj = new URL(url);
+                basePath = url.substring(0, url.lastIndexOf('/') + 1);
+
+                processData();
+                showToast('🌐 Loaded (Read-only)', 'success');
+            } catch (error) {
+                showToast(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        function processData() {
+            items = Array(data.length).fill(null);
+            data.forEach(async (entry, i) => {
+                try {
+                    items[i] = await resolve(entry);
+                    render();
+                } catch {
+                    items[i] = { type: entry['@type'], title: 'Error', creator: '', year: '', cover: null, url: '#' };
+                    render();
+                }
+            });
+
+            // Hide search controls in read-only mode
+            document.getElementById('search-controls').style.display = isReadOnly ? 'none' : 'flex';
+
+            render();
+        }
+
+        async function createNew() {
+            if ('showSaveFilePicker' in window) {
+                const handle = await window.showSaveFilePicker({
+                    suggestedName: 'media.json',
+                    types: [{ accept: { 'application/json': ['.json'] } }]
+                });
+                fileHandle = handle;
+                data = [
+                    {
+                        "@type": "Article",
+                        "url": "https://tugdual.fr",
+                        "cached": {
+                            "type": "Article",
+                            "title": "tugdual.fr",
+                            "creator": "",
+                            "year": "",
+                            "cover": null,
+                            "url": "https://tugdual.fr"
+                        }
+                    }
+                ];
+                // Write initial data to file immediately
+                const writable = await fileHandle.createWritable();
+                await writable.write(JSON.stringify(data, null, 2));
+                await writable.close();
+                isReadOnly = false;
+                basePath = './';
+                processData();
+                showToast('📝 Created new library', 'success');
+            } else {
+                // Fallback for browsers without File System Access API
+                data = [
+                    {
+                        "@type": "Article",
+                        "url": "https://tugdual.fr",
+                        "cached": {
+                            "type": "Article",
+                            "title": "tugdual.fr",
+                            "creator": "",
+                            "year": "",
+                            "cover": null,
+                            "url": "https://tugdual.fr"
+                        }
+                    }
+                ];
+                isReadOnly = false;
+                basePath = './';
+                processData();
+                showToast('📝 New library ready (use download to save)', 'success');
+            }
+        }
+
+        // Events
+        document.getElementById('load-file').onclick = load;
+        document.getElementById('create-new').onclick = createNew;
+        document.getElementById('load-url').onclick = loadFromURL;
+
+        document.querySelectorAll('button[data-type]').forEach(b => b.onclick = () => {
+            document.querySelectorAll('button[data-type]').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            filter = b.dataset.type;
+            render();
+        });
+
+        document.getElementById('filter').oninput = e => {
+            query = e.target.value;
+            render();
+        };
+
+        ['books', 'movies', 'articles'].forEach(type => {
+            document.getElementById(type).onclick = () => {
+                document.querySelectorAll('#books, #movies, #articles').forEach(b => b.classList.remove('active'));
+                document.getElementById(type).classList.add('active');
+                document.getElementById('search').placeholder = `Search ${type}...`;
+            };
+        });
+
+        let timeout;
+        document.getElementById('search').oninput = e => {
+            clearTimeout(timeout);
+            const q = e.target.value.trim();
+            if (q.length < 2) {
+                document.getElementById('results').innerHTML = '';
+                return;
+            }
+            timeout = setTimeout(async () => {
+                const active = document.querySelector('#books.active, #movies.active, #articles.active')?.id;
+                let results = [];
+
+                if (active === 'articles') {
+                    results = [{ type: 'Article', title: q, url: q.startsWith('http') ? q : `https://${q}` }];
+                } else if (q.startsWith('http')) {
+                    results = [{ type: 'Article', title: q, url: q }];
+                } else if (active === 'books') {
+                    if (!ISBNDB_KEY) ISBNDB_KEY = getAPIKey('isbndb');
+                    if (ISBNDB_KEY) results = await searchBooks(q);
+                } else if (active === 'movies') {
+                    if (!TMDB_KEY) TMDB_KEY = getAPIKey('tmdb');
+                    if (TMDB_KEY) results = await searchMovies(q);
+                }
+
+                document.getElementById('results').innerHTML = results.map(r => `
+                    <div class="search-result">
+                        ${r.cover ? `<img src="${r.cover}">` : '<div style="width:24px;height:36px;background:#eee;"></div>'}
+                        <div style="flex:1;font-size:.8rem;">
+                            <strong>${r.title}</strong>
+                            ${r.author ? `<br>${r.author}` : ''}
+                            ${r.year ? ` (${r.year})` : ''}
+                        </div>
+                        ${!isReadOnly ? `<button onclick="add(${JSON.stringify(r).replace(/"/g, '&quot;')})">+</button>` : ''}
+                    </div>
+                `).join('');
+            }, 300);
+        };
+
+        // Initialize
+        data = [];
+        render();
+        loadFromURL();
+    </script>
+</body>
+
+</html>
