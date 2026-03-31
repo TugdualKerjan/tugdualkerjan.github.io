@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Media Tracker</title>
+    <title>MEdia Tracker</title>
     <style>
         body {
             font-family: monospace;
@@ -153,26 +153,26 @@
 </head>
 
 <body>
-    <h1>Artifacts II</h1>
+    <h1>MEdia</h1>
     <h4>I currently use Goodreads and Letterboxd for which books and movies I watch, but don't like having my data stuck
         in their hands.</h4>
-    <h4>This HTML file is all there is to the solution: It can load a URL or local JSON representing the list of media.
+    <h4>This HTML file is all there is to the solution: It can load a URL or local JSON representing the list of MEdia.
         Anyone can take this HTML file and open it anywhere, it'll just work ™.</h4>
     <h4>This is a small step to having the user own the files instead of letting companies manage them.</h4>
     <h4>Upcoming features: Addition of other video formats, and music. Migrate to the schema.org formats so as to
         facilitate things by
         respecting standards.</h4>
-    <h4>You can create your own list of media you've consumed and share it however you want: Using a USB, hosting it
+    <h4>You can create your own list of MEdia you've consumed and share it however you want: Using a USB, hosting it
         online, or keeping it in your homeserver. All you need is the html page you're currently looking at.</h4>
 
     <div class="controls">
-        <button id="load-file">📂 Select local media.json library</button>
-        <button id="create-new">📝 Create new media.json</button>
+        <button id="load-file">📂 Select local MEdia.json library</button>
+        <button id="create-new">📝 Create new MEdia.json</button>
     </div>
 
     <div class="controls">
-        <input id="url-input" placeholder="Or enter URL to someone's media.json"
-            value="https://tugdual.fr/artifacts2/media.json">
+        <input id="url-input" placeholder="Or enter URL to someone's MEdia.json"
+            value="https://tugdual.fr/MEdia/MEdia.json">
         <button id="load-url">🌐 Load from URL</button>
     </div>
 
@@ -487,7 +487,7 @@
         async function createNew() {
             if ('showSaveFilePicker' in window) {
                 const handle = await window.showSaveFilePicker({
-                    suggestedName: 'media.json',
+                    suggestedName: 'MEdia.json',
                     types: [{ accept: { 'application/json': ['.json'] } }]
                 });
                 fileHandle = handle;
@@ -505,7 +505,7 @@
                         }
                     }
                 ];
-                // Write initial data to file immediately
+                // Write initial data to file imMEdiately
                 const writable = await fileHandle.createWritable();
                 await writable.write(JSON.stringify(data, null, 2));
                 await writable.close();
