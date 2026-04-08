@@ -7,7 +7,7 @@ from xml.dom import minidom
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 
-ARTICLE_PATH = "/Users/tugdual/Documents/Notes/Articles/"
+ARTICLE_PATH = "Articles/"
 LINK_ATTRS = """onclick="window.open(`%s`, '_blank');" style="cursor: pointer;\""""
 
 PLACEHOLDER_IMG = "data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='%s' height='%s'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
