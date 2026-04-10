@@ -290,7 +290,7 @@ def get_webp_path(img_name):
     return (
         img_name
         if img_name.lower().endswith(".gif")
-        else f"{os.path.splitext(img_name)[0]}.webp"
+        else f"images/{os.path.splitext(img_name)[0]}.webp"
     )
 
 

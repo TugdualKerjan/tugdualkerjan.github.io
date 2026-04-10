@@ -1,0 +1,6 @@
+# LOTS OF MACS
+![](mac.png)
+
+One day when doing my routine tour of the "déchette" (junkyard) of EPFL I noticed a few stacks of PowerMac G5 computers were simply laying there. Curious, I sent a message to the manager of trash at EPFL and found out that these computers were the previous cluster that the <a href="https://www.cecam.org/">CECAM</a> (Centre Européen de Calcul Atomique et Moléculaire) used ! They weren't <a href="https://en.wikipedia.org/wiki/System_X_(supercomputer)">the only ones</a> to use Apple computers at the time for High Performance Computing. After negociating with the IT Manager of this institution, I got his approval to have them passed to me. In total, 22 2005 PowerMacs made it into a Fiat Multipla and back to my flat, making for some niche house decoration. Around 14 have since then left the house, either sold or given to friends. The rest now remain as alternative wall decoration, and on the occasion someone isn't too wide hipped can be used as extra chairs.
+
+![](macplant.png)
