@@ -1,0 +1,6 @@
+# KAYAKS
+![](mac.png)
+
+Bored at EPFL one day, browsing the all mighty entropy generator that is Facebook Marketplace I found two fantastic kayaks for sale at Pully. After proposing to have a "sportive coffee break" to a friend, we took city bikes on our way there, and kayaked on our way back. The only downside was that neither of us knew how to correctly balance on the things, it was april so the water was at 8 C and both our phones got water damaged. After an hour we managed to reach Ouchy (that is to say we managed to do 1 km) and decided we might try place these 4 meter long things in the metro. Or the bus. But neither wanted anything to do with our soaked clothes and kayaks so we decided it best to keep going. In the end I had to go get the my cargobike and managed to knock at some doors near the lake to give them a place to stay in exchange for their free usage of it. They fit wonderfully on the Fiat Multipla, and I must say I've rarely made such a fantastic irrational decision on Facebook Marketplace.
+
+![](macplant.png)

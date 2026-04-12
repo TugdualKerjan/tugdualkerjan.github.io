@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munici — Report an Issue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink: #1a1a1a;
+            --paper: #f5f2eb;
+            --muted: #8a8275;
+            --accent: #c8392b;
+            --accent-light: #f0e8e7;
+            --border: #d4cfc6;
+            --white: #ffffff;
+            --step-inactive: #d4cfc6;
+            --step-active: #c8392b;
+            --step-done: #2d6a4f;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+        }
+
+        /* ── Layout ── */
+        .shell {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        main {
+            flex: 1;
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* ── Steps indicator ── */
+        .steps {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .step-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--step-inactive);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--step-inactive);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .step-dot.active {
+            border-color: var(--step-active);
+            color: var(--white);
+            background: var(--step-active);
+        }
+
+        .step-dot.done {
+            border-color: var(--step-done);
+            background: var(--step-done);
+            color: var(--white);
+        }
+
+        .step-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .step-label.active {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .step-line {
+            height: 1px;
+            background: var(--border);
+            flex: 1;
+            margin: 0 0.5rem;
+            min-width: 20px;
+        }
+
+        /* ── Panels (screens) ── */
+        .panel {
+            display: none;
+            flex-direction: column;
+            gap: 1.25rem;
+            animation: fadeUp 0.35s ease;
+        }
+
+        .panel.active {
+            display: flex;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.65rem;
+            line-height: 1.2;
+            color: var(--ink);
+        }
+
+        .panel-sub {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: -0.5rem;
+        }
+
+        /* ── Camera panel ── */
+        .camera-box {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--ink);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid var(--border);
+        }
+
+        #videoEl {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #canvasEl {
+            display: none;
+        }
+
+        .camera-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            color: var(--white);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .camera-overlay svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.5;
+        }
+
+        /* Preview image */
+        #previewImg {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            display: none;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #a82e23;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ink);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--ink);
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--muted);
+            padding: 0.5rem 0.75rem;
+            font-size: 0.82rem;
+        }
+
+        .btn-ghost:hover {
+            color: var(--ink);
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Capture button - big round shutter */
+        .shutter-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        #shutterBtn {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 4px solid var(--accent);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 2px 12px rgba(200, 57, 43, 0.25);
+        }
+
+        #shutterBtn::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            transition: background 0.15s ease;
+        }
+
+        #shutterBtn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 4px 18px rgba(200, 57, 43, 0.35);
+        }
+
+        #shutterBtn:active::after {
+            background: #a82e23;
+        }
+
+        /* ── Map panel ── */
+        #mapEl {
+            width: 100%;
+            height: 340px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .map-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding: 0.6rem 0.9rem;
+            background: var(--accent-light);
+            border-radius: 8px;
+            border: 1px solid #e8c8c5;
+        }
+
+        .coords-display {
+            font-family: 'DM Serif Display', serif;
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Description panel ── */
+        textarea {
+            width: 100%;
+            min-height: 130px;
+            padding: 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            background: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--ink);
+            resize: vertical;
+            transition: border-color 0.2s;
+            font-weight: 300;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea::placeholder {
+            color: var(--step-inactive);
+        }
+
+        .optional-badge {
+            font-size: 0.72rem;
+            background: var(--border);
+            color: var(--muted);
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-left: 0.4rem;
+        }
+
+        /* Thumb of photo in description step */
+        .photo-thumb {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .photo-thumb img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .photo-thumb-info {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .photo-thumb-info strong {
+            display: block;
+            color: var(--ink);
+            font-weight: 500;
+            font-size: 0.88rem;
+        }
+
+        /* ── Success panel ── */
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #e8f5ee;
+            border: 2px solid #2d6a4f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .success-icon svg {
+            width: 34px;
+            height: 34px;
+            color: #2d6a4f;
+        }
+
+        .success-msg {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        /* ── Error toast ── */
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--ink);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ── Loading spinner ── */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            main {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .step-label {
+                display: none;
+            }
+
+            .step-line {
+                min-width: 10px;
+            }
+
+            header {
+                padding: 1rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <header>
+            <div class="logo">muni<span>ci</span></div>
+            <div class="tagline">Report a local issue</div>
+        </header>
+
+        <main>
+            <!-- Steps -->
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-dot active" id="dot1">1</div>
+                    <div class="step-label active" id="lbl1">Photo</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-dot" id="dot2">2</div>
+                    <div class="step-label" id="lbl2">Location</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-dot" id="dot3">3</div>
+                    <div class="step-label" id="lbl3">Details</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item">
+                    <div class="step-dot" id="dot4">4</div>
+                    <div class="step-label" id="lbl4">Send</div>
+                </div>
+            </div>
+
+            <!-- ── Panel 1: Camera ── -->
+            <div class="panel active" id="panel1">
+                <div class="panel-title">Take a photo</div>
+                <p class="panel-sub">Point your camera at the issue. We'll attach the image to the report.</p>
+
+                <div class="camera-box" id="cameraBox">
+                    <video id="videoEl" autoplay playsinline muted></video>
+                    <div class="camera-overlay" id="camOverlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span style="font-size:0.8rem">Starting camera…</span>
+                    </div>
+                </div>
+
+                <canvas id="canvasEl"></canvas>
+                <img id="previewImg" alt="Captured photo" />
+
+                <div class="shutter-wrap" id="shutterWrap">
+                    <button id="shutterBtn" title="Take photo" aria-label="Capture photo"></button>
+                </div>
+
+                <div class="btn-row" id="retakeRow" style="display:none">
+                    <button class="btn btn-secondary" id="retakeBtn">↺ Retake</button>
+                    <button class="btn btn-primary" id="usePhotoBtn" style="flex:1">Use this photo →</button>
+                </div>
+
+                <!-- File fallback -->
+                <div style="text-align:center">
+                    <label class="btn btn-ghost" style="cursor:pointer">
+                        Upload from library instead
+                        <input type="file" accept="image/*" id="fileInput" style="display:none" />
+                    </label>
+                </div>
+            </div>
+
+            <!-- ── Panel 2: Map ── -->
+            <div class="panel" id="panel2">
+                <div class="panel-title">Confirm location</div>
+                <p class="panel-sub">Drag the pin to the exact spot if needed.</p>
+
+                <div class="map-hint">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    Drag the red marker to adjust the position
+                </div>
+
+                <div id="mapEl"></div>
+                <div class="coords-display" id="coordsDisplay">Locating…</div>
+
+                <div class="btn-row">
+                    <button class="btn btn-secondary" id="backToCamera">← Back</button>
+                    <button class="btn btn-primary" id="confirmLocation" style="flex:1">Confirm location →</button>
+                </div>
+            </div>
+
+            <!-- ── Panel 3: Description ── -->
+            <div class="panel" id="panel3">
+                <div class="panel-title">Add details <span class="optional-badge">Optional</span></div>
+                <p class="panel-sub">Anything that helps — what the problem is, how long it's been there, severity.</p>
+
+                <div class="photo-thumb">
+                    <img id="thumbImg" src="" alt="" />
+                    <div class="photo-thumb-info">
+                        <strong>Photo attached</strong>
+                        <span id="thumbCoords">—</span>
+                    </div>
+                </div>
+
+                <textarea id="descriptionEl"
+                    placeholder="e.g. Large pothole near the bus stop, causing water pooling. Present since last week."></textarea>
+
+                <div class="btn-row">
+                    <button class="btn btn-secondary" id="backToMap">← Back</button>
+                    <button class="btn btn-primary" id="goToSend" style="flex:1">Review & send →</button>
+                </div>
+            </div>
+
+            <!-- ── Panel 4: Send ── -->
+            <div class="panel" id="panel4">
+                <div class="panel-title">Send your report</div>
+                <p class="panel-sub">Your report will be sent to the relevant local authority. Review before sending.
+                </p>
+
+                <div class="photo-thumb">
+                    <img id="reviewThumb" src="" alt="" />
+                    <div class="photo-thumb-info">
+                        <strong id="reviewCoordsTxt">—</strong>
+                        <span id="reviewDescSnippet" style="color:var(--muted)">No description added</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <button class="btn btn-primary btn-full" id="sendBtn">
+                    <span id="sendLabel">Send report</span>
+                    <div class="spinner" id="sendSpinner"></div>
+                </button>
+
+                <div class="btn-row" style="justify-content:center">
+                    <button class="btn btn-ghost" id="backToDesc">← Edit details</button>
+                </div>
+            </div>
+
+            <!-- ── Panel 5: Success ── -->
+            <div class="panel" id="panel5">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <div class="panel-title" style="text-align:center">Report sent!</div>
+                <p class="success-msg">
+                    Your report has been submitted. The relevant authority has been notified and will follow up.<br><br>
+                    Thank you for helping keep your community in good shape.
+                </p>
+                <button class="btn btn-secondary btn-full" id="startOverBtn">Report another issue</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        // ── State ──
+        const state = {
+            photoDataUrl: null,
+            lat: null,
+            lng: null,
+            description: '',
+            map: null,
+            marker: null,
+            stream: null,
+        };
+
+        // ── Helpers ──
+        function showToast(msg, duration = 3500) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), duration);
+        }
+
+        function goTo(n) {
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('panel' + n).classList.add('active');
+            updateSteps(n);
+            if (n === 2) initMap();
+        }
+
+        function updateSteps(current) {
+            [1, 2, 3, 4].forEach(i => {
+                const dot = document.getElementById('dot' + i);
+                const lbl = document.getElementById('lbl' + i);
+                dot.className = 'step-dot';
+                lbl.className = 'step-label';
+                if (i < current) { dot.classList.add('done'); dot.innerHTML = '✓'; }
+                else if (i === current) { dot.classList.add('active'); dot.textContent = i; lbl.classList.add('active'); }
+                else { dot.textContent = i; }
+            });
+        }
+
+        // ── Camera ──
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 960 } }
+                });
+                state.stream = stream;
+                const vid = document.getElementById('videoEl');
+                vid.srcObject = stream;
+                document.getElementById('camOverlay').style.display = 'none';
+            } catch (e) {
+                document.getElementById('camOverlay').querySelector('span').textContent = 'Camera unavailable — use upload below';
+                console.warn('Camera error', e);
+            }
+        }
+
+        function stopCamera() {
+            if (state.stream) {
+                state.stream.getTracks().forEach(t => t.stop());
+                state.stream = null;
+            }
+        }
+
+        function capturePhoto() {
+            const vid = document.getElementById('videoEl');
+            const canvas = document.getElementById('canvasEl');
+            canvas.width = vid.videoWidth || 640;
+            canvas.height = vid.videoHeight || 480;
+            canvas.getContext('2d').drawImage(vid, 0, 0);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            showPreview(dataUrl);
+        }
+
+        function showPreview(dataUrl) {
+            state.photoDataUrl = dataUrl;
+            const preview = document.getElementById('previewImg');
+            preview.src = dataUrl;
+            preview.style.display = 'block';
+            document.getElementById('cameraBox').style.display = 'none';
+            document.getElementById('shutterWrap').style.display = 'none';
+            document.getElementById('retakeRow').style.display = 'flex';
+        }
+
+        function retake() {
+            state.photoDataUrl = null;
+            document.getElementById('previewImg').style.display = 'none';
+            document.getElementById('cameraBox').style.display = 'block';
+            document.getElementById('shutterWrap').style.display = 'flex';
+            document.getElementById('retakeRow').style.display = 'none';
+            startCamera();
+        }
+
+        document.getElementById('shutterBtn').addEventListener('click', capturePhoto);
+        document.getElementById('retakeBtn').addEventListener('click', retake);
+
+        document.getElementById('fileInput').addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = ev => showPreview(ev.target.result);
+            reader.readAsDataURL(file);
+            stopCamera();
+        });
+
+        document.getElementById('usePhotoBtn').addEventListener('click', () => {
+            if (!state.photoDataUrl) { showToast('No photo captured yet'); return; }
+            stopCamera();
+            goTo(2);
+            geolocate();
+        });
+
+        // ── Geolocation ──
+        function geolocate() {
+            if (!navigator.geolocation) {
+                setLocation(46.2044, 6.1432); // Geneva fallback
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(
+                pos => setLocation(pos.coords.latitude, pos.coords.longitude),
+                () => setLocation(46.2044, 6.1432),
+                { timeout: 8000 }
+            );
+        }
+
+        function setLocation(lat, lng) {
+            state.lat = lat; state.lng = lng;
+            updateCoordsDisplay(lat, lng);
+            if (state.map) {
+                state.map.setView([lat, lng], 16);
+                state.marker.setLatLng([lat, lng]);
+            }
+        }
+
+        function updateCoordsDisplay(lat, lng) {
+            document.getElementById('coordsDisplay').textContent =
+                `${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E`;
+            document.getElementById('thumbCoords').textContent =
+                `${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E`;
+            document.getElementById('reviewCoordsTxt').textContent =
+                `${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E`;
+        }
+
+        // ── Map ──
+        function initMap() {
+            if (state.map) return;
+            const fallbackLat = state.lat || 46.2044;
+            const fallbackLng = state.lng || 6.1432;
+
+            state.map = L.map('mapEl').setView([fallbackLat, fallbackLng], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+                maxZoom: 19,
+            }).addTo(state.map);
+
+            const icon = L.divIcon({
+                className: '',
+                html: `<div style="width:22px;height:22px;background:var(--accent,#c8392b);border:3px solid white;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.35);cursor:grab"></div>`,
+                iconSize: [22, 22],
+                iconAnchor: [11, 11],
+            });
+
+            state.marker = L.marker([fallbackLat, fallbackLng], { icon, draggable: true }).addTo(state.map);
+            state.marker.on('dragend', e => {
+                const p = e.target.getLatLng();
+                state.lat = p.lat; state.lng = p.lng;
+                updateCoordsDisplay(p.lat, p.lng);
+            });
+        }
+
+        document.getElementById('backToCamera').addEventListener('click', () => { goTo(1); startCamera(); });
+        document.getElementById('confirmLocation').addEventListener('click', () => {
+            if (!state.lat) { showToast('Still locating…'); return; }
+            document.getElementById('thumbImg').src = state.photoDataUrl;
+            goTo(3);
+        });
+
+        // ── Description ──
+        document.getElementById('backToMap').addEventListener('click', () => goTo(2));
+        document.getElementById('goToSend').addEventListener('click', () => {
+            state.description = document.getElementById('descriptionEl').value.trim();
+            document.getElementById('reviewThumb').src = state.photoDataUrl;
+            const desc = state.description || 'No description added';
+            document.getElementById('reviewDescSnippet').textContent =
+                desc.length > 80 ? desc.slice(0, 80) + '…' : desc;
+            goTo(4);
+        });
+
+        // ── Send via EmailJS ──
+        document.getElementById('backToDesc').addEventListener('click', () => goTo(3));
+
+        document.getElementById('sendBtn').addEventListener('click', sendReport);
+
+        async function sendReport() {
+            const btn = document.getElementById('sendBtn');
+            const label = document.getElementById('sendLabel');
+            const spinner = document.getElementById('sendSpinner');
+            btn.disabled = true;
+            label.textContent = 'Sending…';
+            spinner.style.display = 'block';
+
+            // Build OSM link
+            const mapsUrl = `https://www.openstreetmap.org/?mlat=${state.lat}&mlon=${state.lng}#map=17/${state.lat}/${state.lng}`;
+
+            // Compose email body
+            const body = `
+New issue reported via Munici.
+
+📍 Location: ${state.lat.toFixed(5)}° N, ${state.lng.toFixed(5)}° E
+🗺️ Map link: ${mapsUrl}
+
+📝 Description:
+${state.description || '(No description provided)'}
+
+📷 A photo is attached below.
+  `.trim();
+
+            try {
+                // Use mailto as a reliable no-backend fallback
+                // For production: replace with EmailJS, Formspree, or your own API
+                await sendViaEmailJS(body);
+                goTo(5);
+            } catch (e) {
+                // Fallback: open mailto
+                fallbackMailto(body);
+            } finally {
+                btn.disabled = false;
+                label.textContent = 'Send report';
+                spinner.style.display = 'none';
+            }
+        }
+
+        async function sendViaEmailJS(body) {
+
+            const EMAILJS_SERVICE_ID = 'service_oduxg27'; // e.g. 'service_abc123'
+            const EMAILJS_TEMPLATE_ID = 'template_jgodhfm'; // e.g. 'template_xyz789'
+            const EMAILJS_PUBLIC_KEY = 'ftH8hBoTdCNmkSZ1M'; // e.g. 'user_XXXXXXXXX'
+
+            const mapsUrl = `https://www.openstreetmap.org/?mlat=${state.lat}&mlon=${state.lng}`;
+
+            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                to_email: 'tkerjan@outlook.com',
+                from_name: 'Munici Reporter',
+                reply_to: 'noreply@munici.app',
+                coordinates: `${state.lat.toFixed(5)}° N, ${state.lng.toFixed(5)}° E`,
+                maps_url: mapsUrl,
+                description: state.description || '(No description provided)',
+                photo_url: state.photoDataUrl,
+                message: body,
+            }, EMAILJS_PUBLIC_KEY);
+        }
+
+        function fallbackMailto(body) {
+            const subject = encodeURIComponent('Munici Issue Report');
+            const bodyEnc = encodeURIComponent(body + '\n\n[Photo must be attached manually — camera access required for automatic attachment]');
+            window.location.href = `mailto:tkerjan@outlook.com?subject=${subject}&body=${bodyEnc}`;
+            setTimeout(() => goTo(5), 500);
+        }
+
+        // ── Start over ──
+        document.getElementById('startOverBtn').addEventListener('click', () => {
+            state.photoDataUrl = null;
+            state.lat = null; state.lng = null;
+            state.description = '';
+            document.getElementById('descriptionEl').value = '';
+            document.getElementById('previewImg').style.display = 'none';
+            document.getElementById('cameraBox').style.display = 'block';
+            document.getElementById('shutterWrap').style.display = 'flex';
+            document.getElementById('retakeRow').style.display = 'none';
+            goTo(1);
+            startCamera();
+        });
+
+        // ── Boot ──
+        startCamera();
+    </script>
+</body>
+
+</html>
