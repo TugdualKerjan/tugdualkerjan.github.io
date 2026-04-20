@@ -8,27 +8,29 @@ from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 
 ARTICLE_PATH = "Articles/"
-LINK_ATTRS = """onclick="window.open(`%s`, '_blank');" style="cursor: pointer;\""""
+LINK_ATTRS = """onclick="window.open(`%s`, '_blank');\""""
 
 PLACEHOLDER_IMG = "data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='%s' height='%s'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
 
-PROJECT_CARD_TEMPLATE = """
+PROJECT_CARD_TEMPLATE = '''
 <div class="project-card">
-  <div class="project-header">
-    <img class="project-icon lazy" %s data-src="%s" src="%s" width="48" height="48" alt="icon" loading="lazy">
+  <div class="project-header mobile-toggle">
+    <img class="project-icon" src="%s" width="48" height="48" alt="icon">
     <h2 class="project-title">%s</h2>
   </div>
-  <div class="project-image-container">
-    <img class="project-image lazy" %s data-src="%s" src="%s" width="220" height="140" alt="project image" loading="lazy">
+  <div class="project-body clickable" %s>
+    <div class="project-image-container">
+      <img class="project-image" src="%s" width="220" height="140" alt="project image">
+    </div>
+    <div class="project-desc-container">
+      <p class="project-desc">%s</p>
+    </div>
   </div>
-  <div class="project-desc-container">
-    <p class="project-desc" %s>%s</p>
-  </div>
-</div>"""
+</div>'''
 
 GIF_TEMPLATE = '<div class="hitbox2"><img src="images/%s"></div>'
 
-HTML_TEMPLATE = """
+HTML_TEMPLATE = '''
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,57 +50,40 @@ HTML_TEMPLATE = """
     data-site-id="1210"
     defer
     ></script>
-    <style>
-    .draw-animate path, .draw-animate line {
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: draw 2s forwards;
-    }
-    @keyframes draw {
-        to { stroke-dashoffset: 0; }
-    }
-    /* Touch improvements for mobile devices */
-    @media (hover: none) and (pointer: coarse) {
-        .project-card:hover {
-            transform: none;
-            box-shadow: 0 6px 32px 0 #ff7a0022, 0 1.5px 0 0 #fff inset;
-        }
-        .contact-link:hover, .lang-switch span:hover {
-            transform: none;
-        }
-        .logo:hover {
-            transform: none;
-            filter: none;
-        }
-    }
-    </style>
     <script>
-    // Reveal animations on scroll and logo animation
     document.addEventListener('DOMContentLoaded', function() {
-      function revealOnScroll() {
+      let ticking = false;
+
+      // Combined scroll handler for animations and header shrink
+      function handleScroll() {
+        // Reveal animations
         document.querySelectorAll('.fade-in, .slide-up, .hero-paper-img, .projects-title, .hero-paper-title').forEach(function(el) {
           var rect = el.getBoundingClientRect();
           if (rect.top < window.innerHeight - 60) {
             el.classList.add('visible');
           }
         });
+
+        // Header shrink
+        var header = document.querySelector('.landing-header');
+        header.classList.toggle('shrink', window.scrollY > 50);
+
+        ticking = false;
       }
-      window.addEventListener('scroll', revealOnScroll);
-      revealOnScroll();
+
+      function requestScrollTick() {
+        if (!ticking) {
+          requestAnimationFrame(handleScroll);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', requestScrollTick);
+      handleScroll(); // Initial call
+
       // Animate logo on load
       var logo = document.querySelector('.logo-svg');
       if (logo) setTimeout(() => logo.classList.add('animated'), 400);
-      // Header shrink on scroll
-      var header = document.querySelector('.landing-header');
-      function handleHeaderShrink() {
-        if (window.scrollY > 10) {
-          header.classList.add('shrink');
-        } else {
-          header.classList.remove('shrink');
-        }
-      }
-      window.addEventListener('scroll', handleHeaderShrink);
-      handleHeaderShrink();
     });
     </script>
 </head>
@@ -107,7 +92,7 @@ HTML_TEMPLATE = """
     <div class="paper-bg"></div>
     <header class="landing-header sticky-header fade-in">
     <div class="logo">
-        <a href="https://tugdual.fr" style="cursor: pointer;">
+        <a href="https://tugdual.fr">
             <img src="logo.svg" alt="Tugdual Logo" class="logo-svg" />
         </a>
     </div>
@@ -127,19 +112,20 @@ HTML_TEMPLATE = """
             </div>
             <div class="hero-paper-content">
                 <h1 class="hero-paper-title trans"
-    data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building."
-    data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>J'adore apprendre en construisant."
+    data-en="Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature'/><br>I love to learn by building."
+    data-fr="Salut, je suis <img class='hero-signature-svg' src='tugdual.svg' alt='signature'/><br>J'adore apprendre en construisant."
     >
-    Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature' style='transform:scale(2); display:inline-block; vertical-align:middle; transform-origin:left center; margin-left:8px;'/><br>I love to learn by building.
+    Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature'/><br>I love to learn by building.
 </h1>
-            <p class="hero-paper-desc trans fade-in" data-en="I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>">I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>.</p>                <div class="hero-paper-socials" style="display:none;"></div>
+            <p class="hero-paper-desc trans fade-in" data-en="I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>">I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>.</p>
+                <div class="hero-paper-socials hidden"></div>
             </div>
         </section>
         <section class="status-section fade-in">
-          <h2 class="projects-title trans" data-en="Status (Jan 9 2025)" data-fr="Statut (9 Jan 2025)">Status (Jan 9 2025)</h2>
+          <h2 class="projects-title trans" data-en="Status (20 April 2025)" data-fr="Statut (20 Avril 2025)">Status (20 April 2025)</h2>
           <div class="status-row">
             <div class="status-block">
-              <div class="status-value" id="current-status">Building out a blog area for this website</div>
+              <div class="status-value" id="current-status">Learning Haskell, working on Zero to ASIC</div>
             </div>
 
           </div>
@@ -155,130 +141,95 @@ HTML_TEMPLATE = """
         <div class="landing-bottom-bar"></div>
     </footer>
     <script>
-    // Vanilla JS hover animations - REMOVED, now handled by CSS
     document.addEventListener('DOMContentLoaded', function() {
-        // Lazy loading implementation
-        const lazyImages = document.querySelectorAll('img.lazy');
-        
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    img.classList.add('loaded');
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '50px 0px',
-            threshold: 0.01
-        });
-
-        lazyImages.forEach(img => {
-            imageObserver.observe(img);
-        });
-
         // Language switcher
         function setLang(lang) {
-            document.querySelectorAll('.trans').forEach(function(el) {
+            document.querySelectorAll('.trans').forEach(el => {
                 el.innerHTML = el.getAttribute('data-' + lang);
             });
             document.getElementById('en-btn').classList.toggle('active', lang === 'en');
             document.getElementById('fr-btn').classList.toggle('active', lang === 'fr');
         }
-        document.getElementById('en-btn').onclick = function() { setLang('en'); };
-        document.getElementById('fr-btn').onclick = function() { setLang('fr'); };
-    });
+        document.getElementById('en-btn').onclick = () => setLang('en');
+        document.getElementById('fr-btn').onclick = () => setLang('fr');
 
+        // Mobile project card toggle behavior
+        function setupMobileToggle() {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.project-header.mobile-toggle').forEach(header => {
+                    header.onclick = (e) => {
+                        e.stopPropagation();
+                        const card = header.closest('.project-card');
+                        card.classList.toggle('expanded');
+                    };
+                });
+            }
+        }
+
+        setupMobileToggle();
+        window.addEventListener('resize', setupMobileToggle);
     // SVG signature unveil animation
-    window.addEventListener('DOMContentLoaded', function() {
-        var svg = document.getElementById('signature-svg');
-        if (svg) {
-            var totalLength = 0;
-            svg.querySelectorAll('line').forEach(function(line) {
-                var x1 = parseFloat(line.getAttribute('x1'));
-                var y1 = parseFloat(line.getAttribute('y1'));
-                var x2 = parseFloat(line.getAttribute('x2'));
-                var y2 = parseFloat(line.getAttribute('y2'));
-                var length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
-                line.setAttribute('stroke-dasharray', length);
-                line.setAttribute('stroke-dashoffset', length);
-                totalLength += length;
-            });
-            var lines = svg.querySelectorAll('line');
-            lines.forEach(function(line, i) {
-                setTimeout(function() {
-                    line.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.77,0,0.18,1)';
-                    line.setAttribute('stroke-dashoffset', 0);
-                }, i * 250);
+        window.addEventListener('DOMContentLoaded', function() {
+            var svg = document.getElementById('signature-svg');
+            if (svg) {
+                var totalLength = 0;
+                svg.querySelectorAll('line').forEach(function(line) {
+                    var x1 = parseFloat(line.getAttribute('x1'));
+                    var y1 = parseFloat(line.getAttribute('y1'));
+                    var x2 = parseFloat(line.getAttribute('x2'));
+                    var y2 = parseFloat(line.getAttribute('y2'));
+                    var length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
+                    line.setAttribute('stroke-dasharray', length);
+                    line.setAttribute('stroke-dashoffset', length);
+                    totalLength += length;
+                });
+                var lines = svg.querySelectorAll('line');
+                lines.forEach(function(line, i) {
+                    setTimeout(function() {
+                        line.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.77,0,0.18,1)';
+                        line.setAttribute('stroke-dashoffset', 0);
+                    }, i * 250);
+                });
+            }
+        });
+        // Inline SVG animation for signature
+        function inlineSVG(imgSelector) {
+            document.querySelectorAll(imgSelector).forEach(img => {
+                fetch(img.src)
+                    .then(res => res.text())
+                    .then(svgText => {
+                        const div = document.createElement('div');
+                        div.innerHTML = svgText;
+                        const svg = div.querySelector('svg');
+                        if (!svg) return;
+                        svg.classList.add('draw-animate');
+                        svg.removeAttribute('width');
+                        svg.removeAttribute('height');
+                        if (img.className) svg.setAttribute('class', img.className + ' draw-animate');
+                        img.replaceWith(svg);
+                        svg.querySelectorAll('path, line').forEach(el => {
+                            let length;
+                            if (el.tagName === 'path') {
+                                length = el.getTotalLength();
+                            } else if (el.tagName === 'line') {
+                                const x1 = el.x1.baseVal.value, y1 = el.y1.baseVal.value;
+                                const x2 = el.x2.baseVal.value, y2 = el.y2.baseVal.value;
+                                length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
+                            }
+                            el.style.strokeDasharray = length;
+                            el.style.strokeDashoffset = length;
+                            el.style.animation = 'draw 2s forwards';
+                        });
+                    });
             });
         }
-    });
-
-    // Inline SVG animation for logo.svg and tugdual.svg
-    function inlineSVG(imgSelector) {
-        document.querySelectorAll(imgSelector).forEach(function(img) {
-            fetch(img.src)
-                .then(res => res.text())
-                .then(svgText => {
-                    const div = document.createElement('div');
-                    div.innerHTML = svgText;
-                    const svg = div.querySelector('svg');
-                    if (!svg) return;
-                    svg.classList.add('draw-animate');
-                    // Remove width/height to allow CSS scaling
-                    svg.removeAttribute('width');
-                    svg.removeAttribute('height');
-                    // Copy over class and style from img
-                    if (img.className) svg.setAttribute('class', img.className + ' draw-animate');
-                    if (img.style.cssText) svg.setAttribute('style', img.style.cssText);
-                    img.replaceWith(svg);
-                    // Animate each path/line
-                    svg.querySelectorAll('path, line').forEach(function(el) {
-                        let length;
-                        if (el.tagName === 'path') {
-                            length = el.getTotalLength();
-                        } else if (el.tagName === 'line') {
-                            const x1 = el.x1.baseVal.value, y1 = el.y1.baseVal.value;
-                            const x2 = el.x2.baseVal.value, y2 = el.y2.baseVal.value;
-                            length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
-                        }
-                        el.style.strokeDasharray = length;
-                        el.style.strokeDashoffset = length;
-                        el.style.animation = 'draw 2s forwards';
-                    });
-                });
-        });
-    }
-    document.addEventListener('DOMContentLoaded', function() {
         inlineSVG('img.hero-signature-svg');
     });
     </script>
 </body>
 
 </html>
-            """
-
-# <-- <div class="status-block">
-#   <div class="status-label-wrap">
-#     <div class="status-label">Services I pay for</div>
-#     <div class="status-arrow">
-#       <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-#         <path d="M5 10 L20 10 M15 5 L20 10 L15 15" stroke="#ff7a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-#       </svg>
-#     </div>
-#   </div>
-#   <ul class="services-list">
-#     <li><a href="https://telegram.org/premium" target="_blank" rel="noopener">Telegram Premium</a></li>
-#     <li><a href="https://claude.ai" target="_blank" rel="noopener">Claude Pro</a></li>
-#     <li><a href="https://pasteapp.io/" target="_blank" rel="noopener">Paste on mac</a></li>
-#     <li><a href="https://www.warmshowers.org/" target="_blank" rel="noopener">Warmshowers</a></li>
-#     <li><a href="https://www.odoo.com/" target="_blank" rel="noopener">Odoo</a></li>
-#     <li><a href="https://kagi.com/" target="_blank" rel="noopener">Kagi Search</a></li>
-#   </ul>
-# </div> -->
-
+'''
 
 def get_image_filename(img_line):
     """Extract filename from markdown image line"""
@@ -301,35 +252,25 @@ def transform_text(lines) -> str:
     description = lines[3].strip()
     back_image = get_webp_path(get_image_filename(lines[-1]))
 
-    icon_placeholder = PLACEHOLDER_IMG % ("48", "48")
-    img_placeholder = PLACEHOLDER_IMG % ("220", "140")
 
     if "[" in title_line:  # Has link
         title = title_line.split("# [")[1].split("](")[0]
         link = title_line.split("](")[1][:-1]
-        link_attrs = LINK_ATTRS % link
+        card_attrs = LINK_ATTRS % link
         return PROJECT_CARD_TEMPLATE % (
-            link_attrs,
             card_image,
-            icon_placeholder,
             title,
-            link_attrs,
+            card_attrs,
             back_image,
-            img_placeholder,
-            link_attrs,
             description,
         )
     else:  # No link
         title = title_line.split("# ")[1]
         return PROJECT_CARD_TEMPLATE % (
-            "",
             card_image,
-            icon_placeholder,
             title,
             "",
             back_image,
-            img_placeholder,
-            "",
             description,
         )
 
@@ -477,10 +418,7 @@ def process_images(src_dir, dest_dir):
             tasks.append((src_path, dest_path))
 
     with ThreadPoolExecutor() as executor:
-        for future in executor.map(
-            lambda args: compress_and_resize_image(*args), tasks
-        ):
-            pass  # Process all tasks
+        list(executor.map(lambda args: compress_and_resize_image(*args), tasks))
 
 
 def main():
