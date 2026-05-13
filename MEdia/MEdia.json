@@ -52,6 +52,18 @@
     }
   },
   {
+    "@type": "Article",
+    "url": "https://arxiv.org/pdf/math/9404236",
+    "cached": {
+      "type": "Article",
+      "title": "On proof and progress in Mathematics",
+      "creator": "William P. Thurston",
+      "year": "1994",
+      "cover": null,
+      "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
+    }
+  },
+  {
     "@type": "Movie",
     "tmdb": "127409",
     "cached": {

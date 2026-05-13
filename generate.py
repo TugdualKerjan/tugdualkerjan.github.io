@@ -131,15 +131,18 @@ HTML_TEMPLATE = '''
           </div>
 
           <div class="habits-section">
-            <h3 class="habits-title">Planking Tracking</h3>
-            <div class="chart-wrapper">
-            <iframe class="habits-chart-iframe"
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLHaEWJeZJJ4ZsubKcoQ8gu2170I2R7CNDf-LFTiZEUrfReI5V15xgySWBRz8BAXbcpOWdRo_5bsb1/pubchart?oid=923609560&format=interactive"
-                title="Habits Progress Chart">
-            </iframe>
-            </div>
-            <p class="habits-description">Daily planking and Anki study sessions - consistency is key!</p>
-            </div>
+        <h3 class="habits-title">Planking Tracking</h3>
+        <div class="chart-wrapper">
+          <iframe class="habits-chart-iframe"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLHaEWJeZJJ4ZsubKcoQ8gu2170I2R7CNDf-LFTiZEUrfReI5V15xgySWBRz8BAXbcpOWdRo_5bsb1/pubchart?oid=923609560&format=interactive"
+            title="Habits Progress Chart">
+          </iframe>
+        </div>
+        <div class="chart-wrapper heatmap-wrapper">
+          <iframe src="https://heatshare.tugdual.fr/u/tug"></iframe>
+        </div>
+        <p class="habits-description">Daily planking and Anki study sessions - consistency is key!</p>
+      </div>
         </section>
         <section id="projects" class="projects-section fade-in">
             <h2 class="projects-title trans" data-en="Projects completed" data-fr="Projets complétées">Projects completed</h2>
