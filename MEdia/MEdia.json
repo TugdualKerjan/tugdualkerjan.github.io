@@ -53,6 +53,18 @@
   },
   {
     "@type": "Article",
+    "url": "https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy",
+    "cached": {
+      "type": "Article",
+      "title": "The fall of the theorem economy",
+      "creator": "David Besses",
+      "year": "2026",
+      "cover": null,
+      "url": "https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy"
+    }
+  },
+  {
+    "@type": "Article",
     "url": "https://arxiv.org/pdf/math/9404236",
     "cached": {
       "type": "Article",
@@ -60,7 +72,7 @@
       "creator": "William P. Thurston",
       "year": "1994",
       "cover": null,
-      "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
+      "url": "https://arxiv.org/pdf/math/9404236"
     }
   },
   {

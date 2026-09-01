@@ -10,17 +10,15 @@ from concurrent.futures import ThreadPoolExecutor
 ARTICLE_PATH = "Articles/"
 LINK_ATTRS = """onclick="window.open(`%s`, '_blank');\""""
 
-PLACEHOLDER_IMG = "data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' width='%s' height='%s'%%3E%%3Crect width='100%%25' height='100%%25' fill='%%23f0f0f0'/%%3E%%3C/svg%%3E"
-
 PROJECT_CARD_TEMPLATE = '''
 <div class="project-card">
   <div class="project-header mobile-toggle">
-    <img class="project-icon" src="%s" width="48" height="48" alt="icon">
+    <img class="project-icon" src="%s" width="48" height="48" alt="icon" loading="lazy">
     <h2 class="project-title">%s</h2>
   </div>
   <div class="project-body clickable" %s>
     <div class="project-image-container">
-      <img class="project-image" src="%s" width="220" height="140" alt="project image">
+      <img class="project-image" src="%s" width="220" height="140" alt="project image" loading="lazy">
     </div>
     <div class="project-desc-container">
       <p class="project-desc">%s</p>
@@ -118,7 +116,6 @@ HTML_TEMPLATE = '''
     Hi, I'm <img class='hero-signature-svg' src='tugdual.svg' alt='signature'/><br>I love to learn by building.
 </h1>
             <p class="hero-paper-desc trans fade-in" data-en="I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>." data-fr="J'ai étudié l'architecture des ordinateurs à l'EPFL, et je travaille maintenant en tant qu'indépendant dans ma boîte, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>">I've studied computer architecture at EPFL, and now work in my own company, <a href='https://tugdual.fr/gradient' target='_blank'>Gradient Kerjan</a>.</p>
-                <div class="hero-paper-socials hidden"></div>
             </div>
         </section>
         <section class="status-section fade-in">
@@ -182,30 +179,6 @@ HTML_TEMPLATE = '''
 
         setupMobileToggle();
         window.addEventListener('resize', setupMobileToggle);
-    // SVG signature unveil animation
-        window.addEventListener('DOMContentLoaded', function() {
-            var svg = document.getElementById('signature-svg');
-            if (svg) {
-                var totalLength = 0;
-                svg.querySelectorAll('line').forEach(function(line) {
-                    var x1 = parseFloat(line.getAttribute('x1'));
-                    var y1 = parseFloat(line.getAttribute('y1'));
-                    var x2 = parseFloat(line.getAttribute('x2'));
-                    var y2 = parseFloat(line.getAttribute('y2'));
-                    var length = Math.sqrt(Math.pow(x2-x1,2) + Math.pow(y2-y1,2));
-                    line.setAttribute('stroke-dasharray', length);
-                    line.setAttribute('stroke-dashoffset', length);
-                    totalLength += length;
-                });
-                var lines = svg.querySelectorAll('line');
-                lines.forEach(function(line, i) {
-                    setTimeout(function() {
-                        line.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(0.77,0,0.18,1)';
-                        line.setAttribute('stroke-dashoffset', 0);
-                    }, i * 250);
-                });
-            }
-        });
         // Inline SVG animation for signature
         function inlineSVG(imgSelector) {
             document.querySelectorAll(imgSelector).forEach(img => {
