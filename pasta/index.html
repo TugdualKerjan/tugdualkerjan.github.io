@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The pastas of the world</title>
     <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="ol.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
 </head>
 
 <body>
@@ -52,15 +48,38 @@
 
 
 
-    <main class="divider">
-        <div class="side-select">
-            <div class="current-pasta-area">
-                <img class="current-pasta" src="" alt="Selected Pasta" />
-                <div class="pasta-number-display" id="pastaNumberDisplay"></div>
-            </div>
-            <div class="scrollable-list"></div>
-        </div>
+    <main class="layout">
         <div id="map" class="map"></div>
+
+        <section class="gallery">
+            <div class="eaten-progress">
+                <div class="eaten-progress-label">
+                    <span>🤌 Pastas eaten</span>
+                    <span id="eatenCount"></span>
+                </div>
+                <div class="eaten-progress-track">
+                    <div class="eaten-progress-fill" id="eatenFill"></div>
+                </div>
+            </div>
+            <div class="showcase">
+                <div class="showcase-image">
+                    <img class="current-pasta" src="" alt="Selected Pasta" />
+                    <span class="img-fallback" id="stageFallback"></span>
+                </div>
+                <div class="showcase-info">
+                    <div class="pasta-number-display" id="pastaNumberDisplay"></div>
+                    <div class="pasta-name" id="pastaName"></div>
+                    <div class="eaten-line" id="eatenLine"></div>
+                    <div class="pasta-rating" id="pastaRating"></div>
+                    <div class="pasta-description" id="pastaDescription"></div>
+                </div>
+            </div>
+            <div class="filmstrip-row">
+                <button class="nav-arrow" id="prevPasta" aria-label="Previous pasta">&#8249;</button>
+                <div class="filmstrip" id="filmstrip"></div>
+                <button class="nav-arrow" id="nextPasta" aria-label="Next pasta">&#8250;</button>
+            </div>
+        </section>
     </main>
 </body>
 

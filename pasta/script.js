@@ -1,7 +1,31 @@
+// ─────────────────────────────────────────────────────────────────────────
+// EATEN LIST — the pasta numbers Tugdual has already eaten.
+// Edit this one short list to update what shows in colour vs. grayed out.
+// (Numbers correspond to the "number" field of each pasta.)
+const EATEN = [
+    "5", "10", "13", "27", "44", "49", "54", "56", "59", "65",
+    "83", "88", "90", "93", "98", "217", "265", "280", "292", "296",
+    // discovered extras (no classic pack number, keyed by slug)
+    "297", "piccolini", "gran-ruote", "trigatelli", "amore"
+];
+const eatenSet = new Set(EATEN.map(String));
+
+// PASTA META — optional tasting notes + rating per pasta number.
+// Add entries as you eat them, e.g.  "0": { rating: 4, description: "..." }
+// rating is 0–5; description is free text. Missing fields show a placeholder.
+const PASTA_META = {
+    // "0": { rating: 4, description: "Thin, cooks in a flash — great in broth." },
+};
+// ─────────────────────────────────────────────────────────────────────────
+
 // Define global variables for the map, vector source, and pasta-country mapping
 let map, vectorSource, vectorLayer;
 var pastaCountries = {};
 let geoJsonFeatures = [];
+
+// Gallery state
+let allPasta = [];
+let currentIndex = 0;
 
 // Initialize the map and layers
 function initMapAndList() {
@@ -58,81 +82,146 @@ function initMapAndList() {
 }
 
 
-function loadPasta(pastaData) {
-    // Clear previous list if necessary
-    const existingTable = document.querySelector('#pastaTable');
-    if (existingTable) {
-        existingTable.parentNode.removeChild(existingTable);
-    }
-
-    // Build the table structure
-    let tableHtml = `
-        <table id="pastaTable" class="display">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    `;
-    document.querySelector('.scrollable-list').innerHTML = tableHtml;
-
-    pastaData.map(pasta => {
-        pastaCountries[pasta.name] = Object.keys(pasta.links);
-    })
-
-    // console.log(pastaCountries)
-
-    // Populate the table with data
-    let tableData = pastaData.map(pasta => {
-        return [
-            `<img src="${pasta.image}" alt="${pasta.name}" class="list-item">`,
-            pasta.name
-        ];
-    });
-
-    // Initialize DataTable
-    const dataTable = new DataTable('#pastaTable', {
-        data: tableData,
-        columns: [
-            { title: "Image" },
-            { title: "Name" }
-        ]
-    });
-
-    $('#pastaTable').on('click', 'tbody td', function() {
-        var index = dataTable.row(this).index();
-        selectItem(pastaData[index].name, pastaData[index].image, pastaData[index].number);
-    })
-  
-
-    // Select the first item programmatically
-    selectItem(pastaData[0].name, pastaData[0].image, pastaData[0].number);
+function isEaten(pasta) {
+    return eatenSet.has(String(pasta.number));
 }
 
-function selectItem(name, imagePath, number) {
-    // Update the image displayed on the webpage to the selected pasta's image
-    // Clear previously selected item styling
-    document.querySelectorAll('.list-item').forEach(item => {
-        item.classList.remove('selected-list-item');
+// Some discovered pastas have no classic pack number (keyed by a slug instead).
+function hasNumber(pasta) {
+    return /^\d+$/.test(String(pasta.number));
+}
+
+// Short label for the small number shown behind a thumbnail.
+function thumbLabel(pasta) {
+    return hasNumber(pasta)
+        ? pasta.number
+        : pasta.name.replace(/[^A-Za-z]/g, '').slice(0, 3);
+}
+
+// Swap a broken image out for a numbered placeholder tile.
+function markImageFailed(img) {
+    img.classList.add('failed');
+}
+
+function loadPasta(pastaData) {
+    allPasta = pastaData;
+
+    pastaData.forEach(pasta => {
+        pastaCountries[pasta.name] = Object.keys(pasta.links);
     });
 
-    // Set the clicked item as selected
-    // listItem.classList.add('selected-list-item');
+    // Build the filmstrip of thumbnails
+    const filmstrip = document.getElementById('filmstrip');
+    filmstrip.innerHTML = '';
 
-    // Update the image displayed on the webpage to the selected pasta's image
-    document.querySelector('.current-pasta').src = imagePath;
-    document.querySelector('.current-pasta').alt = `Image of ${name}`;
+    pastaData.forEach((pasta, index) => {
+        const thumb = document.createElement('button');
+        thumb.className = 'thumb' + (isEaten(pasta) ? ' eaten' : ' not-eaten');
+        thumb.dataset.index = index;
+        thumb.title = hasNumber(pasta) ? `${pasta.name} (No. ${pasta.number})` : pasta.name;
+        thumb.setAttribute('aria-label', thumb.title);
 
-    // Update the number display
-    const pastaNumberDisplay = document.getElementById('pastaNumberDisplay');
-    pastaNumberDisplay.textContent = `${name}, Number: ${number}`;
-    pastaNumberDisplay.style.display = 'block'; // Make sure it's visible
+        const num = document.createElement('span');
+        num.className = 'thumb-num';
+        num.textContent = thumbLabel(pasta);
+
+        const img = document.createElement('img');
+        img.src = pasta.image;
+        img.alt = pasta.name;
+        img.loading = 'lazy';
+        img.onerror = () => markImageFailed(img);
+
+        thumb.appendChild(num);
+        thumb.appendChild(img);
+        thumb.addEventListener('click', () => selectIndex(index));
+        filmstrip.appendChild(thumb);
+    });
+
+    // Eaten progress (how many of the gallery's pastas have been eaten)
+    updateEatenProgress();
+
+    // Wire up navigation
+    document.getElementById('prevPasta').addEventListener('click', () => cycle(-1));
+    document.getElementById('nextPasta').addEventListener('click', () => cycle(1));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') cycle(-1);
+        if (e.key === 'ArrowRight') cycle(1);
+    });
+
+    // Select the first item programmatically
+    selectIndex(0);
+}
+
+function updateEatenProgress() {
+    const total = allPasta.length;
+    const eaten = allPasta.filter(isEaten).length;
+    const pct = total ? Math.round((eaten / total) * 100) : 0;
+    document.getElementById('eatenCount').textContent = `${eaten} / ${total} · ${pct}%`;
+    document.getElementById('eatenFill').style.width = pct + '%';
+}
+
+function cycle(delta) {
+    if (!allPasta.length) return;
+    const next = (currentIndex + delta + allPasta.length) % allPasta.length;
+    selectIndex(next);
+}
+
+function selectIndex(index) {
+    if (index < 0 || index >= allPasta.length) return;
+    currentIndex = index;
+    const pasta = allPasta[index];
+
+    // Highlight the active thumbnail and scroll it into view
+    const thumbs = document.querySelectorAll('.thumb');
+    thumbs.forEach(t => t.classList.remove('active'));
+    const activeThumb = thumbs[index];
+    if (activeThumb) {
+        activeThumb.classList.add('active');
+        activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    // Update the stage (large selected pasta)
+    const stageImg = document.querySelector('.current-pasta');
+    const stageFallback = document.getElementById('stageFallback');
+    stageImg.classList.remove('failed');
+    stageFallback.textContent = thumbLabel(pasta);
+    stageImg.alt = `Image of ${pasta.name}`;
+    stageImg.onerror = () => markImageFailed(stageImg);
+    stageImg.src = pasta.image;
+
+    document.getElementById('pastaName').textContent = pasta.name;
+    document.getElementById('pastaNumberDisplay').textContent =
+        hasNumber(pasta) ? `No. ${pasta.number}` : 'Special / no number';
+
+    const eaten = isEaten(pasta);
+    const eatenLine = document.getElementById('eatenLine');
+    eatenLine.textContent = eaten ? '✓ Eaten' : 'Not yet eaten';
+    eatenLine.className = 'eaten-line ' + (eaten ? 'is-eaten' : 'is-uneaten');
+
+    // Optional tasting notes + rating
+    const meta = PASTA_META[String(pasta.number)] || {};
+
+    const ratingEl = document.getElementById('pastaRating');
+    if (typeof meta.rating === 'number') {
+        const full = Math.round(meta.rating);
+        ratingEl.textContent = '★'.repeat(full) + '☆'.repeat(Math.max(0, 5 - full));
+        ratingEl.classList.remove('empty');
+    } else {
+        ratingEl.textContent = 'Not rated yet';
+        ratingEl.classList.add('empty');
+    }
+
+    const descEl = document.getElementById('pastaDescription');
+    if (meta.description) {
+        descEl.textContent = meta.description;
+        descEl.classList.remove('empty');
+    } else {
+        descEl.textContent = 'No tasting notes yet.';
+        descEl.classList.add('empty');
+    }
+
     // Highlight the countries on the map where this pasta is available
-    highlightCountries(name);
+    highlightCountries(pasta.name);
 }
 
 

@@ -36,107 +36,288 @@ h1 {
 }
 
 /* Layout */
-.divider {
+.layout {
     position: relative;
-    max-height: 95vh;
     margin-top: 20px;
-}
-
-.side-select {
-    position: absolute;
-    z-index: 1;
     display: flex;
-    max-width: 20vw;
     flex-direction: column;
-    max-height: 100%;
-    overflow-y: auto;
-}
-
-.scrollable-list {
-    background-color: white;
-    max-width: 100%;
-    padding: 10px;
-    border-radius: 8px; /* Consistent rounding */
-    overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    flex: 1;
-    height: auto; /* Adjust based on content */
-    margin: 10px;
 }
 
 .map {
-    /* padding: 20px; */
-    /* flex-grow: 3; */
     width: auto;
-    height: 90vh;
+    height: 75vh;
     border: 1px solid #ffffff;
     background-color: #e0e0e0; /* Placeholder, assuming map will cover */
     border-radius: 8px; /* Consistent rounding */
 }
 
-/* List Items */
-.list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border-bottom: 1px solid #eee; */
-    /* background-color: #fff; */
-    padding: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* .list-item:hover {
-    background-color: #f7f7f7;
-} */
-
-.list-item {
-    max-height: 4vh; /* Increase for visibility */
-    width: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
-}
-
-/* Hover effect removed from img to maintain image stability on hover */
-
-/* Selected Item and Pasta Number Display */
-.selected-list-item {
-    background-color: #dedede;
-    font-weight: bold; /* Adjusted for subtlety */
-}
-
-.current-pasta-area {
+/* Gallery — one card: selected-pasta showcase + the filmstrip, floating over the map */
+.gallery {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    /* min-width: 1%; */
-    min-height: 30vh;
-    max-height: 30vh;
+    gap: 16px;
+    margin: -150px 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Eaten progress bar */
+.eaten-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eaten-progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: rgba(13, 38, 79, 1);
+}
+
+.eaten-progress-label #eatenCount {
+    color: rgba(178, 10, 48, 1);
+}
+
+.eaten-progress-track {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.eaten-progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: rgba(178, 10, 48, 1);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+/* Showcase — the currently-selected pasta with its details */
+.showcase {
+    display: flex;
     align-items: center;
-    justify-content: space-around; /* Align content to the top */
-    margin: 10px;
-    background-color: #ffffff; /* Contrast with body */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    border-radius: 8px; /* Rounded corners */
+    gap: 28px;
+    min-width: 0;
+}
+
+.showcase-image {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .current-pasta {
-    /* display: flex; */
-    align-self: center;
-    justify-self: center;
-    max-width: 60%; /* Adjust for better fit */
-    max-height: 60%;
-    overflow: hidden;
-    padding: 20px;
-    margin-bottom: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Numbered fallback shown when an image fails to load */
+.img-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: rgba(13, 38, 79, 0.5);
+    background: repeating-linear-gradient(
+        45deg,
+        #f0f0f0,
+        #f0f0f0 10px,
+        #e8e8e8 10px,
+        #e8e8e8 20px
+    );
+    border-radius: 8px;
+}
+
+.showcase-image .img-fallback {
+    font-size: 3rem;
+}
+
+.current-pasta.failed {
+    display: none;
+}
+
+.current-pasta.failed + .img-fallback,
+.showcase-image:has(.current-pasta.failed) .img-fallback {
+    display: flex;
+}
+
+.showcase-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
 }
 
 .pasta-number-display {
-    align-self: center;
-    font-size: 1.2rem; /* Larger font size */
-    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: darkgray;
-    padding: 8px;
-    border-radius: 8px; /* Consistent rounding */
+}
+
+.pasta-name {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: rgba(13, 38, 79, 1);
+}
+
+.eaten-line {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.eaten-line.is-eaten {
+    color: rgba(178, 10, 48, 1);
+}
+
+.eaten-line.is-uneaten {
+    color: #aaa;
+}
+
+.pasta-rating {
+    font-size: 1.1rem;
+    color: rgba(178, 10, 48, 1);
+    letter-spacing: 0.1em;
+}
+
+.pasta-rating.empty {
+    font-size: 0.9rem;
+    letter-spacing: normal;
+    color: #bbb;
+    font-style: italic;
+}
+
+.pasta-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 2px;
+    max-width: 60ch;
+}
+
+.pasta-description.empty {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(13, 38, 79, 1);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(178, 10, 48, 1);
+}
+
+.nav-arrow:active {
+    transform: scale(0.92);
+}
+
+/* Filmstrip row — arrows flanking the scrollable strip */
+.filmstrip-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+}
+
+.filmstrip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 4px;
+    flex: 1;
+    min-width: 0;
+    scroll-padding: 4px;
+}
+
+.thumb {
+    position: relative;
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s, opacity 0.2s;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.thumb img.failed {
+    display: none;
+}
+
+.thumb-num {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: rgba(13, 38, 79, 0.35);
+    z-index: 0;
+}
+
+.thumb:hover {
+    transform: translateY(-2px);
+}
+
+.thumb.active {
+    border-color: rgba(178, 10, 48, 1);
+}
+
+/* Not-yet-eaten pastas are grayed out */
+.thumb.not-eaten {
+    filter: grayscale(100%);
+    opacity: 0.45;
+}
+
+.thumb.not-eaten.active,
+.thumb.not-eaten:hover {
+    filter: grayscale(60%);
+    opacity: 0.8;
 }
 
 .stats {
@@ -171,4 +352,108 @@ h1 {
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 200;
     color: darkgray;
+}
+
+/* ───────────────────────────── Mobile ───────────────────────────── */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: clamp(1.6rem, 7vw, 3rem);
+        min-width: 0;
+    }
+
+    .intro-text {
+        font-size: 1.05rem;
+        padding: 0 4px;
+        text-align: left;
+    }
+
+    /* Stats stack into compact rows */
+    .stats {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 10px 14px;
+    }
+
+    .stat {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 10px 6px;
+        gap: 12px;
+    }
+
+    .stat:not(:last-child) {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .stat h2,
+    .stat h4 {
+        margin: 0;
+    }
+
+    .stat h4 {
+        text-align: right;
+    }
+
+    .map {
+        height: 55vh;
+    }
+
+    /* Gallery: lighter overlap, single-column showcase */
+    .gallery {
+        margin: -60px 10px 0;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .showcase {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .showcase-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .showcase-info {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .pasta-name {
+        font-size: 1.5rem;
+    }
+
+    .pasta-description {
+        max-width: none;
+    }
+
+    /* Bigger tap targets, smaller thumbs so more fit */
+    .nav-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+    }
+
+    .filmstrip-row {
+        gap: 8px;
+        padding-top: 14px;
+    }
+
+    .thumb {
+        width: 64px;
+        height: 64px;
+        padding: 5px;
+    }
+
+    .thumb-num {
+        font-size: 1.1rem;
+    }
 }
