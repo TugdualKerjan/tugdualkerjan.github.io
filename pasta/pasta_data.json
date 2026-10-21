@@ -89,7 +89,7 @@
     {
         "number": "5",
         "name": "Spaghetti",
-        "image": "images/5.webp",
+        "image": "images/5.png",
         "links": {
             "SWE": "https://www.barilla.com//-/media/images/sv_se/products/groups/ranges/glutenfri_sv/gluten-free-2023/3d_real_11409_sg_nvi_spaghetti_400g_eu_3129_v1_front_80.png",
             "HRV": "https://www.barilla.com//-/media/images/hr_hr/legumesspaghetti.png",
@@ -193,7 +193,7 @@
     {
         "number": "11",
         "name": "Bavettine",
-        "image": "images/11.webp",
+        "image": "images/11.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/bavettine_11_500g.png"
         },
@@ -453,7 +453,7 @@
     {
         "number": "43",
         "name": "Ditalini Lisci",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditalini_lisci_43_500g.png",
+        "image": "images/43.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/ditalini_lisci_43_500g.png"
         }
@@ -505,7 +505,7 @@
     {
         "number": "48",
         "name": "Mezzi Canneroni",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezzi_canneroni_48_cello_1kg.png",
+        "image": "images/48.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/mezzi_canneroni_48_cello_1kg.png"
         }
@@ -647,7 +647,7 @@
     {
         "number": "69",
         "name": "Pennette Lisce",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_lisce_69_500g.png",
+        "image": "images/69.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/pennette_lisce_69_500g.png"
         }
@@ -747,7 +747,7 @@
     {
         "number": "77",
         "name": "Penne a Candela",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_a_candela_77_500g.png",
+        "image": "images/77.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/penne_a_candela_77_500g.png"
         }
@@ -764,7 +764,7 @@
     {
         "number": "82",
         "name": "Cataneselle",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/new_classici/classici_cataneselle_225px.png",
+        "image": "images/82.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/new_classici/classici_cataneselle_225px.png"
         }
@@ -772,7 +772,7 @@
     {
         "number": "83",
         "name": "Tortiglioni",
-        "image": "images/83.webp",
+        "image": "images/83.png",
         "links": {
             "GRC": "https://www.barilla.com//-/media/images/el_gr/products/groups/ranges/classic-gr/3df_3030030022_1000012626tortiglioni15x500ggrintl.png",
             "ISR": "https://www.barilla.com//-/media/images/he_il/products/il-products/tortiglioni_83_500g.webp",
@@ -945,7 +945,7 @@
     {
         "number": "96",
         "name": "Spaccatelle",
-        "image": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaccatelle_96_cello_1kg.png",
+        "image": "images/96.png",
         "links": {
             "ITA": "https://www.barilla.com//-/media/images/it_it/products/groups/ranges/classici_pack_nvi/spaccatelle_96_cello_1kg.png"
         }
@@ -953,7 +953,7 @@
     {
         "number": "98",
         "name": "Fusilli",
-        "image": "images/98.webp",
+        "image": "images/98.png",
         "links": {
             "SVN": "https://www.barilla.com//-/media/images/sl_si/fussili50.png",
             "PRT": "https://www.barilla.com//-/media/images/pt_pt/products/groups/ranges/gama--clasica_pt/_0016_3df_3030030466_1000012625fusilli500gowintlb.png",
@@ -1005,7 +1005,7 @@
     {
         "number": "125",
         "name": "Collezione Édition Gourmet Lasagnette",
-        "image": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/lasagnette_collection_gourmet_new.png",
+        "image": "125.png",
         "links": {
             "FRA": "https://www.barilla.com//-/media/images/fr_fr/products/groups/ranges/collezione_edition_gourmet/lasagnette_collection_gourmet_new.png"
         }
@@ -1063,15 +1063,6 @@
         "image_original": "https://www.barilla.com//-/media/images/hr_hr/spinaci.png"
     },
     {
-        "number": "169",
-        "name": "Collezione Lasagne",
-        "image": "images/169.webp",
-        "links": {
-            "BRA": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_lasagne_500g_front/3df_3030043741_1000012389lasagnelc12x250ggerbraport/3df_12389_coll_lasagne_250g_eu-(1).png"
-        },
-        "image_original": "https://www.barilla.com//-/media/images/pt_br/products/groups/ranges/collezione/collezione_br_lasagne_500g_front/3df_3030043741_1000012389lasagnelc12x250ggerbraport/3df_12389_coll_lasagne_250g_eu-(1).png"
-    },
-    {
         "number": "170",
         "name": "Mezze Penne Tricolore",
         "image": "images/170.webp",
@@ -1099,7 +1090,7 @@
     {
         "number": "174",
         "name": "Tagliatelle all‘uovo",
-        "image": "images/174.webp",
+        "image": "images/174.png",
         "links": {
             "SVN": "https://www.barilla.com//-/media/images/sl_si/collezione_tagliatellealluovo.png",
             "AUS": "https://www.barilla.com//-/media/images/en_au/products/groups/ranges/collezione/collezione_tagliatelle_2021.png",
@@ -1300,7 +1291,7 @@
     {
         "number": "?",
         "name": "Tortellini Fromaggi",
-        "image": "images/tortellini-fromaggi.webp",
+        "image": "images/tortellini-fromaggi.png",
         "links": {
             "TUR": "https://www.barilla.com//-/media/images/tr_tr/products/groups/ranges/collezione_tr/collezione_tortellini_2112.png",
             "MEX": "https://www.barilla.com//-/media/images/es_mx/products/groups/ranges/classic-blue-box/barilla_engrane_200g.png",
@@ -1339,7 +1330,7 @@
     {
         "number": "gran-ruote",
         "name": "Special Gran Ruote",
-        "image": "images/gran-ruote.webp",
+        "image": "images/gran-route.png",
         "links": {}
     },
     {
@@ -1351,7 +1342,7 @@
     {
         "number": "amore",
         "name": "Special Amore",
-        "image": "images/amore.webp",
+        "image": "images/gesto-amore.png",
         "links": {}
     }
 ]
